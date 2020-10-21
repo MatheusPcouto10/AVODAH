@@ -1,0 +1,70 @@
+﻿using EscalasMetodista.Conexão;
+using EscalasMetodista.Dao;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace EscalasMetodista.Model
+{
+    class SubFuncao : DaoSubFuncao<SubFuncao>
+    {
+        public int idSubFuncao { get; set; }
+
+        public int idFuncao_fk { get; set; }
+        public String Descricao { get; set; }
+
+        SqlCommand cmd = new SqlCommand();
+        Conexao conexao = new Conexao();
+        public void create(SubFuncao t)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO subfuncao(descricao, idFuncao_fk) " +
+                                  "values('" + t.Descricao + "', '" + t.idFuncao_fk + "')";
+
+                cmd.Connection = conexao.Conectar();
+                cmd.ExecuteNonQuery();
+                conexao.Desconectar();
+                MessageBox.Show("Sub-Função cadastrada com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+        }
+
+        public void delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SubFuncao findById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void update(SubFuncao t, int idSubFuncoes)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE subfuncao SET descricao = '" + t.Descricao +
+                                                                     "', idFuncao_fk = '" + t.idFuncao_fk +
+                                                                     "' WHERE idSubFuncao LIKE '" + idSubFuncoes + "'";
+                cmd.Connection = conexao.Conectar();
+                cmd.ExecuteNonQuery();
+                conexao.Desconectar();
+
+                MessageBox.Show("Alteração feita com sucesso!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+        }
+    }
+}

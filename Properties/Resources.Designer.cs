@@ -83,6 +83,16 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1485476000_artboard_1_78543 {
+            get {
+                object obj = ResourceManager.GetObject("1485476000-artboard-1_78543", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3563935 {
             get {
                 object obj = ResourceManager.GetObject("3563935", resourceCulture);
@@ -113,9 +123,39 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_contact_folded_icon_30480 {
+            get {
+                object obj = ResourceManager.GetObject("add-contact-folded-icon_30480", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contacts_23830 {
+            get {
+                object obj = ResourceManager.GetObject("contacts_23830", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cruz_chama_metodista {
             get {
                 object obj = ResourceManager.GetObject("cruz_chama_metodista", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_folder_4341292_120540 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder-folder-4341292_120540", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
