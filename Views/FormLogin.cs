@@ -94,5 +94,10 @@ namespace EscalasMetodista
             btnLimpar.BackColor = Color.Transparent;
             btnLimpar.ForeColor = Color.Black;
         }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

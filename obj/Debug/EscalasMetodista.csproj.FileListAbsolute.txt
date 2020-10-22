@@ -9,3 +9,5 @@ C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\EscalasMetodista\
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\EscalasMetodista\obj\Debug\EscalasMetodista.pdb
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\EscalasMetodista\obj\Debug\EscalasMetodista.FormMenu.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\EscalasMetodista\obj\Debug\EscalasMetodista.FormLogin.resources
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\EscalasMetodista\obj\Debug\EscalasMetodista.Views.FormCadastroFuncao.resources
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\EscalasMetodista\obj\Debug\EscalasMetodista.Views.FormCadastroSubFuncao.resources
