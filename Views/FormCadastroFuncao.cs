@@ -21,16 +21,12 @@ namespace EscalasMetodista.Views
 
         private void btnCadastrarFuncao_Click(object sender, EventArgs e)
         {
-            if (txtdescricaoFuncao.Text != null)
+            funcoes.descricaoFuncao = txtdescricaoFuncao.Text;
+            if (Validacoes.ValidarObjeto(funcoes) == true)
             {
-                funcoes.descricaoFuncao = txtdescricaoFuncao.Text;
                 funcoes.create(funcoes);
-                txtdescricaoFuncao.Text = " ";
             }
-            else
-            {
-                MessageBox.Show("Campos não informados");
-            }
+            txtdescricaoFuncao.Text = " ";
         }
 
         private void FormCadastroFuncao_KeyDown(object sender, KeyEventArgs e)

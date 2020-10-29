@@ -1,4 +1,5 @@
 ﻿using EscalasMetodista.Conexão;
+using EscalasMetodista.Session;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,14 +35,27 @@ namespace EscalasMetodista
 
                 if (dr.Read())
                 {
-
                     FormMenu formMenu = new FormMenu();
-                    formMenu.Show();
-                    this.Hide();
+
+                    UsuarioSession.tipoUsuario = Convert.ToInt32(dr[5].ToString());
+                    UsuarioSession.idUsuario = Convert.ToInt32(dr[0].ToString());
+                    UsuarioSession.nomeUsuario = dr[1].ToString();
+                    UsuarioSession.sobrenomeUsuario = dr[2].ToString();
+                    string statusUsuario = dr[6].ToString();
+
+                    if (statusUsuario.Equals("Ativo"))
+                    {
+                        formMenu.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("O Usuário está Inativo", "Inatividade", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Usuário e/ou senha incorretos!");
+                    MessageBox.Show("Usuário e/ou senha incorretos!", "Dados incorretos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.btnLimpar_Click(null, null);
                 }
 

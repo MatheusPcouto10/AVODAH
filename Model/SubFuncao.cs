@@ -2,6 +2,7 @@
 using EscalasMetodista.Dao;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ namespace EscalasMetodista.Model
         public int idSubFuncao { get; set; }
 
         public int idFuncao_fk { get; set; }
+
+        [Required(ErrorMessage = "Insira o nome da Sub-Função")]
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Números e caracteres especiais não são permitidos no nome.")]
         public String Descricao { get; set; }
 
         SqlCommand cmd = new SqlCommand();

@@ -24,17 +24,15 @@ namespace EscalasMetodista.Views
 
         private void btnCadastrarSubFuncao_Click(object sender, EventArgs e)
         {
-            if ((txtDescricao.Text != ""))
-            {
-                subFuncoes.Descricao = txtDescricao.Text;
-                subFuncoes.idFuncao_fk = (int)cbFuncoes.SelectedValue;
 
+            subFuncoes.Descricao = txtDescricao.Text;
+            subFuncoes.idFuncao_fk = (int)cbFuncoes.SelectedValue;
+            if (Validacoes.ValidarObjeto(subFuncoes) == true)
+            {
                 subFuncoes.create(subFuncoes);
             }
-            else
-            {
-                MessageBox.Show("Campos não informados");
-            }
+
+            txtDescricao.Text = " ";
         }
 
         private void preencheComboBoxFuncoes()

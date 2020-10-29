@@ -1,4 +1,5 @@
-﻿using EscalasMetodista.Views;
+﻿using EscalasMetodista.Session;
+using EscalasMetodista.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,16 @@ namespace EscalasMetodista
             form.Show();
         }
 
+        private void controleAcesso()
+        {
+            if (UsuarioSession.tipoUsuario.Equals(2))
+            {
+                this.btnFuncoes.Enabled = false;
+                this.btnUsuarios.Enabled = false;
+                this.btnRelatorios.Enabled = false;
+            }
+        }
+
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -58,6 +69,12 @@ namespace EscalasMetodista
                 form.Show();
                 this.Hide();
             }
+        }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+            this.labelUsuarioLogado.Text = "Bem vindo " + UsuarioSession.nomeUsuario + " !";
+            this.controleAcesso();
         }
     }
 }

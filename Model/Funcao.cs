@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
 
 namespace EscalasMetodista.Model
 {
     class Funcao : DaoFuncao<Funcao>
     {
         public int idFuncao { get; set; }
+
+        [Required(ErrorMessage = "Insira o nome da Função")]
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Números e caracteres especiais não são permitidos no nome.")]
         public String descricaoFuncao { get; set; }
 
         SqlCommand cmd = new SqlCommand();
