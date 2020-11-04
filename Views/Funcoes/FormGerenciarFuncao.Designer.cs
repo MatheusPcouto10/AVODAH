@@ -1,6 +1,6 @@
 ﻿namespace EscalasMetodista.Views.Funcoes
 {
-    partial class FormGerenciarFunção
+    partial class FormGerenciarFuncao
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGerenciarFunção));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGerenciarFuncao));
             this.panel_rodape = new System.Windows.Forms.Panel();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.telaPesquisa = new System.Windows.Forms.TabPage();
-            this.dgFuncoes = new System.Windows.Forms.DataGridView();
             this.fillByNomeToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txtPesquisa = new System.Windows.Forms.ToolStripTextBox();
+            this.btnPesquisa = new System.Windows.Forms.ToolStripButton();
+            this.dgFuncoes = new System.Windows.Forms.DataGridView();
+            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnPesquisa = new System.Windows.Forms.ToolStripButton();
-            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.salvar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnVoltar = new System.Windows.Forms.Button();
             this.panel_rodape.SuspendLayout();
             this.panel1.SuspendLayout();
             this.telaPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).BeginInit();
             this.fillByNomeToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +63,22 @@
             this.panel_rodape.Name = "panel_rodape";
             this.panel_rodape.Size = new System.Drawing.Size(775, 45);
             this.panel_rodape.TabIndex = 4;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVoltar.Location = new System.Drawing.Point(12, 11);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(95, 30);
+            this.btnVoltar.TabIndex = 19;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // label1
             // 
@@ -114,34 +129,6 @@
             this.telaPesquisa.TabIndex = 0;
             this.telaPesquisa.Text = "Pesquisa";
             // 
-            // dgFuncoes
-            // 
-            this.dgFuncoes.AllowUserToAddRows = false;
-            this.dgFuncoes.AllowUserToDeleteRows = false;
-            this.dgFuncoes.AllowUserToOrderColumns = true;
-            this.dgFuncoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgFuncoes.BackgroundColor = System.Drawing.Color.Black;
-            this.dgFuncoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgFuncoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.editar,
-            this.salvar});
-            this.dgFuncoes.GridColor = System.Drawing.Color.Black;
-            this.dgFuncoes.Location = new System.Drawing.Point(12, 128);
-            this.dgFuncoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgFuncoes.Name = "dgFuncoes";
-            this.dgFuncoes.ReadOnly = true;
-            this.dgFuncoes.RowHeadersWidth = 51;
-            this.dgFuncoes.RowTemplate.Height = 24;
-            this.dgFuncoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncoes.Size = new System.Drawing.Size(751, 321);
-            this.dgFuncoes.TabIndex = 5;
-            this.dgFuncoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellContentClick);
-            this.dgFuncoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgFuncoes_CellFormatting);
-            this.dgFuncoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgFuncoes_DataBindingComplete);
-            this.dgFuncoes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgFuncoes_KeyDown);
-            // 
             // fillByNomeToolStrip
             // 
             this.fillByNomeToolStrip.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -173,6 +160,54 @@
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(199, 27);
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPesquisa.Image = global::EscalasMetodista.Properties.Resources.searchmagnifierinterfacesymbol1_79893;
+            this.btnPesquisa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(29, 24);
+            this.btnPesquisa.Text = "toolStripButton1";
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            // 
+            // dgFuncoes
+            // 
+            this.dgFuncoes.AllowUserToAddRows = false;
+            this.dgFuncoes.AllowUserToDeleteRows = false;
+            this.dgFuncoes.AllowUserToOrderColumns = true;
+            this.dgFuncoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgFuncoes.BackgroundColor = System.Drawing.Color.Black;
+            this.dgFuncoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFuncoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.editar});
+            this.dgFuncoes.GridColor = System.Drawing.Color.Black;
+            this.dgFuncoes.Location = new System.Drawing.Point(12, 128);
+            this.dgFuncoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgFuncoes.Name = "dgFuncoes";
+            this.dgFuncoes.ReadOnly = true;
+            this.dgFuncoes.RowHeadersWidth = 51;
+            this.dgFuncoes.RowTemplate.Height = 24;
+            this.dgFuncoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgFuncoes.Size = new System.Drawing.Size(751, 321);
+            this.dgFuncoes.TabIndex = 5;
+            this.dgFuncoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellContentClick);
+            this.dgFuncoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgFuncoes_CellFormatting);
+            this.dgFuncoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgFuncoes_DataBindingComplete);
+            this.dgFuncoes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgFuncoes_KeyDown);
+            // 
+            // editar
+            // 
+            this.editar.HeaderText = "";
+            this.editar.Image = global::EscalasMetodista.Properties.Resources.editar;
+            this.editar.MinimumWidth = 6;
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            this.editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editar.Width = 1099;
             // 
             // tabControl1
             // 
@@ -206,53 +241,7 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 125;
             // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPesquisa.Image = global::EscalasMetodista.Properties.Resources.searchmagnifierinterfacesymbol1_79893;
-            this.btnPesquisa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(29, 24);
-            this.btnPesquisa.Text = "toolStripButton1";
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            // 
-            // editar
-            // 
-            this.editar.HeaderText = "";
-            this.editar.Image = global::EscalasMetodista.Properties.Resources.editar;
-            this.editar.MinimumWidth = 6;
-            this.editar.Name = "editar";
-            this.editar.ReadOnly = true;
-            this.editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editar.Width = 1099;
-            // 
-            // salvar
-            // 
-            this.salvar.HeaderText = "";
-            this.salvar.Image = global::EscalasMetodista.Properties.Resources.salve_;
-            this.salvar.MinimumWidth = 6;
-            this.salvar.Name = "salvar";
-            this.salvar.ReadOnly = true;
-            this.salvar.Width = 125;
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVoltar.Location = new System.Drawing.Point(12, 11);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(95, 30);
-            this.btnVoltar.TabIndex = 19;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // FormGerenciarFunção
+            // FormGerenciarFuncao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -264,9 +253,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FormGerenciarFunção";
+            this.Name = "FormGerenciarFuncao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Funções";
+            this.Activated += new System.EventHandler(this.FormGerenciarFuncao_Activated);
             this.Load += new System.EventHandler(this.FormGerenciarFunção_Load);
             this.panel_rodape.ResumeLayout(false);
             this.panel_rodape.PerformLayout();
@@ -274,9 +264,9 @@
             this.panel1.PerformLayout();
             this.telaPesquisa.ResumeLayout(false);
             this.telaPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).EndInit();
             this.fillByNomeToolStrip.ResumeLayout(false);
             this.fillByNomeToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -294,10 +284,9 @@
         private System.Windows.Forms.ToolStripButton btnPesquisa;
         public System.Windows.Forms.DataGridView dgFuncoes;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.DataGridViewImageColumn editar;
-        private System.Windows.Forms.DataGridViewImageColumn salvar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn editar;
     }
 }

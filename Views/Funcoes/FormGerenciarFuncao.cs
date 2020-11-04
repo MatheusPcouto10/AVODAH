@@ -13,11 +13,13 @@ using System.Windows.Forms;
 
 namespace EscalasMetodista.Views.Funcoes
 {
-    public partial class FormGerenciarFunção : Form
+    public partial class FormGerenciarFuncao : Form
     {
         public int idFuncao;
+        public string descricaoFuncao;
+
         Conexao conexao = new Conexao();
-        public FormGerenciarFunção()
+        public FormGerenciarFuncao()
         {
             InitializeComponent();
         }
@@ -50,7 +52,7 @@ namespace EscalasMetodista.Views.Funcoes
                     }
                     else
                     {
-                        MessageBox.Show("Nenhuma Função Encontrada"," ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Nenhuma Função Encontrada", " ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception erro)
@@ -96,8 +98,14 @@ namespace EscalasMetodista.Views.Funcoes
             //verificar qual a coluna clicada é a de editar
             if (dgFuncoes.Columns[e.ColumnIndex] == dgFuncoes.Columns["editar"])
             {
-                // pegar o id para editar
+                FormCadastroFuncao form = new FormCadastroFuncao();
                 idFuncao = Convert.ToInt32(dgFuncoes.Rows[e.RowIndex].Cells["idFuncao"].Value.ToString());
+                descricaoFuncao = dgFuncoes.Rows[e.RowIndex].Cells["descricaoFuncao"].Value.ToString();
+
+                form.idFuncao = idFuncao;
+                form.txtDescricaoFuncao.Text = descricaoFuncao;
+                form.updateFuncao = true;
+                form.Show(); 
             }
         }
 
@@ -132,10 +140,6 @@ namespace EscalasMetodista.Views.Funcoes
                         coluna.Width = 40;
                         coluna.DisplayIndex = 2;
                         break;
-                    case "salvar":
-                        coluna.Width = 40;
-                        coluna.DisplayIndex = 3;
-                        break;
                     default:
                         break;
                 }
@@ -145,8 +149,6 @@ namespace EscalasMetodista.Views.Funcoes
         private void FormGerenciarFunção_Load(object sender, EventArgs e)
         {
             this.CarregarDataGrid();
-            salvar.Visible = false;
-
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -157,7 +159,11 @@ namespace EscalasMetodista.Views.Funcoes
         private void dgFuncoes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             dgFuncoes.Rows[e.RowIndex].Cells["editar"].ToolTipText = "Clique aqui para editar";
-            dgFuncoes.Rows[e.RowIndex].Cells["salvar"].ToolTipText = "Clique aqui para salvar";
+        }
+
+        private void FormGerenciarFuncao_Activated(object sender, EventArgs e)
+        {
+            this.CarregarDataGrid();
         }
     }
 }

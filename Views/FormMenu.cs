@@ -86,7 +86,7 @@ namespace EscalasMetodista
 
         private void gerenciarFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormGerenciarFunção form = new FormGerenciarFunção();
+            FormGerenciarFuncao form = new FormGerenciarFuncao();
             form.Show();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using EscalasMetodista.Model;
+using EscalasMetodista.Views.Funcoes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,19 +15,36 @@ namespace EscalasMetodista.Views
     public partial class FormCadastroFuncao : Form
     {
         Funcao funcoes = new Funcao();
+        public bool updateFuncao = false;
+        public int idFuncao;
+
         public FormCadastroFuncao()
         {
             InitializeComponent();
         }
 
-        private void btnCadastrarFuncao_Click(object sender, EventArgs e)
+        private void btnSalvarFuncao_Click(object sender, EventArgs e)
         {
-            funcoes.descricaoFuncao = txtdescricaoFuncao.Text;
-            if (Validacoes.ValidarObjeto(funcoes) == true)
+            funcoes.descricaoFuncao = txtDescricaoFuncao.Text;
+            if (updateFuncao == true)
             {
-                funcoes.create(funcoes);
+                if (Validacoes.ValidarObjeto(funcoes) == true)
+                {
+                    funcoes.update(funcoes, idFuncao);
+                }
+                txtDescricaoFuncao.Text = " ";
+                updateFuncao = false;
+                this.Close();
             }
-            txtdescricaoFuncao.Text = " ";
+            else
+            {
+                if (Validacoes.ValidarObjeto(funcoes) == true)
+                {
+                    funcoes.create(funcoes);
+                }
+                txtDescricaoFuncao.Text = " ";
+            }
+
         }
 
         private void FormCadastroFuncao_KeyDown(object sender, KeyEventArgs e)
@@ -34,7 +52,7 @@ namespace EscalasMetodista.Views
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    this.btnCadastrarFuncao_Click(null, null);
+                    this.btnSalvarFuncao_Click(null, null);
                     break;
                 case Keys.Escape:
                     this.Close();

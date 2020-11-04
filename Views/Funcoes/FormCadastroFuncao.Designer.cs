@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroFuncao));
-            this.btnCadastrarFuncao = new System.Windows.Forms.Button();
+            this.btnSalvarFuncao = new System.Windows.Forms.Button();
             this.labelNomeProduto = new System.Windows.Forms.Label();
-            this.txtdescricaoFuncao = new System.Windows.Forms.TextBox();
+            this.txtDescricaoFuncao = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnCadastrarFuncao
+            // btnSalvarFuncao
             // 
-            this.btnCadastrarFuncao.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnCadastrarFuncao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrarFuncao.FlatAppearance.BorderSize = 2;
-            this.btnCadastrarFuncao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCadastrarFuncao.Location = new System.Drawing.Point(124, 158);
-            this.btnCadastrarFuncao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCadastrarFuncao.Name = "btnCadastrarFuncao";
-            this.btnCadastrarFuncao.Size = new System.Drawing.Size(165, 39);
-            this.btnCadastrarFuncao.TabIndex = 36;
-            this.btnCadastrarFuncao.Text = "ADICIONAR";
-            this.btnCadastrarFuncao.UseVisualStyleBackColor = false;
-            this.btnCadastrarFuncao.Click += new System.EventHandler(this.btnCadastrarFuncao_Click);
+            this.btnSalvarFuncao.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSalvarFuncao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSalvarFuncao.FlatAppearance.BorderSize = 2;
+            this.btnSalvarFuncao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSalvarFuncao.Location = new System.Drawing.Point(124, 158);
+            this.btnSalvarFuncao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalvarFuncao.Name = "btnSalvarFuncao";
+            this.btnSalvarFuncao.Size = new System.Drawing.Size(165, 39);
+            this.btnSalvarFuncao.TabIndex = 36;
+            this.btnSalvarFuncao.Text = "SALVAR";
+            this.btnSalvarFuncao.UseVisualStyleBackColor = false;
+            this.btnSalvarFuncao.Click += new System.EventHandler(this.btnSalvarFuncao_Click);
             // 
             // labelNomeProduto
             // 
@@ -61,15 +61,15 @@
             this.labelNomeProduto.TabIndex = 38;
             this.labelNomeProduto.Text = "Função:";
             // 
-            // txtdescricaoFuncao
+            // txtDescricaoFuncao
             // 
-            this.txtdescricaoFuncao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtdescricaoFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdescricaoFuncao.Location = new System.Drawing.Point(83, 66);
-            this.txtdescricaoFuncao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtdescricaoFuncao.Name = "txtdescricaoFuncao";
-            this.txtdescricaoFuncao.Size = new System.Drawing.Size(267, 26);
-            this.txtdescricaoFuncao.TabIndex = 37;
+            this.txtDescricaoFuncao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescricaoFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoFuncao.Location = new System.Drawing.Point(83, 66);
+            this.txtDescricaoFuncao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescricaoFuncao.Name = "txtDescricaoFuncao";
+            this.txtDescricaoFuncao.Size = new System.Drawing.Size(267, 26);
+            this.txtDescricaoFuncao.TabIndex = 37;
             // 
             // FormCadastroFuncao
             // 
@@ -78,8 +78,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(419, 209);
             this.Controls.Add(this.labelNomeProduto);
-            this.Controls.Add(this.txtdescricaoFuncao);
-            this.Controls.Add(this.btnCadastrarFuncao);
+            this.Controls.Add(this.txtDescricaoFuncao);
+            this.Controls.Add(this.btnSalvarFuncao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -95,8 +95,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCadastrarFuncao;
+        private System.Windows.Forms.Button btnSalvarFuncao;
         private System.Windows.Forms.Label labelNomeProduto;
-        public System.Windows.Forms.TextBox txtdescricaoFuncao;
+        public System.Windows.Forms.TextBox txtDescricaoFuncao;
     }
 }

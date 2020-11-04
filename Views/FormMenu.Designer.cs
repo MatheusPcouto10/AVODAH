@@ -82,10 +82,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_botoes.BackColor = System.Drawing.SystemColors.ControlText;
             this.panel_botoes.Controls.Add(this.dgEscalas);
-            this.panel_botoes.Location = new System.Drawing.Point(-1, 152);
-            this.panel_botoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_botoes.Location = new System.Drawing.Point(-1, 187);
+            this.panel_botoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_botoes.Name = "panel_botoes";
-            this.panel_botoes.Size = new System.Drawing.Size(334, 413);
+            this.panel_botoes.Size = new System.Drawing.Size(445, 508);
             this.panel_botoes.TabIndex = 2;
             // 
             // dgEscalas
@@ -100,14 +100,14 @@
             this.Arquivo,
             this.dataEscala});
             this.dgEscalas.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgEscalas.Location = new System.Drawing.Point(10, 32);
-            this.dgEscalas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgEscalas.Location = new System.Drawing.Point(13, 39);
+            this.dgEscalas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgEscalas.Name = "dgEscalas";
             this.dgEscalas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgEscalas.RowHeadersWidth = 51;
             this.dgEscalas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgEscalas.RowTemplate.Height = 24;
-            this.dgEscalas.Size = new System.Drawing.Size(318, 342);
+            this.dgEscalas.Size = new System.Drawing.Size(424, 421);
             this.dgEscalas.TabIndex = 0;
             // 
             // Arquivo
@@ -128,10 +128,10 @@
             // 
             this.logo_metodista.BackColor = System.Drawing.Color.Transparent;
             this.logo_metodista.Image = ((System.Drawing.Image)(resources.GetObject("logo_metodista.Image")));
-            this.logo_metodista.Location = new System.Drawing.Point(68, 10);
-            this.logo_metodista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logo_metodista.Location = new System.Drawing.Point(91, 12);
+            this.logo_metodista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logo_metodista.Name = "logo_metodista";
-            this.logo_metodista.Size = new System.Drawing.Size(199, 128);
+            this.logo_metodista.Size = new System.Drawing.Size(265, 158);
             this.logo_metodista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo_metodista.TabIndex = 0;
             this.logo_metodista.TabStop = false;
@@ -142,10 +142,10 @@
             this.txtPesquisaEscala.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtPesquisaEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPesquisaEscala.Font = new System.Drawing.Font("Verdana", 10F);
-            this.txtPesquisaEscala.Location = new System.Drawing.Point(400, 46);
-            this.txtPesquisaEscala.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPesquisaEscala.Location = new System.Drawing.Point(533, 57);
+            this.txtPesquisaEscala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPesquisaEscala.Name = "txtPesquisaEscala";
-            this.txtPesquisaEscala.Size = new System.Drawing.Size(254, 21);
+            this.txtPesquisaEscala.Size = new System.Drawing.Size(339, 21);
             this.txtPesquisaEscala.TabIndex = 0;
             // 
             // btnPesquisa
@@ -159,10 +159,10 @@
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.btnPesquisa.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPesquisa.Location = new System.Drawing.Point(658, 48);
-            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPesquisa.Location = new System.Drawing.Point(877, 59);
+            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(27, 21);
+            this.btnPesquisa.Size = new System.Drawing.Size(36, 26);
             this.btnPesquisa.TabIndex = 1;
             this.btnPesquisa.UseVisualStyleBackColor = false;
             // 
@@ -170,10 +170,10 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(400, 68);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(533, 84);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 1);
+            this.panel1.Size = new System.Drawing.Size(339, 1);
             this.panel1.TabIndex = 3;
             // 
             // panel_rodape
@@ -181,10 +181,10 @@
             this.panel_rodape.BackColor = System.Drawing.Color.DarkRed;
             this.panel_rodape.Controls.Add(this.label1);
             this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_rodape.Location = new System.Drawing.Point(0, 531);
-            this.panel_rodape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_rodape.Location = new System.Drawing.Point(0, 654);
+            this.panel_rodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_rodape.Name = "panel_rodape";
-            this.panel_rodape.Size = new System.Drawing.Size(694, 31);
+            this.panel_rodape.Size = new System.Drawing.Size(925, 38);
             this.panel_rodape.TabIndex = 2;
             // 
             // label1
@@ -193,8 +193,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(214, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(285, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(341, 17);
             this.label1.TabIndex = 0;
@@ -205,10 +204,10 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources.cruz_chama_metodista;
-            this.pictureBox1.Location = new System.Drawing.Point(146, 74);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(195, 91);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(369, 453);
+            this.pictureBox1.Size = new System.Drawing.Size(492, 558);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -232,20 +231,20 @@
             this.btnSair});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
-            this.toolStripMenu.Size = new System.Drawing.Size(694, 31);
+            this.toolStripMenu.Size = new System.Drawing.Size(925, 27);
             this.toolStripMenu.TabIndex = 5;
             // 
             // labelUsuarioLogado
             // 
             this.labelUsuarioLogado.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelUsuarioLogado.Name = "labelUsuarioLogado";
-            this.labelUsuarioLogado.Size = new System.Drawing.Size(171, 28);
+            this.labelUsuarioLogado.Size = new System.Drawing.Size(171, 24);
             this.labelUsuarioLogado.Text = "Bem vindo Matheus !";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // btnAlterarSenha
             // 
@@ -253,14 +252,14 @@
             this.btnAlterarSenha.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterarSenha.Image")));
             this.btnAlterarSenha.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAlterarSenha.Name = "btnAlterarSenha";
-            this.btnAlterarSenha.Size = new System.Drawing.Size(102, 28);
+            this.btnAlterarSenha.Size = new System.Drawing.Size(102, 24);
             this.btnAlterarSenha.Text = "Alterar Senha";
             this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // btnSobre
             // 
@@ -268,13 +267,13 @@
             this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
             this.btnSobre.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(52, 28);
+            this.btnSobre.Size = new System.Drawing.Size(52, 24);
             this.btnSobre.Text = "Sobre";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
             // 
             // btnRelatorios
             // 
@@ -284,7 +283,7 @@
             this.btnRelatorios.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorios.Image")));
             this.btnRelatorios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(95, 28);
+            this.btnRelatorios.Size = new System.Drawing.Size(95, 24);
             this.btnRelatorios.Text = "Relatórios";
             // 
             // relatórioDePessoasToolStripMenuItem
@@ -296,7 +295,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
             // 
             // btnUsuarios
             // 
@@ -306,7 +305,7 @@
             this.gerenciarUsuárioToolStripMenuItem});
             this.btnUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(84, 28);
+            this.btnUsuarios.Size = new System.Drawing.Size(84, 24);
             this.btnUsuarios.Text = "Usuários";
             this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             // 
@@ -325,7 +324,7 @@
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
             // 
             // btnFuncoes
             // 
@@ -338,7 +337,7 @@
             this.btnFuncoes.Image = ((System.Drawing.Image)(resources.GetObject("btnFuncoes.Image")));
             this.btnFuncoes.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFuncoes.Name = "btnFuncoes";
-            this.btnFuncoes.Size = new System.Drawing.Size(81, 28);
+            this.btnFuncoes.Size = new System.Drawing.Size(81, 24);
             this.btnFuncoes.Text = "Funções";
             // 
             // novaFunçãoToolStripMenuItem
@@ -376,7 +375,7 @@
             this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSair.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(59, 31);
+            this.btnSair.Size = new System.Drawing.Size(59, 27);
             this.btnSair.Text = "Sair";
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -398,10 +397,10 @@
             this.panel_principal.Controls.Add(this.panel1);
             this.panel_principal.Controls.Add(this.btnPesquisa);
             this.panel_principal.Controls.Add(this.txtPesquisaEscala);
-            this.panel_principal.Location = new System.Drawing.Point(332, 0);
-            this.panel_principal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_principal.Location = new System.Drawing.Point(443, 0);
+            this.panel_principal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_principal.Name = "panel_principal";
-            this.panel_principal.Size = new System.Drawing.Size(694, 562);
+            this.panel_principal.Size = new System.Drawing.Size(925, 692);
             this.panel_principal.TabIndex = 1;
             // 
             // linkNovaEscala
@@ -415,8 +414,7 @@
             this.linkNovaEscala.LinkArea = new System.Windows.Forms.LinkArea(0, 21);
             this.linkNovaEscala.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkNovaEscala.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.linkNovaEscala.Location = new System.Drawing.Point(36, 184);
-            this.linkNovaEscala.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkNovaEscala.Location = new System.Drawing.Point(48, 226);
             this.linkNovaEscala.Name = "linkNovaEscala";
             this.linkNovaEscala.Size = new System.Drawing.Size(141, 26);
             this.linkNovaEscala.TabIndex = 16;
@@ -428,10 +426,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::EscalasMetodista.Properties.Resources._1485476000_artboard_1_78543;
-            this.pictureBox2.Location = new System.Drawing.Point(52, 111);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(69, 137);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(76, 64);
+            this.pictureBox2.Size = new System.Drawing.Size(101, 79);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
@@ -439,10 +437,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::EscalasMetodista.Properties.Resources.iconfinder_folder_4341292_120540;
-            this.pictureBox3.Location = new System.Drawing.Point(242, 111);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(323, 137);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(76, 64);
+            this.pictureBox3.Size = new System.Drawing.Size(101, 79);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
@@ -458,8 +456,7 @@
             this.linkAbrirArquivo.LinkArea = new System.Windows.Forms.LinkArea(0, 21);
             this.linkAbrirArquivo.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkAbrirArquivo.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.linkAbrirArquivo.Location = new System.Drawing.Point(220, 184);
-            this.linkAbrirArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkAbrirArquivo.Location = new System.Drawing.Point(293, 226);
             this.linkAbrirArquivo.Name = "linkAbrirArquivo";
             this.linkAbrirArquivo.Size = new System.Drawing.Size(167, 26);
             this.linkAbrirArquivo.TabIndex = 13;
@@ -470,17 +467,17 @@
             // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1026, 556);
+            this.ClientSize = new System.Drawing.Size(1368, 684);
             this.Controls.Add(this.panel_botoes);
             this.Controls.Add(this.panel_principal);
             this.Controls.Add(this.logo_metodista);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(1044, 603);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1386, 731);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escalas Metodista";
