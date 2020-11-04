@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscalasMetodista.Views.Funcoes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

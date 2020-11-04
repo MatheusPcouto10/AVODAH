@@ -7,18 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
 
 namespace EscalasMetodista.Model
 {
     class Pessoa : DaoPessoa<Pessoa>
     {
         public int idPessoa { get; set; }
+
+        [Required(ErrorMessage = "Informe o Nome")]
+        [RegularExpression(@"[a-z][a-zA-Z0-9]{0,20}", ErrorMessage = "O limite é 20 caracteres.")]
         public String Nome { get; set; }
+
+        [Required(ErrorMessage = "Informe o Sobrenome")]
+        [RegularExpression(@"[a-z][a-zA-Z0-9]{0,20}", ErrorMessage = "O limite é 20 caracteres.")]
         public String Sobrenome { get; set; }
         public String TipoUsuario { get; set; }
         public String Status { get; set; }
         public DateTime dataCadastro { get; set; }
+
+        [Required(ErrorMessage = "Informe um E-mail")]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Informe um email válido. Ex: exemplo@exemplo.com")]
         public String Email { get; set; }
+
+        [Required(ErrorMessage = "Informe uma Senha")]
         public String Senha { get; set; }
 
         SqlCommand cmd = new SqlCommand();
@@ -44,7 +56,7 @@ namespace EscalasMetodista.Model
             {
                 cmd.CommandText = "INSERT INTO pessoa(nome, sobrenome, email, senha, " +
                                                      "tipoUsuario_fk, funcaoPrincipal_fk, funcaoSecundaria_fk, dataCadastro, status) " +
-                                  "values('" + t.Nome + "', '" + t.Sobrenome + "', '" + t.Email + "', '" + t.Senha + "','" + t.tipoUsuario.idTipoUsuario 
+                                  "values('" + t.Nome + "', '" + t.Sobrenome + "', '" + t.Email + "', '" + t.Senha + "','" + t.tipoUsuario.idTipoUsuario
                                   + "','" + t.subFuncao.idSubFuncao + t.subFuncao.idSubFuncao + "','" + t.dataCadastro + "','" + t.Status + "')";
 
                 cmd.Connection = conexao.Conectar();

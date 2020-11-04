@@ -58,16 +58,22 @@
     <Compile Include="Model\TipoUsuario.cs" />
     <Compile Include="Model\Validacoes.cs" />
     <Compile Include="Session\UsuarioSession.cs" />
-    <Compile Include="Views\FormCadastroFuncao.cs">
+    <Compile Include="Views\FormAlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormCadastroFuncao.Designer.cs">
+    <Compile Include="Views\FormAlterarSenha.Designer.cs">
+      <DependentUpon>FormAlterarSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funcoes\FormCadastroFuncao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcoes\FormCadastroFuncao.Designer.cs">
       <DependentUpon>FormCadastroFuncao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormCadastroSubFuncao.cs">
+    <Compile Include="Views\Funcoes\FormCadastroSubFuncao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormCadastroSubFuncao.Designer.cs">
+    <Compile Include="Views\Funcoes\FormCadastroSubFuncao.Designer.cs">
       <DependentUpon>FormCadastroSubFuncao.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormLogin.cs">
@@ -84,10 +90,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\FormCadastroFuncao.resx">
+    <Compile Include="Views\Funcoes\FormGerenciarFunção.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcoes\FormGerenciarFunção.Designer.cs">
+      <DependentUpon>FormGerenciarFunção.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\FormAlterarSenha.resx">
+      <DependentUpon>FormAlterarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcoes\FormCadastroFuncao.resx">
       <DependentUpon>FormCadastroFuncao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormCadastroSubFuncao.resx">
+    <EmbeddedResource Include="Views\Funcoes\FormCadastroSubFuncao.resx">
       <DependentUpon>FormCadastroSubFuncao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormLogin.resx">
@@ -106,6 +121,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Funcoes\FormGerenciarFunção.resx">
+      <DependentUpon>FormGerenciarFunção.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,14 +156,16 @@
     <None Include="Resources\iconfinder-folder-4341292_120540.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\add-contact-folded-icon_30480.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\contacts_23830.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\sair.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\searchmagnifierinterfacesymbol1_79893.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salve-.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

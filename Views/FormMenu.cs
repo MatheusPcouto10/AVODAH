@@ -1,5 +1,6 @@
 ﻿using EscalasMetodista.Session;
 using EscalasMetodista.Views;
+using EscalasMetodista.Views.Funcoes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,6 +76,18 @@ namespace EscalasMetodista
         {
             this.labelUsuarioLogado.Text = "Bem vindo " + UsuarioSession.nomeUsuario + " !";
             this.controleAcesso();
+        }
+
+        private void btnAlterarSenha_Click(object sender, EventArgs e)
+        {
+            FormAlterarSenha form = new FormAlterarSenha();
+            form.Show();
+        }
+
+        private void gerenciarFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGerenciarFunção form = new FormGerenciarFunção();
+            form.Show();
         }
     }
 }
