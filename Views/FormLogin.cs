@@ -99,19 +99,24 @@ namespace EscalasMetodista
 
         private void btnLimpar_MouseHover(object sender, EventArgs e)
         {
-            btnLimpar.BackColor = Color.Black;
-            btnLimpar.ForeColor = Color.Transparent;
+            btnLimpar.BackColor = Color.White;
+            btnLimpar.ForeColor = Color.Black;
         }
 
         private void btnLimpar_MouseLeave(object sender, EventArgs e)
         {
             btnLimpar.BackColor = Color.Transparent;
-            btnLimpar.ForeColor = Color.Black;
+            btnLimpar.ForeColor = Color.White;
         }
 
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

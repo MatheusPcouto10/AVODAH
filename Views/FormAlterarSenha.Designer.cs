@@ -42,7 +42,9 @@
             // labelNomeProduto
             // 
             this.labelNomeProduto.AutoSize = true;
+            this.labelNomeProduto.BackColor = System.Drawing.Color.Transparent;
             this.labelNomeProduto.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.labelNomeProduto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelNomeProduto.Location = new System.Drawing.Point(76, 15);
             this.labelNomeProduto.Name = "labelNomeProduto";
             this.labelNomeProduto.Size = new System.Drawing.Size(130, 20);
@@ -62,7 +64,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(76, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 20);
@@ -82,7 +86,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(76, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 20);
@@ -120,7 +126,7 @@
             this.checkMostrarSenha.AutoSize = true;
             this.checkMostrarSenha.BackColor = System.Drawing.Color.Transparent;
             this.checkMostrarSenha.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
-            this.checkMostrarSenha.ForeColor = System.Drawing.Color.Black;
+            this.checkMostrarSenha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.checkMostrarSenha.Location = new System.Drawing.Point(80, 252);
             this.checkMostrarSenha.Name = "checkMostrarSenha";
             this.checkMostrarSenha.Size = new System.Drawing.Size(141, 21);
@@ -134,6 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::EscalasMetodista.Properties.Resources.dark_material_design_wallpaper__1_in_4k_by_tgs266_d9j7yts;
             this.ClientSize = new System.Drawing.Size(431, 355);
             this.Controls.Add(this.checkMostrarSenha);
             this.Controls.Add(this.btnAlterarSenha);

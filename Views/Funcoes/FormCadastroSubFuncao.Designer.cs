@@ -39,9 +39,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(76, 100);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(101, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 20);
             this.label1.TabIndex = 37;
@@ -52,19 +53,20 @@
             this.cbFuncoes.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncoes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             this.cbFuncoes.FormattingEnabled = true;
-            this.cbFuncoes.Location = new System.Drawing.Point(79, 128);
-            this.cbFuncoes.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFuncoes.Location = new System.Drawing.Point(105, 158);
+            this.cbFuncoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFuncoes.Name = "cbFuncoes";
-            this.cbFuncoes.Size = new System.Drawing.Size(201, 26);
+            this.cbFuncoes.Size = new System.Drawing.Size(267, 26);
             this.cbFuncoes.TabIndex = 36;
             this.cbFuncoes.Text = "Selecione...";
             // 
             // labelNomeProduto
             // 
             this.labelNomeProduto.AutoSize = true;
+            this.labelNomeProduto.BackColor = System.Drawing.Color.Transparent;
             this.labelNomeProduto.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.labelNomeProduto.Location = new System.Drawing.Point(76, 42);
-            this.labelNomeProduto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNomeProduto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelNomeProduto.Location = new System.Drawing.Point(101, 52);
             this.labelNomeProduto.Name = "labelNomeProduto";
             this.labelNomeProduto.Size = new System.Drawing.Size(128, 20);
             this.labelNomeProduto.TabIndex = 35;
@@ -74,10 +76,10 @@
             // 
             this.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricao.Location = new System.Drawing.Point(79, 70);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescricao.Location = new System.Drawing.Point(105, 86);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(201, 26);
+            this.txtDescricao.Size = new System.Drawing.Size(267, 26);
             this.txtDescricao.TabIndex = 34;
             // 
             // btnCadastrarSubFuncao
@@ -87,10 +89,10 @@
             this.btnCadastrarSubFuncao.FlatAppearance.BorderSize = 2;
             this.btnCadastrarSubFuncao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarSubFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCadastrarSubFuncao.Location = new System.Drawing.Point(116, 206);
-            this.btnCadastrarSubFuncao.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCadastrarSubFuncao.Location = new System.Drawing.Point(155, 254);
+            this.btnCadastrarSubFuncao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCadastrarSubFuncao.Name = "btnCadastrarSubFuncao";
-            this.btnCadastrarSubFuncao.Size = new System.Drawing.Size(124, 31);
+            this.btnCadastrarSubFuncao.Size = new System.Drawing.Size(165, 38);
             this.btnCadastrarSubFuncao.TabIndex = 38;
             this.btnCadastrarSubFuncao.Text = "ADICIONAR";
             this.btnCadastrarSubFuncao.UseVisualStyleBackColor = false;
@@ -98,10 +100,11 @@
             // 
             // FormCadastroSubFuncao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(363, 245);
+            this.BackgroundImage = global::EscalasMetodista.Properties.Resources.ocLJYEKLE1aHAy9jGKX_2g_store_banner_image;
+            this.ClientSize = new System.Drawing.Size(484, 302);
             this.Controls.Add(this.btnCadastrarSubFuncao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbFuncoes);
@@ -109,7 +112,7 @@
             this.Controls.Add(this.txtDescricao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FormCadastroSubFuncao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

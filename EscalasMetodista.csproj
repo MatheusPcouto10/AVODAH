@@ -57,6 +57,11 @@
     <Compile Include="Model\SubFuncao.cs" />
     <Compile Include="Model\TipoUsuario.cs" />
     <Compile Include="Model\Validacoes.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Session\UsuarioSession.cs" />
     <Compile Include="Views\FormAlterarSenha.cs">
       <SubType>Form</SubType>
@@ -113,14 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\Funcoes\FormGerenciarFuncao.resx">
       <DependentUpon>FormGerenciarFuncao.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,16 +138,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\9793.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\006.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3563935.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\367502-PAXLKG-681.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1485476000-artboard-1_78543.png" />
@@ -165,7 +156,19 @@
     <None Include="Resources\editar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\salve-.png" />
+    <None Include="Resources\dark_material_design_wallpaper__1_in_4k_by_tgs266-d9j7yts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo-futurista-moderno-do-circuito-metalico-cinzento-vermelho_33869-1252.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobreposicao-de-rotulo-vermelho-sobre-fundo-metalico-cinzento-escuro_33869-1241.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ocLJYEKLE1aHAy9jGKX_2g_store_banner_image.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8595.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

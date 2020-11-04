@@ -41,6 +41,7 @@
             this.btnSalvarFuncao.FlatAppearance.BorderSize = 2;
             this.btnSalvarFuncao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSalvarFuncao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSalvarFuncao.Location = new System.Drawing.Point(124, 158);
             this.btnSalvarFuncao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalvarFuncao.Name = "btnSalvarFuncao";
@@ -76,10 +77,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::EscalasMetodista.Properties.Resources.dark_material_design_wallpaper__1_in_4k_by_tgs266_d9j7yts;
             this.ClientSize = new System.Drawing.Size(419, 209);
             this.Controls.Add(this.labelNomeProduto);
             this.Controls.Add(this.txtDescricaoFuncao);
             this.Controls.Add(this.btnSalvarFuncao);
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

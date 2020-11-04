@@ -45,7 +45,7 @@
             this.checkMostrarSenha.AutoSize = true;
             this.checkMostrarSenha.BackColor = System.Drawing.Color.Transparent;
             this.checkMostrarSenha.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
-            this.checkMostrarSenha.ForeColor = System.Drawing.Color.Black;
+            this.checkMostrarSenha.ForeColor = System.Drawing.SystemColors.Control;
             this.checkMostrarSenha.Location = new System.Drawing.Point(126, 362);
             this.checkMostrarSenha.Name = "checkMostrarSenha";
             this.checkMostrarSenha.Size = new System.Drawing.Size(141, 21);
@@ -57,11 +57,11 @@
             // btnLimpar
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnLimpar.FlatAppearance.BorderSize = 2;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimpar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLimpar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnLimpar.Location = new System.Drawing.Point(269, 432);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpar.Name = "btnLimpar";
@@ -93,7 +93,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources._007;
+            this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources._006;
             this.pictureBox1.Location = new System.Drawing.Point(126, 25);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -117,7 +117,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(198, 271);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 25);
@@ -139,7 +139,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(198, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 25);
@@ -150,8 +150,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BackgroundImage = global::EscalasMetodista.Properties.Resources._367502_PAXLKG_681;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(483, 509);
             this.Controls.Add(this.checkMostrarSenha);
@@ -169,6 +169,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

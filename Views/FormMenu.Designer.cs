@@ -29,17 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            this.panel_botoes = new System.Windows.Forms.Panel();
-            this.dgEscalas = new System.Windows.Forms.DataGridView();
-            this.Arquivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataEscala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logo_metodista = new System.Windows.Forms.PictureBox();
             this.txtPesquisaEscala = new System.Windows.Forms.TextBox();
-            this.btnPesquisa = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_rodape = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.labelUsuarioLogado = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -65,76 +58,23 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.linkAbrirArquivo = new System.Windows.Forms.LinkLabel();
-            this.panel_botoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPesquisa = new System.Windows.Forms.Button();
+            this.panel_botoes = new System.Windows.Forms.Panel();
+            this.dgEscalas = new System.Windows.Forms.DataGridView();
+            this.Arquivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataEscala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logo_metodista = new System.Windows.Forms.PictureBox();
             this.panel_rodape.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStripMenu.SuspendLayout();
             this.panel_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_botoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel_botoes
-            // 
-            this.panel_botoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel_botoes.BackColor = System.Drawing.SystemColors.ControlText;
-            this.panel_botoes.Controls.Add(this.dgEscalas);
-            this.panel_botoes.Location = new System.Drawing.Point(-1, 187);
-            this.panel_botoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel_botoes.Name = "panel_botoes";
-            this.panel_botoes.Size = new System.Drawing.Size(445, 508);
-            this.panel_botoes.TabIndex = 2;
-            // 
-            // dgEscalas
-            // 
-            this.dgEscalas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgEscalas.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgEscalas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgEscalas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgEscalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEscalas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Arquivo,
-            this.dataEscala});
-            this.dgEscalas.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgEscalas.Location = new System.Drawing.Point(13, 39);
-            this.dgEscalas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgEscalas.Name = "dgEscalas";
-            this.dgEscalas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgEscalas.RowHeadersWidth = 51;
-            this.dgEscalas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgEscalas.RowTemplate.Height = 24;
-            this.dgEscalas.Size = new System.Drawing.Size(424, 421);
-            this.dgEscalas.TabIndex = 0;
-            // 
-            // Arquivo
-            // 
-            this.Arquivo.HeaderText = "Arquivo";
-            this.Arquivo.MinimumWidth = 6;
-            this.Arquivo.Name = "Arquivo";
-            this.Arquivo.Width = 125;
-            // 
-            // dataEscala
-            // 
-            this.dataEscala.HeaderText = "Última Alteração";
-            this.dataEscala.MinimumWidth = 6;
-            this.dataEscala.Name = "dataEscala";
-            this.dataEscala.Width = 125;
-            // 
-            // logo_metodista
-            // 
-            this.logo_metodista.BackColor = System.Drawing.Color.Transparent;
-            this.logo_metodista.Image = ((System.Drawing.Image)(resources.GetObject("logo_metodista.Image")));
-            this.logo_metodista.Location = new System.Drawing.Point(91, 12);
-            this.logo_metodista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.logo_metodista.Name = "logo_metodista";
-            this.logo_metodista.Size = new System.Drawing.Size(265, 158);
-            this.logo_metodista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logo_metodista.TabIndex = 0;
-            this.logo_metodista.TabStop = false;
             // 
             // txtPesquisaEscala
             // 
@@ -148,24 +88,6 @@
             this.txtPesquisaEscala.Size = new System.Drawing.Size(339, 21);
             this.txtPesquisaEscala.TabIndex = 0;
             // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.BackgroundImage")));
-            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPesquisa.FlatAppearance.BorderSize = 0;
-            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.btnPesquisa.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPesquisa.Location = new System.Drawing.Point(877, 59);
-            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(36, 26);
-            this.btnPesquisa.TabIndex = 1;
-            this.btnPesquisa.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -178,7 +100,7 @@
             // 
             // panel_rodape
             // 
-            this.panel_rodape.BackColor = System.Drawing.Color.DarkRed;
+            this.panel_rodape.BackColor = System.Drawing.Color.Maroon;
             this.panel_rodape.Controls.Add(this.label1);
             this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_rodape.Location = new System.Drawing.Point(0, 654);
@@ -198,19 +120,6 @@
             this.label1.Size = new System.Drawing.Size(341, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Desenvolvido por Matheus Pimentel - 2020";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources.cruz_chama_metodista;
-            this.pictureBox1.Location = new System.Drawing.Point(195, 91);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(492, 558);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // toolStripMenu
             // 
@@ -465,6 +374,98 @@
             this.linkAbrirArquivo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkAbrirArquivo.UseCompatibleTextRendering = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources.cruz_chama_metodista;
+            this.pictureBox1.Location = new System.Drawing.Point(195, 91);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(492, 558);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.BackgroundImage")));
+            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPesquisa.FlatAppearance.BorderSize = 0;
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPesquisa.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnPesquisa.Location = new System.Drawing.Point(877, 59);
+            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(36, 26);
+            this.btnPesquisa.TabIndex = 1;
+            this.btnPesquisa.UseVisualStyleBackColor = false;
+            // 
+            // panel_botoes
+            // 
+            this.panel_botoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel_botoes.BackColor = System.Drawing.SystemColors.ControlText;
+            this.panel_botoes.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
+            this.panel_botoes.Controls.Add(this.dgEscalas);
+            this.panel_botoes.Location = new System.Drawing.Point(-1, 187);
+            this.panel_botoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_botoes.Name = "panel_botoes";
+            this.panel_botoes.Size = new System.Drawing.Size(445, 508);
+            this.panel_botoes.TabIndex = 2;
+            // 
+            // dgEscalas
+            // 
+            this.dgEscalas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgEscalas.BackgroundColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.dgEscalas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgEscalas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgEscalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEscalas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Arquivo,
+            this.dataEscala});
+            this.dgEscalas.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgEscalas.Location = new System.Drawing.Point(13, 39);
+            this.dgEscalas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgEscalas.Name = "dgEscalas";
+            this.dgEscalas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgEscalas.RowHeadersWidth = 51;
+            this.dgEscalas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgEscalas.RowTemplate.Height = 24;
+            this.dgEscalas.Size = new System.Drawing.Size(424, 421);
+            this.dgEscalas.TabIndex = 0;
+            // 
+            // Arquivo
+            // 
+            this.Arquivo.HeaderText = "Arquivo";
+            this.Arquivo.MinimumWidth = 6;
+            this.Arquivo.Name = "Arquivo";
+            this.Arquivo.Width = 125;
+            // 
+            // dataEscala
+            // 
+            this.dataEscala.HeaderText = "Última Alteração";
+            this.dataEscala.MinimumWidth = 6;
+            this.dataEscala.Name = "dataEscala";
+            this.dataEscala.Width = 125;
+            // 
+            // logo_metodista
+            // 
+            this.logo_metodista.BackColor = System.Drawing.Color.Transparent;
+            this.logo_metodista.Image = ((System.Drawing.Image)(resources.GetObject("logo_metodista.Image")));
+            this.logo_metodista.Location = new System.Drawing.Point(91, 12);
+            this.logo_metodista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logo_metodista.Name = "logo_metodista";
+            this.logo_metodista.Size = new System.Drawing.Size(265, 158);
+            this.logo_metodista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logo_metodista.TabIndex = 0;
+            this.logo_metodista.TabStop = false;
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -486,18 +487,18 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenu_FormClosed);
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMenu_KeyDown);
-            this.panel_botoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).EndInit();
             this.panel_rodape.ResumeLayout(false);
             this.panel_rodape.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
             this.panel_principal.ResumeLayout(false);
             this.panel_principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_botoes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).EndInit();
             this.ResumeLayout(false);
 
         }

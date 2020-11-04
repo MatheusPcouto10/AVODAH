@@ -93,29 +93,9 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3563935 {
+        internal static System.Drawing.Bitmap _8595 {
             get {
-                object obj = ResourceManager.GetObject("3563935", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _367502_PAXLKG_681 {
-            get {
-                object obj = ResourceManager.GetObject("367502-PAXLKG-681", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _9793 {
-            get {
-                object obj = ResourceManager.GetObject("9793", resourceCulture);
+                object obj = ResourceManager.GetObject("8595", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +113,29 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dark_material_design_wallpaper__1_in_4k_by_tgs266_d9j7yts {
+            get {
+                object obj = ResourceManager.GetObject("dark_material_design_wallpaper__1_in_4k_by_tgs266-d9j7yts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editar {
             get {
                 object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fundo_futurista_moderno_do_circuito_metalico_cinzento_vermelho_33869_1252 {
+            get {
+                object obj = ResourceManager.GetObject("fundo-futurista-moderno-do-circuito-metalico-cinzento-vermelho_33869-1252", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +153,16 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ocLJYEKLE1aHAy9jGKX_2g_store_banner_image {
+            get {
+                object obj = ResourceManager.GetObject("ocLJYEKLE1aHAy9jGKX_2g_store_banner_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sair {
             get {
                 object obj = ResourceManager.GetObject("sair", resourceCulture);
@@ -163,9 +173,9 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap salve_ {
+        internal static System.Drawing.Bitmap searchmagnifierinterfacesymbol1_79893 {
             get {
-                object obj = ResourceManager.GetObject("salve-", resourceCulture);
+                object obj = ResourceManager.GetObject("searchmagnifierinterfacesymbol1_79893", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +183,9 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap searchmagnifierinterfacesymbol1_79893 {
+        internal static System.Drawing.Bitmap sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241 {
             get {
-                object obj = ResourceManager.GetObject("searchmagnifierinterfacesymbol1_79893", resourceCulture);
+                object obj = ResourceManager.GetObject("sobreposicao-de-rotulo-vermelho-sobre-fundo-metalico-cinzento-escuro_33869-1241", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
