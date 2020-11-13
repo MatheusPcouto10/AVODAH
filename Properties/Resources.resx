@@ -133,6 +133,9 @@
   <data name="sobreposicao-de-rotulo-vermelho-sobre-fundo-metalico-cinzento-escuro_33869-1241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sobreposicao-de-rotulo-vermelho-sobre-fundo-metalico-cinzento-escuro_33869-1241.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="2741104" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2741104.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="006" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\006.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,7 +166,7 @@
   <data name="kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2741104" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2741104.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="seo-social-web-network-internet_322_icon-icons.com_61532" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seo-social-web-network-internet_322_icon-icons.com_61532.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

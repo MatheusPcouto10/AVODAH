@@ -37,11 +37,18 @@ namespace EscalasMetodista.Model
         SqlCommand cmd = new SqlCommand();
         Conexao conexao = new Conexao();
 
-        public SubFuncao subFuncao = new SubFuncao();
-        public SubFuncao SubFuncoes
+        public SubFuncao funcaoPrincipal = new SubFuncao();
+        public SubFuncao funcaoSecundaria = new SubFuncao();
+        public SubFuncao SubFuncaoPrincipal
         {
-            get => this.subFuncao;
-            set => this.subFuncao = value;
+            get => this.funcaoPrincipal;
+            set => this.funcaoPrincipal = value;
+        }
+
+        public SubFuncao SubFuncaoSecundaria
+        {
+            get => this.funcaoSecundaria;
+            set => this.funcaoSecundaria = value;
         }
 
         public TipoUsuario tipoUsuario = new TipoUsuario();
@@ -51,20 +58,37 @@ namespace EscalasMetodista.Model
             set => this.tipoUsuario = value;
         }
 
-        public void create(Pessoa t)
+        public void create(Pessoa t, Boolean temFuncaoSecundaria)
         {
             try
             {
-                cmd.CommandText = "INSERT INTO pessoa(nome, sobrenome, email, senha, " +
+                if (temFuncaoSecundaria == true)
+                {
+                    cmd.CommandText = "INSERT INTO pessoa(nome, sobrenome, email, senha, " +
                                                      "tipoUsuario_fk, funcaoPrincipal_fk, funcaoSecundaria_fk, dataCadastro, status) " +
                                   "values('" + t.Nome + "', '" + t.Sobrenome + "', '" + t.Email + "', '" + t.Senha + "','" + t.tipoUsuario.idTipoUsuario
-                                  + "','" + t.subFuncao.idSubFuncao + "','" + t.subFuncao.idSubFuncao + "','" + t.dataCadastro + "','" + t.Status + "')";
+                                  + "','" + t.funcaoPrincipal.idSubFuncao + "','" + t.funcaoSecundaria.idSubFuncao + "','" + t.dataCadastro + "','" + t.Status + "')";
 
-                cmd.Connection = conexao.Conectar();
-                cmd.ExecuteNonQuery();
-                conexao.Desconectar();
+                    cmd.Connection = conexao.Conectar();
+                    cmd.ExecuteNonQuery();
+                    conexao.Desconectar();
 
-                MessageBox.Show("Usuário cadastrado com sucesso!");
+                    MessageBox.Show("Usuário cadastrado com sucesso!");
+                }
+                else
+                {
+                    cmd.CommandText = "INSERT INTO pessoa(nome, sobrenome, email, senha, " +
+                                                     "tipoUsuario_fk, funcaoPrincipal_fk, dataCadastro, status) " +
+                                  "values('" + t.Nome + "', '" + t.Sobrenome + "', '" + t.Email + "', '" + t.Senha + "','" + t.tipoUsuario.idTipoUsuario
+                                  + "','" + t.funcaoPrincipal.idSubFuncao + "','" + t.dataCadastro + "','" + t.Status + "')";
+
+                    cmd.Connection = conexao.Conectar();
+                    cmd.ExecuteNonQuery();
+                    conexao.Desconectar();
+
+                    MessageBox.Show("Usuário cadastrado com sucesso!");
+                }
+
             }
             catch (Exception ex)
             {
@@ -91,8 +115,8 @@ namespace EscalasMetodista.Model
                                                                      "', email = '" + t.Email +
                                                                      "', senha = '" + t.Senha +
                                                                      "', tipoUsuario_fk = '" + t.tipoUsuario.idTipoUsuario +
-                                                                     "', funcaoPrincipal_fk = '" + t.subFuncao.idSubFuncao +
-                                                                     "', funcaoSecundaria_fk = '" + t.subFuncao.idSubFuncao +
+                                                                     "', funcaoPrincipal_fk = '" + t.funcaoPrincipal.idSubFuncao +
+                                                                     "', funcaoSecundaria_fk = '" + t.funcaoSecundaria.idSubFuncao +
                                                                      "', dataCadastro = '" + t.dataCadastro +
                                                                      "', status = '" + t.Status +
                                                                      "' WHERE idPessoa LIKE '" + idPessoas + "'";

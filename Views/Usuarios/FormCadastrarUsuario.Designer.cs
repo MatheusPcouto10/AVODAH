@@ -57,6 +57,8 @@
             this.cbSubFuncaoSecundaria = new System.Windows.Forms.ComboBox();
             this.cbFuncaoSecundaria = new System.Windows.Forms.ComboBox();
             this.checkMostrarSenha = new System.Windows.Forms.CheckBox();
+            this.btnLimparFuncaoSecundaria = new System.Windows.Forms.Button();
+            this.btnLimparFuncaoPrincipal = new System.Windows.Forms.Button();
             this.panel_rodape.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -330,6 +332,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnLimparFuncaoPrincipal);
             this.groupBox1.Controls.Add(this.cbSubFuncaoPrincipal);
             this.groupBox1.Controls.Add(this.cbFuncaoPrincipal);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
@@ -351,7 +354,7 @@
             this.cbSubFuncaoPrincipal.Location = new System.Drawing.Point(195, 45);
             this.cbSubFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSubFuncaoPrincipal.Name = "cbSubFuncaoPrincipal";
-            this.cbSubFuncaoPrincipal.Size = new System.Drawing.Size(169, 28);
+            this.cbSubFuncaoPrincipal.Size = new System.Drawing.Size(202, 28);
             this.cbSubFuncaoPrincipal.TabIndex = 38;
             this.cbSubFuncaoPrincipal.Text = "Selecione...";
             // 
@@ -371,6 +374,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.btnLimparFuncaoSecundaria);
             this.groupBox2.Controls.Add(this.cbSubFuncaoSecundaria);
             this.groupBox2.Controls.Add(this.cbFuncaoSecundaria);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
@@ -392,7 +396,7 @@
             this.cbSubFuncaoSecundaria.Location = new System.Drawing.Point(195, 45);
             this.cbSubFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSubFuncaoSecundaria.Name = "cbSubFuncaoSecundaria";
-            this.cbSubFuncaoSecundaria.Size = new System.Drawing.Size(169, 28);
+            this.cbSubFuncaoSecundaria.Size = new System.Drawing.Size(202, 28);
             this.cbSubFuncaoSecundaria.TabIndex = 38;
             this.cbSubFuncaoSecundaria.Text = "Selecione...";
             // 
@@ -422,6 +426,42 @@
             this.checkMostrarSenha.Text = "Mostrar senha";
             this.checkMostrarSenha.UseVisualStyleBackColor = false;
             this.checkMostrarSenha.CheckedChanged += new System.EventHandler(this.checkMostrarSenha_CheckedChanged);
+            // 
+            // btnLimparFuncaoSecundaria
+            // 
+            this.btnLimparFuncaoSecundaria.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnLimparFuncaoSecundaria.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
+            this.btnLimparFuncaoSecundaria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimparFuncaoSecundaria.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimparFuncaoSecundaria.FlatAppearance.BorderSize = 2;
+            this.btnLimparFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLimparFuncaoSecundaria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(400, 8);
+            this.btnLimparFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimparFuncaoSecundaria.Name = "btnLimparFuncaoSecundaria";
+            this.btnLimparFuncaoSecundaria.Size = new System.Drawing.Size(20, 20);
+            this.btnLimparFuncaoSecundaria.TabIndex = 65;
+            this.btnLimparFuncaoSecundaria.UseVisualStyleBackColor = false;
+            this.btnLimparFuncaoSecundaria.Click += new System.EventHandler(this.btnLimparFuncaoSecundaria_Click);
+            // 
+            // btnLimparFuncaoPrincipal
+            // 
+            this.btnLimparFuncaoPrincipal.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnLimparFuncaoPrincipal.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
+            this.btnLimparFuncaoPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimparFuncaoPrincipal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimparFuncaoPrincipal.FlatAppearance.BorderSize = 2;
+            this.btnLimparFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLimparFuncaoPrincipal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(400, 10);
+            this.btnLimparFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimparFuncaoPrincipal.Name = "btnLimparFuncaoPrincipal";
+            this.btnLimparFuncaoPrincipal.Size = new System.Drawing.Size(20, 20);
+            this.btnLimparFuncaoPrincipal.TabIndex = 66;
+            this.btnLimparFuncaoPrincipal.UseVisualStyleBackColor = false;
+            this.btnLimparFuncaoPrincipal.Click += new System.EventHandler(this.btnLimparFuncaoPrincipal_Click);
             // 
             // FormCadastrarUsuario
             // 
@@ -500,5 +540,7 @@
         public System.Windows.Forms.ComboBox cbSubFuncaoSecundaria;
         public System.Windows.Forms.ComboBox cbFuncaoSecundaria;
         private System.Windows.Forms.CheckBox checkMostrarSenha;
+        private System.Windows.Forms.Button btnLimparFuncaoSecundaria;
+        private System.Windows.Forms.Button btnLimparFuncaoPrincipal;
     }
 }

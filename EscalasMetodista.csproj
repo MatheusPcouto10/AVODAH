@@ -197,5 +197,8 @@
   <ItemGroup>
     <None Include="Resources\2741104.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seo-social-web-network-internet_322_icon-icons.com_61532.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

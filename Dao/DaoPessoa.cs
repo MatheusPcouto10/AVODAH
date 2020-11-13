@@ -9,7 +9,7 @@ namespace EscalasMetodista.Dao
  
         interface DaoPessoa<T>
         {
-            void create(T t);
+            void create(T t, Boolean temFuncaoSecundaria);
             void update(T t, int id);
             void delete(int id);
             T findById(int id);

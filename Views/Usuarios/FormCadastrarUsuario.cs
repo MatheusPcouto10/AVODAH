@@ -17,6 +17,7 @@ namespace EscalasMetodista.Views.Usuarios
     {
         Pessoa pessoa = new Pessoa();
         SqlCommand cmd = new SqlCommand();
+        public Boolean temFuncaoSecundaria = false;
         public FormCadastrarUsuario()
         {
             InitializeComponent();
@@ -29,9 +30,13 @@ namespace EscalasMetodista.Views.Usuarios
             pessoa.Email = txtEmail.Text;
             pessoa.Senha = txtSenha.Text;
             pessoa.dataCadastro = dtCadastro.Value;
+            pessoa.funcaoPrincipal.idSubFuncao = (int)cbSubFuncaoPrincipal.SelectedValue;
+            if (cbSubFuncaoSecundaria.Text != "Selecione...")
+            {
+                pessoa.funcaoSecundaria.idSubFuncao = (int)cbSubFuncaoSecundaria.SelectedValue;
+                temFuncaoSecundaria = true;
+            }
             pessoa.tipoUsuario.idTipoUsuario = (int)cbTipoUsuario.SelectedValue;
-            pessoa.subFuncao.idSubFuncao = (int)cbSubFuncaoPrincipal.SelectedValue;
-            pessoa.subFuncao.idSubFuncao = (int)cbSubFuncaoSecundaria.SelectedValue;
             pessoa.Status = "Ativo";
 
             try
@@ -42,17 +47,24 @@ namespace EscalasMetodista.Views.Usuarios
                 }
                 else
                 {
-                    if (txtConfirmarSenha.Text == txtSenha.Text)
+                    if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
                     {
-                        if (Validacoes.ValidarObjeto(pessoa) == true)
-                        {
-                            pessoa.create(pessoa);
-                            this.btnLimpar_Click(null, null);
-                        }
+                        MessageBox.Show("As sub-funções não podem ser iguais!", "Sub-Função Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("As senhas informadas não são iguais!", "Senha não Correspondente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (txtConfirmarSenha.Text == txtSenha.Text)
+                        {
+                            if (Validacoes.ValidarObjeto(pessoa) == true)
+                            {
+                                pessoa.create(pessoa, temFuncaoSecundaria);
+                                this.btnLimpar_Click(null, null);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("As senhas informadas não são iguais!", "Senha não Correspondente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
@@ -218,6 +230,11 @@ namespace EscalasMetodista.Views.Usuarios
             this.preencheComboBoxFuncaoPrincipal();
             this.preencheComboBoxFuncaoSecundaria();
             this.preencheComboBoxTipoUsuario();
+            cbTipoUsuario.Text = "Selecione...";
+            cbFuncaoPrincipal.Text = "Selecione...";
+            cbFuncaoSecundaria.Text = "Selecione...";
+            cbSubFuncaoPrincipal.Text = "Selecione...";
+            cbSubFuncaoSecundaria.Text = "Selecione...";
         }
 
         private void cbFuncaoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
@@ -242,6 +259,18 @@ namespace EscalasMetodista.Views.Usuarios
                 txtSenha.UseSystemPasswordChar = true;
                 txtConfirmarSenha.UseSystemPasswordChar = true;
             }
+        }
+
+        private void btnLimparFuncaoPrincipal_Click(object sender, EventArgs e)
+        {
+            cbFuncaoPrincipal.Text = "Selecione...";
+            cbSubFuncaoPrincipal.Text = "Selecione...";
+        }
+
+        private void btnLimparFuncaoSecundaria_Click(object sender, EventArgs e)
+        {
+            cbFuncaoSecundaria.Text = "Selecione...";
+            cbSubFuncaoSecundaria.Text = "Selecione...";
         }
     }
 }

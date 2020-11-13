@@ -214,6 +214,16 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap seo_social_web_network_internet_322_icon_icons_com_61532 {
+            get {
+                object obj = ResourceManager.GetObject("seo-social-web-network-internet_322_icon-icons.com_61532", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241 {
             get {
                 object obj = ResourceManager.GetObject("sobreposicao-de-rotulo-vermelho-sobre-fundo-metalico-cinzento-escuro_33869-1241", resourceCulture);
