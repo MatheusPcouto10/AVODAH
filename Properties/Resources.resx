@@ -118,11 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="006" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\006.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ocLJYEKLE1aHAy9jGKX_2g_store_banner_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ocLJYEKLE1aHAy9jGKX_2g_store_banner_image.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder-folder-4341292_120540" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder-folder-4341292_120540.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,11 +133,17 @@
   <data name="sobreposicao-de-rotulo-vermelho-sobre-fundo-metalico-cinzento-escuro_33869-1241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sobreposicao-de-rotulo-vermelho-sobre-fundo-metalico-cinzento-escuro_33869-1241.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="006" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\006.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1485476000-artboard-1_78543" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1485476000-artboard-1_78543.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ocLJYEKLE1aHAy9jGKX_2g_store_banner_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ocLJYEKLE1aHAy9jGKX_2g_store_banner_image.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="8595" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8595.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cruz_chama_metodista" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cruz_chama_metodista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,10 +154,13 @@
   <data name="fundo-futurista-moderno-do-circuito-metalico-cinzento-vermelho_33869-1252" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fundo-futurista-moderno-do-circuito-metalico-cinzento-vermelho_33869-1252.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="kisspng-material-font-search-icon-5b21819439b852.2823675615289225162364" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-material-font-search-icon-5b21819439b852.2823675615289225162364.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="searchmagnifierinterfacesymbol1_79893" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchmagnifierinterfacesymbol1_79893.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8595" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8595.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

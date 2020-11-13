@@ -153,6 +153,27 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kisspng_forest_lake_computer_icons_inspection_white_wine_search_bar_5addbd8c2df2a6_8041717315244814201882 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a" +
+                        "6.8041717315244814201882", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_material_font_search_icon_5b21819439b852_2823675615289225162364 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-material-font-search-icon-5b21819439b852.2823675615289225162364", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ocLJYEKLE1aHAy9jGKX_2g_store_banner_image {
             get {
                 object obj = ResourceManager.GetObject("ocLJYEKLE1aHAy9jGKX_2g_store_banner_image", resourceCulture);

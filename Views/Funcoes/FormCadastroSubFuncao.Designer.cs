@@ -94,7 +94,7 @@
             this.btnCadastrarSubFuncao.Name = "btnCadastrarSubFuncao";
             this.btnCadastrarSubFuncao.Size = new System.Drawing.Size(165, 38);
             this.btnCadastrarSubFuncao.TabIndex = 38;
-            this.btnCadastrarSubFuncao.Text = "ADICIONAR";
+            this.btnCadastrarSubFuncao.Text = "SALVAR";
             this.btnCadastrarSubFuncao.UseVisualStyleBackColor = false;
             this.btnCadastrarSubFuncao.Click += new System.EventHandler(this.btnCadastrarSubFuncao_Click);
             // 

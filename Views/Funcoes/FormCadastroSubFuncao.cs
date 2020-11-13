@@ -17,6 +17,10 @@ namespace EscalasMetodista.Views
     {
         SqlCommand cmd = new SqlCommand();
         SubFuncao subFuncoes = new SubFuncao();
+
+        public bool updateFuncao = false;
+        public int idSubFuncao;
+
         public FormCadastroSubFuncao()
         {
             InitializeComponent();
@@ -27,12 +31,27 @@ namespace EscalasMetodista.Views
 
             subFuncoes.Descricao = txtDescricao.Text;
             subFuncoes.idFuncao_fk = (int)cbFuncoes.SelectedValue;
-            if (Validacoes.ValidarObjeto(subFuncoes) == true)
+
+            if (updateFuncao == true)
             {
-                subFuncoes.create(subFuncoes);
+                if (Validacoes.ValidarObjeto(subFuncoes) == true)
+                {
+                    subFuncoes.update(subFuncoes, idSubFuncao);
+                }
+
+                txtDescricao.Text = " ";
+                updateFuncao = false;
+                this.Close();
+            }
+            else
+            {
+                if (Validacoes.ValidarObjeto(subFuncoes) == true)
+                {
+                    subFuncoes.create(subFuncoes);
+                }
+                txtDescricao.Text = " ";
             }
 
-            txtDescricao.Text = " ";
         }
 
         private void preencheComboBoxFuncoes()
@@ -73,12 +92,10 @@ namespace EscalasMetodista.Views
                 case Keys.Enter:
                     this.btnCadastrarSubFuncao_Click(null, null);
                     break;
-                case Keys.Escape:
-                    this.Close();
-                    break;
                 default:
                     break;
             }
         }
     }
 }
+

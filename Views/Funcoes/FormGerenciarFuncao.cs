@@ -105,19 +105,7 @@ namespace EscalasMetodista.Views.Funcoes
                 form.idFuncao = idFuncao;
                 form.txtDescricaoFuncao.Text = descricaoFuncao;
                 form.updateFuncao = true;
-                form.Show(); 
-            }
-        }
-
-        private void dgFuncoes_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Enter:
-                    this.btnPesquisa_Click(null, null);
-                    break;
-                default:
-                    break;
+                form.Show();
             }
         }
 
@@ -164,6 +152,18 @@ namespace EscalasMetodista.Views.Funcoes
         private void FormGerenciarFuncao_Activated(object sender, EventArgs e)
         {
             this.CarregarDataGrid();
+        }
+
+        private void FormGerenciarFuncao_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    this.btnPesquisa_Click(null, null);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

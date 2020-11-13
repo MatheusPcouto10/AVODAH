@@ -201,7 +201,6 @@
             this.dgFuncoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellContentClick);
             this.dgFuncoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgFuncoes_CellFormatting);
             this.dgFuncoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgFuncoes_DataBindingComplete);
-            this.dgFuncoes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgFuncoes_KeyDown);
             // 
             // editar
             // 
@@ -261,6 +260,7 @@
             this.Text = "Gerenciar Funções";
             this.Activated += new System.EventHandler(this.FormGerenciarFuncao_Activated);
             this.Load += new System.EventHandler(this.FormGerenciarFunção_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGerenciarFuncao_KeyDown);
             this.panel_rodape.ResumeLayout(false);
             this.panel_rodape.PerformLayout();
             this.panel1.ResumeLayout(false);

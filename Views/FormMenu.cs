@@ -74,7 +74,7 @@ namespace EscalasMetodista
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            this.labelUsuarioLogado.Text = "Bem vindo " + UsuarioSession.nomeUsuario + " !";
+            this.btnPerfil.Text = "Bem vindo " + UsuarioSession.nomeUsuario + " !";
             this.controleAcesso();
         }
 
@@ -87,6 +87,32 @@ namespace EscalasMetodista
         private void gerenciarFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormGerenciarFuncao form = new FormGerenciarFuncao();
+            form.Show();
+        }
+
+        private void dgEscalas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewColumn coluna in dgEscalas.Columns)
+            {
+                switch (coluna.Name)
+                {
+                    case "descricao":
+                        coluna.Width = 100;
+                        coluna.HeaderText = "Arquivo";
+                        break;
+                    case "dataAlteracao":
+                        coluna.Width = 50;
+                        coluna.HeaderText = "Última Alteração";
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void gerenciarSubFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGerenciarSubfuncoes form = new FormGerenciarSubfuncoes();
             form.Show();
         }
     }

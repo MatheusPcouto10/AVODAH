@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtPesquisaEscala = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel_rodape = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
-            this.labelUsuarioLogado = new System.Windows.Forms.ToolStripLabel();
+            this.btnPerfil = new System.Windows.Forms.ToolStripDropDownButton();
+            this.editarPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAlterarSenha = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -59,11 +60,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.linkAbrirArquivo = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnPesquisa = new System.Windows.Forms.Button();
             this.panel_botoes = new System.Windows.Forms.Panel();
             this.dgEscalas = new System.Windows.Forms.DataGridView();
-            this.Arquivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataEscala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAlteracao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPesquisa = new System.Windows.Forms.Button();
             this.logo_metodista = new System.Windows.Forms.PictureBox();
             this.panel_rodape.SuspendLayout();
             this.toolStripMenu.SuspendLayout();
@@ -79,24 +80,14 @@
             // txtPesquisaEscala
             // 
             this.txtPesquisaEscala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisaEscala.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtPesquisaEscala.BackColor = System.Drawing.Color.White;
             this.txtPesquisaEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPesquisaEscala.Font = new System.Drawing.Font("Verdana", 10F);
-            this.txtPesquisaEscala.Location = new System.Drawing.Point(533, 57);
+            this.txtPesquisaEscala.Font = new System.Drawing.Font("Verdana", 12F);
+            this.txtPesquisaEscala.Location = new System.Drawing.Point(77, 35);
             this.txtPesquisaEscala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPesquisaEscala.Name = "txtPesquisaEscala";
-            this.txtPesquisaEscala.Size = new System.Drawing.Size(339, 21);
+            this.txtPesquisaEscala.Size = new System.Drawing.Size(335, 25);
             this.txtPesquisaEscala.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(533, 84);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(339, 1);
-            this.panel1.TabIndex = 3;
             // 
             // panel_rodape
             // 
@@ -126,7 +117,7 @@
             this.toolStripMenu.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.labelUsuarioLogado,
+            this.btnPerfil,
             this.toolStripSeparator2,
             this.btnAlterarSenha,
             this.toolStripSeparator1,
@@ -143,12 +134,20 @@
             this.toolStripMenu.Size = new System.Drawing.Size(925, 27);
             this.toolStripMenu.TabIndex = 5;
             // 
-            // labelUsuarioLogado
+            // btnPerfil
             // 
-            this.labelUsuarioLogado.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelUsuarioLogado.Name = "labelUsuarioLogado";
-            this.labelUsuarioLogado.Size = new System.Drawing.Size(171, 24);
-            this.labelUsuarioLogado.Text = "Bem vindo Matheus !";
+            this.btnPerfil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarPerfilToolStripMenuItem});
+            this.btnPerfil.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.Size = new System.Drawing.Size(185, 24);
+            this.btnPerfil.Text = "Bem vindo Matheus !";
+            // 
+            // editarPerfilToolStripMenuItem
+            // 
+            this.editarPerfilToolStripMenuItem.Name = "editarPerfilToolStripMenuItem";
+            this.editarPerfilToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.editarPerfilToolStripMenuItem.Text = "Editar Perfil";
             // 
             // toolStripSeparator2
             // 
@@ -275,6 +274,7 @@
             this.gerenciarSubFunçõesToolStripMenuItem.Name = "gerenciarSubFunçõesToolStripMenuItem";
             this.gerenciarSubFunçõesToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.gerenciarSubFunçõesToolStripMenuItem.Text = "Gerenciar Sub-Funções";
+            this.gerenciarSubFunçõesToolStripMenuItem.Click += new System.EventHandler(this.gerenciarSubFunçõesToolStripMenuItem_Click);
             // 
             // btnSair
             // 
@@ -303,9 +303,6 @@
             this.panel_principal.Controls.Add(this.toolStripMenu);
             this.panel_principal.Controls.Add(this.pictureBox1);
             this.panel_principal.Controls.Add(this.panel_rodape);
-            this.panel_principal.Controls.Add(this.panel1);
-            this.panel_principal.Controls.Add(this.btnPesquisa);
-            this.panel_principal.Controls.Add(this.txtPesquisaEscala);
             this.panel_principal.Location = new System.Drawing.Point(443, 0);
             this.panel_principal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_principal.Name = "panel_principal";
@@ -387,24 +384,6 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.BackgroundImage")));
-            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPesquisa.FlatAppearance.BorderSize = 0;
-            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.btnPesquisa.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPesquisa.Location = new System.Drawing.Point(877, 59);
-            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(36, 26);
-            this.btnPesquisa.TabIndex = 1;
-            this.btnPesquisa.UseVisualStyleBackColor = false;
-            // 
             // panel_botoes
             // 
             this.panel_botoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -412,6 +391,8 @@
             this.panel_botoes.BackColor = System.Drawing.SystemColors.ControlText;
             this.panel_botoes.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
             this.panel_botoes.Controls.Add(this.dgEscalas);
+            this.panel_botoes.Controls.Add(this.btnPesquisa);
+            this.panel_botoes.Controls.Add(this.txtPesquisaEscala);
             this.panel_botoes.Location = new System.Drawing.Point(-1, 187);
             this.panel_botoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_botoes.Name = "panel_botoes";
@@ -420,39 +401,71 @@
             // 
             // dgEscalas
             // 
-            this.dgEscalas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgEscalas.BackgroundColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.dgEscalas.AllowUserToAddRows = false;
+            this.dgEscalas.AllowUserToDeleteRows = false;
+            this.dgEscalas.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
             this.dgEscalas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgEscalas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 7.8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgEscalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgEscalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEscalas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Arquivo,
-            this.dataEscala});
+            this.descricao,
+            this.dataAlteracao});
             this.dgEscalas.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgEscalas.Location = new System.Drawing.Point(13, 39);
+            this.dgEscalas.Location = new System.Drawing.Point(13, 90);
             this.dgEscalas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgEscalas.Name = "dgEscalas";
+            this.dgEscalas.ReadOnly = true;
             this.dgEscalas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgEscalas.RowHeadersWidth = 51;
             this.dgEscalas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgEscalas.RowTemplate.Height = 24;
-            this.dgEscalas.Size = new System.Drawing.Size(424, 421);
+            this.dgEscalas.Size = new System.Drawing.Size(424, 46);
             this.dgEscalas.TabIndex = 0;
+            this.dgEscalas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgEscalas_DataBindingComplete);
             // 
-            // Arquivo
+            // descricao
             // 
-            this.Arquivo.HeaderText = "Arquivo";
-            this.Arquivo.MinimumWidth = 6;
-            this.Arquivo.Name = "Arquivo";
-            this.Arquivo.Width = 125;
+            this.descricao.HeaderText = "Arquivo";
+            this.descricao.MinimumWidth = 6;
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            this.descricao.Width = 125;
             // 
-            // dataEscala
+            // dataAlteracao
             // 
-            this.dataEscala.HeaderText = "Última Alteração";
-            this.dataEscala.MinimumWidth = 6;
-            this.dataEscala.Name = "dataEscala";
-            this.dataEscala.Width = 125;
+            this.dataAlteracao.HeaderText = "Última Alteração";
+            this.dataAlteracao.MinimumWidth = 6;
+            this.dataAlteracao.Name = "dataAlteracao";
+            this.dataAlteracao.ReadOnly = true;
+            this.dataAlteracao.Width = 125;
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.kisspng_forest_lake_computer_icons_inspection_white_wine_search_bar_5addbd8c2df2a6_8041717315244814201882;
+            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPesquisa.FlatAppearance.BorderSize = 0;
+            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.Location = new System.Drawing.Point(13, 34);
+            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(58, 26);
+            this.btnPesquisa.TabIndex = 1;
+            this.btnPesquisa.UseVisualStyleBackColor = false;
             // 
             // logo_metodista
             // 
@@ -497,6 +510,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_botoes.ResumeLayout(false);
+            this.panel_botoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).EndInit();
             this.ResumeLayout(false);
@@ -508,16 +522,12 @@
         private System.Windows.Forms.PictureBox logo_metodista;
         private System.Windows.Forms.Panel panel_botoes;
         private System.Windows.Forms.DataGridView dgEscalas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Arquivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataEscala;
         private System.Windows.Forms.TextBox txtPesquisaEscala;
         private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel_rodape;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStripMenu;
-        private System.Windows.Forms.ToolStripLabel labelUsuarioLogado;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnAlterarSenha;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -541,6 +551,10 @@
         public System.Windows.Forms.LinkLabel linkAbrirArquivo;
         public System.Windows.Forms.LinkLabel linkNovaEscala;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataAlteracao;
+        private System.Windows.Forms.ToolStripDropDownButton btnPerfil;
+        private System.Windows.Forms.ToolStripMenuItem editarPerfilToolStripMenuItem;
     }
 }
 

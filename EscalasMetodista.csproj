@@ -101,6 +101,12 @@
     <Compile Include="Views\Funcoes\FormGerenciarFuncao.Designer.cs">
       <DependentUpon>FormGerenciarFuncao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Funcoes\FormGerenciarSubfuncoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcoes\FormGerenciarSubfuncoes.Designer.cs">
+      <DependentUpon>FormGerenciarSubfuncoes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\FormAlterarSenha.resx">
       <DependentUpon>FormAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Funcoes\FormGerenciarFuncao.resx">
       <DependentUpon>FormGerenciarFuncao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcoes\FormGerenciarSubfuncoes.resx">
+      <DependentUpon>FormGerenciarSubfuncoes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -169,6 +178,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\8595.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-material-font-search-icon-5b21819439b852.2823675615289225162364.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
