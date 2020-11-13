@@ -2,6 +2,7 @@
 using EscalasMetodista.Dao;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace EscalasMetodista.Model
     class TipoUsuario : DaoTipoUsuario<TipoUsuario>
     {
         public int idTipoUsuario { get; set; }
+
+        [Required(ErrorMessage = "Informe o Tipo de Usuário")]
         public String Descricao { get; set; }
 
         SqlCommand cmd = new SqlCommand();

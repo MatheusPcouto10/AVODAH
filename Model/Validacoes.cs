@@ -1,6 +1,8 @@
-﻿using System;
+﻿using EscalasMetodista.Conexão;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,22 @@ namespace EscalasMetodista.Model
                 return false;
             }
             return true;
+        }
+
+        public static Boolean verificaUnico(String campo, String tabela, String valor)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "SELECT " + campo + " FROM " + tabela + " WHERE " + campo + " = '" + valor + "'";
+            Conexao conexao = new Conexao();
+            cmd.Connection = conexao.Conectar();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -107,6 +107,12 @@
     <Compile Include="Views\Funcoes\FormGerenciarSubfuncoes.Designer.cs">
       <DependentUpon>FormGerenciarSubfuncoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Usuarios\FormCadastrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Usuarios\FormCadastrarUsuario.Designer.cs">
+      <DependentUpon>FormCadastrarUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\FormAlterarSenha.resx">
       <DependentUpon>FormAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Funcoes\FormGerenciarSubfuncoes.resx">
       <DependentUpon>FormGerenciarSubfuncoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Usuarios\FormCadastrarUsuario.resx">
+      <DependentUpon>FormCadastrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -184,6 +193,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2741104.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

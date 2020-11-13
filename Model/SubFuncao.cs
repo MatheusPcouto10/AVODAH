@@ -18,7 +18,7 @@ namespace EscalasMetodista.Model
         public int idFuncao_fk { get; set; }
 
         [Required(ErrorMessage = "Insira o nome da Sub-Função")]
-        [RegularExpression(@"^[a-zA-Z0-9À-ú-/ç'\s]{1,40}$", ErrorMessage = "Números e caracteres especiais não são permitidos no nome.")]
+        [RegularExpression(@"^[a-zA-Z0-9À-ú-/ç()'\s]{1,40}$", ErrorMessage = "Números e caracteres especiais não são permitidos no nome.")]
         public String Descricao { get; set; }
 
         SqlCommand cmd = new SqlCommand();

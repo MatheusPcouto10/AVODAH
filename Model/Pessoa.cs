@@ -16,14 +16,15 @@ namespace EscalasMetodista.Model
         public int idPessoa { get; set; }
 
         [Required(ErrorMessage = "Informe o Nome")]
-        [RegularExpression(@"[a-z][a-zA-Z0-9]{0,20}", ErrorMessage = "O limite é 20 caracteres.")]
+        [RegularExpression(@"^[a-zA-ZÀ-úç'\s]{1,20}$", ErrorMessage = "Números e caracteres especiais não são permitidos.")]
         public String Nome { get; set; }
 
         [Required(ErrorMessage = "Informe o Sobrenome")]
-        [RegularExpression(@"[a-z][a-zA-Z0-9]{0,20}", ErrorMessage = "O limite é 20 caracteres.")]
+        [RegularExpression(@"^[a-zA-ZÀ-úç'\s]{1,20}$", ErrorMessage = "Números e caracteres especiais não são permitidos.")]
         public String Sobrenome { get; set; }
-        public String TipoUsuario { get; set; }
         public String Status { get; set; }
+
+        [DisplayFormat(DataFormatString = "dd/mm/yyyy")]
         public DateTime dataCadastro { get; set; }
 
         [Required(ErrorMessage = "Informe um E-mail")]
@@ -57,7 +58,7 @@ namespace EscalasMetodista.Model
                 cmd.CommandText = "INSERT INTO pessoa(nome, sobrenome, email, senha, " +
                                                      "tipoUsuario_fk, funcaoPrincipal_fk, funcaoSecundaria_fk, dataCadastro, status) " +
                                   "values('" + t.Nome + "', '" + t.Sobrenome + "', '" + t.Email + "', '" + t.Senha + "','" + t.tipoUsuario.idTipoUsuario
-                                  + "','" + t.subFuncao.idSubFuncao + t.subFuncao.idSubFuncao + "','" + t.dataCadastro + "','" + t.Status + "')";
+                                  + "','" + t.subFuncao.idSubFuncao + "','" + t.subFuncao.idSubFuncao + "','" + t.dataCadastro + "','" + t.Status + "')";
 
                 cmd.Connection = conexao.Conectar();
                 cmd.ExecuteNonQuery();

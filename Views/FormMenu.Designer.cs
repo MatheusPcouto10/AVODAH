@@ -219,14 +219,15 @@
             // 
             // novoUsuárioToolStripMenuItem
             // 
-            this.novoUsuárioToolStripMenuItem.Name = "novoUsuárioToolStripMenuItem";
-            this.novoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.novoUsuárioToolStripMenuItem.Name = "novoUsuarioToolStripMenuItem";
+            this.novoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.novoUsuárioToolStripMenuItem.Text = "Novo Usuário";
+            this.novoUsuárioToolStripMenuItem.Click += new System.EventHandler(this.novoUsuarioToolStripMenuItem_Click);
             // 
             // gerenciarUsuárioToolStripMenuItem
             // 
             this.gerenciarUsuárioToolStripMenuItem.Name = "gerenciarUsuárioToolStripMenuItem";
-            this.gerenciarUsuárioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.gerenciarUsuárioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gerenciarUsuárioToolStripMenuItem.Text = "Gerenciar Usuário";
             // 
             // toolStripSeparator6

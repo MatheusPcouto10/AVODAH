@@ -1,6 +1,7 @@
 ﻿using EscalasMetodista.Session;
 using EscalasMetodista.Views;
 using EscalasMetodista.Views.Funcoes;
+using EscalasMetodista.Views.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -113,6 +114,12 @@ namespace EscalasMetodista
         private void gerenciarSubFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormGerenciarSubfuncoes form = new FormGerenciarSubfuncoes();
+            form.Show();
+        }
+
+        private void novoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastrarUsuario form = new FormCadastrarUsuario();
             form.Show();
         }
     }

@@ -161,6 +161,7 @@
             // panel_rodape
             // 
             this.panel_rodape.BackColor = System.Drawing.Color.Maroon;
+            this.panel_rodape.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
             this.panel_rodape.Controls.Add(this.btnVoltar);
             this.panel_rodape.Controls.Add(this.label1);
             this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -202,7 +203,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::EscalasMetodista.Properties.Resources.fundo_futurista_moderno_do_circuito_metalico_cinzento_vermelho_33869_1252;
+            this.panel1.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);

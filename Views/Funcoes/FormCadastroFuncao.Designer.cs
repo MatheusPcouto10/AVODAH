@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroFuncao));
             this.btnSalvarFuncao = new System.Windows.Forms.Button();
-            this.labelNomeProduto = new System.Windows.Forms.Label();
+            this.labelDescricaoFuncao = new System.Windows.Forms.Label();
             this.txtDescricaoFuncao = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -51,16 +51,16 @@
             this.btnSalvarFuncao.UseVisualStyleBackColor = false;
             this.btnSalvarFuncao.Click += new System.EventHandler(this.btnSalvarFuncao_Click);
             // 
-            // labelNomeProduto
+            // labelDescricaoFuncao
             // 
-            this.labelNomeProduto.AutoSize = true;
-            this.labelNomeProduto.BackColor = System.Drawing.Color.Transparent;
-            this.labelNomeProduto.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.labelNomeProduto.Location = new System.Drawing.Point(83, 42);
-            this.labelNomeProduto.Name = "labelNomeProduto";
-            this.labelNomeProduto.Size = new System.Drawing.Size(84, 20);
-            this.labelNomeProduto.TabIndex = 38;
-            this.labelNomeProduto.Text = "Função:";
+            this.labelDescricaoFuncao.AutoSize = true;
+            this.labelDescricaoFuncao.BackColor = System.Drawing.Color.Transparent;
+            this.labelDescricaoFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.labelDescricaoFuncao.Location = new System.Drawing.Point(83, 42);
+            this.labelDescricaoFuncao.Name = "labelDescricaoFuncao";
+            this.labelDescricaoFuncao.Size = new System.Drawing.Size(84, 20);
+            this.labelDescricaoFuncao.TabIndex = 38;
+            this.labelDescricaoFuncao.Text = "Função:";
             // 
             // txtDescricaoFuncao
             // 
@@ -79,7 +79,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::EscalasMetodista.Properties.Resources.dark_material_design_wallpaper__1_in_4k_by_tgs266_d9j7yts;
             this.ClientSize = new System.Drawing.Size(419, 209);
-            this.Controls.Add(this.labelNomeProduto);
+            this.Controls.Add(this.labelDescricaoFuncao);
             this.Controls.Add(this.txtDescricaoFuncao);
             this.Controls.Add(this.btnSalvarFuncao);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -99,7 +99,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnSalvarFuncao;
-        private System.Windows.Forms.Label labelNomeProduto;
+        private System.Windows.Forms.Label labelDescricaoFuncao;
         public System.Windows.Forms.TextBox txtDescricaoFuncao;
     }
 }
