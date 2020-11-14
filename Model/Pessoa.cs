@@ -106,11 +106,13 @@ namespace EscalasMetodista.Model
             throw new NotImplementedException();
         }
 
-        public void update(Pessoa t, int idPessoas)
+        public void update(Pessoa t, int idPessoas, Boolean temFuncaoSecundaria)
         {
             try
             {
-                cmd.CommandText = "UPDATE pessoa SET nome = '" + t.Nome +
+                if (temFuncaoSecundaria == true)
+                {
+                    cmd.CommandText = "UPDATE pessoa SET nome = '" + t.Nome +
                                                                      "', sobrenome = '" + t.Sobrenome +
                                                                      "', email = '" + t.Email +
                                                                      "', senha = '" + t.Senha +
@@ -120,11 +122,29 @@ namespace EscalasMetodista.Model
                                                                      "', dataCadastro = '" + t.dataCadastro +
                                                                      "', status = '" + t.Status +
                                                                      "' WHERE idPessoa LIKE '" + idPessoas + "'";
-                cmd.Connection = conexao.Conectar();
-                cmd.ExecuteNonQuery();
-                conexao.Desconectar();
+                    cmd.Connection = conexao.Conectar();
+                    cmd.ExecuteNonQuery();
+                    conexao.Desconectar();
 
-                MessageBox.Show("Alteração feita com sucesso!");
+                    MessageBox.Show("Alteração feita com sucesso!");
+                }
+                else
+                {
+                    cmd.CommandText = "UPDATE pessoa SET nome = '" + t.Nome +
+                                                                     "', sobrenome = '" + t.Sobrenome +
+                                                                     "', email = '" + t.Email +
+                                                                     "', senha = '" + t.Senha +
+                                                                     "', tipoUsuario_fk = '" + t.tipoUsuario.idTipoUsuario +
+                                                                     "', funcaoPrincipal_fk = '" + t.funcaoPrincipal.idSubFuncao +
+                                                                     "', dataCadastro = '" + t.dataCadastro +
+                                                                     "', status = '" + t.Status +
+                                                                     "' WHERE idPessoa LIKE '" + idPessoas + "'";
+                    cmd.Connection = conexao.Conectar();
+                    cmd.ExecuteNonQuery();
+                    conexao.Desconectar();
+
+                    MessageBox.Show("Alteração feita com sucesso!");
+                }
 
             }
             catch (Exception ex)

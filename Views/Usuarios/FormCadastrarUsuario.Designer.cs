@@ -34,31 +34,31 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelNome = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSobrenome = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSalvarUsuario = new System.Windows.Forms.Button();
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtConfirmarSenha = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.dtCadastro = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLimparFuncaoPrincipal = new System.Windows.Forms.Button();
             this.cbSubFuncaoPrincipal = new System.Windows.Forms.ComboBox();
             this.cbFuncaoPrincipal = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLimparFuncaoSecundaria = new System.Windows.Forms.Button();
             this.cbSubFuncaoSecundaria = new System.Windows.Forms.ComboBox();
             this.cbFuncaoSecundaria = new System.Windows.Forms.ComboBox();
             this.checkMostrarSenha = new System.Windows.Forms.CheckBox();
-            this.btnLimparFuncaoSecundaria = new System.Windows.Forms.Button();
-            this.btnLimparFuncaoPrincipal = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtConfirmarSenha = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSobrenome = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.labelNome = new System.Windows.Forms.Label();
             this.panel_rodape.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -132,95 +132,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "CADASTRAR USUÁRIO";
             // 
-            // labelNome
-            // 
-            this.labelNome.AutoSize = true;
-            this.labelNome.BackColor = System.Drawing.Color.Transparent;
-            this.labelNome.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.labelNome.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelNome.Location = new System.Drawing.Point(143, 115);
-            this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(71, 20);
-            this.labelNome.TabIndex = 40;
-            this.labelNome.Text = "Nome:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(147, 156);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(267, 26);
-            this.txtNome.TabIndex = 39;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(143, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Sobrenome:";
-            // 
-            // txtSobrenome
-            // 
-            this.txtSobrenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSobrenome.Location = new System.Drawing.Point(147, 244);
-            this.txtSobrenome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSobrenome.Name = "txtSobrenome";
-            this.txtSobrenome.Size = new System.Drawing.Size(267, 26);
-            this.txtSobrenome.TabIndex = 41;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(143, 379);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 20);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "Senha:";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(147, 420);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(267, 26);
-            this.txtSenha.TabIndex = 45;
-            this.txtSenha.UseSystemPasswordChar = true;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(143, 291);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 20);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "E-mail:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(147, 332);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(267, 26);
-            this.txtEmail.TabIndex = 43;
-            // 
             // btnSalvarUsuario
             // 
             this.btnSalvarUsuario.BackColor = System.Drawing.SystemColors.Highlight;
@@ -251,30 +162,6 @@
             this.cbTipoUsuario.Size = new System.Drawing.Size(167, 28);
             this.cbTipoUsuario.TabIndex = 48;
             this.cbTipoUsuario.Text = "Selecione...";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(143, 467);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(174, 20);
-            this.label6.TabIndex = 53;
-            this.label6.Text = "Confirmar Senha:";
-            // 
-            // txtConfirmarSenha
-            // 
-            this.txtConfirmarSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarSenha.Location = new System.Drawing.Point(147, 508);
-            this.txtConfirmarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
-            this.txtConfirmarSenha.Size = new System.Drawing.Size(267, 26);
-            this.txtConfirmarSenha.TabIndex = 52;
-            this.txtConfirmarSenha.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -346,6 +233,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Função Principal";
             // 
+            // btnLimparFuncaoPrincipal
+            // 
+            this.btnLimparFuncaoPrincipal.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnLimparFuncaoPrincipal.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
+            this.btnLimparFuncaoPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimparFuncaoPrincipal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimparFuncaoPrincipal.FlatAppearance.BorderSize = 2;
+            this.btnLimparFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLimparFuncaoPrincipal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(400, 10);
+            this.btnLimparFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimparFuncaoPrincipal.Name = "btnLimparFuncaoPrincipal";
+            this.btnLimparFuncaoPrincipal.Size = new System.Drawing.Size(20, 20);
+            this.btnLimparFuncaoPrincipal.TabIndex = 66;
+            this.btnLimparFuncaoPrincipal.UseVisualStyleBackColor = false;
+            this.btnLimparFuncaoPrincipal.Click += new System.EventHandler(this.btnLimparFuncaoPrincipal_Click);
+            // 
             // cbSubFuncaoPrincipal
             // 
             this.cbSubFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -388,6 +293,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Função Secundária";
             // 
+            // btnLimparFuncaoSecundaria
+            // 
+            this.btnLimparFuncaoSecundaria.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnLimparFuncaoSecundaria.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
+            this.btnLimparFuncaoSecundaria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimparFuncaoSecundaria.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimparFuncaoSecundaria.FlatAppearance.BorderSize = 2;
+            this.btnLimparFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLimparFuncaoSecundaria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(400, 8);
+            this.btnLimparFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimparFuncaoSecundaria.Name = "btnLimparFuncaoSecundaria";
+            this.btnLimparFuncaoSecundaria.Size = new System.Drawing.Size(20, 20);
+            this.btnLimparFuncaoSecundaria.TabIndex = 65;
+            this.btnLimparFuncaoSecundaria.UseVisualStyleBackColor = false;
+            this.btnLimparFuncaoSecundaria.Click += new System.EventHandler(this.btnLimparFuncaoSecundaria_Click);
+            // 
             // cbSubFuncaoSecundaria
             // 
             this.cbSubFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -427,41 +350,118 @@
             this.checkMostrarSenha.UseVisualStyleBackColor = false;
             this.checkMostrarSenha.CheckedChanged += new System.EventHandler(this.checkMostrarSenha_CheckedChanged);
             // 
-            // btnLimparFuncaoSecundaria
+            // label6
             // 
-            this.btnLimparFuncaoSecundaria.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLimparFuncaoSecundaria.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
-            this.btnLimparFuncaoSecundaria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimparFuncaoSecundaria.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimparFuncaoSecundaria.FlatAppearance.BorderSize = 2;
-            this.btnLimparFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimparFuncaoSecundaria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(400, 8);
-            this.btnLimparFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLimparFuncaoSecundaria.Name = "btnLimparFuncaoSecundaria";
-            this.btnLimparFuncaoSecundaria.Size = new System.Drawing.Size(20, 20);
-            this.btnLimparFuncaoSecundaria.TabIndex = 65;
-            this.btnLimparFuncaoSecundaria.UseVisualStyleBackColor = false;
-            this.btnLimparFuncaoSecundaria.Click += new System.EventHandler(this.btnLimparFuncaoSecundaria_Click);
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(143, 467);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(174, 20);
+            this.label6.TabIndex = 53;
+            this.label6.Text = "Confirmar Senha:";
             // 
-            // btnLimparFuncaoPrincipal
+            // txtConfirmarSenha
             // 
-            this.btnLimparFuncaoPrincipal.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLimparFuncaoPrincipal.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
-            this.btnLimparFuncaoPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimparFuncaoPrincipal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimparFuncaoPrincipal.FlatAppearance.BorderSize = 2;
-            this.btnLimparFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimparFuncaoPrincipal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(400, 10);
-            this.btnLimparFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLimparFuncaoPrincipal.Name = "btnLimparFuncaoPrincipal";
-            this.btnLimparFuncaoPrincipal.Size = new System.Drawing.Size(20, 20);
-            this.btnLimparFuncaoPrincipal.TabIndex = 66;
-            this.btnLimparFuncaoPrincipal.UseVisualStyleBackColor = false;
-            this.btnLimparFuncaoPrincipal.Click += new System.EventHandler(this.btnLimparFuncaoPrincipal_Click);
+            this.txtConfirmarSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarSenha.Location = new System.Drawing.Point(147, 508);
+            this.txtConfirmarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
+            this.txtConfirmarSenha.Size = new System.Drawing.Size(267, 26);
+            this.txtConfirmarSenha.TabIndex = 52;
+            this.txtConfirmarSenha.UseSystemPasswordChar = true;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(143, 379);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 20);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Senha:";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(147, 420);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(267, 26);
+            this.txtSenha.TabIndex = 45;
+            this.txtSenha.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(143, 291);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 20);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "E-mail:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(147, 332);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(267, 26);
+            this.txtEmail.TabIndex = 43;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(143, 203);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Sobrenome:";
+            // 
+            // txtSobrenome
+            // 
+            this.txtSobrenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSobrenome.Location = new System.Drawing.Point(147, 244);
+            this.txtSobrenome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSobrenome.Name = "txtSobrenome";
+            this.txtSobrenome.Size = new System.Drawing.Size(267, 26);
+            this.txtSobrenome.TabIndex = 41;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(147, 156);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(267, 26);
+            this.txtNome.TabIndex = 39;
+            // 
+            // labelNome
+            // 
+            this.labelNome.AutoSize = true;
+            this.labelNome.BackColor = System.Drawing.Color.Transparent;
+            this.labelNome.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.labelNome.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelNome.Location = new System.Drawing.Point(143, 115);
+            this.labelNome.Name = "labelNome";
+            this.labelNome.Size = new System.Drawing.Size(71, 20);
+            this.labelNome.TabIndex = 40;
+            this.labelNome.Text = "Nome:";
             // 
             // FormCadastrarUsuario
             // 
@@ -517,18 +517,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelNome;
-        public System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtSobrenome;
-        private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSalvarUsuario;
         private System.Windows.Forms.ComboBox cbTipoUsuario;
-        private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox txtConfirmarSenha;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.DateTimePicker dtCadastro;
@@ -539,8 +529,18 @@
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.ComboBox cbSubFuncaoSecundaria;
         public System.Windows.Forms.ComboBox cbFuncaoSecundaria;
-        private System.Windows.Forms.CheckBox checkMostrarSenha;
         private System.Windows.Forms.Button btnLimparFuncaoSecundaria;
         private System.Windows.Forms.Button btnLimparFuncaoPrincipal;
+        private System.Windows.Forms.CheckBox checkMostrarSenha;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txtConfirmarSenha;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtSobrenome;
+        public System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label labelNome;
     }
 }

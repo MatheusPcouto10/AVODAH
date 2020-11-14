@@ -113,6 +113,12 @@
     <Compile Include="Views\Usuarios\FormCadastrarUsuario.Designer.cs">
       <DependentUpon>FormCadastrarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Usuarios\FormGerenciarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Usuarios\FormGerenciarUsuario.Designer.cs">
+      <DependentUpon>FormGerenciarUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\FormAlterarSenha.resx">
       <DependentUpon>FormAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuarios\FormCadastrarUsuario.resx">
       <DependentUpon>FormCadastrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Usuarios\FormGerenciarUsuario.resx">
+      <DependentUpon>FormGerenciarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
