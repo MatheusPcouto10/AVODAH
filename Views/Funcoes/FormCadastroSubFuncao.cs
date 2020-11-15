@@ -19,6 +19,7 @@ namespace EscalasMetodista.Views
         SubFuncao subFuncoes = new SubFuncao();
 
         public bool updateFuncao = false;
+        public string funcao;
         public int idSubFuncao;
 
         public FormCadastroSubFuncao()
@@ -34,28 +35,44 @@ namespace EscalasMetodista.Views
 
             if (updateFuncao == true)
             {
-                if (Validacoes.ValidarObjeto(subFuncoes) == true)
+                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, true, idSubFuncao) == true)
                 {
-                    subFuncoes.update(subFuncoes, idSubFuncao);
+                    MessageBox.Show("Já existe uma Sub-Função Cadastrada!", "Sub-Função já Existente ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (Validacoes.ValidarObjeto(subFuncoes) == true)
+                    {
+                        subFuncoes.update(subFuncoes, idSubFuncao);
+                    }
+
+                    txtDescricao.Text = " ";
+                    updateFuncao = false;
+                    this.Close();
                 }
 
-                txtDescricao.Text = " ";
-                updateFuncao = false;
-                this.Close();
             }
             else
             {
-                if (Validacoes.ValidarObjeto(subFuncoes) == true)
+                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, false, 0) == true)
                 {
-                    subFuncoes.create(subFuncoes);
+                    MessageBox.Show("Já existe uma Sub-Função Cadastrada!", "Sub-Função já Existente ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                txtDescricao.Text = " ";
+                else
+                {
+                    if (Validacoes.ValidarObjeto(subFuncoes) == true)
+                    {
+                        subFuncoes.create(subFuncoes);
+                    }
+                    txtDescricao.Text = " ";
+                }
             }
 
         }
 
         private void preencheComboBoxFuncoes()
         {
+
             cmd.CommandText = "SELECT * FROM funcao";
             Conexao conexao = new Conexao();
             try
@@ -83,6 +100,10 @@ namespace EscalasMetodista.Views
         private void FormCadastroSubFuncao_Load(object sender, EventArgs e)
         {
             this.preencheComboBoxFuncoes();
+            if (updateFuncao == true)
+            {
+                cbFuncoes.Text = funcao;
+            }
         }
 
         private void FormCadastroSubFuncao_KeyDown(object sender, KeyEventArgs e)

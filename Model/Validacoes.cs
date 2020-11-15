@@ -1,4 +1,5 @@
 ﻿using EscalasMetodista.Conexão;
+using EscalasMetodista.Session;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -31,20 +32,36 @@ namespace EscalasMetodista.Model
             return true;
         }
 
-        public static Boolean verificaUnico(String campo, String tabela, String valor)
+        public static Boolean verificaUnico(String campo, String tabela, String valor, Boolean update, int idPessoa)
         {
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT " + campo + " FROM " + tabela + " WHERE " + campo + " = '" + valor + "'";
-            Conexao conexao = new Conexao();
-            cmd.Connection = conexao.Conectar();
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            if (dr.HasRows)
+            if (update == true)
             {
-                return true;
+                cmd.CommandText = "SELECT " + campo + " FROM " + tabela + " WHERE " + campo + " = '" + valor + "' AND idPessoa != " + idPessoa;
+                Conexao conexao = new Conexao();
+                cmd.Connection = conexao.Conectar();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
+            else
+            {
+                cmd.CommandText = "SELECT " + campo + " FROM " + tabela + " WHERE " + campo + " = '" + valor + "'";
+                Conexao conexao = new Conexao();
+                cmd.Connection = conexao.Conectar();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    return true;
+                }
+                return false;
+            }
         }
     }
 }

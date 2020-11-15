@@ -37,8 +37,11 @@ namespace EscalasMetodista.Model
         SqlCommand cmd = new SqlCommand();
         Conexao conexao = new Conexao();
 
+        [Required(ErrorMessage = "É necessário ter uma Função Principal")]
         public SubFuncao funcaoPrincipal = new SubFuncao();
         public SubFuncao funcaoSecundaria = new SubFuncao();
+
+        [Required(ErrorMessage = "É necessário ter uma Função Principal")]
         public SubFuncao SubFuncaoPrincipal
         {
             get => this.funcaoPrincipal;
@@ -116,10 +119,10 @@ namespace EscalasMetodista.Model
                                                                      "', sobrenome = '" + t.Sobrenome +
                                                                      "', email = '" + t.Email +
                                                                      "', senha = '" + t.Senha +
-                                                                     "', tipoUsuario_fk = '" + t.tipoUsuario.idTipoUsuario +
-                                                                     "', funcaoPrincipal_fk = '" + t.funcaoPrincipal.idSubFuncao +
-                                                                     "', funcaoSecundaria_fk = '" + t.funcaoSecundaria.idSubFuncao +
-                                                                     "', dataCadastro = '" + t.dataCadastro +
+                                                                     "', tipoUsuario_fk = " + t.tipoUsuario.idTipoUsuario +
+                                                                     ", funcaoPrincipal_fk = " + t.funcaoPrincipal.idSubFuncao +
+                                                                     ", funcaoSecundaria_fk = " + t.funcaoSecundaria.idSubFuncao +
+                                                                     ", dataCadastro = '" + t.dataCadastro +
                                                                      "', status = '" + t.Status +
                                                                      "' WHERE idPessoa LIKE '" + idPessoas + "'";
                     cmd.Connection = conexao.Conectar();
@@ -134,9 +137,10 @@ namespace EscalasMetodista.Model
                                                                      "', sobrenome = '" + t.Sobrenome +
                                                                      "', email = '" + t.Email +
                                                                      "', senha = '" + t.Senha +
-                                                                     "', tipoUsuario_fk = '" + t.tipoUsuario.idTipoUsuario +
-                                                                     "', funcaoPrincipal_fk = '" + t.funcaoPrincipal.idSubFuncao +
-                                                                     "', dataCadastro = '" + t.dataCadastro +
+                                                                     "', tipoUsuario_fk = " + t.tipoUsuario.idTipoUsuario +
+                                                                     ", funcaoPrincipal_fk = " + t.funcaoPrincipal.idSubFuncao +
+                                                                     ", funcaoSecundaria_fk = NULL" +
+                                                                     ", dataCadastro = '" + t.dataCadastro +
                                                                      "', status = '" + t.Status +
                                                                      "' WHERE idPessoa LIKE '" + idPessoas + "'";
                     cmd.Connection = conexao.Conectar();

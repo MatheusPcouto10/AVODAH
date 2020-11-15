@@ -35,10 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.btnPerfil = new System.Windows.Forms.ToolStripDropDownButton();
-            this.editarPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAlterarSenha = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAlterarSenha = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSobre = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRelatorios = new System.Windows.Forms.ToolStripSplitButton();
@@ -119,8 +117,6 @@
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPerfil,
             this.toolStripSeparator2,
-            this.btnAlterarSenha,
-            this.toolStripSeparator1,
             this.btnSobre,
             this.toolStripSeparator3,
             this.btnRelatorios,
@@ -137,37 +133,23 @@
             // btnPerfil
             // 
             this.btnPerfil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarPerfilToolStripMenuItem});
+            this.btnAlterarSenha});
             this.btnPerfil.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnPerfil.Name = "btnPerfil";
             this.btnPerfil.Size = new System.Drawing.Size(185, 24);
             this.btnPerfil.Text = "Bem vindo Matheus !";
             // 
-            // editarPerfilToolStripMenuItem
+            // btnAlterarSenha
             // 
-            this.editarPerfilToolStripMenuItem.Name = "editarPerfilToolStripMenuItem";
-            this.editarPerfilToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.editarPerfilToolStripMenuItem.Text = "Editar Perfil";
+            this.btnAlterarSenha.Name = "btnAlterarSenha";
+            this.btnAlterarSenha.Size = new System.Drawing.Size(196, 26);
+            this.btnAlterarSenha.Text = "Alterar Senha";
+            this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // btnAlterarSenha
-            // 
-            this.btnAlterarSenha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnAlterarSenha.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterarSenha.Image")));
-            this.btnAlterarSenha.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAlterarSenha.Name = "btnAlterarSenha";
-            this.btnAlterarSenha.Size = new System.Drawing.Size(102, 24);
-            this.btnAlterarSenha.Text = "Alterar Senha";
-            this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // btnSobre
             // 
@@ -226,9 +208,10 @@
             // 
             // gerenciarUsuárioToolStripMenuItem
             // 
-            this.gerenciarUsuárioToolStripMenuItem.Name = "gerenciarUsuárioToolStripMenuItem";
+            this.gerenciarUsuárioToolStripMenuItem.Name = "gerenciarUsuarioToolStripMenuItem";
             this.gerenciarUsuárioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gerenciarUsuárioToolStripMenuItem.Text = "Gerenciar Usuário";
+            this.gerenciarUsuárioToolStripMenuItem.Click += new System.EventHandler(this.gerenciarUsuarioToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
@@ -529,9 +512,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStripMenu;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton btnAlterarSenha;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnSobre;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSplitButton btnRelatorios;
@@ -555,7 +535,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataAlteracao;
         private System.Windows.Forms.ToolStripDropDownButton btnPerfil;
-        private System.Windows.Forms.ToolStripMenuItem editarPerfilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnAlterarSenha;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

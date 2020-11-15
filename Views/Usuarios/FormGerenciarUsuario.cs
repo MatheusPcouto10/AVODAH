@@ -52,7 +52,7 @@ namespace EscalasMetodista.Views.Usuarios
 	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
 	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
 	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
-                                  LEFT JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND p.nome = " + txtPesquisa.Text;
+                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND p.nome LIKE '%" + txtPesquisa.Text + "%'";
 
                     SqlDataReader dr = cmd.ExecuteReader();
 
@@ -218,51 +218,64 @@ namespace EscalasMetodista.Views.Usuarios
             pessoa.Email = txtEmail.Text;
             pessoa.Senha = txtSenha.Text;
             pessoa.dataCadastro = dtCadastro.Value;
-            pessoa.funcaoPrincipal.idSubFuncao = (int)cbSubFuncaoPrincipal.SelectedValue;
-            if (cbSubFuncaoSecundaria.Text != "Selecione...")
-            {
-                pessoa.funcaoSecundaria.idSubFuncao = (int)cbSubFuncaoSecundaria.SelectedValue;
-                temFuncaoSecundaria = true;
-            }
             pessoa.tipoUsuario.idTipoUsuario = (int)cbTipoUsuario.SelectedValue;
             pessoa.Status = cbStatus.Text;
 
-            try
+            if (cbFuncaoPrincipal.Text != "Selecione...")
             {
-                if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text) == true && Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text) == true)
+                pessoa.funcaoPrincipal.idSubFuncao = (int)cbSubFuncaoPrincipal.SelectedValue;
+
+                if (cbSubFuncaoSecundaria.Text != "Selecione...")
                 {
-                    MessageBox.Show("O e-mail e/ou senha já está em uso!", "E-mail/Senha já Cadastrado ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    pessoa.funcaoSecundaria.idSubFuncao = (int)cbSubFuncaoSecundaria.SelectedValue;
+                    temFuncaoSecundaria = true;
+
                 }
-                else
+                else if (cbSubFuncaoSecundaria.Text == "Selecione...")
                 {
-                    if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
+                    temFuncaoSecundaria = false;
+                }
+
+                try
+                {
+                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, true, idPessoa) == true ||
+                        Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text, true, idPessoa) == true)
                     {
-                        MessageBox.Show("As sub-funções não podem ser iguais!", "Sub-Função Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("O e-mail e/ou senha já está em uso!", "E-mail/Senha já Cadastrado ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-
-                        if (Validacoes.ValidarObjeto(pessoa) == true)
+                        if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
                         {
-                            pessoa.update(pessoa, idPessoa, temFuncaoSecundaria);
-                            tabControl1.SelectedIndex = 0;
-                            btnSalvarUsuario.Enabled = false;
-                            this.CarregarDataGrid();
+                            MessageBox.Show("As sub-funções não podem ser iguais!", "Sub-Função Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            if (Validacoes.ValidarObjeto(pessoa) == true)
+                            {
+                                pessoa.update(pessoa, idPessoa, temFuncaoSecundaria);
+                                tabControl1.SelectedIndex = 0;
+                                btnSalvarUsuario.Enabled = false;
+                                this.CarregarDataGrid();
+                            }
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
 
-                MessageBox.Show("Erro: " + ex);
+                    MessageBox.Show("Erro: " + ex);
+                }
             }
+            else
+            {
+                MessageBox.Show("É Necessário ter uma Função Principal!", "Função Principal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void FormGerenciarUsuario_Load(object sender, EventArgs e)
         {
-            this.preencheComboBoxFuncaoPrincipal();
-            this.preencheComboBoxFuncaoSecundaria();
             this.preencheComboBoxTipoUsuario();
             this.CarregarDataGrid();
             btnSalvarUsuario.Enabled = false;
@@ -310,17 +323,30 @@ namespace EscalasMetodista.Views.Usuarios
             //verificar qual a coluna clicada é a de editar
             if (dgUsuarios.Columns[e.ColumnIndex] == dgUsuarios.Columns["editar"])
             {
+                this.preencheComboBoxFuncaoPrincipal();
+                this.preencheComboBoxFuncaoSecundaria();
+
+                if (dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString() == DBNull.Value.ToString())
+                {
+                    cbFuncaoSecundaria.Text = "Selecione...";
+                    cbSubFuncaoSecundaria.Text = "Selecione...";
+
+                }
+                else
+                {
+                    cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value.ToString();
+                    cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString();
+                }
+
                 txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
                 txtSobrenome.Text = dgUsuarios.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
                 txtEmail.Text = dgUsuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
                 txtSenha.Text = dgUsuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
                 cbTipoUsuario.Text = dgUsuarios.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
                 cbStatus.Text = dgUsuarios.Rows[e.RowIndex].Cells["status"].Value.ToString();
-                cbFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["funcaoPrincipal"].Value.ToString();
-                cbSubFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["subFuncaoPrincipal"].Value.ToString();
-                cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["funcaoSecundaria"].Value.ToString();
-                cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["subFuncaoSecundaria"].Value.ToString();
-                dtCadastro.Text = dgUsuarios.Rows[e.RowIndex].Cells["dtCadastro"].Value.ToString();
+                cbFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
+                cbSubFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
+                dtCadastro.Text = dgUsuarios.Rows[e.RowIndex].Cells["dataCadastro"].Value.ToString();
 
                 tabControl1.SelectedIndex = 1;
                 btnSalvarUsuario.Enabled = true;
@@ -344,19 +370,19 @@ namespace EscalasMetodista.Views.Usuarios
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "nome":
-                        coluna.Width = 80;
+                        coluna.Width = 90;
                         coluna.HeaderText = "Nome";
                         break;
                     case "sobrenome":
-                        coluna.Width = 80;
+                        coluna.Width = 90;
                         coluna.HeaderText = "Sobrenome";
                         break;
                     case "email":
-                        coluna.Width = 100;
+                        coluna.Width = 140;
                         coluna.HeaderText = "E-mail";
                         break;
                     case "senha":
-                        coluna.Width = 70;
+                        coluna.Visible = false;
                         coluna.HeaderText = "Senha";
                         break;
                     case "descricao":
@@ -415,7 +441,7 @@ namespace EscalasMetodista.Views.Usuarios
 	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
 	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
 	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
-                                  LEFT JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk";
+                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk";
 
 
                 SqlDataReader dr = cmd.ExecuteReader();

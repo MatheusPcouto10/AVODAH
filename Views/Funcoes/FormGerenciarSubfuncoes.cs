@@ -112,7 +112,7 @@ namespace EscalasMetodista.Views.Funcoes
                 form.idSubFuncao = idSubFuncao;
                 form.txtDescricao.Text = descricao;
                 form.updateFuncao = true;
-                form.cbFuncoes.Text = dgSubFuncoes.Rows[e.RowIndex].Cells["descricaoFuncao"].Value.ToString();
+                form.funcao = dgSubFuncoes.Rows[e.RowIndex].Cells["descricaoFuncao"].Value.ToString();
                 form.Show();
             }
         }
@@ -144,7 +144,7 @@ namespace EscalasMetodista.Views.Funcoes
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "descricao":
-                        coluna.Width = 220;
+                        coluna.Width = 200;
                         coluna.HeaderText = "Sub-Função";
                         break;
                     case "descricaoFuncao":

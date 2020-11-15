@@ -1,5 +1,6 @@
 ﻿using EscalasMetodista.Conexão;
 using EscalasMetodista.Model;
+using EscalasMetodista.Session;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,49 +31,65 @@ namespace EscalasMetodista.Views.Usuarios
             pessoa.Email = txtEmail.Text;
             pessoa.Senha = txtSenha.Text;
             pessoa.dataCadastro = dtCadastro.Value;
-            pessoa.funcaoPrincipal.idSubFuncao = (int)cbSubFuncaoPrincipal.SelectedValue;
-            if (cbSubFuncaoSecundaria.Text != "Selecione...")
-            {
-                pessoa.funcaoSecundaria.idSubFuncao = (int)cbSubFuncaoSecundaria.SelectedValue;
-                temFuncaoSecundaria = true;
-            }
             pessoa.tipoUsuario.idTipoUsuario = (int)cbTipoUsuario.SelectedValue;
             pessoa.Status = "Ativo";
 
-            try
+            if (cbFuncaoPrincipal.Text != "Selecione...")
             {
-                if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text) == true && Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text) == true)
+                pessoa.funcaoPrincipal.idSubFuncao = (int)cbSubFuncaoPrincipal.SelectedValue;
+
+
+                if (cbSubFuncaoSecundaria.Text != "Selecione...")
                 {
-                    MessageBox.Show("O e-mail e/ou senha já está em uso!", "E-mail/Senha já Cadastrado ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    pessoa.funcaoSecundaria.idSubFuncao = (int)cbSubFuncaoSecundaria.SelectedValue;
+                    temFuncaoSecundaria = true;
                 }
-                else
+                else if (cbSubFuncaoSecundaria.Text == "Selecione...")
                 {
-                    if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
+                    temFuncaoSecundaria = false;
+                }
+
+                try
+                {
+                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, false, 0) == true ||
+                        Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text, false, 0) == true)
                     {
-                        MessageBox.Show("As sub-funções não podem ser iguais!", "Sub-Função Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("O e-mail e/ou senha já está em uso!", "E-mail/Senha já Cadastrado ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        if (txtConfirmarSenha.Text == txtSenha.Text)
+                        if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
                         {
-                            if (Validacoes.ValidarObjeto(pessoa) == true)
-                            {
-                                pessoa.create(pessoa, temFuncaoSecundaria);
-                                this.btnLimpar_Click(null, null);
-                            }
+                            MessageBox.Show("As sub-funções não podem ser iguais!", "Sub-Função Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
-                            MessageBox.Show("As senhas informadas não são iguais!", "Senha não Correspondente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (txtConfirmarSenha.Text == txtSenha.Text)
+                            {
+                                if (Validacoes.ValidarObjeto(pessoa) == true)
+                                {
+                                    pessoa.create(pessoa, temFuncaoSecundaria);
+                                    this.btnLimpar_Click(null, null);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("As senhas informadas não são iguais!", "Senha não Correspondente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
 
-                MessageBox.Show("Erro: " + ex);
+                    MessageBox.Show("Erro: " + ex);
+                }
             }
+            else
+            {
+                MessageBox.Show("É Necessário ter uma Função Principal!", "Função Principal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void preencheComboBoxTipoUsuario()

@@ -78,13 +78,6 @@ namespace EscalasMetodista
             this.btnPerfil.Text = "Bem vindo " + UsuarioSession.nomeUsuario + " !";
             this.controleAcesso();
         }
-
-        private void btnAlterarSenha_Click(object sender, EventArgs e)
-        {
-            FormAlterarSenha form = new FormAlterarSenha();
-            form.Show();
-        }
-
         private void gerenciarFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormGerenciarFuncao form = new FormGerenciarFuncao();
@@ -120,6 +113,18 @@ namespace EscalasMetodista
         private void novoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCadastrarUsuario form = new FormCadastrarUsuario();
+            form.Show();
+        }
+
+        private void btnAlterarSenha_Click(object sender, EventArgs e)
+        {
+            FormAlterarSenha form = new FormAlterarSenha();
+            form.Show();
+        }
+
+        private void gerenciarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGerenciarUsuario form = new FormGerenciarUsuario();
             form.Show();
         }
     }

@@ -28,21 +28,35 @@ namespace EscalasMetodista.Views
             funcoes.descricaoFuncao = txtDescricaoFuncao.Text;
             if (updateFuncao == true)
             {
-                if (Validacoes.ValidarObjeto(funcoes) == true)
+                if (Validacoes.verificaUnico("descricaoFuncao", "funcao", txtDescricaoFuncao.Text, true, idFuncao) == true)
                 {
-                    funcoes.update(funcoes, idFuncao);
+                    MessageBox.Show("Já existe uma Sub-Função Cadastrada!", "Sub-Função já Existente ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                txtDescricaoFuncao.Text = " ";
-                updateFuncao = false;
-                this.Close();
+                else
+                {
+                    if (Validacoes.ValidarObjeto(funcoes) == true)
+                    {
+                        funcoes.update(funcoes, idFuncao);
+                    }
+                    txtDescricaoFuncao.Text = " ";
+                    updateFuncao = false;
+                    this.Close();
+                }
             }
             else
             {
-                if (Validacoes.ValidarObjeto(funcoes) == true)
+                if (Validacoes.verificaUnico("descricaoFuncao", "funcao", txtDescricaoFuncao.Text, false, 0) == true)
                 {
-                    funcoes.create(funcoes);
+                    MessageBox.Show("Já existe uma Sub-Função Cadastrada!", "Sub-Função já Existente ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                txtDescricaoFuncao.Text = " ";
+                else
+                {
+                    if (Validacoes.ValidarObjeto(funcoes) == true)
+                    {
+                        funcoes.create(funcoes);
+                    }
+                    txtDescricaoFuncao.Text = " ";
+                }
             }
 
         }
