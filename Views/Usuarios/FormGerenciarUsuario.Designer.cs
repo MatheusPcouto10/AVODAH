@@ -29,20 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGerenciarUsuario));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel_rodape = new System.Windows.Forms.Panel();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.telaPesquisa = new System.Windows.Forms.TabPage();
-            this.fillByNomeToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.txtPesquisa = new System.Windows.Forms.ToolStripTextBox();
-            this.btnPesquisa = new System.Windows.Forms.ToolStripButton();
+            this.btnPesquisa = new System.Windows.Forms.Button();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
             this.editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.telaEditar = new System.Windows.Forms.TabPage();
             this.btnSalvarUsuario = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
@@ -67,41 +63,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel_rodape.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.telaPesquisa.SuspendLayout();
-            this.fillByNomeToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.telaEditar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1283, 70);
-            this.panel1.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(474, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(322, 29);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "GERENCIAR USUÁRIOS";
             // 
             // panel_rodape
             // 
@@ -151,21 +123,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.telaPesquisa);
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.telaEditar);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 74);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1283, 600);
-            this.tabControl1.TabIndex = 10;
+            this.tabControl1.TabIndex = 9;
             // 
             // telaPesquisa
             // 
             this.telaPesquisa.BackColor = System.Drawing.SystemColors.ControlDark;
             this.telaPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
             this.telaPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.telaPesquisa.Controls.Add(this.fillByNomeToolStrip);
+            this.telaPesquisa.Controls.Add(this.btnPesquisa);
+            this.telaPesquisa.Controls.Add(this.txtPesquisa);
             this.telaPesquisa.Controls.Add(this.dgUsuarios);
             this.telaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telaPesquisa.Location = new System.Drawing.Point(4, 26);
@@ -176,48 +149,38 @@
             this.telaPesquisa.TabIndex = 0;
             this.telaPesquisa.Text = "Pesquisa";
             // 
-            // fillByNomeToolStrip
+            // btnPesquisa
             // 
-            this.fillByNomeToolStrip.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fillByNomeToolStrip.BackColor = System.Drawing.SystemColors.Control;
-            this.fillByNomeToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.fillByNomeToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.fillByNomeToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.fillByNomeToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.txtPesquisa,
-            this.btnPesquisa});
-            this.fillByNomeToolStrip.Location = new System.Drawing.Point(477, 75);
-            this.fillByNomeToolStrip.Name = "fillByNomeToolStrip";
-            this.fillByNomeToolStrip.Size = new System.Drawing.Size(340, 27);
-            this.fillByNomeToolStrip.TabIndex = 6;
-            this.fillByNomeToolStrip.Text = "fillByNomeToolStrip";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.toolStripLabel1.Font = new System.Drawing.Font("Verdana", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(107, 24);
-            this.toolStripLabel1.Text = "PESQUISAR:";
+            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.kisspng_forest_lake_computer_icons_inspection_white_wine_search_bar_5addbd8c2df2a6_8041717315244814201882;
+            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPesquisa.FlatAppearance.BorderSize = 0;
+            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.Location = new System.Drawing.Point(798, 64);
+            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(44, 26);
+            this.btnPesquisa.TabIndex = 7;
+            this.btnPesquisa.UseVisualStyleBackColor = false;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisa.BackColor = System.Drawing.Color.White;
+            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPesquisa.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtPesquisa.Location = new System.Drawing.Point(475, 65);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(199, 27);
-            // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPesquisa.Image = global::EscalasMetodista.Properties.Resources.searchmagnifierinterfacesymbol1_79893;
-            this.btnPesquisa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(29, 24);
-            this.btnPesquisa.Text = "toolStripButton1";
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            this.txtPesquisa.Size = new System.Drawing.Size(317, 23);
+            this.txtPesquisa.TabIndex = 6;
             // 
             // dgUsuarios
             // 
@@ -255,35 +218,35 @@
             this.editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.editar.Width = 1099;
             // 
-            // tabPage1
+            // telaEditar
             // 
-            this.tabPage1.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
-            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage1.Controls.Add(this.btnSalvarUsuario);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.cbStatus);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.dtCadastro);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.cbTipoUsuario);
-            this.tabPage1.Controls.Add(this.checkMostrarSenha);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.txtNome);
-            this.tabPage1.Controls.Add(this.txtSobrenome);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.txtEmail);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.txtSenha);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1275, 570);
-            this.tabPage1.TabIndex = 1;
-            this.tabPage1.Text = "Editar";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.telaEditar.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
+            this.telaEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.telaEditar.Controls.Add(this.btnSalvarUsuario);
+            this.telaEditar.Controls.Add(this.label10);
+            this.telaEditar.Controls.Add(this.cbStatus);
+            this.telaEditar.Controls.Add(this.groupBox2);
+            this.telaEditar.Controls.Add(this.groupBox1);
+            this.telaEditar.Controls.Add(this.label8);
+            this.telaEditar.Controls.Add(this.dtCadastro);
+            this.telaEditar.Controls.Add(this.label9);
+            this.telaEditar.Controls.Add(this.cbTipoUsuario);
+            this.telaEditar.Controls.Add(this.checkMostrarSenha);
+            this.telaEditar.Controls.Add(this.label3);
+            this.telaEditar.Controls.Add(this.txtNome);
+            this.telaEditar.Controls.Add(this.txtSobrenome);
+            this.telaEditar.Controls.Add(this.label4);
+            this.telaEditar.Controls.Add(this.txtEmail);
+            this.telaEditar.Controls.Add(this.label5);
+            this.telaEditar.Controls.Add(this.txtSenha);
+            this.telaEditar.Controls.Add(this.label6);
+            this.telaEditar.Location = new System.Drawing.Point(4, 26);
+            this.telaEditar.Name = "telaEditar";
+            this.telaEditar.Padding = new System.Windows.Forms.Padding(3);
+            this.telaEditar.Size = new System.Drawing.Size(1275, 570);
+            this.telaEditar.TabIndex = 1;
+            this.telaEditar.Text = "Editar";
+            this.telaEditar.UseVisualStyleBackColor = true;
             // 
             // btnSalvarUsuario
             // 
@@ -600,6 +563,31 @@
             this.label6.TabIndex = 46;
             this.label6.Text = "Senha:";
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(474, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(322, 29);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "GERENCIAR USUÁRIOS";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1283, 70);
+            this.panel1.TabIndex = 8;
+            // 
             // FormGerenciarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -616,40 +604,32 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Usuários";
             this.Load += new System.EventHandler(this.FormGerenciarUsuario_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGerenciarUsuario_KeyDown);
             this.panel_rodape.ResumeLayout(false);
             this.panel_rodape.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.telaPesquisa.ResumeLayout(false);
             this.telaPesquisa.PerformLayout();
-            this.fillByNomeToolStrip.ResumeLayout(false);
-            this.fillByNomeToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.telaEditar.ResumeLayout(false);
+            this.telaEditar.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_rodape;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage telaPesquisa;
-        private System.Windows.Forms.ToolStrip fillByNomeToolStrip;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox txtPesquisa;
-        private System.Windows.Forms.ToolStripButton btnPesquisa;
         public System.Windows.Forms.DataGridView dgUsuarios;
         private System.Windows.Forms.DataGridViewImageColumn editar;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage telaEditar;
         private System.Windows.Forms.CheckBox checkMostrarSenha;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNome;
@@ -674,5 +654,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbTipoUsuario;
         private System.Windows.Forms.Button btnSalvarUsuario;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnPesquisa;
+        private System.Windows.Forms.TextBox txtPesquisa;
     }
 }

@@ -35,6 +35,8 @@ namespace EscalasMetodista.Views.Usuarios
         {
             if (txtPesquisa.Text == "")
             {
+                FormPesquisaUsuario form = new FormPesquisaUsuario();
+                form.Show();
                 this.CarregarDataGrid();
             }
             else
@@ -65,10 +67,39 @@ namespace EscalasMetodista.Views.Usuarios
                         dgUsuarios.DataSource = dt;
 
                     }
-                    else
+                    else if (dr.HasRows == false)
                     {
-                        MessageBox.Show("Nenhuma Pessoa Encontrada");
+                        dr.Close();
+                        cmd.Connection = conexao.Conectar();
+
+                        cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
+                                  f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
+                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
+                                  FROM pessoa AS p 
+	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
+	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
+	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
+	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
+                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND p.idPessoa = " + txtPesquisa.Text;
+
+                        dr = cmd.ExecuteReader();
+
+                        if (dr.HasRows == true)
+                        {
+
+                            DataTable dt = new DataTable();
+
+                            dt.Load(dr);
+                            dgUsuarios.DataSource = dt;
+                            dr.Close();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
+
                 }
                 catch (Exception erro)
                 {
@@ -256,6 +287,7 @@ namespace EscalasMetodista.Views.Usuarios
                                 pessoa.update(pessoa, idPessoa, temFuncaoSecundaria);
                                 tabControl1.SelectedIndex = 0;
                                 btnSalvarUsuario.Enabled = false;
+                                txtPesquisa.Text = "";
                                 this.CarregarDataGrid();
                             }
                         }
@@ -462,6 +494,18 @@ namespace EscalasMetodista.Views.Usuarios
                 MessageBox.Show("Erro: " + erro.Message);
             }
             conexao.Desconectar();
+        }
+
+        private void FormGerenciarUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    this.btnPesquisa_Click(null, null);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
