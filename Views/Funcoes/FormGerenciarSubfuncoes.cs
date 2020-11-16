@@ -30,34 +30,47 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            if (txtPesquisa.Text == "")
+            if (txtNomePesquisa.Text == "" && txtIdPesquisa.Text == "")
             {
-                this.CarregarDataGrid();
+                this.CarregarDataGrid(true, null, null, 0);
             }
             else
             {
+                if (txtIdPesquisa.Text != "")
+                {
+                    this.CarregarDataGrid(false, "idSubFuncao", null, Int32.Parse(txtIdPesquisa.Text));
+                }
+                else if (txtNomePesquisa.Text != "")
+                {
+                    this.CarregarDataGrid(false, "descricao", txtNomePesquisa.Text, 0);
+                }
+            }
+        }
+
+        private void CarregarDataGrid(Boolean atualizacao, String campo, String valor, int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            if (atualizacao == true)
+            {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conexao.Conectar();
-
                     cmd.CommandText = @"SELECT s.idSubFuncao, s.descricao, f.descricaoFuncao FROM subFuncao AS s INNER JOIN funcao AS f 
-                                        ON f.idFuncao = s.idFuncao_fk AND s.descricao LIKE '%" + txtPesquisa.Text + "%'";
+                                    ON f.idFuncao = s.idFuncao_fk";
+
 
                     SqlDataReader dr = cmd.ExecuteReader();
-
-                    if (dr.HasRows == true)
+                    if (dr.HasRows)
                     {
-
+                        // Cria uma tabela genérica
                         DataTable dt = new DataTable();
-
-                        dt.Load(dr);
-                        dgSubFuncoes.DataSource = dt;
-
+                        dt.Load(dr); // Carrega os dados para o DataTable
+                        dgSubFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
                     {
-                        MessageBox.Show("Nenhuma Sub-Função Encontrada", " ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Nenhuma Sub-Função foi encontrada!", "Sub-Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception erro)
@@ -66,38 +79,63 @@ namespace EscalasMetodista.Views.Funcoes
                 }
                 conexao.Desconectar();
             }
-        }
-
-        private void CarregarDataGrid()
-        {
-            try
+            else if (valor != null)
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conexao.Conectar();
-
-                cmd.Connection = conexao.Conectar();
-                cmd.CommandText = @"SELECT s.idSubFuncao, s.descricao, f.descricaoFuncao FROM subFuncao AS s INNER JOIN funcao AS f 
-                                    ON f.idFuncao = s.idFuncao_fk";
-
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                try
                 {
-                    // Cria uma tabela genérica
-                    DataTable dt = new DataTable();
-                    dt.Load(dr); // Carrega os dados para o DataTable
-                    dgSubFuncoes.DataSource = dt; // Preenche o DataGridView
+                    cmd.Connection = conexao.Conectar();
+                    cmd.CommandText = @"SELECT s.idSubFuncao, s.descricao, f.descricaoFuncao FROM subFuncao AS s INNER JOIN funcao AS f 
+                                    ON f.idFuncao = s.idFuncao_fk WHERE " + campo + " LIKE '%" + valor + "%'";
+
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        // Cria uma tabela genérica
+                        DataTable dt = new DataTable();
+                        dt.Load(dr); // Carrega os dados para o DataTable
+                        dgSubFuncoes.DataSource = dt; // Preenche o DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhuma Sub-Função foi encontrada!", "Sub-Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else
+                catch (Exception erro)
                 {
-                    MessageBox.Show("erro");
+                    MessageBox.Show("Erro: " + erro.Message);
                 }
+                conexao.Desconectar();
+
             }
-            catch (Exception erro)
+            else if (valor == null)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                try
+                {
+                    cmd.Connection = conexao.Conectar();
+                    cmd.CommandText = @"SELECT s.idSubFuncao, s.descricao, f.descricaoFuncao FROM subFuncao AS s INNER JOIN funcao AS f 
+                                    ON f.idFuncao = s.idFuncao_fk WHERE " + campo + " = '" + id + "'";
+
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        // Cria uma tabela genérica
+                        DataTable dt = new DataTable();
+                        dt.Load(dr); // Carrega os dados para o DataTable
+                        dgSubFuncoes.DataSource = dt; // Preenche o DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhuma Sub-Função foi encontrada!", "Sub-Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro: " + erro.Message);
+                }
+                conexao.Desconectar();
             }
-            conexao.Desconectar();
         }
 
         private void dgFuncoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -119,7 +157,7 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void FormGerenciarSubfuncoes_Load(object sender, EventArgs e)
         {
-            this.CarregarDataGrid();
+            this.CarregarDataGrid(true, null, null, 0);
         }
 
         private void dgFuncoes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -129,7 +167,7 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void FormGerenciarSubfuncoes_Activated(object sender, EventArgs e)
         {
-            this.CarregarDataGrid();
+            this.CarregarDataGrid(true, null, null, 0);
         }
 
         private void dgSubFuncoes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

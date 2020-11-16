@@ -26,222 +26,30 @@ namespace EscalasMetodista.Views.Usuarios
             InitializeComponent();
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            if (txtPesquisa.Text == "")
+            if (txtNomePesquisa.Text == "" && txtIdPesquisa.Text == "")
             {
                 FormPesquisaUsuario form = new FormPesquisaUsuario();
                 form.Show();
-                this.CarregarDataGrid();
+                this.CarregarDataGrid(true, null, null, 0);
             }
             else
             {
-                try
+                if (txtNomePesquisa.Text == "")
                 {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conexao.Conectar();
-
-                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
-                                  f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
-                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
-                                  FROM pessoa AS p 
-	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
-	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
-	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
-	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
-                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND p.nome LIKE '%" + txtPesquisa.Text + "%'";
-
-                    SqlDataReader dr = cmd.ExecuteReader();
-
-                    if (dr.HasRows == true)
-                    {
-
-                        DataTable dt = new DataTable();
-
-                        dt.Load(dr);
-                        dgUsuarios.DataSource = dt;
-
-                    }
-                    else if (dr.HasRows == false)
-                    {
-                        dr.Close();
-                        cmd.Connection = conexao.Conectar();
-
-                        cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
-                                  f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
-                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
-                                  FROM pessoa AS p 
-	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
-	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
-	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
-	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
-                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND p.idPessoa = " + txtPesquisa.Text;
-
-                        dr = cmd.ExecuteReader();
-
-                        if (dr.HasRows == true)
-                        {
-
-                            DataTable dt = new DataTable();
-
-                            dt.Load(dr);
-                            dgUsuarios.DataSource = dt;
-                            dr.Close();
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-
+                    this.CarregarDataGrid(false, "p.idPessoa", null, Int32.Parse(txtIdPesquisa.Text));
                 }
-                catch (Exception erro)
+                else if (txtIdPesquisa.Text != "" && txtNomePesquisa.Text != "")
                 {
-                    // Exibe a mensagem de erro
-                    MessageBox.Show("Erro: " +
-                        erro.Message);
+                    this.CarregarDataGrid(false, "p.idPessoa", null, Int32.Parse(txtIdPesquisa.Text));
                 }
-                conexao.Desconectar();
+                else if (txtIdPesquisa.Text == "")
+                {
+                    this.CarregarDataGrid(false, "p.nome", txtNomePesquisa.Text, 0);
+                }
             }
         }
-
-        private void preencheComboBoxTipoUsuario()
-        {
-            cmd.CommandText = "SELECT * FROM tipoUsuario";
-            Conexao conexao = new Conexao();
-            try
-            {
-                cmd.Connection = conexao.Conectar();
-                DataTable dt = new DataTable();
-                SqlDataReader dr = cmd.ExecuteReader();
-                dt.Load(dr);
-
-                cbTipoUsuario.DisplayMember = "descricao";
-                cbTipoUsuario.ValueMember = "idTipoUsuario";
-                cbTipoUsuario.DataSource = dt;
-
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro: " + erro.Message);
-            }
-            finally
-            {
-                conexao.Desconectar();
-            }
-        }
-
-        private void preencheComboBoxFuncaoPrincipal()
-        {
-            cmd.CommandText = "SELECT * FROM funcao";
-            Conexao conexao = new Conexao();
-            try
-            {
-                cmd.Connection = conexao.Conectar();
-                DataTable dt = new DataTable();
-                SqlDataReader dr = cmd.ExecuteReader();
-                dt.Load(dr);
-
-                cbFuncaoPrincipal.DisplayMember = "descricaoFuncao";
-                cbFuncaoPrincipal.ValueMember = "idFuncao";
-                cbFuncaoPrincipal.DataSource = dt;
-
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro: " + erro.Message);
-            }
-            finally
-            {
-                conexao.Desconectar();
-            }
-        }
-
-        private void preencheComboBoxFuncaoSecundaria()
-        {
-            cmd.CommandText = "SELECT * FROM funcao";
-            Conexao conexao = new Conexao();
-            try
-            {
-                cmd.Connection = conexao.Conectar();
-                DataTable dt = new DataTable();
-                SqlDataReader dr = cmd.ExecuteReader();
-                dt.Load(dr);
-
-                cbFuncaoSecundaria.DisplayMember = "descricaoFuncao";
-                cbFuncaoSecundaria.ValueMember = "idFuncao";
-                cbFuncaoSecundaria.DataSource = dt;
-
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro: " + erro.Message);
-            }
-            finally
-            {
-                conexao.Desconectar();
-            }
-        }
-        private void preencheComboBoxSubFuncaoPrincipal()
-        {
-            cmd.CommandText = "SELECT * FROM subfuncao WHERE idFuncao_fk = " + (int)cbFuncaoPrincipal.SelectedValue;
-            Conexao conexao = new Conexao();
-            try
-            {
-                cmd.Connection = conexao.Conectar();
-                DataTable dt = new DataTable();
-                SqlDataReader dr = cmd.ExecuteReader();
-                dt.Load(dr);
-
-                cbSubFuncaoPrincipal.DisplayMember = "descricao";
-                cbSubFuncaoPrincipal.ValueMember = "idSubfuncao";
-                cbSubFuncaoPrincipal.DataSource = dt;
-
-                dr.Close();
-
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro: " + erro.Message);
-            }
-            finally
-            {
-                conexao.Desconectar();
-            }
-        }
-
-        private void preencheComboboxSubFuncaoSecundaria()
-        {
-            cmd.CommandText = "SELECT * FROM subfuncao WHERE idFuncao_fk = " + (int)cbFuncaoSecundaria.SelectedValue;
-            Conexao conexao = new Conexao();
-            try
-            {
-                cmd.Connection = conexao.Conectar();
-                DataTable dt = new DataTable();
-                SqlDataReader dr = cmd.ExecuteReader();
-                dt.Load(dr);
-
-                cbSubFuncaoSecundaria.DisplayMember = "descricao";
-                cbSubFuncaoSecundaria.ValueMember = "idSubfuncao";
-                cbSubFuncaoSecundaria.DataSource = dt;
-
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro: " + erro.Message);
-            }
-            finally
-            {
-                conexao.Desconectar();
-            }
-        }
-
         private void btnSalvarUsuario_Click(object sender, EventArgs e)
         {
             pessoa.Nome = txtNome.Text;
@@ -269,8 +77,8 @@ namespace EscalasMetodista.Views.Usuarios
 
                 try
                 {
-                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, true, idPessoa) == true ||
-                        Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text, true, idPessoa) == true)
+                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, true, idPessoa, "idPessoa") == true ||
+                        Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text, true, idPessoa, "idPessoa") == true)
                     {
                         MessageBox.Show("O e-mail e/ou senha já está em uso!", "E-mail/Senha já Cadastrado ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -287,8 +95,8 @@ namespace EscalasMetodista.Views.Usuarios
                                 pessoa.update(pessoa, idPessoa, temFuncaoSecundaria);
                                 tabControl1.SelectedIndex = 0;
                                 btnSalvarUsuario.Enabled = false;
-                                txtPesquisa.Text = "";
-                                this.CarregarDataGrid();
+                                txtNomePesquisa.Text = "";
+                                this.CarregarDataGrid(true, null, null, 0);
                             }
                         }
                     }
@@ -305,48 +113,12 @@ namespace EscalasMetodista.Views.Usuarios
             }
 
         }
-
         private void FormGerenciarUsuario_Load(object sender, EventArgs e)
         {
             this.preencheComboBoxTipoUsuario();
-            this.CarregarDataGrid();
+            this.CarregarDataGrid(true, null, null, 0);
             btnSalvarUsuario.Enabled = false;
         }
-
-        private void cbFuncaoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.preencheComboBoxSubFuncaoPrincipal();
-        }
-
-        private void cbFuncaoSecundaria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.preencheComboboxSubFuncaoSecundaria();
-        }
-
-        private void checkMostrarSenha_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkMostrarSenha.Checked)
-            {
-                txtSenha.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtSenha.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void btnLimparFuncaoPrincipal_Click(object sender, EventArgs e)
-        {
-            cbFuncaoPrincipal.Text = "Selecione...";
-            cbSubFuncaoPrincipal.Text = "Selecione...";
-        }
-
-        private void btnLimparFuncaoSecundaria_Click(object sender, EventArgs e)
-        {
-            cbFuncaoSecundaria.Text = "Selecione...";
-            cbSubFuncaoSecundaria.Text = "Selecione...";
-        }
-
         private void dgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // pegar o id para editar
@@ -362,7 +134,6 @@ namespace EscalasMetodista.Views.Usuarios
                 {
                     cbFuncaoSecundaria.Text = "Selecione...";
                     cbSubFuncaoSecundaria.Text = "Selecione...";
-
                 }
                 else
                 {
@@ -384,12 +155,39 @@ namespace EscalasMetodista.Views.Usuarios
                 btnSalvarUsuario.Enabled = true;
             }
         }
+        private void dgUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.preencheComboBoxFuncaoPrincipal();
+            this.preencheComboBoxFuncaoSecundaria();
 
+            if (dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString() == DBNull.Value.ToString())
+            {
+                cbFuncaoSecundaria.Text = "Selecione...";
+                cbSubFuncaoSecundaria.Text = "Selecione...";
+            }
+            else
+            {
+                cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value.ToString();
+                cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString();
+            }
+
+            txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            txtSobrenome.Text = dgUsuarios.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
+            txtEmail.Text = dgUsuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
+            txtSenha.Text = dgUsuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
+            cbTipoUsuario.Text = dgUsuarios.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
+            cbStatus.Text = dgUsuarios.Rows[e.RowIndex].Cells["status"].Value.ToString();
+            cbFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
+            cbSubFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
+            dtCadastro.Text = dgUsuarios.Rows[e.RowIndex].Cells["dataCadastro"].Value.ToString();
+
+            tabControl1.SelectedIndex = 1;
+            btnSalvarUsuario.Enabled = true;
+        }
         private void dgUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             dgUsuarios.Rows[e.RowIndex].Cells["editar"].ToolTipText = "Clique aqui para editar";
         }
-
         private void dgUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewColumn coluna in dgUsuarios.Columns)
@@ -457,15 +255,16 @@ namespace EscalasMetodista.Views.Usuarios
                 }
             }
         }
-        private void CarregarDataGrid()
+        private void CarregarDataGrid(Boolean atualizacao, String campo, String valor, int id)
         {
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conexao.Conectar();
+            SqlCommand cmd = new SqlCommand();
 
-                cmd.Connection = conexao.Conectar();
-                cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
+            if (atualizacao == true)
+            {
+                try
+                {
+                    cmd.Connection = conexao.Conectar();
+                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
                                   f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
                                   f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
                                   FROM pessoa AS p 
@@ -476,26 +275,259 @@ namespace EscalasMetodista.Views.Usuarios
                                   INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk";
 
 
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        // Cria uma tabela genérica
+                        DataTable dt = new DataTable();
+                        dt.Load(dr); // Carrega os dados para o DataTable
+                        dgUsuarios.DataSource = dt; // Preenche o DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro: " + erro.Message);
+                }
+                conexao.Desconectar();
+            }
+            else if (valor != null)
+            {
+
+                try
+                {
+                    cmd.Connection = conexao.Conectar();
+                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
+                                  f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
+                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
+                                  FROM pessoa AS p 
+	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
+	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
+	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
+	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
+                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND " + campo + " LIKE '" + valor + "'";
+
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        // Cria uma tabela genérica
+                        DataTable dt = new DataTable();
+                        dt.Load(dr); // Carrega os dados para o DataTable
+                        dgUsuarios.DataSource = dt; // Preenche o DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro: " + erro.Message);
+                }
+                conexao.Desconectar();
+
+            }
+            else if (valor == null)
+            {
+
+                try
+                {
+                    cmd.Connection = conexao.Conectar();
+                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
+                                  f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
+                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
+                                  FROM pessoa AS p 
+	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
+	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
+	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
+	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
+                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND " + campo + " = '" + id + "'";
+
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        // Cria uma tabela genérica
+                        DataTable dt = new DataTable();
+                        dt.Load(dr); // Carrega os dados para o DataTable
+                        dgUsuarios.DataSource = dt; // Preenche o DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro: " + erro.Message);
+                }
+                conexao.Desconectar();
+            }
+        }
+        private void preencheComboBoxTipoUsuario()
+        {
+            cmd.CommandText = "SELECT * FROM tipoUsuario";
+            Conexao conexao = new Conexao();
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                DataTable dt = new DataTable();
                 SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    // Cria uma tabela genérica
-                    DataTable dt = new DataTable();
-                    dt.Load(dr); // Carrega os dados para o DataTable
-                    dgUsuarios.DataSource = dt; // Preenche o DataGridView
-                }
-                else
-                {
-                    MessageBox.Show("erro");
-                }
+                dt.Load(dr);
+
+                cbTipoUsuario.DisplayMember = "descricao";
+                cbTipoUsuario.ValueMember = "idTipoUsuario";
+                cbTipoUsuario.DataSource = dt;
+
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Erro: " + erro.Message);
             }
-            conexao.Desconectar();
+            finally
+            {
+                conexao.Desconectar();
+            }
         }
+        private void preencheComboBoxFuncaoPrincipal()
+        {
+            cmd.CommandText = "SELECT * FROM funcao";
+            Conexao conexao = new Conexao();
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                DataTable dt = new DataTable();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
 
+                cbFuncaoPrincipal.DisplayMember = "descricaoFuncao";
+                cbFuncaoPrincipal.ValueMember = "idFuncao";
+                cbFuncaoPrincipal.DataSource = dt;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+        private void preencheComboBoxFuncaoSecundaria()
+        {
+            cmd.CommandText = "SELECT * FROM funcao";
+            Conexao conexao = new Conexao();
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                DataTable dt = new DataTable();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+
+                cbFuncaoSecundaria.DisplayMember = "descricaoFuncao";
+                cbFuncaoSecundaria.ValueMember = "idFuncao";
+                cbFuncaoSecundaria.DataSource = dt;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+        private void preencheComboBoxSubFuncaoPrincipal()
+        {
+            cmd.CommandText = "SELECT * FROM subfuncao WHERE idFuncao_fk = " + (int)cbFuncaoPrincipal.SelectedValue;
+            Conexao conexao = new Conexao();
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                DataTable dt = new DataTable();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+
+                cbSubFuncaoPrincipal.DisplayMember = "descricao";
+                cbSubFuncaoPrincipal.ValueMember = "idSubfuncao";
+                cbSubFuncaoPrincipal.DataSource = dt;
+
+                dr.Close();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+        private void preencheComboboxSubFuncaoSecundaria()
+        {
+            cmd.CommandText = "SELECT * FROM subfuncao WHERE idFuncao_fk = " + (int)cbFuncaoSecundaria.SelectedValue;
+            Conexao conexao = new Conexao();
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                DataTable dt = new DataTable();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+
+                cbSubFuncaoSecundaria.DisplayMember = "descricao";
+                cbSubFuncaoSecundaria.ValueMember = "idSubfuncao";
+                cbSubFuncaoSecundaria.DataSource = dt;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+        private void cbFuncaoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.preencheComboBoxSubFuncaoPrincipal();
+        }
+        private void cbFuncaoSecundaria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.preencheComboboxSubFuncaoSecundaria();
+        }
+        private void checkMostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkMostrarSenha.Checked)
+            {
+                txtSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtSenha.UseSystemPasswordChar = true;
+            }
+        }
+        private void btnLimparFuncaoPrincipal_Click(object sender, EventArgs e)
+        {
+            cbFuncaoPrincipal.Text = "Selecione...";
+            cbSubFuncaoPrincipal.Text = "Selecione...";
+        }
+        private void btnLimparFuncaoSecundaria_Click(object sender, EventArgs e)
+        {
+            cbFuncaoSecundaria.Text = "Selecione...";
+            cbSubFuncaoSecundaria.Text = "Selecione...";
+        }
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
         private void FormGerenciarUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)

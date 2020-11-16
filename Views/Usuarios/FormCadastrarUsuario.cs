@@ -51,8 +51,8 @@ namespace EscalasMetodista.Views.Usuarios
 
                 try
                 {
-                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, false, 0) == true ||
-                        Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text, false, 0) == true)
+                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, false, 0, null) == true ||
+                        Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text, false, 0, null) == true)
                     {
                         MessageBox.Show("O e-mail e/ou senha já está em uso!", "E-mail/Senha já Cadastrado ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

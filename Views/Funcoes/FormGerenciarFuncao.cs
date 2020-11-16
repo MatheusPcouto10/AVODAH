@@ -26,33 +26,46 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            if (txtPesquisa.Text == "")
+            if (txtNomePesquisa.Text == "" && txtIdPesquisa.Text == "")
             {
-                this.CarregarDataGrid();
+                this.CarregarDataGrid(true, null, null, 0);
             }
             else
             {
+                if (txtIdPesquisa.Text != "")
+                {
+                    this.CarregarDataGrid(false, "idFuncao", null, Int32.Parse(txtIdPesquisa.Text));
+                }
+                else if (txtNomePesquisa.Text != "")
+                {
+                    this.CarregarDataGrid(false, "descricaoFuncao", txtNomePesquisa.Text, 0);
+                }
+            }
+        }
+
+        private void CarregarDataGrid(Boolean atualizacao, String campo, String valor, int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            if (atualizacao == true)
+            {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conexao.Conectar();
+                    cmd.CommandText = "SELECT * FROM funcao";
 
-                    cmd.CommandText = "SELECT * FROM funcao WHERE descricaoFuncao LIKE '%" + txtPesquisa.Text + "%'";
 
                     SqlDataReader dr = cmd.ExecuteReader();
-
-                    if (dr.HasRows == true)
+                    if (dr.HasRows)
                     {
-
+                        // Cria uma tabela genérica
                         DataTable dt = new DataTable();
-
-                        dt.Load(dr);
-                        dgFuncoes.DataSource = dt;
-
+                        dt.Load(dr); // Carrega os dados para o DataTable
+                        dgFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
                     {
-                        MessageBox.Show("Nenhuma Função Encontrada", " ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Nenhuma Função foi encontrada!", "Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception erro)
@@ -61,36 +74,60 @@ namespace EscalasMetodista.Views.Funcoes
                 }
                 conexao.Desconectar();
             }
-        }
-        private void CarregarDataGrid()
-        {
-            try
+            else if (valor != null)
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conexao.Conectar();
-
-                cmd.Connection = conexao.Conectar();
-                cmd.CommandText = "SELECT * FROM funcao";
-
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                try
                 {
-                    // Cria uma tabela genérica
-                    DataTable dt = new DataTable();
-                    dt.Load(dr); // Carrega os dados para o DataTable
-                    dgFuncoes.DataSource = dt; // Preenche o DataGridView
+                    cmd.Connection = conexao.Conectar();
+                    cmd.CommandText = "SELECT * FROM funcao WHERE "  + campo + " LIKE '%" + valor + "%'";
+
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        // Cria uma tabela genérica
+                        DataTable dt = new DataTable();
+                        dt.Load(dr); // Carrega os dados para o DataTable
+                        dgFuncoes.DataSource = dt; // Preenche o DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhuma Função foi encontrada!", "Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else
+                catch (Exception erro)
                 {
-                    MessageBox.Show("erro");
+                    MessageBox.Show("Erro: " + erro.Message);
                 }
+                conexao.Desconectar();
+
             }
-            catch (Exception erro)
+            else if (valor == null)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                try
+                {
+                    cmd.Connection = conexao.Conectar();
+                    cmd.CommandText = "SELECT * FROM funcao WHERE " + campo + " = '" + id + "'";
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        // Cria uma tabela genérica
+                        DataTable dt = new DataTable();
+                        dt.Load(dr); // Carrega os dados para o DataTable
+                        dgFuncoes.DataSource = dt; // Preenche o DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhuma Função foi encontrada!", "Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro: " + erro.Message);
+                }
+                conexao.Desconectar();
             }
-            conexao.Desconectar();
         }
 
         private void dgFuncoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -136,7 +173,7 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void FormGerenciarFunção_Load(object sender, EventArgs e)
         {
-            this.CarregarDataGrid();
+            this.CarregarDataGrid(true, null, null, 0);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -151,7 +188,7 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void FormGerenciarFuncao_Activated(object sender, EventArgs e)
         {
-            this.CarregarDataGrid();
+            this.CarregarDataGrid(true, null, null, 0);
         }
 
         private void FormGerenciarFuncao_KeyDown(object sender, KeyEventArgs e)

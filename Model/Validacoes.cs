@@ -32,13 +32,13 @@ namespace EscalasMetodista.Model
             return true;
         }
 
-        public static Boolean verificaUnico(String campo, String tabela, String valor, Boolean update, int idPessoa)
+        public static Boolean verificaUnico(String campo, String tabela, String valor, Boolean update, int idPessoa, String idCampo)
         {
             SqlCommand cmd = new SqlCommand();
 
             if (update == true)
             {
-                cmd.CommandText = "SELECT " + campo + " FROM " + tabela + " WHERE " + campo + " = '" + valor + "' AND idPessoa != " + idPessoa;
+                cmd.CommandText = "SELECT " + campo + " FROM " + tabela + " WHERE " + campo + " = '" + valor + "' AND " + idCampo + " != " + idPessoa;
                 Conexao conexao = new Conexao();
                 cmd.Connection = conexao.Conectar();
                 SqlDataReader dr = cmd.ExecuteReader();

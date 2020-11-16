@@ -33,23 +33,23 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.telaPesquisa = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtIdPesquisa = new System.Windows.Forms.TextBox();
+            this.btnPesquisa = new System.Windows.Forms.Button();
+            this.txtNomePesquisa = new System.Windows.Forms.TextBox();
+            this.dgFuncoes = new System.Windows.Forms.DataGridView();
+            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.telaPesquisa = new System.Windows.Forms.TabPage();
-            this.fillByNomeToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.txtPesquisa = new System.Windows.Forms.ToolStripTextBox();
-            this.btnPesquisa = new System.Windows.Forms.ToolStripButton();
-            this.dgFuncoes = new System.Windows.Forms.DataGridView();
-            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel_rodape.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.telaPesquisa.SuspendLayout();
-            this.fillByNomeToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_rodape
@@ -88,7 +88,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(209, 19);
+            this.label1.Location = new System.Drawing.Point(227, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(341, 17);
             this.label1.TabIndex = 0;
@@ -108,43 +108,15 @@
             this.tabControl1.Size = new System.Drawing.Size(788, 504);
             this.tabControl1.TabIndex = 5;
             // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 125;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(775, 46);
-            this.panel1.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(264, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(258, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "GERENCIAR FUNÇÕES";
-            // 
             // telaPesquisa
             // 
             this.telaPesquisa.BackColor = System.Drawing.SystemColors.ControlDark;
             this.telaPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
-            this.telaPesquisa.Controls.Add(this.fillByNomeToolStrip);
+            this.telaPesquisa.Controls.Add(this.label11);
+            this.telaPesquisa.Controls.Add(this.label7);
+            this.telaPesquisa.Controls.Add(this.txtIdPesquisa);
+            this.telaPesquisa.Controls.Add(this.btnPesquisa);
+            this.telaPesquisa.Controls.Add(this.txtNomePesquisa);
             this.telaPesquisa.Controls.Add(this.dgFuncoes);
             this.telaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telaPesquisa.Location = new System.Drawing.Point(4, 26);
@@ -155,48 +127,77 @@
             this.telaPesquisa.TabIndex = 0;
             this.telaPesquisa.Text = "Pesquisa";
             // 
-            // fillByNomeToolStrip
+            // label11
             // 
-            this.fillByNomeToolStrip.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fillByNomeToolStrip.BackColor = System.Drawing.SystemColors.Control;
-            this.fillByNomeToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.fillByNomeToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.fillByNomeToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.fillByNomeToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.txtPesquisa,
-            this.btnPesquisa});
-            this.fillByNomeToolStrip.Location = new System.Drawing.Point(230, 75);
-            this.fillByNomeToolStrip.Name = "fillByNomeToolStrip";
-            this.fillByNomeToolStrip.Size = new System.Drawing.Size(340, 27);
-            this.fillByNomeToolStrip.TabIndex = 6;
-            this.fillByNomeToolStrip.Text = "fillByNomeToolStrip";
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(316, 48);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 17);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Função";
             // 
-            // toolStripLabel1
+            // label7
             // 
-            this.toolStripLabel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.toolStripLabel1.Font = new System.Drawing.Font("Verdana", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(107, 24);
-            this.toolStripLabel1.Text = "PESQUISAR:";
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(227, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 17);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "ID";
             // 
-            // txtPesquisa
+            // txtIdPesquisa
             // 
-            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(199, 27);
+            this.txtIdPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIdPesquisa.BackColor = System.Drawing.Color.White;
+            this.txtIdPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdPesquisa.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtIdPesquisa.Location = new System.Drawing.Point(230, 77);
+            this.txtIdPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdPesquisa.Name = "txtIdPesquisa";
+            this.txtIdPesquisa.Size = new System.Drawing.Size(83, 23);
+            this.txtIdPesquisa.TabIndex = 13;
             // 
             // btnPesquisa
             // 
+            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPesquisa.Image = global::EscalasMetodista.Properties.Resources.searchmagnifierinterfacesymbol1_79893;
-            this.btnPesquisa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.kisspng_forest_lake_computer_icons_inspection_white_wine_search_bar_5addbd8c2df2a6_8041717315244814201882;
+            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPesquisa.FlatAppearance.BorderSize = 0;
+            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.Location = new System.Drawing.Point(524, 73);
+            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(29, 24);
-            this.btnPesquisa.Text = "toolStripButton1";
+            this.btnPesquisa.Size = new System.Drawing.Size(44, 26);
+            this.btnPesquisa.TabIndex = 12;
+            this.btnPesquisa.UseVisualStyleBackColor = false;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            // 
+            // txtNomePesquisa
+            // 
+            this.txtNomePesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNomePesquisa.BackColor = System.Drawing.Color.White;
+            this.txtNomePesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNomePesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomePesquisa.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtNomePesquisa.Location = new System.Drawing.Point(319, 77);
+            this.txtNomePesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNomePesquisa.Name = "txtNomePesquisa";
+            this.txtNomePesquisa.Size = new System.Drawing.Size(199, 23);
+            this.txtNomePesquisa.TabIndex = 11;
             // 
             // dgFuncoes
             // 
@@ -234,6 +235,38 @@
             this.editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.editar.Width = 1099;
             // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 125;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(775, 46);
+            this.panel1.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(267, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(258, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "GERENCIAR FUNÇÕES";
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "";
@@ -265,13 +298,11 @@
             this.panel_rodape.ResumeLayout(false);
             this.panel_rodape.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.telaPesquisa.ResumeLayout(false);
             this.telaPesquisa.PerformLayout();
-            this.fillByNomeToolStrip.ResumeLayout(false);
-            this.fillByNomeToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -282,15 +313,16 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage telaPesquisa;
-        private System.Windows.Forms.ToolStrip fillByNomeToolStrip;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox txtPesquisa;
-        private System.Windows.Forms.ToolStripButton btnPesquisa;
         public System.Windows.Forms.DataGridView dgFuncoes;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn editar;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtIdPesquisa;
+        private System.Windows.Forms.Button btnPesquisa;
+        private System.Windows.Forms.TextBox txtNomePesquisa;
     }
 }
