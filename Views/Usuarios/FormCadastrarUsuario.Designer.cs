@@ -243,7 +243,7 @@
             this.btnLimparFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimparFuncaoPrincipal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(400, 10);
+            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(400, 9);
             this.btnLimparFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimparFuncaoPrincipal.Name = "btnLimparFuncaoPrincipal";
             this.btnLimparFuncaoPrincipal.Size = new System.Drawing.Size(20, 20);

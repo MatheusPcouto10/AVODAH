@@ -32,3 +32,4 @@ C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Usuarios.FormCadastrarUsuario.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Usuarios.FormGerenciarUsuario.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Usuarios.FormPesquisaUsuario.resources
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.FormSobre.resources

@@ -81,7 +81,7 @@
             this.txtPesquisaEscala.BackColor = System.Drawing.Color.White;
             this.txtPesquisaEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPesquisaEscala.Font = new System.Drawing.Font("Verdana", 12F);
-            this.txtPesquisaEscala.Location = new System.Drawing.Point(77, 35);
+            this.txtPesquisaEscala.Location = new System.Drawing.Point(31, 40);
             this.txtPesquisaEscala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPesquisaEscala.Name = "txtPesquisaEscala";
             this.txtPesquisaEscala.Size = new System.Drawing.Size(335, 25);
@@ -89,7 +89,7 @@
             // 
             // panel_rodape
             // 
-            this.panel_rodape.BackColor = System.Drawing.Color.Maroon;
+            this.panel_rodape.BackColor = System.Drawing.Color.DarkRed;
             this.panel_rodape.Controls.Add(this.label1);
             this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_rodape.Location = new System.Drawing.Point(0, 654);
@@ -142,7 +142,7 @@
             // btnAlterarSenha
             // 
             this.btnAlterarSenha.Name = "btnAlterarSenha";
-            this.btnAlterarSenha.Size = new System.Drawing.Size(196, 26);
+            this.btnAlterarSenha.Size = new System.Drawing.Size(224, 26);
             this.btnAlterarSenha.Text = "Alterar Senha";
             this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
             // 
@@ -159,6 +159,7 @@
             this.btnSobre.Name = "btnSobre";
             this.btnSobre.Size = new System.Drawing.Size(52, 24);
             this.btnSobre.Text = "Sobre";
+            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
             // 
             // toolStripSeparator3
             // 
@@ -201,15 +202,15 @@
             // 
             // novoUsuárioToolStripMenuItem
             // 
-            this.novoUsuárioToolStripMenuItem.Name = "novoUsuarioToolStripMenuItem";
-            this.novoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.novoUsuárioToolStripMenuItem.Name = "novoUsuárioToolStripMenuItem";
+            this.novoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.novoUsuárioToolStripMenuItem.Text = "Novo Usuário";
             this.novoUsuárioToolStripMenuItem.Click += new System.EventHandler(this.novoUsuarioToolStripMenuItem_Click);
             // 
             // gerenciarUsuárioToolStripMenuItem
             // 
-            this.gerenciarUsuárioToolStripMenuItem.Name = "gerenciarUsuarioToolStripMenuItem";
-            this.gerenciarUsuárioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gerenciarUsuárioToolStripMenuItem.Name = "gerenciarUsuárioToolStripMenuItem";
+            this.gerenciarUsuárioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.gerenciarUsuárioToolStripMenuItem.Text = "Gerenciar Usuário";
             this.gerenciarUsuárioToolStripMenuItem.Click += new System.EventHandler(this.gerenciarUsuarioToolStripMenuItem_Click);
             // 
@@ -444,12 +445,13 @@
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.Location = new System.Drawing.Point(13, 34);
+            this.btnPesquisa.Location = new System.Drawing.Point(372, 39);
             this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(58, 26);
+            this.btnPesquisa.Size = new System.Drawing.Size(47, 26);
             this.btnPesquisa.TabIndex = 1;
             this.btnPesquisa.UseVisualStyleBackColor = false;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // logo_metodista
             // 

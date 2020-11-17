@@ -63,6 +63,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Session\UsuarioSession.cs" />
+    <Compile Include="Views\FormSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormSobre.Designer.cs">
+      <DependentUpon>FormSobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Usuarios\FormAlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     <Compile Include="Views\Usuarios\FormPesquisaUsuario.Designer.cs">
       <DependentUpon>FormPesquisaUsuario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\FormSobre.resx">
+      <DependentUpon>FormSobre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuarios\FormAlterarSenha.resx">
       <DependentUpon>FormAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>

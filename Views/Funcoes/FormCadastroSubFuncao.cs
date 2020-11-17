@@ -44,11 +44,9 @@ namespace EscalasMetodista.Views
                     if (Validacoes.ValidarObjeto(subFuncoes) == true)
                     {
                         subFuncoes.update(subFuncoes, idSubFuncao);
+                        this.Close();
+                        txtDescricao.Text = " ";
                     }
-
-                    txtDescricao.Text = " ";
-                    updateFuncao = false;
-                    this.Close();
                 }
 
             }
@@ -67,7 +65,7 @@ namespace EscalasMetodista.Views
                     txtDescricao.Text = " ";
                 }
             }
-
+            updateFuncao = false;
         }
 
         private void preencheComboBoxFuncoes()

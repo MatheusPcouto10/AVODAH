@@ -56,7 +56,6 @@ namespace EscalasMetodista
                 else
                 {
                     MessageBox.Show("Usuário e/ou senha incorretos!", "Dados incorretos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.btnLimpar_Click(null, null);
                 }
 
             }

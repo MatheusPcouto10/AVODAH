@@ -1,4 +1,5 @@
 ﻿using EscalasMetodista.Conexão;
+using EscalasMetodista.Model;
 using EscalasMetodista.Session;
 using System;
 using System.Collections.Generic;
@@ -25,42 +26,58 @@ namespace EscalasMetodista.Views
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
 
-            try
+            if ((txtNovaSenha.Text == "") || (txtSenhaAtual.Text == "") || (txtConfirmarSenha.Text == ""))
             {
-                cmd.CommandText = "SELECT senha FROM pessoa where idPessoa = " + UsuarioSession.idUsuario;
-                cmd.Connection = conexao.Conectar();
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                if (dr.Read())
+                MessageBox.Show("É necessário informar os campos!", "Campos não informados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
                 {
-                    if (dr.GetString(0) == txtSenhaAtual.Text)
-                    {
-                        if (txtNovaSenha.Text == txtConfirmarSenha.Text)
-                        {
-                            conexao.Desconectar();
-                            cmd.CommandText = "UPDATE pessoa SET senha = '" + txtNovaSenha.Text +
-                                              "' WHERE idPessoa = " + UsuarioSession.idUsuario;
+                    cmd.CommandText = "SELECT senha FROM pessoa where idPessoa = " + UsuarioSession.idUsuario;
+                    cmd.Connection = conexao.Conectar();
+                    SqlDataReader dr = cmd.ExecuteReader();
 
-                            cmd.Connection = conexao.Conectar();
-                            cmd.ExecuteNonQuery();
-                            conexao.Desconectar();
-                            MessageBox.Show("Senha alterada com sucesso!");
-                            this.Hide();
+                    if (dr.Read())
+                    {
+
+                        if (dr.GetString(0) == txtSenhaAtual.Text)
+                        {
+                            if (Validacoes.verificaUnico("senha", "pessoa", txtNovaSenha.Text, false, 0, null) == true)
+                            {
+                                MessageBox.Show("A senha informada já está em uso!", "Senha já Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                if (txtNovaSenha.Text == txtConfirmarSenha.Text)
+                                {
+                                    conexao.Desconectar();
+                                    cmd.CommandText = "UPDATE pessoa SET senha = '" + txtNovaSenha.Text +
+                                                      "' WHERE idPessoa = " + UsuarioSession.idUsuario;
+
+                                    cmd.Connection = conexao.Conectar();
+                                    cmd.ExecuteNonQuery();
+                                    conexao.Desconectar();
+                                    MessageBox.Show("Senha alterada com sucesso!");
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("A nova senha não corresponde!", "Senha Incorreta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("A nova senha não corresponde!", "Senha Incorreta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("A senha atual está incorreta!", "Senha Incorreta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("A senha atual está incorreta!", "Senha Incorreta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex);
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex);
+                }
             }
         }
 

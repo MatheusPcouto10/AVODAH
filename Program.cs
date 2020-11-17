@@ -1,4 +1,5 @@
-﻿using EscalasMetodista.Views.Funcoes;
+﻿using EscalasMetodista.Views;
+using EscalasMetodista.Views.Funcoes;
 using EscalasMetodista.Views.Usuarios;
 using System;
 using System.Collections.Generic;

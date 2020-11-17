@@ -21,31 +21,9 @@ namespace EscalasMetodista
             InitializeComponent();
         }
 
-        private void FormMenu_KeyDown(object sender, KeyEventArgs e)
+        private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Enter:
-                    //this.btnPesquisa(null, null);
-                    break;
-                case Keys.Escape:
-                    this.Close();
-                    break;
-                default:
-                    break;
-            }
-        }
 
-        private void novaFunçãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormCadastroFuncao form = new FormCadastroFuncao();
-            form.Show();
-        }
-
-        private void novaSubFunçãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormCadastroSubFuncao form = new FormCadastroSubFuncao();
-            form.Show();
         }
 
         private void controleAcesso()
@@ -56,11 +34,6 @@ namespace EscalasMetodista
                 this.btnUsuarios.Enabled = false;
                 this.btnRelatorios.Enabled = false;
             }
-        }
-
-        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -78,10 +51,10 @@ namespace EscalasMetodista
             this.btnPerfil.Text = "Bem vindo " + UsuarioSession.nomeUsuario + " !";
             this.controleAcesso();
         }
-        private void gerenciarFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FormGerenciarFuncao form = new FormGerenciarFuncao();
-            form.Show();
+            Application.Exit();
         }
 
         private void dgEscalas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -126,6 +99,45 @@ namespace EscalasMetodista
         {
             FormGerenciarUsuario form = new FormGerenciarUsuario();
             form.Show();
+        }
+
+        private void novaFunçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastroFuncao form = new FormCadastroFuncao();
+            form.Show();
+        }
+
+        private void novaSubFunçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastroSubFuncao form = new FormCadastroSubFuncao();
+            form.Show();
+        }
+
+        private void gerenciarFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGerenciarFuncao form = new FormGerenciarFuncao();
+            form.Show();
+        }
+
+        private void btnSobre_Click(object sender, EventArgs e)
+        {
+            FormSobre form = new FormSobre();
+            form.Show();
+        }
+
+        private void FormMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    //this.btnPesquisa(null, null);
+                    break;
+                case Keys.Escape:
+                    this.Close();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

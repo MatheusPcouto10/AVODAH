@@ -37,10 +37,9 @@ namespace EscalasMetodista.Views
                     if (Validacoes.ValidarObjeto(funcoes) == true)
                     {
                         funcoes.update(funcoes, idFuncao);
+                        this.Close();
+                        txtDescricaoFuncao.Text = " ";
                     }
-                    txtDescricaoFuncao.Text = " ";
-                    updateFuncao = false;
-                    this.Close();
                 }
             }
             else
@@ -58,7 +57,7 @@ namespace EscalasMetodista.Views
                     txtDescricaoFuncao.Text = " ";
                 }
             }
-
+            updateFuncao = false;
         }
 
         private void FormCadastroFuncao_KeyDown(object sender, KeyEventArgs e)
