@@ -48,7 +48,10 @@ namespace EscalasMetodista
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
+            DateTime dataHoje = DateTime.Today;
             this.btnPerfil.Text = "Bem vindo " + UsuarioSession.nomeUsuario + " !";
+            this.labelIdUsuarioLogado.Text = "Código: " + UsuarioSession.idUsuario;
+            this.labelData.Text = "Data: " + dataHoje.ToString("D");
             this.controleAcesso();
         }
 
@@ -77,7 +80,7 @@ namespace EscalasMetodista
             }
         }
 
-        private void gerenciarSubFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gerenciarSubFunçoesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormGerenciarSubfuncoes form = new FormGerenciarSubfuncoes();
             form.Show();
@@ -101,19 +104,19 @@ namespace EscalasMetodista
             form.Show();
         }
 
-        private void novaFunçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void novaFunçaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCadastroFuncao form = new FormCadastroFuncao();
             form.Show();
         }
 
-        private void novaSubFunçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void novaSubFunçaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCadastroSubFuncao form = new FormCadastroSubFuncao();
             form.Show();
         }
 
-        private void gerenciarFunçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gerenciarFunçoesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormGerenciarFuncao form = new FormGerenciarFuncao();
             form.Show();

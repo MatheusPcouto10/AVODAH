@@ -186,9 +186,6 @@
     <None Include="Resources\006.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1485476000-artboard-1_78543.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconfinder-folder-4341292_120540.png" />
   </ItemGroup>
   <ItemGroup>
@@ -216,9 +213,6 @@
     <None Include="Resources\8595.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\kisspng-material-font-search-icon-5b21819439b852.2823675615289225162364.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882.png" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +220,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\seo-social-web-network-internet_322_icon-icons.com_61532.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486564400-account_81513.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486504829-clipboard-tasks-report-business-checking-verification-list_81387.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486504843-collaboration-group-people-men-user-team-users_81379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\System-preferences_46991.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486504846-clipboard-tasks-report-business-checking-verification-document_81354.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

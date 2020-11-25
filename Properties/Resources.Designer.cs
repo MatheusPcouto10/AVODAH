@@ -83,9 +83,39 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1485476000_artboard_1_78543 {
+        internal static System.Drawing.Bitmap _1486504829_clipboard_tasks_report_business_checking_verification_list_81387 {
             get {
-                object obj = ResourceManager.GetObject("1485476000-artboard-1_78543", resourceCulture);
+                object obj = ResourceManager.GetObject("1486504829-clipboard-tasks-report-business-checking-verification-list_81387", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486504843_collaboration_group_people_men_user_team_users_81379 {
+            get {
+                object obj = ResourceManager.GetObject("1486504843-collaboration-group-people-men-user-team-users_81379", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486504846_clipboard_tasks_report_business_checking_verification_document_81354 {
+            get {
+                object obj = ResourceManager.GetObject("1486504846-clipboard-tasks-report-business-checking-verification-document_81354", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486564400_account_81513 {
+            get {
+                object obj = ResourceManager.GetObject("1486564400-account_81513", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -174,16 +204,6 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap kisspng_material_font_search_icon_5b21819439b852_2823675615289225162364 {
-            get {
-                object obj = ResourceManager.GetObject("kisspng-material-font-search-icon-5b21819439b852.2823675615289225162364", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ocLJYEKLE1aHAy9jGKX_2g_store_banner_image {
             get {
                 object obj = ResourceManager.GetObject("ocLJYEKLE1aHAy9jGKX_2g_store_banner_image", resourceCulture);
@@ -227,6 +247,16 @@ namespace EscalasMetodista.Properties {
         internal static System.Drawing.Bitmap sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241 {
             get {
                 object obj = ResourceManager.GetObject("sobreposicao-de-rotulo-vermelho-sobre-fundo-metalico-cinzento-escuro_33869-1241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap System_preferences_46991 {
+            get {
+                object obj = ResourceManager.GetObject("System-preferences_46991", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

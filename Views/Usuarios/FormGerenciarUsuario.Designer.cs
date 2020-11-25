@@ -88,7 +88,7 @@
             this.panel_rodape.Location = new System.Drawing.Point(0, 676);
             this.panel_rodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_rodape.Name = "panel_rodape";
-            this.panel_rodape.Size = new System.Drawing.Size(1283, 45);
+            this.panel_rodape.Size = new System.Drawing.Size(1315, 45);
             this.panel_rodape.TabIndex = 9;
             // 
             // btnVoltar
@@ -114,7 +114,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(476, 19);
+            this.label1.Location = new System.Drawing.Point(492, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(341, 17);
             this.label1.TabIndex = 0;
@@ -132,7 +132,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1283, 600);
+            this.tabControl1.Size = new System.Drawing.Size(1315, 600);
             this.tabControl1.TabIndex = 9;
             // 
             // telaPesquisa
@@ -151,7 +151,7 @@
             this.telaPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.telaPesquisa.Name = "telaPesquisa";
             this.telaPesquisa.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.telaPesquisa.Size = new System.Drawing.Size(1275, 570);
+            this.telaPesquisa.Size = new System.Drawing.Size(1307, 570);
             this.telaPesquisa.TabIndex = 0;
             this.telaPesquisa.Text = "Pesquisa";
             // 
@@ -162,7 +162,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(561, 34);
+            this.label11.Location = new System.Drawing.Point(598, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 17);
             this.label11.TabIndex = 10;
@@ -175,7 +175,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(472, 34);
+            this.label7.Location = new System.Drawing.Point(509, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 17);
             this.label7.TabIndex = 9;
@@ -187,11 +187,12 @@
             this.txtIdPesquisa.BackColor = System.Drawing.Color.White;
             this.txtIdPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdPesquisa.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtIdPesquisa.Location = new System.Drawing.Point(475, 64);
+            this.txtIdPesquisa.Location = new System.Drawing.Point(507, 64);
             this.txtIdPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdPesquisa.Name = "txtIdPesquisa";
             this.txtIdPesquisa.Size = new System.Drawing.Size(83, 23);
             this.txtIdPesquisa.TabIndex = 8;
+            this.txtIdPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnPesquisa
             // 
@@ -206,7 +207,7 @@
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.Location = new System.Drawing.Point(798, 60);
+            this.btnPesquisa.Location = new System.Drawing.Point(830, 60);
             this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisa.Name = "btnPesquisa";
             this.btnPesquisa.Size = new System.Drawing.Size(44, 26);
@@ -220,7 +221,7 @@
             this.txtNomePesquisa.BackColor = System.Drawing.Color.White;
             this.txtNomePesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomePesquisa.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtNomePesquisa.Location = new System.Drawing.Point(564, 64);
+            this.txtNomePesquisa.Location = new System.Drawing.Point(596, 64);
             this.txtNomePesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomePesquisa.Name = "txtNomePesquisa";
             this.txtNomePesquisa.Size = new System.Drawing.Size(228, 23);
@@ -246,7 +247,7 @@
             this.dgUsuarios.RowHeadersWidth = 51;
             this.dgUsuarios.RowTemplate.Height = 24;
             this.dgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUsuarios.Size = new System.Drawing.Size(1246, 417);
+            this.dgUsuarios.Size = new System.Drawing.Size(1291, 417);
             this.dgUsuarios.TabIndex = 5;
             this.dgUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellContentClick);
             this.dgUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellDoubleClick);
@@ -288,7 +289,7 @@
             this.telaEditar.Location = new System.Drawing.Point(4, 26);
             this.telaEditar.Name = "telaEditar";
             this.telaEditar.Padding = new System.Windows.Forms.Padding(3);
-            this.telaEditar.Size = new System.Drawing.Size(1275, 570);
+            this.telaEditar.Size = new System.Drawing.Size(1307, 570);
             this.telaEditar.TabIndex = 1;
             this.telaEditar.Text = "Editar";
             this.telaEditar.UseVisualStyleBackColor = true;
@@ -615,7 +616,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(474, 19);
+            this.label2.Location = new System.Drawing.Point(511, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(322, 29);
             this.label2.TabIndex = 0;
@@ -630,7 +631,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1283, 70);
+            this.panel1.Size = new System.Drawing.Size(1315, 70);
             this.panel1.TabIndex = 8;
             // 
             // FormGerenciarUsuario
@@ -638,7 +639,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1283, 721);
+            this.ClientSize = new System.Drawing.Size(1315, 721);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel_rodape);
             this.Controls.Add(this.panel1);
@@ -701,10 +702,10 @@
         private System.Windows.Forms.Button btnSalvarUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.TextBox txtNomePesquisa;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.TextBox txtIdPesquisa;
+        private System.Windows.Forms.TextBox txtNomePesquisa;
     }
 }

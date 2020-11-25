@@ -30,18 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtPesquisaEscala = new System.Windows.Forms.TextBox();
             this.panel_rodape = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.btnPerfil = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnAlterarSenha = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSobre = new System.Windows.Forms.ToolStripButton();
+            this.btnEscalas = new System.Windows.Forms.ToolStripDropDownButton();
+            this.novaEscalaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnRelatorios = new System.Windows.Forms.ToolStripSplitButton();
-            this.relatórioDePessoasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnUsuarios = new System.Windows.Forms.ToolStripSplitButton();
             this.novoUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,59 +50,49 @@
             this.gerenciarFunçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarSubFunçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSair = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnRelatorios = new System.Windows.Forms.ToolStripSplitButton();
+            this.relatórioDePessoasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSobre = new System.Windows.Forms.ToolStripButton();
             this.panel_principal = new System.Windows.Forms.Panel();
-            this.linkNovaEscala = new System.Windows.Forms.LinkLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.linkAbrirArquivo = new System.Windows.Forms.LinkLabel();
+            this.labelData = new System.Windows.Forms.Label();
+            this.labelIdUsuarioLogado = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_botoes = new System.Windows.Forms.Panel();
             this.dgEscalas = new System.Windows.Forms.DataGridView();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataAlteracao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPesquisa = new System.Windows.Forms.Button();
+            this.txtPesquisaEscala = new System.Windows.Forms.TextBox();
             this.logo_metodista = new System.Windows.Forms.PictureBox();
             this.panel_rodape.SuspendLayout();
             this.toolStripMenu.SuspendLayout();
             this.panel_principal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_botoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtPesquisaEscala
-            // 
-            this.txtPesquisaEscala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisaEscala.BackColor = System.Drawing.Color.White;
-            this.txtPesquisaEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPesquisaEscala.Font = new System.Drawing.Font("Verdana", 12F);
-            this.txtPesquisaEscala.Location = new System.Drawing.Point(31, 40);
-            this.txtPesquisaEscala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPesquisaEscala.Name = "txtPesquisaEscala";
-            this.txtPesquisaEscala.Size = new System.Drawing.Size(335, 25);
-            this.txtPesquisaEscala.TabIndex = 0;
-            // 
             // panel_rodape
             // 
             this.panel_rodape.BackColor = System.Drawing.Color.DarkRed;
             this.panel_rodape.Controls.Add(this.label1);
             this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_rodape.Location = new System.Drawing.Point(0, 654);
+            this.panel_rodape.Location = new System.Drawing.Point(0, 653);
             this.panel_rodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_rodape.Name = "panel_rodape";
-            this.panel_rodape.Size = new System.Drawing.Size(925, 38);
+            this.panel_rodape.Size = new System.Drawing.Size(925, 39);
             this.panel_rodape.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(285, 4);
+            this.label1.Location = new System.Drawing.Point(289, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(341, 17);
             this.label1.TabIndex = 0;
@@ -117,14 +105,16 @@
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPerfil,
             this.toolStripSeparator2,
-            this.btnSobre,
+            this.btnEscalas,
             this.toolStripSeparator3,
-            this.btnRelatorios,
-            this.toolStripSeparator4,
             this.btnUsuarios,
             this.toolStripSeparator6,
             this.btnFuncoes,
-            this.btnSair});
+            this.btnSair,
+            this.toolStripSeparator4,
+            this.btnRelatorios,
+            this.toolStripSeparator5,
+            this.btnSobre});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.Size = new System.Drawing.Size(925, 27);
@@ -135,14 +125,16 @@
             this.btnPerfil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAlterarSenha});
             this.btnPerfil.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPerfil.Image = global::EscalasMetodista.Properties.Resources._1486564400_account_81513;
             this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(185, 24);
+            this.btnPerfil.Size = new System.Drawing.Size(205, 24);
             this.btnPerfil.Text = "Bem vindo Matheus !";
             // 
             // btnAlterarSenha
             // 
+            this.btnAlterarSenha.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.btnAlterarSenha.Name = "btnAlterarSenha";
-            this.btnAlterarSenha.Size = new System.Drawing.Size(224, 26);
+            this.btnAlterarSenha.Size = new System.Drawing.Size(186, 26);
             this.btnAlterarSenha.Text = "Alterar Senha";
             this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
             // 
@@ -151,65 +143,55 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // btnSobre
+            // btnEscalas
             // 
-            this.btnSobre.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
-            this.btnSobre.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(52, 24);
-            this.btnSobre.Text = "Sobre";
-            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
+            this.btnEscalas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novaEscalaToolStripMenuItem,
+            this.abrirArquivoToolStripMenuItem});
+            this.btnEscalas.Image = global::EscalasMetodista.Properties.Resources._1486504829_clipboard_tasks_report_business_checking_verification_list_81387;
+            this.btnEscalas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEscalas.Name = "btnEscalas";
+            this.btnEscalas.Size = new System.Drawing.Size(90, 24);
+            this.btnEscalas.Text = "Escalas";
+            // 
+            // novaEscalaToolStripMenuItem
+            // 
+            this.novaEscalaToolStripMenuItem.Name = "novaEscalaToolStripMenuItem";
+            this.novaEscalaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.novaEscalaToolStripMenuItem.Text = "Nova Escala";
+            // 
+            // abrirArquivoToolStripMenuItem
+            // 
+            this.abrirArquivoToolStripMenuItem.Name = "abrirArquivoToolStripMenuItem";
+            this.abrirArquivoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.abrirArquivoToolStripMenuItem.Text = "Abrir Arquivo";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
             // 
-            // btnRelatorios
-            // 
-            this.btnRelatorios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnRelatorios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relatórioDePessoasToolStripMenuItem});
-            this.btnRelatorios.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorios.Image")));
-            this.btnRelatorios.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(95, 24);
-            this.btnRelatorios.Text = "Relatórios";
-            // 
-            // relatórioDePessoasToolStripMenuItem
-            // 
-            this.relatórioDePessoasToolStripMenuItem.Name = "relatórioDePessoasToolStripMenuItem";
-            this.relatórioDePessoasToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
-            this.relatórioDePessoasToolStripMenuItem.Text = "Relatório de Pessoas";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
-            // 
             // btnUsuarios
             // 
-            this.btnUsuarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnUsuarios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novoUsuárioToolStripMenuItem,
             this.gerenciarUsuárioToolStripMenuItem});
+            this.btnUsuarios.Image = global::EscalasMetodista.Properties.Resources._1486504843_collaboration_group_people_men_user_team_users_81379;
             this.btnUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(84, 24);
+            this.btnUsuarios.Size = new System.Drawing.Size(104, 24);
             this.btnUsuarios.Text = "Usuários";
-            this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             // 
             // novoUsuárioToolStripMenuItem
             // 
-            this.novoUsuárioToolStripMenuItem.Name = "novoUsuárioToolStripMenuItem";
+            this.novoUsuárioToolStripMenuItem.Name = "novoUsuarioToolStripMenuItem";
             this.novoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.novoUsuárioToolStripMenuItem.Text = "Novo Usuário";
             this.novoUsuárioToolStripMenuItem.Click += new System.EventHandler(this.novoUsuarioToolStripMenuItem_Click);
             // 
             // gerenciarUsuárioToolStripMenuItem
             // 
-            this.gerenciarUsuárioToolStripMenuItem.Name = "gerenciarUsuárioToolStripMenuItem";
+            this.gerenciarUsuárioToolStripMenuItem.Name = "gerenciarUsuarioToolStripMenuItem";
             this.gerenciarUsuárioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.gerenciarUsuárioToolStripMenuItem.Text = "Gerenciar Usuário";
             this.gerenciarUsuárioToolStripMenuItem.Click += new System.EventHandler(this.gerenciarUsuarioToolStripMenuItem_Click);
@@ -221,45 +203,44 @@
             // 
             // btnFuncoes
             // 
-            this.btnFuncoes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnFuncoes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novaFunçãoToolStripMenuItem,
             this.novaSubFunçãoToolStripMenuItem,
             this.gerenciarFunçõesToolStripMenuItem,
             this.gerenciarSubFunçõesToolStripMenuItem});
-            this.btnFuncoes.Image = ((System.Drawing.Image)(resources.GetObject("btnFuncoes.Image")));
+            this.btnFuncoes.Image = global::EscalasMetodista.Properties.Resources.System_preferences_46991;
             this.btnFuncoes.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFuncoes.Name = "btnFuncoes";
-            this.btnFuncoes.Size = new System.Drawing.Size(81, 24);
+            this.btnFuncoes.Size = new System.Drawing.Size(101, 24);
             this.btnFuncoes.Text = "Funções";
             // 
             // novaFunçãoToolStripMenuItem
             // 
-            this.novaFunçãoToolStripMenuItem.Name = "novaFunçãoToolStripMenuItem";
+            this.novaFunçãoToolStripMenuItem.Name = "novaFunçaoToolStripMenuItem";
             this.novaFunçãoToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.novaFunçãoToolStripMenuItem.Text = "Nova Função";
-            this.novaFunçãoToolStripMenuItem.Click += new System.EventHandler(this.novaFunçãoToolStripMenuItem_Click);
+            this.novaFunçãoToolStripMenuItem.Click += new System.EventHandler(this.novaFunçaoToolStripMenuItem_Click);
             // 
             // novaSubFunçãoToolStripMenuItem
             // 
-            this.novaSubFunçãoToolStripMenuItem.Name = "novaSubFunçãoToolStripMenuItem";
+            this.novaSubFunçãoToolStripMenuItem.Name = "novaSubFunçaoToolStripMenuItem";
             this.novaSubFunçãoToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.novaSubFunçãoToolStripMenuItem.Text = "Nova Sub-Função";
-            this.novaSubFunçãoToolStripMenuItem.Click += new System.EventHandler(this.novaSubFunçãoToolStripMenuItem_Click);
+            this.novaSubFunçãoToolStripMenuItem.Click += new System.EventHandler(this.novaSubFunçaoToolStripMenuItem_Click);
             // 
             // gerenciarFunçõesToolStripMenuItem
             // 
-            this.gerenciarFunçõesToolStripMenuItem.Name = "gerenciarFunçõesToolStripMenuItem";
+            this.gerenciarFunçõesToolStripMenuItem.Name = "gerenciarFunçoesToolStripMenuItem";
             this.gerenciarFunçõesToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.gerenciarFunçõesToolStripMenuItem.Text = "Gerenciar Funções";
-            this.gerenciarFunçõesToolStripMenuItem.Click += new System.EventHandler(this.gerenciarFunçõesToolStripMenuItem_Click);
+            this.gerenciarFunçõesToolStripMenuItem.Click += new System.EventHandler(this.gerenciarFunçoesToolStripMenuItem_Click);
             // 
             // gerenciarSubFunçõesToolStripMenuItem
             // 
-            this.gerenciarSubFunçõesToolStripMenuItem.Name = "gerenciarSubFunçõesToolStripMenuItem";
+            this.gerenciarSubFunçõesToolStripMenuItem.Name = "gerenciarSubFunçoesToolStripMenuItem";
             this.gerenciarSubFunçõesToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.gerenciarSubFunçõesToolStripMenuItem.Text = "Gerenciar Sub-Funções";
-            this.gerenciarSubFunçõesToolStripMenuItem.Click += new System.EventHandler(this.gerenciarSubFunçõesToolStripMenuItem_Click);
+            this.gerenciarSubFunçõesToolStripMenuItem.Click += new System.EventHandler(this.gerenciarSubFunçoesToolStripMenuItem_Click);
             // 
             // btnSair
             // 
@@ -274,6 +255,42 @@
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // btnRelatorios
+            // 
+            this.btnRelatorios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.relatórioDePessoasToolStripMenuItem});
+            this.btnRelatorios.Image = global::EscalasMetodista.Properties.Resources._1486504846_clipboard_tasks_report_business_checking_verification_document_81354;
+            this.btnRelatorios.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRelatorios.Name = "btnRelatorios";
+            this.btnRelatorios.Size = new System.Drawing.Size(115, 24);
+            this.btnRelatorios.Text = "Relatórios";
+            // 
+            // relatórioDePessoasToolStripMenuItem
+            // 
+            this.relatórioDePessoasToolStripMenuItem.Name = "relatórioDePessoasToolStripMenuItem";
+            this.relatórioDePessoasToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.relatórioDePessoasToolStripMenuItem.Text = "Relatório de Pessoas";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            // 
+            // btnSobre
+            // 
+            this.btnSobre.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
+            this.btnSobre.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSobre.Name = "btnSobre";
+            this.btnSobre.Size = new System.Drawing.Size(52, 24);
+            this.btnSobre.Text = "Sobre";
+            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
+            // 
             // panel_principal
             // 
             this.panel_principal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -281,10 +298,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_principal.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel_principal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel_principal.Controls.Add(this.linkNovaEscala);
-            this.panel_principal.Controls.Add(this.pictureBox2);
-            this.panel_principal.Controls.Add(this.pictureBox3);
-            this.panel_principal.Controls.Add(this.linkAbrirArquivo);
+            this.panel_principal.Controls.Add(this.labelData);
+            this.panel_principal.Controls.Add(this.labelIdUsuarioLogado);
             this.panel_principal.Controls.Add(this.toolStripMenu);
             this.panel_principal.Controls.Add(this.pictureBox1);
             this.panel_principal.Controls.Add(this.panel_rodape);
@@ -294,67 +309,27 @@
             this.panel_principal.Size = new System.Drawing.Size(925, 692);
             this.panel_principal.TabIndex = 1;
             // 
-            // linkNovaEscala
+            // labelData
             // 
-            this.linkNovaEscala.AutoSize = true;
-            this.linkNovaEscala.BackColor = System.Drawing.Color.Transparent;
-            this.linkNovaEscala.DisabledLinkColor = System.Drawing.Color.Black;
-            this.linkNovaEscala.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.linkNovaEscala.ForeColor = System.Drawing.Color.Black;
-            this.linkNovaEscala.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.linkNovaEscala.LinkArea = new System.Windows.Forms.LinkArea(0, 21);
-            this.linkNovaEscala.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkNovaEscala.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.linkNovaEscala.Location = new System.Drawing.Point(48, 226);
-            this.linkNovaEscala.Name = "linkNovaEscala";
-            this.linkNovaEscala.Size = new System.Drawing.Size(141, 26);
-            this.linkNovaEscala.TabIndex = 16;
-            this.linkNovaEscala.TabStop = true;
-            this.linkNovaEscala.Text = "NOVA ESCALA";
-            this.linkNovaEscala.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkNovaEscala.UseCompatibleTextRendering = true;
+            this.labelData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelData.AutoSize = true;
+            this.labelData.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData.ForeColor = System.Drawing.Color.Black;
+            this.labelData.Location = new System.Drawing.Point(525, 618);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(0, 17);
+            this.labelData.TabIndex = 7;
             // 
-            // pictureBox2
+            // labelIdUsuarioLogado
             // 
-            this.pictureBox2.Image = global::EscalasMetodista.Properties.Resources._1485476000_artboard_1_78543;
-            this.pictureBox2.Location = new System.Drawing.Point(69, 137);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(101, 79);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::EscalasMetodista.Properties.Resources.iconfinder_folder_4341292_120540;
-            this.pictureBox3.Location = new System.Drawing.Point(323, 137);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(101, 79);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            // 
-            // linkAbrirArquivo
-            // 
-            this.linkAbrirArquivo.AutoSize = true;
-            this.linkAbrirArquivo.BackColor = System.Drawing.Color.Transparent;
-            this.linkAbrirArquivo.DisabledLinkColor = System.Drawing.Color.Black;
-            this.linkAbrirArquivo.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.linkAbrirArquivo.ForeColor = System.Drawing.Color.Black;
-            this.linkAbrirArquivo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.linkAbrirArquivo.LinkArea = new System.Windows.Forms.LinkArea(0, 21);
-            this.linkAbrirArquivo.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkAbrirArquivo.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.linkAbrirArquivo.Location = new System.Drawing.Point(293, 226);
-            this.linkAbrirArquivo.Name = "linkAbrirArquivo";
-            this.linkAbrirArquivo.Size = new System.Drawing.Size(167, 26);
-            this.linkAbrirArquivo.TabIndex = 13;
-            this.linkAbrirArquivo.TabStop = true;
-            this.linkAbrirArquivo.Text = "ABRIR ARQUIVO";
-            this.linkAbrirArquivo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkAbrirArquivo.UseCompatibleTextRendering = true;
+            this.labelIdUsuarioLogado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelIdUsuarioLogado.AutoSize = true;
+            this.labelIdUsuarioLogado.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIdUsuarioLogado.ForeColor = System.Drawing.Color.Black;
+            this.labelIdUsuarioLogado.Location = new System.Drawing.Point(525, 589);
+            this.labelIdUsuarioLogado.Name = "labelIdUsuarioLogado";
+            this.labelIdUsuarioLogado.Size = new System.Drawing.Size(0, 17);
+            this.labelIdUsuarioLogado.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -453,6 +428,18 @@
             this.btnPesquisa.UseVisualStyleBackColor = false;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
+            // txtPesquisaEscala
+            // 
+            this.txtPesquisaEscala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisaEscala.BackColor = System.Drawing.Color.White;
+            this.txtPesquisaEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPesquisaEscala.Font = new System.Drawing.Font("Verdana", 12F);
+            this.txtPesquisaEscala.Location = new System.Drawing.Point(31, 40);
+            this.txtPesquisaEscala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPesquisaEscala.Name = "txtPesquisaEscala";
+            this.txtPesquisaEscala.Size = new System.Drawing.Size(335, 25);
+            this.txtPesquisaEscala.TabIndex = 0;
+            // 
             // logo_metodista
             // 
             this.logo_metodista.BackColor = System.Drawing.Color.Transparent;
@@ -492,8 +479,6 @@
             this.toolStripMenu.PerformLayout();
             this.panel_principal.ResumeLayout(false);
             this.panel_principal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_botoes.ResumeLayout(false);
             this.panel_botoes.PerformLayout();
@@ -518,7 +503,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSplitButton btnRelatorios;
         private System.Windows.Forms.ToolStripMenuItem relatórioDePessoasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSplitButton btnUsuarios;
         private System.Windows.Forms.ToolStripMenuItem novoUsuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gerenciarUsuárioToolStripMenuItem;
@@ -530,15 +514,18 @@
         private System.Windows.Forms.ToolStripMenuItem gerenciarSubFunçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton btnSair;
         private System.Windows.Forms.Panel panel_principal;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        public System.Windows.Forms.LinkLabel linkAbrirArquivo;
-        public System.Windows.Forms.LinkLabel linkNovaEscala;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataAlteracao;
         private System.Windows.Forms.ToolStripDropDownButton btnPerfil;
         private System.Windows.Forms.ToolStripMenuItem btnAlterarSenha;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripDropDownButton btnEscalas;
+        private System.Windows.Forms.ToolStripMenuItem novaEscalaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirArquivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.Label labelIdUsuarioLogado;
+        private System.Windows.Forms.Label labelData;
     }
 }
 

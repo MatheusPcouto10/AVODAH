@@ -25,8 +25,9 @@ namespace EscalasMetodista
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "SELECT idPessoa, nome, sobrenome, email, senha, tipoUsuario_fk, status FROM pessoa where email = '" + txtEmail.Text +
-                               "' AND senha = '" + txtSenha.Text + "'";
+            cmd.CommandText = "SELECT idPessoa, nome, sobrenome, email, senha, tipoUsuario_fk, status FROM pessoa " +
+                              "where email = '" + txtEmail.Text +
+                              "' AND senha = '" + txtSenha.Text + "'";
 
             try
             {

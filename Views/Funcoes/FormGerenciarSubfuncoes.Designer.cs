@@ -175,7 +175,7 @@
             this.dgSubFuncoes.RowHeadersWidth = 51;
             this.dgSubFuncoes.RowTemplate.Height = 24;
             this.dgSubFuncoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgSubFuncoes.Size = new System.Drawing.Size(751, 316);
+            this.dgSubFuncoes.Size = new System.Drawing.Size(754, 316);
             this.dgSubFuncoes.TabIndex = 5;
             this.dgSubFuncoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellContentClick);
             this.dgSubFuncoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgFuncoes_CellFormatting);

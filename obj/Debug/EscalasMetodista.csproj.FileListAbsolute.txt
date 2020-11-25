@@ -17,6 +17,7 @@ C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\bin\Debug\EscalasMetodista.exe
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\bin\Debug\EscalasMetodista.pdb
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.csprojAssemblyReference.cache
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.FormSobre.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.FormAlterarSenha.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.FormCadastroFuncao.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.FormCadastroSubFuncao.resources
@@ -24,12 +25,11 @@ C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.FormMenu.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Properties.Resources.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Funcoes.FormGerenciarFuncao.resources
-C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.csproj.GenerateResource.cache
-C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.csproj.CoreCompileInputs.cache
-C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.exe
-C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.pdb
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Funcoes.FormGerenciarSubfuncoes.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Usuarios.FormCadastrarUsuario.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Usuarios.FormGerenciarUsuario.resources
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Usuarios.FormPesquisaUsuario.resources
-C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.FormSobre.resources
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.csproj.GenerateResource.cache
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.csproj.CoreCompileInputs.cache
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.exe
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.pdb

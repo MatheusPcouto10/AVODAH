@@ -62,7 +62,7 @@
             this.panel_rodape.Location = new System.Drawing.Point(0, 549);
             this.panel_rodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_rodape.Name = "panel_rodape";
-            this.panel_rodape.Size = new System.Drawing.Size(775, 45);
+            this.panel_rodape.Size = new System.Drawing.Size(785, 45);
             this.panel_rodape.TabIndex = 4;
             // 
             // btnVoltar
@@ -88,7 +88,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(227, 19);
+            this.label1.Location = new System.Drawing.Point(232, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(341, 17);
             this.label1.TabIndex = 0;
@@ -101,11 +101,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.telaPesquisa);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(-4, 50);
+            this.tabControl1.Location = new System.Drawing.Point(-3, 50);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(788, 504);
+            this.tabControl1.Size = new System.Drawing.Size(797, 504);
             this.tabControl1.TabIndex = 5;
             // 
             // telaPesquisa
@@ -123,7 +123,7 @@
             this.telaPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.telaPesquisa.Name = "telaPesquisa";
             this.telaPesquisa.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.telaPesquisa.Size = new System.Drawing.Size(780, 474);
+            this.telaPesquisa.Size = new System.Drawing.Size(789, 474);
             this.telaPesquisa.TabIndex = 0;
             this.telaPesquisa.Text = "Pesquisa";
             // 
@@ -134,7 +134,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(316, 48);
+            this.label11.Location = new System.Drawing.Point(320, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 17);
             this.label11.TabIndex = 15;
@@ -147,7 +147,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(227, 48);
+            this.label7.Location = new System.Drawing.Point(231, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 17);
             this.label7.TabIndex = 14;
@@ -159,7 +159,7 @@
             this.txtIdPesquisa.BackColor = System.Drawing.Color.White;
             this.txtIdPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdPesquisa.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtIdPesquisa.Location = new System.Drawing.Point(230, 77);
+            this.txtIdPesquisa.Location = new System.Drawing.Point(239, 77);
             this.txtIdPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdPesquisa.Name = "txtIdPesquisa";
             this.txtIdPesquisa.Size = new System.Drawing.Size(83, 23);
@@ -178,7 +178,7 @@
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.Location = new System.Drawing.Point(524, 73);
+            this.btnPesquisa.Location = new System.Drawing.Point(533, 73);
             this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisa.Name = "btnPesquisa";
             this.btnPesquisa.Size = new System.Drawing.Size(44, 26);
@@ -193,7 +193,7 @@
             this.txtNomePesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomePesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomePesquisa.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtNomePesquisa.Location = new System.Drawing.Point(319, 77);
+            this.txtNomePesquisa.Location = new System.Drawing.Point(328, 77);
             this.txtNomePesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomePesquisa.Name = "txtNomePesquisa";
             this.txtNomePesquisa.Size = new System.Drawing.Size(199, 23);
@@ -219,7 +219,7 @@
             this.dgFuncoes.RowHeadersWidth = 51;
             this.dgFuncoes.RowTemplate.Height = 24;
             this.dgFuncoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncoes.Size = new System.Drawing.Size(751, 321);
+            this.dgFuncoes.Size = new System.Drawing.Size(760, 321);
             this.dgFuncoes.TabIndex = 5;
             this.dgFuncoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellContentClick);
             this.dgFuncoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgFuncoes_CellFormatting);
@@ -251,7 +251,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(775, 46);
+            this.panel1.Size = new System.Drawing.Size(785, 46);
             this.panel1.TabIndex = 6;
             // 
             // label2
@@ -261,7 +261,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(267, 9);
+            this.label2.Location = new System.Drawing.Point(272, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(258, 25);
             this.label2.TabIndex = 0;
@@ -282,7 +282,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(775, 594);
+            this.ClientSize = new System.Drawing.Size(785, 594);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel_rodape);

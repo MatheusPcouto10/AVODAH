@@ -18,7 +18,6 @@ namespace EscalasMetodista.Views.Usuarios
     {
         SqlCommand cmd = new SqlCommand();
         Conexao conexao = new Conexao();
-
         public FormPesquisaUsuario()
         {
             InitializeComponent();
@@ -81,7 +80,7 @@ namespace EscalasMetodista.Views.Usuarios
                 .Controls["telaPesquisa"].Controls["txtIdPesquisa"] as TextBox).Text = txtIdPessoa.Text;
             (Application.OpenForms["FormGerenciarUsuario"].Controls["tabControl1"]
                 .Controls["telaPesquisa"].Controls["txtNomePesquisa"] as TextBox).Text = txtNome.Text;
-            this.Hide();
+            this.Close();
         }
 
         private void dgUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
