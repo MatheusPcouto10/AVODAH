@@ -236,5 +236,8 @@
   <ItemGroup>
     <None Include="Resources\1486504846-clipboard-tasks-report-business-checking-verification-document_81354.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-united-states-win-the-white-house-hotel-business-c-refresh-icon-5b0ecd3859cd92.0718737115276966963679.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

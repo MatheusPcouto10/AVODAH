@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGerenciarUsuario));
-            this.panel_rodape = new System.Windows.Forms.Panel();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.telaPesquisa = new System.Windows.Forms.TabPage();
+            this.btnAtualizarDatagrid = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtIdPesquisa = new System.Windows.Forms.TextBox();
@@ -66,59 +64,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel_rodape = new System.Windows.Forms.Panel();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_rodape.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.telaPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.telaEditar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel_rodape.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel_rodape
-            // 
-            this.panel_rodape.BackColor = System.Drawing.Color.Transparent;
-            this.panel_rodape.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
-            this.panel_rodape.Controls.Add(this.btnVoltar);
-            this.panel_rodape.Controls.Add(this.label1);
-            this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_rodape.Location = new System.Drawing.Point(0, 676);
-            this.panel_rodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel_rodape.Name = "panel_rodape";
-            this.panel_rodape.Size = new System.Drawing.Size(1315, 45);
-            this.panel_rodape.TabIndex = 9;
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVoltar.Location = new System.Drawing.Point(12, 11);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(95, 30);
-            this.btnVoltar.TabIndex = 19;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(492, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Desenvolvido por Matheus Pimentel - 2020";
             // 
             // tabControl1
             // 
@@ -140,6 +99,7 @@
             this.telaPesquisa.BackColor = System.Drawing.SystemColors.ControlDark;
             this.telaPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
             this.telaPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.telaPesquisa.Controls.Add(this.btnAtualizarDatagrid);
             this.telaPesquisa.Controls.Add(this.label11);
             this.telaPesquisa.Controls.Add(this.label7);
             this.telaPesquisa.Controls.Add(this.txtIdPesquisa);
@@ -154,6 +114,27 @@
             this.telaPesquisa.Size = new System.Drawing.Size(1307, 570);
             this.telaPesquisa.TabIndex = 0;
             this.telaPesquisa.Text = "Pesquisa";
+            // 
+            // btnAtualizarDatagrid
+            // 
+            this.btnAtualizarDatagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtualizarDatagrid.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtualizarDatagrid.BackgroundImage = global::EscalasMetodista.Properties.Resources.kisspng_united_states_win_the_white_house_hotel_business_c_refresh_icon_5b0ecd3859cd92_0718737115276966963679;
+            this.btnAtualizarDatagrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAtualizarDatagrid.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAtualizarDatagrid.FlatAppearance.BorderSize = 0;
+            this.btnAtualizarDatagrid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAtualizarDatagrid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAtualizarDatagrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarDatagrid.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAtualizarDatagrid.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAtualizarDatagrid.Location = new System.Drawing.Point(880, 58);
+            this.btnAtualizarDatagrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAtualizarDatagrid.Name = "btnAtualizarDatagrid";
+            this.btnAtualizarDatagrid.Size = new System.Drawing.Size(29, 31);
+            this.btnAtualizarDatagrid.TabIndex = 11;
+            this.btnAtualizarDatagrid.UseVisualStyleBackColor = false;
+            this.btnAtualizarDatagrid.Click += new System.EventHandler(this.btnAtualizarDatagrid_Click);
             // 
             // label11
             // 
@@ -609,18 +590,47 @@
             this.label6.TabIndex = 46;
             this.label6.Text = "Senha:";
             // 
-            // label2
+            // panel_rodape
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(511, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(322, 29);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "GERENCIAR USUÁRIOS";
+            this.panel_rodape.BackColor = System.Drawing.Color.Transparent;
+            this.panel_rodape.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
+            this.panel_rodape.Controls.Add(this.btnVoltar);
+            this.panel_rodape.Controls.Add(this.label1);
+            this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_rodape.Location = new System.Drawing.Point(0, 676);
+            this.panel_rodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_rodape.Name = "panel_rodape";
+            this.panel_rodape.Size = new System.Drawing.Size(1315, 45);
+            this.panel_rodape.TabIndex = 9;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVoltar.Location = new System.Drawing.Point(12, 11);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(95, 30);
+            this.btnVoltar.TabIndex = 19;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(492, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(341, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Desenvolvido por Matheus Pimentel - 2020";
             // 
             // panel1
             // 
@@ -634,6 +644,19 @@
             this.panel1.Size = new System.Drawing.Size(1315, 70);
             this.panel1.TabIndex = 8;
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(511, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(322, 29);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "GERENCIAR USUÁRIOS";
+            // 
             // FormGerenciarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -645,14 +668,13 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "FormGerenciarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Usuários";
             this.Load += new System.EventHandler(this.FormGerenciarUsuario_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGerenciarUsuario_KeyDown);
-            this.panel_rodape.ResumeLayout(false);
-            this.panel_rodape.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.telaPesquisa.ResumeLayout(false);
             this.telaPesquisa.PerformLayout();
@@ -661,6 +683,8 @@
             this.telaEditar.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.panel_rodape.ResumeLayout(false);
+            this.panel_rodape.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -707,5 +731,6 @@
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.TextBox txtIdPesquisa;
         private System.Windows.Forms.TextBox txtNomePesquisa;
+        private System.Windows.Forms.Button btnAtualizarDatagrid;
     }
 }

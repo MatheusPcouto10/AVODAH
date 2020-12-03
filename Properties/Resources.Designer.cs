@@ -204,6 +204,17 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kisspng_united_states_win_the_white_house_hotel_business_c_refresh_icon_5b0ecd3859cd92_0718737115276966963679 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-united-states-win-the-white-house-hotel-business-c-refresh-icon-5b0ecd385" +
+                        "9cd92.0718737115276966963679", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ocLJYEKLE1aHAy9jGKX_2g_store_banner_image {
             get {
                 object obj = ResourceManager.GetObject("ocLJYEKLE1aHAy9jGKX_2g_store_banner_image", resourceCulture);

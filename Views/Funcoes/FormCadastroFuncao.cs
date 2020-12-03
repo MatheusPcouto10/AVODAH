@@ -59,20 +59,5 @@ namespace EscalasMetodista.Views
             }
             updateFuncao = false;
         }
-
-        private void FormCadastroFuncao_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Enter:
-                    this.btnSalvarFuncao_Click(null, null);
-                    break;
-                case Keys.Escape:
-                    this.Close();
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 }

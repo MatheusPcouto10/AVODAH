@@ -90,7 +90,6 @@
             this.Name = "FormCadastroFuncao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Função";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroFuncao_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

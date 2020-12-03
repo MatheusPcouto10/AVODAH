@@ -103,18 +103,6 @@ namespace EscalasMetodista.Views
                 cbFuncoes.Text = funcao;
             }
         }
-
-        private void FormCadastroSubFuncao_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Enter:
-                    this.btnCadastrarSubFuncao_Click(null, null);
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 }
 

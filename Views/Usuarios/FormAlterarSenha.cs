@@ -81,18 +81,6 @@ namespace EscalasMetodista.Views
             }
         }
 
-        private void FormAlterarSenha_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Enter:
-                    this.btnAlterarSenha_Click(null, null);
-                    break;
-                default:
-                    break;
-            }
-        }
-
         private void checkMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
             if (checkMostrarSenha.Checked)

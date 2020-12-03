@@ -118,7 +118,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Sub-Função";
             this.Load += new System.EventHandler(this.FormCadastroSubFuncao_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroSubFuncao_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

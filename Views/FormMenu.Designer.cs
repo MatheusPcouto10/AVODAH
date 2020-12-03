@@ -184,14 +184,14 @@
             // 
             // novoUsuárioToolStripMenuItem
             // 
-            this.novoUsuárioToolStripMenuItem.Name = "novoUsuarioToolStripMenuItem";
+            this.novoUsuárioToolStripMenuItem.Name = "novoUsuárioToolStripMenuItem";
             this.novoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.novoUsuárioToolStripMenuItem.Text = "Novo Usuário";
             this.novoUsuárioToolStripMenuItem.Click += new System.EventHandler(this.novoUsuarioToolStripMenuItem_Click);
             // 
             // gerenciarUsuárioToolStripMenuItem
             // 
-            this.gerenciarUsuárioToolStripMenuItem.Name = "gerenciarUsuarioToolStripMenuItem";
+            this.gerenciarUsuárioToolStripMenuItem.Name = "gerenciarUsuárioToolStripMenuItem";
             this.gerenciarUsuárioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.gerenciarUsuárioToolStripMenuItem.Text = "Gerenciar Usuário";
             this.gerenciarUsuárioToolStripMenuItem.Click += new System.EventHandler(this.gerenciarUsuarioToolStripMenuItem_Click);
@@ -216,28 +216,28 @@
             // 
             // novaFunçãoToolStripMenuItem
             // 
-            this.novaFunçãoToolStripMenuItem.Name = "novaFunçaoToolStripMenuItem";
+            this.novaFunçãoToolStripMenuItem.Name = "novaFunçãoToolStripMenuItem";
             this.novaFunçãoToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.novaFunçãoToolStripMenuItem.Text = "Nova Função";
             this.novaFunçãoToolStripMenuItem.Click += new System.EventHandler(this.novaFunçaoToolStripMenuItem_Click);
             // 
             // novaSubFunçãoToolStripMenuItem
             // 
-            this.novaSubFunçãoToolStripMenuItem.Name = "novaSubFunçaoToolStripMenuItem";
+            this.novaSubFunçãoToolStripMenuItem.Name = "novaSubFunçãoToolStripMenuItem";
             this.novaSubFunçãoToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.novaSubFunçãoToolStripMenuItem.Text = "Nova Sub-Função";
             this.novaSubFunçãoToolStripMenuItem.Click += new System.EventHandler(this.novaSubFunçaoToolStripMenuItem_Click);
             // 
             // gerenciarFunçõesToolStripMenuItem
             // 
-            this.gerenciarFunçõesToolStripMenuItem.Name = "gerenciarFunçoesToolStripMenuItem";
+            this.gerenciarFunçõesToolStripMenuItem.Name = "gerenciarFunçõesToolStripMenuItem";
             this.gerenciarFunçõesToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.gerenciarFunçõesToolStripMenuItem.Text = "Gerenciar Funções";
             this.gerenciarFunçõesToolStripMenuItem.Click += new System.EventHandler(this.gerenciarFunçoesToolStripMenuItem_Click);
             // 
             // gerenciarSubFunçõesToolStripMenuItem
             // 
-            this.gerenciarSubFunçõesToolStripMenuItem.Name = "gerenciarSubFunçoesToolStripMenuItem";
+            this.gerenciarSubFunçõesToolStripMenuItem.Name = "gerenciarSubFunçõesToolStripMenuItem";
             this.gerenciarSubFunçõesToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.gerenciarSubFunçõesToolStripMenuItem.Text = "Gerenciar Sub-Funções";
             this.gerenciarSubFunçõesToolStripMenuItem.Click += new System.EventHandler(this.gerenciarSubFunçoesToolStripMenuItem_Click);
@@ -463,6 +463,7 @@
             this.Controls.Add(this.panel_principal);
             this.Controls.Add(this.logo_metodista);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1386, 731);
             this.Name = "FormMenu";

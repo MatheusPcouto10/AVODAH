@@ -136,7 +136,7 @@ namespace EscalasMetodista
                     //this.btnPesquisa(null, null);
                     break;
                 case Keys.Escape:
-                    this.Close();
+                    this.btnSair_Click(null, null);
                     break;
                 default:
                     break;

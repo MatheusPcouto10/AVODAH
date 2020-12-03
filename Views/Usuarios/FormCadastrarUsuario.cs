@@ -269,12 +269,10 @@ namespace EscalasMetodista.Views.Usuarios
             if (checkMostrarSenha.Checked)
             {
                 txtSenha.UseSystemPasswordChar = false;
-                txtConfirmarSenha.UseSystemPasswordChar = false;
             }
             else
             {
                 txtSenha.UseSystemPasswordChar = true;
-                txtConfirmarSenha.UseSystemPasswordChar = true;
             }
         }
 

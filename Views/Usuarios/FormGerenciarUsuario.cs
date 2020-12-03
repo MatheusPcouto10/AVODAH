@@ -540,5 +540,10 @@ namespace EscalasMetodista.Views.Usuarios
                     break;
             }
         }
+
+        private void btnAtualizarDatagrid_Click(object sender, EventArgs e)
+        {
+            this.CarregarDataGridUsuario(true, null, null, 0);
+        }
     }
 }

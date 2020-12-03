@@ -156,7 +156,6 @@
             this.Name = "FormAlterarSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Senha";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormAlterarSenha_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
