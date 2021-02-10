@@ -673,6 +673,7 @@
             this.Name = "FormGerenciarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Usuários";
+            this.Activated += new System.EventHandler(this.FormGerenciarUsuario_Activated);
             this.Load += new System.EventHandler(this.FormGerenciarUsuario_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGerenciarUsuario_KeyDown);
             this.tabControl1.ResumeLayout(false);
@@ -729,8 +730,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.TextBox txtIdPesquisa;
         private System.Windows.Forms.TextBox txtNomePesquisa;
         private System.Windows.Forms.Button btnAtualizarDatagrid;
+        public System.Windows.Forms.TextBox txtIdPesquisa;
     }
 }

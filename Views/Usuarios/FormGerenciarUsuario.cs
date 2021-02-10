@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,7 +21,6 @@ namespace EscalasMetodista.Views.Usuarios
         Conexao conexao = new Conexao();
         public Boolean temFuncaoSecundaria = false;
         public int idPessoa;
-        public Boolean formPesquisaAtivado;
 
         public FormGerenciarUsuario()
         {
@@ -127,9 +127,20 @@ namespace EscalasMetodista.Views.Usuarios
             // pegar o id para editar
             idPessoa = Convert.ToInt32(dgUsuarios.Rows[e.RowIndex].Cells["idPessoa"].Value.ToString());
 
-            //verificar qual a coluna clicada é a de editar
+            //verificar se a coluna clicada é a de editar
             if (dgUsuarios.Columns[e.ColumnIndex] == dgUsuarios.Columns["editar"])
             {
+
+                if (dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value == DBNull.Value)
+                {
+                    cbFuncaoSecundaria.Text = "Selecione...";
+                    cbSubFuncaoSecundaria.Text = "Selecione...";
+                }
+                else
+                {
+                    cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value.ToString();
+                    cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString();
+                }
 
                 txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
                 txtSobrenome.Text = dgUsuarios.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
@@ -141,27 +152,14 @@ namespace EscalasMetodista.Views.Usuarios
                 cbSubFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
                 dtCadastro.Text = dgUsuarios.Rows[e.RowIndex].Cells["dataCadastro"].Value.ToString();
 
-                if (dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString() != DBNull.Value.ToString())
-                {
-                    cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value.ToString();
-                    cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString();
-                }
-                else
-                {
-                    cbFuncaoSecundaria.Text = "Selecione...";
-                    cbSubFuncaoSecundaria.Text = "Selecione...";
-                }
-
                 tabControl1.SelectedIndex = 1;
                 btnSalvarUsuario.Enabled = true;
             }
         }
         private void dgUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.preencheComboBoxFuncaoPrincipal();
-            this.preencheComboBoxFuncaoSecundaria();
 
-            if (dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString() == DBNull.Value.ToString())
+            if (dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value == DBNull.Value)
             {
                 cbFuncaoSecundaria.Text = "Selecione...";
                 cbSubFuncaoSecundaria.Text = "Selecione...";
@@ -239,7 +237,7 @@ namespace EscalasMetodista.Views.Usuarios
                         break;
                     case "dataCadastro":
                         coluna.Width = 80;
-                        coluna.HeaderText = "Data de Nascimento";
+                        coluna.HeaderText = "Data de Cadastro";
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "status":
@@ -544,6 +542,20 @@ namespace EscalasMetodista.Views.Usuarios
         private void btnAtualizarDatagrid_Click(object sender, EventArgs e)
         {
             this.CarregarDataGridUsuario(true, null, null, 0);
+            txtIdPesquisa.Text = "";
+            txtNomePesquisa.Text = "";
+        }
+
+        private void FormGerenciarUsuario_Activated(object sender, EventArgs e)
+        {
+            if (txtIdPesquisa.Text != "")
+            {
+                this.CarregarDataGridUsuario(false, "p.idPessoa", null, Int32.Parse(txtIdPesquisa.Text));
+            }
+            else
+            {
+                this.CarregarDataGridUsuario(true, null, null, 0);
+            }
         }
     }
 }

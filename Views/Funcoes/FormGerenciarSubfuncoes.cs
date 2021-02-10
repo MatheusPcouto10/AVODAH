@@ -151,7 +151,7 @@ namespace EscalasMetodista.Views.Funcoes
                 form.txtDescricao.Text = descricao;
                 form.updateFuncao = true;
                 form.funcao = dgSubFuncoes.Rows[e.RowIndex].Cells["descricaoFuncao"].Value.ToString();
-                form.Show();
+                form.ShowDialog();
             }
         }
 
@@ -209,6 +209,19 @@ namespace EscalasMetodista.Views.Funcoes
                 default:
                     break;
             }
+        }
+
+        private void dgSubFuncoes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormCadastroSubFuncao form = new FormCadastroSubFuncao();
+            idSubFuncao = Convert.ToInt32(dgSubFuncoes.Rows[e.RowIndex].Cells["idSubFuncao"].Value.ToString());
+            descricao = dgSubFuncoes.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
+
+            form.idSubFuncao = idSubFuncao;
+            form.txtDescricao.Text = descricao;
+            form.updateFuncao = true;
+            form.funcao = dgSubFuncoes.Rows[e.RowIndex].Cells["descricaoFuncao"].Value.ToString();
+            form.Show();
         }
     }
 }

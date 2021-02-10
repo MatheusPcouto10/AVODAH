@@ -178,6 +178,7 @@
             this.dgSubFuncoes.Size = new System.Drawing.Size(754, 316);
             this.dgSubFuncoes.TabIndex = 5;
             this.dgSubFuncoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellContentClick);
+            this.dgSubFuncoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSubFuncoes_CellDoubleClick);
             this.dgSubFuncoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgFuncoes_CellFormatting);
             this.dgSubFuncoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgSubFuncoes_DataBindingComplete);
             // 

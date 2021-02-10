@@ -222,6 +222,7 @@
             this.dgFuncoes.Size = new System.Drawing.Size(760, 321);
             this.dgFuncoes.TabIndex = 5;
             this.dgFuncoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellContentClick);
+            this.dgFuncoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellDoubleClick);
             this.dgFuncoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgFuncoes_CellFormatting);
             this.dgFuncoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgFuncoes_DataBindingComplete);
             // 

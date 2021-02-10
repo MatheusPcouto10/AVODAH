@@ -41,11 +41,11 @@
             this.cbFuncao = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
-            this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgUsuariosPesquisa = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsuariosPesquisa)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -205,29 +205,29 @@
             this.cbTipoUsuario.TabIndex = 76;
             this.cbTipoUsuario.Text = "Selecione...";
             // 
-            // dgUsuarios
+            // dgUsuariosPesquisa
             // 
-            this.dgUsuarios.AllowUserToAddRows = false;
-            this.dgUsuarios.AllowUserToDeleteRows = false;
-            this.dgUsuarios.AllowUserToOrderColumns = true;
-            this.dgUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgUsuariosPesquisa.AllowUserToAddRows = false;
+            this.dgUsuariosPesquisa.AllowUserToDeleteRows = false;
+            this.dgUsuariosPesquisa.AllowUserToOrderColumns = true;
+            this.dgUsuariosPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgUsuarios.BackgroundColor = System.Drawing.Color.Black;
-            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.GridColor = System.Drawing.Color.Black;
-            this.dgUsuarios.Location = new System.Drawing.Point(12, 228);
-            this.dgUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.ReadOnly = true;
-            this.dgUsuarios.RowHeadersWidth = 51;
-            this.dgUsuarios.RowTemplate.Height = 24;
-            this.dgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUsuarios.Size = new System.Drawing.Size(902, 264);
-            this.dgUsuarios.TabIndex = 78;
-            this.dgUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellClick);
-            this.dgUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellDoubleClick);
-            this.dgUsuarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgUsuarios_DataBindingComplete);
+            this.dgUsuariosPesquisa.BackgroundColor = System.Drawing.Color.Black;
+            this.dgUsuariosPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuariosPesquisa.GridColor = System.Drawing.Color.Black;
+            this.dgUsuariosPesquisa.Location = new System.Drawing.Point(12, 228);
+            this.dgUsuariosPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgUsuariosPesquisa.Name = "dgUsuariosPesquisa";
+            this.dgUsuariosPesquisa.ReadOnly = true;
+            this.dgUsuariosPesquisa.RowHeadersWidth = 51;
+            this.dgUsuariosPesquisa.RowTemplate.Height = 24;
+            this.dgUsuariosPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgUsuariosPesquisa.Size = new System.Drawing.Size(902, 264);
+            this.dgUsuariosPesquisa.TabIndex = 78;
+            this.dgUsuariosPesquisa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuariosPesquisa_CellClick);
+            this.dgUsuariosPesquisa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuariosPesquisa_CellDoubleClick);
+            this.dgUsuariosPesquisa.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgUsuariosPesquisa_DataBindingComplete);
             // 
             // btnPesquisar
             // 
@@ -273,7 +273,7 @@
             this.ClientSize = new System.Drawing.Size(920, 508);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnPesquisar);
-            this.Controls.Add(this.dgUsuarios);
+            this.Controls.Add(this.dgUsuariosPesquisa);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbTipoUsuario);
             this.Controls.Add(this.groupBox2);
@@ -294,7 +294,7 @@
             this.Load += new System.EventHandler(this.FormPesquisaUsuario_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormPesquisaUsuario_KeyDown);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsuariosPesquisa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,7 +314,7 @@
         public System.Windows.Forms.ComboBox cbFuncao;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbTipoUsuario;
-        public System.Windows.Forms.DataGridView dgUsuarios;
+        public System.Windows.Forms.DataGridView dgUsuariosPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnLimpar;
     }

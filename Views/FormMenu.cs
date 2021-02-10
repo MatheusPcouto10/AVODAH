@@ -49,7 +49,7 @@ namespace EscalasMetodista
         private void FormMenu_Load(object sender, EventArgs e)
         {
             DateTime dataHoje = DateTime.Today;
-            this.btnPerfil.Text = "Bem vindo " + UsuarioSession.nomeUsuario + " !";
+            this.btnPerfil.Text = "Bem vindo(a) " + UsuarioSession.nomeUsuario + " !";
             this.labelIdUsuarioLogado.Text = "Código: " + UsuarioSession.idUsuario;
             this.labelData.Text = "Data: " + dataHoje.ToString("D");
             this.controleAcesso();

@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -64,28 +65,30 @@ namespace EscalasMetodista.Views.Usuarios
 
         }
 
-        private void dgUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgUsuariosPesquisa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
-            txtIdPessoa.Text = dgUsuarios.Rows[e.RowIndex].Cells["idPessoa"].Value.ToString();
-            cbTipoUsuario.Text = dgUsuarios.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
-            cbStatus.Text = dgUsuarios.Rows[e.RowIndex].Cells["status"].Value.ToString();
-            cbFuncao.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
-            cbSubFuncao.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
-        }
+            txtNome.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            txtIdPessoa.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["idPessoa"].Value.ToString();
+            cbTipoUsuario.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
+            cbStatus.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["status"].Value.ToString();
+            cbFuncao.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
+            cbSubFuncao.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
 
-        private void dgUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
             (Application.OpenForms["FormGerenciarUsuario"].Controls["tabControl1"]
-                .Controls["telaPesquisa"].Controls["txtIdPesquisa"] as TextBox).Text = txtIdPessoa.Text;
+          .Controls["telaPesquisa"].Controls["txtIdPesquisa"] as TextBox).Text = txtIdPessoa.Text;
             (Application.OpenForms["FormGerenciarUsuario"].Controls["tabControl1"]
                 .Controls["telaPesquisa"].Controls["txtNomePesquisa"] as TextBox).Text = txtNome.Text;
+
+        }
+
+        private void dgUsuariosPesquisa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             this.Close();
         }
 
-        private void dgUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void dgUsuariosPesquisa_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            foreach (DataGridViewColumn coluna in dgUsuarios.Columns)
+            foreach (DataGridViewColumn coluna in dgUsuariosPesquisa.Columns)
             {
                 switch (coluna.Name)
                 {
@@ -171,7 +174,7 @@ namespace EscalasMetodista.Views.Usuarios
                         // Cria uma tabela genérica
                         DataTable dt = new DataTable();
                         dt.Load(dr); // Carrega os dados para o DataTable
-                        dgUsuarios.DataSource = dt; // Preenche o DataGridView
+                        dgUsuariosPesquisa.DataSource = dt; // Preenche o DataGridView
                     }
                     else
                     {
@@ -207,7 +210,7 @@ namespace EscalasMetodista.Views.Usuarios
                         // Cria uma tabela genérica
                         DataTable dt = new DataTable();
                         dt.Load(dr); // Carrega os dados para o DataTable
-                        dgUsuarios.DataSource = dt; // Preenche o DataGridView
+                        dgUsuariosPesquisa.DataSource = dt; // Preenche o DataGridView
                     }
                     else
                     {
@@ -244,7 +247,7 @@ namespace EscalasMetodista.Views.Usuarios
                         // Cria uma tabela genérica
                         DataTable dt = new DataTable();
                         dt.Load(dr); // Carrega os dados para o DataTable
-                        dgUsuarios.DataSource = dt; // Preenche o DataGridView
+                        dgUsuariosPesquisa.DataSource = dt; // Preenche o DataGridView
                     }
                     else
                     {

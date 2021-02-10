@@ -40,18 +40,18 @@
             this.novaEscalaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnUsuarios = new System.Windows.Forms.ToolStripSplitButton();
+            this.btnUsuarios = new System.Windows.Forms.ToolStripDropDownButton();
             this.novoUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnFuncoes = new System.Windows.Forms.ToolStripSplitButton();
+            this.btnFuncoes = new System.Windows.Forms.ToolStripDropDownButton();
             this.novaFunçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novaSubFunçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarFunçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarSubFunçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnRelatorios = new System.Windows.Forms.ToolStripSplitButton();
+            this.btnRelatorios = new System.Windows.Forms.ToolStripDropDownButton();
             this.relatórioDePessoasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSobre = new System.Windows.Forms.ToolStripButton();
@@ -77,7 +77,7 @@
             // 
             // panel_rodape
             // 
-            this.panel_rodape.BackColor = System.Drawing.Color.DarkRed;
+            this.panel_rodape.BackColor = System.Drawing.Color.Maroon;
             this.panel_rodape.Controls.Add(this.label1);
             this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_rodape.Location = new System.Drawing.Point(0, 653);
@@ -117,7 +117,7 @@
             this.btnSobre});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
-            this.toolStripMenu.Size = new System.Drawing.Size(925, 27);
+            this.toolStripMenu.Size = new System.Drawing.Size(925, 31);
             this.toolStripMenu.TabIndex = 5;
             // 
             // btnPerfil
@@ -127,21 +127,21 @@
             this.btnPerfil.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnPerfil.Image = global::EscalasMetodista.Properties.Resources._1486564400_account_81513;
             this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(205, 24);
-            this.btnPerfil.Text = "Bem vindo Matheus !";
+            this.btnPerfil.Size = new System.Drawing.Size(160, 28);
+            this.btnPerfil.Text = "Bem vindo(a) !";
             // 
             // btnAlterarSenha
             // 
             this.btnAlterarSenha.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.btnAlterarSenha.Name = "btnAlterarSenha";
-            this.btnAlterarSenha.Size = new System.Drawing.Size(186, 26);
+            this.btnAlterarSenha.Size = new System.Drawing.Size(224, 26);
             this.btnAlterarSenha.Text = "Alterar Senha";
             this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // btnEscalas
             // 
@@ -151,7 +151,7 @@
             this.btnEscalas.Image = global::EscalasMetodista.Properties.Resources._1486504829_clipboard_tasks_report_business_checking_verification_list_81387;
             this.btnEscalas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEscalas.Name = "btnEscalas";
-            this.btnEscalas.Size = new System.Drawing.Size(90, 24);
+            this.btnEscalas.Size = new System.Drawing.Size(90, 28);
             this.btnEscalas.Text = "Escalas";
             // 
             // novaEscalaToolStripMenuItem
@@ -169,7 +169,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
             // btnUsuarios
             // 
@@ -179,7 +179,7 @@
             this.btnUsuarios.Image = global::EscalasMetodista.Properties.Resources._1486504843_collaboration_group_people_men_user_team_users_81379;
             this.btnUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(104, 24);
+            this.btnUsuarios.Size = new System.Drawing.Size(99, 28);
             this.btnUsuarios.Text = "Usuários";
             // 
             // novoUsuárioToolStripMenuItem
@@ -199,7 +199,7 @@
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
             // 
             // btnFuncoes
             // 
@@ -211,7 +211,7 @@
             this.btnFuncoes.Image = global::EscalasMetodista.Properties.Resources.System_preferences_46991;
             this.btnFuncoes.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFuncoes.Name = "btnFuncoes";
-            this.btnFuncoes.Size = new System.Drawing.Size(101, 24);
+            this.btnFuncoes.Size = new System.Drawing.Size(96, 28);
             this.btnFuncoes.Text = "Funções";
             // 
             // novaFunçãoToolStripMenuItem
@@ -250,7 +250,7 @@
             this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSair.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(59, 27);
+            this.btnSair.Size = new System.Drawing.Size(59, 31);
             this.btnSair.Text = "Sair";
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -258,7 +258,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
             // btnRelatorios
             // 
@@ -267,7 +267,7 @@
             this.btnRelatorios.Image = global::EscalasMetodista.Properties.Resources._1486504846_clipboard_tasks_report_business_checking_verification_document_81354;
             this.btnRelatorios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(115, 24);
+            this.btnRelatorios.Size = new System.Drawing.Size(110, 28);
             this.btnRelatorios.Text = "Relatórios";
             // 
             // relatórioDePessoasToolStripMenuItem
@@ -279,7 +279,7 @@
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
             // 
             // btnSobre
             // 
@@ -287,7 +287,7 @@
             this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
             this.btnSobre.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(52, 24);
+            this.btnSobre.Size = new System.Drawing.Size(52, 28);
             this.btnSobre.Text = "Sobre";
             this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
             // 
@@ -502,17 +502,7 @@
         private System.Windows.Forms.ToolStrip toolStripMenu;
         private System.Windows.Forms.ToolStripButton btnSobre;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSplitButton btnRelatorios;
-        private System.Windows.Forms.ToolStripMenuItem relatórioDePessoasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSplitButton btnUsuarios;
-        private System.Windows.Forms.ToolStripMenuItem novoUsuárioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gerenciarUsuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripSplitButton btnFuncoes;
-        private System.Windows.Forms.ToolStripMenuItem novaFunçãoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem novaSubFunçãoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gerenciarFunçõesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gerenciarSubFunçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton btnSair;
         private System.Windows.Forms.Panel panel_principal;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
@@ -527,6 +517,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.Label labelIdUsuarioLogado;
         private System.Windows.Forms.Label labelData;
+        private System.Windows.Forms.ToolStripDropDownButton btnUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem novoUsuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerenciarUsuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton btnFuncoes;
+        private System.Windows.Forms.ToolStripMenuItem novaFunçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novaSubFunçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerenciarFunçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerenciarSubFunçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton btnRelatorios;
+        private System.Windows.Forms.ToolStripMenuItem relatórioDePessoasToolStripMenuItem;
     }
 }
 

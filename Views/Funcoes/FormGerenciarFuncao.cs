@@ -142,7 +142,7 @@ namespace EscalasMetodista.Views.Funcoes
                 form.idFuncao = idFuncao;
                 form.txtDescricaoFuncao.Text = descricaoFuncao;
                 form.updateFuncao = true;
-                form.Show();
+                form.ShowDialog();
             }
         }
 
@@ -201,6 +201,18 @@ namespace EscalasMetodista.Views.Funcoes
                 default:
                     break;
             }
+        }
+
+        private void dgFuncoes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormCadastroFuncao form = new FormCadastroFuncao();
+            idFuncao = Convert.ToInt32(dgFuncoes.Rows[e.RowIndex].Cells["idFuncao"].Value.ToString());
+            descricaoFuncao = dgFuncoes.Rows[e.RowIndex].Cells["descricaoFuncao"].Value.ToString();
+
+            form.idFuncao = idFuncao;
+            form.txtDescricaoFuncao.Text = descricaoFuncao;
+            form.updateFuncao = true;
+            form.Show();
         }
     }
 }
