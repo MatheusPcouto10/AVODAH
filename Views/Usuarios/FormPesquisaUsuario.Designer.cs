@@ -216,7 +216,7 @@
             this.dgUsuariosPesquisa.BackgroundColor = System.Drawing.Color.Black;
             this.dgUsuariosPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgUsuariosPesquisa.GridColor = System.Drawing.Color.Black;
-            this.dgUsuariosPesquisa.Location = new System.Drawing.Point(12, 228);
+            this.dgUsuariosPesquisa.Location = new System.Drawing.Point(9, 228);
             this.dgUsuariosPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgUsuariosPesquisa.Name = "dgUsuariosPesquisa";
             this.dgUsuariosPesquisa.ReadOnly = true;

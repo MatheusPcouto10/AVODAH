@@ -1,5 +1,6 @@
 ﻿using EscalasMetodista.Session;
 using EscalasMetodista.Views;
+using EscalasMetodista.Views.Escalas;
 using EscalasMetodista.Views.Funcoes;
 using EscalasMetodista.Views.Usuarios;
 using System;
@@ -95,7 +96,7 @@ namespace EscalasMetodista
         private void btnAlterarSenha_Click(object sender, EventArgs e)
         {
             FormAlterarSenha form = new FormAlterarSenha();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void gerenciarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,7 +126,7 @@ namespace EscalasMetodista
         private void btnSobre_Click(object sender, EventArgs e)
         {
             FormSobre form = new FormSobre();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void FormMenu_KeyDown(object sender, KeyEventArgs e)
@@ -141,6 +142,12 @@ namespace EscalasMetodista
                 default:
                     break;
             }
+        }
+
+        private void btnNovaEscalaPersonalizada_Click(object sender, EventArgs e)
+        {
+            FormPersonalizarEscala form = new FormPersonalizarEscala();
+            form.Show();
         }
     }
 }

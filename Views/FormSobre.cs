@@ -24,7 +24,7 @@ namespace EscalasMetodista.Views
 
         private void linkLinkedin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.linkedin.com/in/matheus-pimentel-do-couto-a68571185/");
+            System.Diagnostics.Process.Start("https://www.linkedin.com/in/matheuspcouto/");
         }
 
         private void linkInstagram_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

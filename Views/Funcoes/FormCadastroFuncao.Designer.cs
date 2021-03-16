@@ -42,7 +42,7 @@
             this.btnSalvarFuncao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnSalvarFuncao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalvarFuncao.Location = new System.Drawing.Point(129, 158);
+            this.btnSalvarFuncao.Location = new System.Drawing.Point(127, 158);
             this.btnSalvarFuncao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalvarFuncao.Name = "btnSalvarFuncao";
             this.btnSalvarFuncao.Size = new System.Drawing.Size(165, 39);
@@ -66,7 +66,7 @@
             // 
             this.txtDescricaoFuncao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescricaoFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoFuncao.Location = new System.Drawing.Point(78, 66);
+            this.txtDescricaoFuncao.Location = new System.Drawing.Point(76, 66);
             this.txtDescricaoFuncao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescricaoFuncao.Name = "txtDescricaoFuncao";
             this.txtDescricaoFuncao.Size = new System.Drawing.Size(267, 26);

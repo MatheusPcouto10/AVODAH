@@ -46,7 +46,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources._006;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(103, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(269, 134);
@@ -60,7 +60,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(98, 162);
+            this.label1.Location = new System.Drawing.Point(102, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(271, 29);
             this.label1.TabIndex = 25;
@@ -73,7 +73,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(70, 208);
+            this.label2.Location = new System.Drawing.Point(74, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(326, 36);
             this.label2.TabIndex = 26;
@@ -86,11 +86,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(97, 261);
+            this.label3.Location = new System.Drawing.Point(101, 261);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(273, 60);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Matheus Pimentel Do Couto\r\nSistemas de Informação\r\nUNITINS - 2020\r\n";
+            this.label3.Text = "Matheus Pimentel Do Couto\r\nSistemas de Informação\r\nUNITINS - 2021\r\n";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -99,11 +99,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(193, 355);
+            this.label4.Location = new System.Drawing.Point(197, 355);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 40);
+            this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 28;
-            this.label4.Text = "Github:\r\n\r\n";
+            this.label4.Text = "Github:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkGithub
@@ -112,7 +112,7 @@
             this.linkGithub.BackColor = System.Drawing.Color.Transparent;
             this.linkGithub.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkGithub.LinkColor = System.Drawing.SystemColors.Control;
-            this.linkGithub.Location = new System.Drawing.Point(162, 395);
+            this.linkGithub.Location = new System.Drawing.Point(166, 392);
             this.linkGithub.Name = "linkGithub";
             this.linkGithub.Size = new System.Drawing.Size(143, 18);
             this.linkGithub.TabIndex = 29;
@@ -126,12 +126,12 @@
             this.linkLinkedin.BackColor = System.Drawing.Color.Transparent;
             this.linkLinkedin.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLinkedin.LinkColor = System.Drawing.SystemColors.Control;
-            this.linkLinkedin.Location = new System.Drawing.Point(72, 467);
+            this.linkLinkedin.Location = new System.Drawing.Point(162, 464);
             this.linkLinkedin.Name = "linkLinkedin";
-            this.linkLinkedin.Size = new System.Drawing.Size(322, 18);
+            this.linkLinkedin.Size = new System.Drawing.Size(144, 18);
             this.linkLinkedin.TabIndex = 31;
             this.linkLinkedin.TabStop = true;
-            this.linkLinkedin.Text = "/matheus-pimentel-do-couto-a68571185\r\n";
+            this.linkLinkedin.Text = "in/matheuspcouto";
             this.linkLinkedin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLinkedin_LinkClicked);
             // 
             // label5
@@ -140,7 +140,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(185, 430);
+            this.label5.Location = new System.Drawing.Point(189, 427);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 20);
             this.label5.TabIndex = 30;
@@ -153,7 +153,7 @@
             this.linkInstagram.BackColor = System.Drawing.Color.Transparent;
             this.linkInstagram.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkInstagram.LinkColor = System.Drawing.SystemColors.Control;
-            this.linkInstagram.Location = new System.Drawing.Point(158, 539);
+            this.linkInstagram.Location = new System.Drawing.Point(162, 536);
             this.linkInstagram.Name = "linkInstagram";
             this.linkInstagram.Size = new System.Drawing.Size(151, 18);
             this.linkInstagram.TabIndex = 33;
@@ -167,7 +167,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(129, 502);
+            this.label6.Location = new System.Drawing.Point(133, 499);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(208, 20);
             this.label6.TabIndex = 32;
@@ -195,6 +195,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSobre";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sobre o Sistema";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

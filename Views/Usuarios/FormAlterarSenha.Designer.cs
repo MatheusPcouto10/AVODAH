@@ -45,7 +45,7 @@
             this.labelNomeProduto.BackColor = System.Drawing.Color.Transparent;
             this.labelNomeProduto.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.labelNomeProduto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelNomeProduto.Location = new System.Drawing.Point(68, 19);
+            this.labelNomeProduto.Location = new System.Drawing.Point(71, 19);
             this.labelNomeProduto.Name = "labelNomeProduto";
             this.labelNomeProduto.Size = new System.Drawing.Size(130, 20);
             this.labelNomeProduto.TabIndex = 37;
@@ -54,7 +54,7 @@
             // txtSenhaAtual
             // 
             this.txtSenhaAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenhaAtual.Location = new System.Drawing.Point(72, 51);
+            this.txtSenhaAtual.Location = new System.Drawing.Point(75, 51);
             this.txtSenhaAtual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSenhaAtual.Name = "txtSenhaAtual";
             this.txtSenhaAtual.Size = new System.Drawing.Size(267, 26);
@@ -67,7 +67,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(68, 92);
+            this.label1.Location = new System.Drawing.Point(71, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 39;
@@ -76,7 +76,7 @@
             // txtNovaSenha
             // 
             this.txtNovaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNovaSenha.Location = new System.Drawing.Point(72, 129);
+            this.txtNovaSenha.Location = new System.Drawing.Point(75, 129);
             this.txtNovaSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNovaSenha.Name = "txtNovaSenha";
             this.txtNovaSenha.Size = new System.Drawing.Size(267, 26);
@@ -89,7 +89,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(68, 171);
+            this.label2.Location = new System.Drawing.Point(71, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 20);
             this.label2.TabIndex = 41;
@@ -98,7 +98,7 @@
             // txtConfirmarSenha
             // 
             this.txtConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarSenha.Location = new System.Drawing.Point(72, 207);
+            this.txtConfirmarSenha.Location = new System.Drawing.Point(75, 207);
             this.txtConfirmarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConfirmarSenha.Name = "txtConfirmarSenha";
             this.txtConfirmarSenha.Size = new System.Drawing.Size(267, 26);
@@ -112,7 +112,7 @@
             this.btnAlterarSenha.FlatAppearance.BorderSize = 2;
             this.btnAlterarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarSenha.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAlterarSenha.Location = new System.Drawing.Point(123, 306);
+            this.btnAlterarSenha.Location = new System.Drawing.Point(126, 306);
             this.btnAlterarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAlterarSenha.Name = "btnAlterarSenha";
             this.btnAlterarSenha.Size = new System.Drawing.Size(165, 38);
@@ -127,7 +127,7 @@
             this.checkMostrarSenha.BackColor = System.Drawing.Color.Transparent;
             this.checkMostrarSenha.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.checkMostrarSenha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkMostrarSenha.Location = new System.Drawing.Point(72, 253);
+            this.checkMostrarSenha.Location = new System.Drawing.Point(75, 253);
             this.checkMostrarSenha.Name = "checkMostrarSenha";
             this.checkMostrarSenha.Size = new System.Drawing.Size(141, 21);
             this.checkMostrarSenha.TabIndex = 43;
@@ -153,6 +153,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAlterarSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Senha";

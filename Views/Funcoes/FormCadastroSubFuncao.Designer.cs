@@ -42,7 +42,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(101, 125);
+            this.label1.Location = new System.Drawing.Point(105, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 20);
             this.label1.TabIndex = 37;
@@ -53,7 +53,7 @@
             this.cbFuncoes.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncoes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             this.cbFuncoes.FormattingEnabled = true;
-            this.cbFuncoes.Location = new System.Drawing.Point(104, 158);
+            this.cbFuncoes.Location = new System.Drawing.Point(109, 158);
             this.cbFuncoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFuncoes.Name = "cbFuncoes";
             this.cbFuncoes.Size = new System.Drawing.Size(267, 26);
@@ -66,7 +66,7 @@
             this.labelNomeProduto.BackColor = System.Drawing.Color.Transparent;
             this.labelNomeProduto.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.labelNomeProduto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelNomeProduto.Location = new System.Drawing.Point(101, 53);
+            this.labelNomeProduto.Location = new System.Drawing.Point(105, 53);
             this.labelNomeProduto.Name = "labelNomeProduto";
             this.labelNomeProduto.Size = new System.Drawing.Size(128, 20);
             this.labelNomeProduto.TabIndex = 35;
@@ -76,7 +76,7 @@
             // 
             this.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricao.Location = new System.Drawing.Point(104, 86);
+            this.txtDescricao.Location = new System.Drawing.Point(109, 86);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(267, 26);
@@ -89,7 +89,7 @@
             this.btnCadastrarSubFuncao.FlatAppearance.BorderSize = 2;
             this.btnCadastrarSubFuncao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarSubFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCadastrarSubFuncao.Location = new System.Drawing.Point(155, 254);
+            this.btnCadastrarSubFuncao.Location = new System.Drawing.Point(160, 254);
             this.btnCadastrarSubFuncao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCadastrarSubFuncao.Name = "btnCadastrarSubFuncao";
             this.btnCadastrarSubFuncao.Size = new System.Drawing.Size(165, 38);

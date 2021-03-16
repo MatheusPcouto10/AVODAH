@@ -283,7 +283,7 @@
             this.btnSalvarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarUsuario.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnSalvarUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalvarUsuario.Location = new System.Drawing.Point(557, 509);
+            this.btnSalvarUsuario.Location = new System.Drawing.Point(571, 509);
             this.btnSalvarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalvarUsuario.Name = "btnSalvarUsuario";
             this.btnSalvarUsuario.Size = new System.Drawing.Size(165, 39);
@@ -626,7 +626,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(492, 19);
+            this.label1.Location = new System.Drawing.Point(487, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(341, 17);
             this.label1.TabIndex = 0;
@@ -651,7 +651,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(511, 19);
+            this.label2.Location = new System.Drawing.Point(496, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(322, 29);
             this.label2.TabIndex = 0;
