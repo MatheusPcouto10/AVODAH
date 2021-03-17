@@ -1,7 +1,7 @@
 ﻿
 namespace EscalasMetodista.Views.Escalas
 {
-    partial class FormEscalaLouvor
+    partial class FormEscala
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@ namespace EscalasMetodista.Views.Escalas
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEscalaLouvor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEscala));
             this.panel_botoes = new System.Windows.Forms.Panel();
-            this.btnEditarNomeEscala = new System.Windows.Forms.PictureBox();
+            this.lbNomeEscala = new System.Windows.Forms.Label();
             this.txtNomeEscala = new System.Windows.Forms.TextBox();
             this.logo_metodista = new System.Windows.Forms.PictureBox();
             this.tbDatasEscala = new System.Windows.Forms.TableLayoutPanel();
@@ -57,14 +57,16 @@ namespace EscalasMetodista.Views.Escalas
             this.btnPreencherEscala = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnPreencherEscalaLinha = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPreencherColuna = new System.Windows.Forms.ToolStripMenuItem();
+            this.preencherTudoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnVoltar = new System.Windows.Forms.ToolStripButton();
             this.btnLimparEscala = new System.Windows.Forms.ToolStripDropDownButton();
             this.limparLinhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limparColunaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limparTudoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.tbPessoasEcala = new System.Windows.Forms.TableLayoutPanel();
             this.panel_botoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditarNomeEscala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).BeginInit();
             this.tbCabecalhoEscala.SuspendLayout();
             this.menuEscala.SuspendLayout();
@@ -74,8 +76,8 @@ namespace EscalasMetodista.Views.Escalas
             // 
             this.panel_botoes.BackColor = System.Drawing.SystemColors.ControlText;
             this.panel_botoes.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
-            this.panel_botoes.Controls.Add(this.btnEditarNomeEscala);
             this.panel_botoes.Controls.Add(this.txtNomeEscala);
+            this.panel_botoes.Controls.Add(this.lbNomeEscala);
             this.panel_botoes.Controls.Add(this.logo_metodista);
             this.panel_botoes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_botoes.Location = new System.Drawing.Point(0, 0);
@@ -84,33 +86,35 @@ namespace EscalasMetodista.Views.Escalas
             this.panel_botoes.Size = new System.Drawing.Size(1481, 109);
             this.panel_botoes.TabIndex = 3;
             // 
-            // btnEditarNomeEscala
+            // lbNomeEscala
             // 
-            this.btnEditarNomeEscala.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEditarNomeEscala.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditarNomeEscala.Image = global::EscalasMetodista.Properties.Resources.editar;
-            this.btnEditarNomeEscala.Location = new System.Drawing.Point(574, 37);
-            this.btnEditarNomeEscala.Name = "btnEditarNomeEscala";
-            this.btnEditarNomeEscala.Size = new System.Drawing.Size(24, 24);
-            this.btnEditarNomeEscala.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnEditarNomeEscala.TabIndex = 6;
-            this.btnEditarNomeEscala.TabStop = false;
-            this.btnEditarNomeEscala.Click += new System.EventHandler(this.btnEditarNomeEscala_Click);
+            this.lbNomeEscala.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbNomeEscala.AutoSize = true;
+            this.lbNomeEscala.BackColor = System.Drawing.Color.Transparent;
+            this.lbNomeEscala.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeEscala.ForeColor = System.Drawing.Color.White;
+            this.lbNomeEscala.Location = new System.Drawing.Point(617, 35);
+            this.lbNomeEscala.Name = "lbNomeEscala";
+            this.lbNomeEscala.Size = new System.Drawing.Size(203, 29);
+            this.lbNomeEscala.TabIndex = 7;
+            this.lbNomeEscala.Text = "NOME ESCALA";
+            this.lbNomeEscala.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbNomeEscala.DoubleClick += new System.EventHandler(this.lbNomeEscala_DoubleClick);
             // 
             // txtNomeEscala
             // 
             this.txtNomeEscala.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNomeEscala.BackColor = System.Drawing.Color.Black;
             this.txtNomeEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNomeEscala.Enabled = false;
-            this.txtNomeEscala.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeEscala.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold);
             this.txtNomeEscala.ForeColor = System.Drawing.Color.White;
-            this.txtNomeEscala.Location = new System.Drawing.Point(623, 37);
+            this.txtNomeEscala.Location = new System.Drawing.Point(617, 35);
+            this.txtNomeEscala.MaxLength = 40;
             this.txtNomeEscala.Name = "txtNomeEscala";
-            this.txtNomeEscala.Size = new System.Drawing.Size(242, 28);
+            this.txtNomeEscala.Size = new System.Drawing.Size(205, 28);
             this.txtNomeEscala.TabIndex = 5;
-            this.txtNomeEscala.Text = "NOME DA ESCALA";
             this.txtNomeEscala.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNomeEscala.Visible = false;
             // 
             // logo_metodista
             // 
@@ -393,7 +397,8 @@ namespace EscalasMetodista.Views.Escalas
             this.btnPreencherEscala.BackColor = System.Drawing.Color.Transparent;
             this.btnPreencherEscala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPreencherEscalaLinha,
-            this.btnPreencherColuna});
+            this.btnPreencherColuna,
+            this.preencherTudoToolStripMenuItem});
             this.btnPreencherEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnPreencherEscala.Name = "btnPreencherEscala";
             this.btnPreencherEscala.Size = new System.Drawing.Size(154, 22);
@@ -411,6 +416,12 @@ namespace EscalasMetodista.Views.Escalas
             this.btnPreencherColuna.Name = "btnPreencherColuna";
             this.btnPreencherColuna.Size = new System.Drawing.Size(228, 26);
             this.btnPreencherColuna.Text = "Preencher Coluna";
+            // 
+            // preencherTudoToolStripMenuItem
+            // 
+            this.preencherTudoToolStripMenuItem.Name = "preencherTudoToolStripMenuItem";
+            this.preencherTudoToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.preencherTudoToolStripMenuItem.Text = "Preencher Tudo";
             // 
             // toolStripSeparator6
             // 
@@ -435,7 +446,9 @@ namespace EscalasMetodista.Views.Escalas
             // btnLimparEscala
             // 
             this.btnLimparEscala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.limparLinhaToolStripMenuItem});
+            this.limparLinhaToolStripMenuItem,
+            this.limparColunaToolStripMenuItem,
+            this.limparTudoToolStripMenuItem});
             this.btnLimparEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnLimparEscala.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLimparEscala.Name = "btnLimparEscala";
@@ -445,8 +458,20 @@ namespace EscalasMetodista.Views.Escalas
             // limparLinhaToolStripMenuItem
             // 
             this.limparLinhaToolStripMenuItem.Name = "limparLinhaToolStripMenuItem";
-            this.limparLinhaToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.limparLinhaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.limparLinhaToolStripMenuItem.Text = "Limpar Linha";
+            // 
+            // limparColunaToolStripMenuItem
+            // 
+            this.limparColunaToolStripMenuItem.Name = "limparColunaToolStripMenuItem";
+            this.limparColunaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.limparColunaToolStripMenuItem.Text = "Limpar Coluna";
+            // 
+            // limparTudoToolStripMenuItem
+            // 
+            this.limparTudoToolStripMenuItem.Name = "limparTudoToolStripMenuItem";
+            this.limparTudoToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.limparTudoToolStripMenuItem.Text = "Limpar Tudo";
             // 
             // label1
             // 
@@ -518,7 +543,6 @@ namespace EscalasMetodista.Views.Escalas
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormEscalaLouvor_KeyDown);
             this.panel_botoes.ResumeLayout(false);
             this.panel_botoes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditarNomeEscala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).EndInit();
             this.tbCabecalhoEscala.ResumeLayout(false);
             this.tbCabecalhoEscala.PerformLayout();
@@ -563,6 +587,9 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.TableLayoutPanel tbPessoasEcala;
         private System.Windows.Forms.TextBox txtNomeEscala;
-        private System.Windows.Forms.PictureBox btnEditarNomeEscala;
+        private System.Windows.Forms.ToolStripMenuItem preencherTudoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem limparColunaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem limparTudoToolStripMenuItem;
+        private System.Windows.Forms.Label lbNomeEscala;
     }
 }

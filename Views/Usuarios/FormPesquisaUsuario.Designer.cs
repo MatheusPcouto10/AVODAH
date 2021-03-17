@@ -89,6 +89,7 @@
             this.txtIdPessoa.Name = "txtIdPessoa";
             this.txtIdPessoa.Size = new System.Drawing.Size(103, 26);
             this.txtIdPessoa.TabIndex = 43;
+            this.txtIdPessoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 

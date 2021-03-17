@@ -120,6 +120,7 @@
             this.txtIdPesquisa.Name = "txtIdPesquisa";
             this.txtIdPesquisa.Size = new System.Drawing.Size(83, 23);
             this.txtIdPesquisa.TabIndex = 18;
+            this.txtIdPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnPesquisa
             // 

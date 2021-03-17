@@ -29,7 +29,7 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            if (txtNomePesquisa.Text == "" && txtIdPesquisa.Text == "")
+            if ((string.IsNullOrWhiteSpace(txtNomePesquisa.Text)) && (string.IsNullOrWhiteSpace(txtIdPesquisa.Text)))
             {
                 FormPesquisaUsuario form = new FormPesquisaUsuario();
                 form.ShowDialog();
@@ -37,7 +37,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             else
             {
-                if (txtNomePesquisa.Text == "")
+                if ((string.IsNullOrWhiteSpace(txtNomePesquisa.Text)))
                 {
                     this.CarregarDataGridUsuario(false, "p.idPessoa", null, Int32.Parse(txtIdPesquisa.Text));
                 }
@@ -45,7 +45,7 @@ namespace EscalasMetodista.Views.Usuarios
                 {
                     this.CarregarDataGridUsuario(false, "p.idPessoa", null, Int32.Parse(txtIdPesquisa.Text));
                 }
-                else if (txtIdPesquisa.Text == "")
+                else if ((string.IsNullOrWhiteSpace(txtIdPesquisa.Text)))
                 {
                     this.CarregarDataGridUsuario(false, "p.nome", txtNomePesquisa.Text, 0);
                 }

@@ -34,4 +34,4 @@ C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.exe
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.pdb
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Escalas.FormPersonalizarEscala.resources
-C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Escalas.FormEscalaLouvor.resources
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Escalas.FormEscala.resources

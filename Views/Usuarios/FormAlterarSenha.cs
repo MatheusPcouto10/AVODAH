@@ -26,7 +26,8 @@ namespace EscalasMetodista.Views
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
 
-            if ((txtNovaSenha.Text == "") || (txtSenhaAtual.Text == "") || (txtConfirmarSenha.Text == ""))
+            if ((string.IsNullOrWhiteSpace(txtNovaSenha.Text)) || (string.IsNullOrWhiteSpace(txtSenhaAtual.Text)) ||
+                (string.IsNullOrWhiteSpace(txtConfirmarSenha.Text)))
             {
                 MessageBox.Show("É necessário informar os campos!", "Campos não informados", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

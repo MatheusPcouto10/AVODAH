@@ -32,7 +32,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (cbTipoEscala.Text == "LOUVOR")
             {
-                FormEscalaLouvor form = new FormEscalaLouvor();
+                FormEscala form = new FormEscala();
                 form.Show();
                 this.Close();
             }

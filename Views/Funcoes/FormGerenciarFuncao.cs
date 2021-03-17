@@ -26,7 +26,7 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            if (txtNomePesquisa.Text == "" && txtIdPesquisa.Text == "")
+            if ((string.IsNullOrWhiteSpace(txtNomePesquisa.Text)) && (string.IsNullOrWhiteSpace(txtIdPesquisa.Text)))
             {
                 this.CarregarDataGrid(true, null, null, 0);
             }

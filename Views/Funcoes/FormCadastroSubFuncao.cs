@@ -45,7 +45,7 @@ namespace EscalasMetodista.Views
                     {
                         subFuncoes.update(subFuncoes, idSubFuncao);
                         this.Close();
-                        txtDescricao.Text = " ";
+                        txtDescricao.Text = "";
                     }
                 }
 
@@ -62,7 +62,7 @@ namespace EscalasMetodista.Views
                     {
                         subFuncoes.create(subFuncoes);
                     }
-                    txtDescricao.Text = " ";
+                    txtDescricao.Text = "";
                 }
             }
             updateFuncao = false;
