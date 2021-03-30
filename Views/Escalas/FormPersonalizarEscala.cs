@@ -15,7 +15,6 @@ namespace EscalasMetodista.Views.Escalas
     public partial class FormPersonalizarEscala : Form
     {
         SqlCommand cmd = new SqlCommand();
-
         public FormPersonalizarEscala()
         {
             InitializeComponent();
@@ -30,11 +29,46 @@ namespace EscalasMetodista.Views.Escalas
 
         private void btnCriarEscala_Click(object sender, EventArgs e)
         {
-            if (cbTipoEscala.Text == "LOUVOR")
+            try
             {
-                FormEscala form = new FormEscala();
-                form.Show();
-                this.Close();
+                if (string.IsNullOrWhiteSpace(txtNomeEscala.Text))
+                {
+                    MessageBox.Show("O nome da escala não pode ficar em branco.", "Campo em Branco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DateTime dataInicio = new DateTime(dtInicioEscala.Value.Year, dtInicioEscala.Value.Month, dtInicioEscala.Value.Day);
+                    DateTime dataFim = new DateTime(dtFimEscala.Value.Year, dtFimEscala.Value.Month, dtFimEscala.Value.Day);
+                    TimeSpan dias = dataFim - dataInicio;
+
+                    //if (cbIntervalo.Text == "Semanal")
+                    //{
+                    //    var limiteData = new DateTime(dataInicio.Year, dataInicio.Month, 1);
+                    //    dtFimEscala.MaxDate = limiteData.AddDays(6);
+                    //}
+                    //else if (cbIntervalo.Text == "Mensal")
+                    //{
+                    //    dtFimEscala.MaxDate = dataInicio.AddMonths(1).AddDays(-1);
+
+                    //}
+                    //else if (cbIntervalo.Text == "Trimestral")
+                    //{
+                    //    dtFimEscala.MaxDate = dataInicio.AddMonths(3).AddDays(-1);
+                    //}
+
+                    FormEscala form = new FormEscala();
+                    form.dias = dias;
+                    form.dataInicio = dataInicio;
+                    form.dataFim = dataFim;
+                    form.lbNomeEscala.Text = txtNomeEscala.Text;
+                    form.tipoEscala = (int)cbTipoEscala.SelectedValue;
+                    form.Show();
+                    this.Close();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
             }
         }
         private void preencheComboBoxTipoEscala()
@@ -96,6 +130,11 @@ namespace EscalasMetodista.Views.Escalas
             this.preencheComboBoxTipoEscala();
             this.preencheComboBoxIntervalo();
 
+        }
+
+        private void dtInicioEscala_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

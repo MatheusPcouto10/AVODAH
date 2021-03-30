@@ -37,6 +37,7 @@ namespace EscalasMetodista.Views
                     if (Validacoes.ValidarObjeto(funcoes) == true)
                     {
                         funcoes.update(funcoes, idFuncao);
+                        updateFuncao = false;
                         this.Close();
                         txtDescricaoFuncao.Text = "";
                     }
@@ -53,11 +54,12 @@ namespace EscalasMetodista.Views
                     if (Validacoes.ValidarObjeto(funcoes) == true)
                     {
                         funcoes.create(funcoes);
+                        txtDescricaoFuncao.Text = "";
+                        updateFuncao = false;
                     }
-                    txtDescricaoFuncao.Text = "";
+                    
                 }
             }
-            updateFuncao = false;
         }
     }
 }

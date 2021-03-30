@@ -145,12 +145,14 @@ namespace EscalasMetodista.Views.Escalas
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dtInicioEscala.CalendarFont = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.dtInicioEscala.CalendarMonthBackground = System.Drawing.Color.Gray;
+            this.dtInicioEscala.CustomFormat = "";
             this.dtInicioEscala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtInicioEscala.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtInicioEscala.Location = new System.Drawing.Point(41, 180);
             this.dtInicioEscala.Name = "dtInicioEscala";
             this.dtInicioEscala.Size = new System.Drawing.Size(225, 24);
             this.dtInicioEscala.TabIndex = 85;
+            this.dtInicioEscala.ValueChanged += new System.EventHandler(this.dtInicioEscala_ValueChanged);
             // 
             // label1
             // 
@@ -170,6 +172,7 @@ namespace EscalasMetodista.Views.Escalas
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dtFimEscala.CalendarFont = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.dtFimEscala.CalendarMonthBackground = System.Drawing.Color.Gray;
+            this.dtFimEscala.CustomFormat = "";
             this.dtFimEscala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFimEscala.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFimEscala.Location = new System.Drawing.Point(302, 180);
@@ -279,12 +282,12 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNomeEscala;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtInicioEscala;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtFimEscala;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbTipoEscala;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckedListBox clDiasSemanaEscala;
+        private System.Windows.Forms.DateTimePicker dtInicioEscala;
+        private System.Windows.Forms.DateTimePicker dtFimEscala;
     }
 }
