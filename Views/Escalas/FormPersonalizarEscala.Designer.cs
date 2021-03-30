@@ -62,6 +62,7 @@ namespace EscalasMetodista.Views.Escalas
             // 
             this.cbIntervalo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbIntervalo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIntervalo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbIntervalo.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbIntervalo.FormattingEnabled = true;
@@ -70,7 +71,7 @@ namespace EscalasMetodista.Views.Escalas
             this.cbIntervalo.Name = "cbIntervalo";
             this.cbIntervalo.Size = new System.Drawing.Size(167, 28);
             this.cbIntervalo.TabIndex = 78;
-            this.cbIntervalo.Text = "Selecione...";
+            this.cbIntervalo.SelectedIndexChanged += new System.EventHandler(this.cbIntervalo_SelectedIndexChanged);
             // 
             // btnLimpar
             // 
@@ -196,6 +197,7 @@ namespace EscalasMetodista.Views.Escalas
             // 
             this.cbTipoEscala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbTipoEscala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoEscala.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbTipoEscala.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbTipoEscala.FormattingEnabled = true;
@@ -204,7 +206,6 @@ namespace EscalasMetodista.Views.Escalas
             this.cbTipoEscala.Name = "cbTipoEscala";
             this.cbTipoEscala.Size = new System.Drawing.Size(167, 28);
             this.cbTipoEscala.TabIndex = 89;
-            this.cbTipoEscala.Text = "Selecione...";
             // 
             // label4
             // 

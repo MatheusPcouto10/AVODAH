@@ -153,6 +153,7 @@
             // 
             this.cbTipoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbTipoUsuario.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbTipoUsuario.FormattingEnabled = true;
@@ -161,7 +162,6 @@
             this.cbTipoUsuario.Name = "cbTipoUsuario";
             this.cbTipoUsuario.Size = new System.Drawing.Size(167, 28);
             this.cbTipoUsuario.TabIndex = 48;
-            this.cbTipoUsuario.Text = "Selecione...";
             // 
             // label7
             // 
@@ -254,6 +254,7 @@
             // 
             // cbSubFuncaoPrincipal
             // 
+            this.cbSubFuncaoPrincipal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncaoPrincipal.FormattingEnabled = true;
@@ -262,10 +263,10 @@
             this.cbSubFuncaoPrincipal.Name = "cbSubFuncaoPrincipal";
             this.cbSubFuncaoPrincipal.Size = new System.Drawing.Size(202, 28);
             this.cbSubFuncaoPrincipal.TabIndex = 38;
-            this.cbSubFuncaoPrincipal.Text = "Selecione...";
             // 
             // cbFuncaoPrincipal
             // 
+            this.cbFuncaoPrincipal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbFuncaoPrincipal.FormattingEnabled = true;
@@ -274,7 +275,6 @@
             this.cbFuncaoPrincipal.Name = "cbFuncaoPrincipal";
             this.cbFuncaoPrincipal.Size = new System.Drawing.Size(169, 28);
             this.cbFuncaoPrincipal.TabIndex = 31;
-            this.cbFuncaoPrincipal.Text = "Selecione...";
             this.cbFuncaoPrincipal.SelectedIndexChanged += new System.EventHandler(this.cbFuncaoPrincipal_SelectedIndexChanged);
             // 
             // groupBox2
@@ -314,6 +314,7 @@
             // 
             // cbSubFuncaoSecundaria
             // 
+            this.cbSubFuncaoSecundaria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncaoSecundaria.FormattingEnabled = true;
@@ -322,10 +323,10 @@
             this.cbSubFuncaoSecundaria.Name = "cbSubFuncaoSecundaria";
             this.cbSubFuncaoSecundaria.Size = new System.Drawing.Size(202, 28);
             this.cbSubFuncaoSecundaria.TabIndex = 38;
-            this.cbSubFuncaoSecundaria.Text = "Selecione...";
             // 
             // cbFuncaoSecundaria
             // 
+            this.cbFuncaoSecundaria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbFuncaoSecundaria.FormattingEnabled = true;
@@ -334,7 +335,6 @@
             this.cbFuncaoSecundaria.Name = "cbFuncaoSecundaria";
             this.cbFuncaoSecundaria.Size = new System.Drawing.Size(169, 28);
             this.cbFuncaoSecundaria.TabIndex = 31;
-            this.cbFuncaoSecundaria.Text = "Selecione...";
             this.cbFuncaoSecundaria.SelectedIndexChanged += new System.EventHandler(this.cbFuncaoSecundaria_SelectedIndexChanged);
             // 
             // checkMostrarSenha

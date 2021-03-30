@@ -19,6 +19,7 @@ namespace EscalasMetodista.Views.Escalas
         private Label subfuncoes, datas;
         public DateTime dataInicio, dataFim;
         public TimeSpan dias;
+        public String intervaloEscala;
 
         public FormEscala()
         {

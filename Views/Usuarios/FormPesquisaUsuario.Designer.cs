@@ -157,6 +157,7 @@
             // 
             // cbSubFuncao
             // 
+            this.cbSubFuncao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubFuncao.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncao.FormattingEnabled = true;
@@ -165,10 +166,10 @@
             this.cbSubFuncao.Name = "cbSubFuncao";
             this.cbSubFuncao.Size = new System.Drawing.Size(225, 28);
             this.cbSubFuncao.TabIndex = 38;
-            this.cbSubFuncao.Text = "Selecione...";
             // 
             // cbFuncao
             // 
+            this.cbFuncao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFuncao.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbFuncao.FormattingEnabled = true;
@@ -177,7 +178,6 @@
             this.cbFuncao.Name = "cbFuncao";
             this.cbFuncao.Size = new System.Drawing.Size(169, 28);
             this.cbFuncao.TabIndex = 31;
-            this.cbFuncao.Text = "Selecione...";
             this.cbFuncao.SelectedIndexChanged += new System.EventHandler(this.cbFuncao_SelectedIndexChanged);
             // 
             // label9

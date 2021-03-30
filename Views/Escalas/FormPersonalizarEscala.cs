@@ -41,21 +41,6 @@ namespace EscalasMetodista.Views.Escalas
                     DateTime dataFim = new DateTime(dtFimEscala.Value.Year, dtFimEscala.Value.Month, dtFimEscala.Value.Day);
                     TimeSpan dias = dataFim - dataInicio;
 
-                    //if (cbIntervalo.Text == "Semanal")
-                    //{
-                    //    var limiteData = new DateTime(dataInicio.Year, dataInicio.Month, 1);
-                    //    dtFimEscala.MaxDate = limiteData.AddDays(6);
-                    //}
-                    //else if (cbIntervalo.Text == "Mensal")
-                    //{
-                    //    dtFimEscala.MaxDate = dataInicio.AddMonths(1).AddDays(-1);
-
-                    //}
-                    //else if (cbIntervalo.Text == "Trimestral")
-                    //{
-                    //    dtFimEscala.MaxDate = dataInicio.AddMonths(3).AddDays(-1);
-                    //}
-
                     FormEscala form = new FormEscala();
                     form.dias = dias;
                     form.dataInicio = dataInicio;
@@ -101,7 +86,7 @@ namespace EscalasMetodista.Views.Escalas
         private void preencheComboBoxIntervalo()
         {
 
-            cmd.CommandText = "SELECT * FROM intervalo";
+            cmd.CommandText = "SELECT * FROM intervalo where idIntervalo <> 1";
             Conexao conexao = new Conexao();
             try
             {
@@ -134,7 +119,35 @@ namespace EscalasMetodista.Views.Escalas
 
         private void dtInicioEscala_ValueChanged(object sender, EventArgs e)
         {
-            
+            defineLimiteDataEscala();
+        }
+        private void cbIntervalo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            defineLimiteDataEscala();
+        }
+
+        private void defineLimiteDataEscala()
+        {
+            DateTime dataInicio = new DateTime(dtInicioEscala.Value.Year, dtInicioEscala.Value.Month, dtInicioEscala.Value.Day);
+
+            if ((int)cbIntervalo.SelectedValue == 2)
+            {
+                dataInicio = dataInicio.AddDays(6);
+                dtFimEscala.MaxDate = dataInicio;
+                dtFimEscala.Refresh();
+            }
+            if ((int)cbIntervalo.SelectedValue == 3)
+            {
+                dataInicio = dataInicio.AddMonths(1).AddDays(-1);
+                dtFimEscala.MaxDate = dtFimEscala.MaxDate = dataInicio;
+                dtFimEscala.Refresh();
+            }
+            if ((int)cbIntervalo.SelectedValue == 4)
+            {
+                dataInicio = dataInicio.AddMonths(3).AddDays(-1);
+                dtFimEscala.MaxDate = dataInicio;
+                dtFimEscala.Refresh();
+            }
         }
     }
 }
