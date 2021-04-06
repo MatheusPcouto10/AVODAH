@@ -112,8 +112,10 @@ namespace EscalasMetodista.Views.Escalas
 
         private void FormPersonalizarEscala_Load(object sender, EventArgs e)
         {
-            this.preencheComboBoxTipoEscala();
-            this.preencheComboBoxIntervalo();
+            preencheComboBoxTipoEscala();
+            preencheComboBoxIntervalo();
+            dtInicioEscala.MinDate = DateTime.Today;
+            dtFimEscala.MinDate = DateTime.Today;
 
         }
 
@@ -148,6 +150,16 @@ namespace EscalasMetodista.Views.Escalas
                 dtFimEscala.MaxDate = dataInicio;
                 dtFimEscala.Refresh();
             }
+        }
+
+        private void dtFimEscala_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dtInicioEscala_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }

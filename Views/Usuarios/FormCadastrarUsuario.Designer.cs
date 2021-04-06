@@ -254,7 +254,6 @@
             // 
             // cbSubFuncaoPrincipal
             // 
-            this.cbSubFuncaoPrincipal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncaoPrincipal.FormattingEnabled = true;
@@ -266,7 +265,6 @@
             // 
             // cbFuncaoPrincipal
             // 
-            this.cbFuncaoPrincipal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbFuncaoPrincipal.FormattingEnabled = true;
@@ -314,7 +312,6 @@
             // 
             // cbSubFuncaoSecundaria
             // 
-            this.cbSubFuncaoSecundaria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncaoSecundaria.FormattingEnabled = true;
@@ -326,7 +323,6 @@
             // 
             // cbFuncaoSecundaria
             // 
-            this.cbFuncaoSecundaria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbFuncaoSecundaria.FormattingEnabled = true;
