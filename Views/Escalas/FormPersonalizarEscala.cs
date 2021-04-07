@@ -25,6 +25,8 @@ namespace EscalasMetodista.Views.Escalas
             cbTipoEscala.Text = "Selecione...";
             cbIntervalo.Text = "Selecione...";
             txtNomeEscala.Text = null;
+            dtInicioEscala.ResetText();
+            dtFimEscala.ResetText();
         }
 
         private void btnCriarEscala_Click(object sender, EventArgs e)
@@ -116,7 +118,6 @@ namespace EscalasMetodista.Views.Escalas
             preencheComboBoxIntervalo();
             dtInicioEscala.MinDate = DateTime.Today;
             dtFimEscala.MinDate = DateTime.Today;
-
         }
 
         private void dtInicioEscala_ValueChanged(object sender, EventArgs e)
@@ -131,6 +132,12 @@ namespace EscalasMetodista.Views.Escalas
         private void defineLimiteDataEscala()
         {
             DateTime dataInicio = new DateTime(dtInicioEscala.Value.Year, dtInicioEscala.Value.Month, dtInicioEscala.Value.Day);
+
+            if (dataInicio > dtFimEscala.MaxDate)
+            {
+                dtFimEscala.MaxDate = dataInicio;
+                dtFimEscala.Value = dataInicio;
+            }
 
             if ((int)cbIntervalo.SelectedValue == 2)
             {
@@ -150,16 +157,6 @@ namespace EscalasMetodista.Views.Escalas
                 dtFimEscala.MaxDate = dataInicio;
                 dtFimEscala.Refresh();
             }
-        }
-
-        private void dtFimEscala_KeyDown(object sender, KeyEventArgs e)
-        {
-            e.SuppressKeyPress = true;
-        }
-
-        private void dtInicioEscala_KeyDown(object sender, KeyEventArgs e)
-        {
-            e.SuppressKeyPress = true;
         }
     }
 }

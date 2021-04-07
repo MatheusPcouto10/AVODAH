@@ -16,7 +16,7 @@ namespace EscalasMetodista.Views.Escalas
     {
         public int tipoEscala;
         SqlCommand cmd = new SqlCommand();
-        private Label subfuncoes, datas;
+        private Label subfuncoes, datas, pessoas;
         public DateTime dataInicio, dataFim;
         public TimeSpan dias;
         public String intervaloEscala;
@@ -53,13 +53,24 @@ namespace EscalasMetodista.Views.Escalas
 
                 while (dr.Read())
                 {
+                    tbCabecalhoEscala.GrowStyle = TableLayoutPanelGrowStyle.AddColumns;
                     subfuncoes = new Label();
                     subfuncoes.Text = dr[0].ToString();
                     subfuncoes.TextAlign = ContentAlignment.MiddleCenter;
                     subfuncoes.Dock = DockStyle.Fill;
                     tbCabecalhoEscala.Controls.Add(subfuncoes);
-                    //tbCabecalhoEscala.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 180));
                 }
+
+                tbCabecalhoEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
+                pessoas = new Label();
+                pessoas.Text = "teste";
+                pessoas.TextAlign = ContentAlignment.MiddleCenter;
+                pessoas.Dock = DockStyle.Fill;
+                tbCabecalhoEscala.SuspendLayout();
+                tbCabecalhoEscala.RowCount += 1;
+                tbCabecalhoEscala.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+                tbCabecalhoEscala.Controls.Add(pessoas);
+                tbCabecalhoEscala.ResumeLayout();
             }
             catch (Exception erro)
             {

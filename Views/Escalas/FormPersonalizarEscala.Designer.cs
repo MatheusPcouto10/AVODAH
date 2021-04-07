@@ -154,7 +154,6 @@ namespace EscalasMetodista.Views.Escalas
             this.dtInicioEscala.Size = new System.Drawing.Size(225, 24);
             this.dtInicioEscala.TabIndex = 85;
             this.dtInicioEscala.ValueChanged += new System.EventHandler(this.dtInicioEscala_ValueChanged);
-            this.dtInicioEscala.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtInicioEscala_KeyDown);
             // 
             // label1
             // 
@@ -181,7 +180,6 @@ namespace EscalasMetodista.Views.Escalas
             this.dtFimEscala.Name = "dtFimEscala";
             this.dtFimEscala.Size = new System.Drawing.Size(225, 24);
             this.dtFimEscala.TabIndex = 87;
-            this.dtFimEscala.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtFimEscala_KeyDown);
             // 
             // label2
             // 
