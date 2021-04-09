@@ -16,7 +16,7 @@ namespace EscalasMetodista.Views.Escalas
     {
         public int tipoEscala;
         SqlCommand cmd = new SqlCommand();
-        private Label subfuncoes, datas, pessoas, label;
+        private Label funcao, datas, pessoas;
         public DateTime dataInicio, dataFim;
         public TimeSpan dias;
         public String intervaloEscala;
@@ -36,10 +36,9 @@ namespace EscalasMetodista.Views.Escalas
 
         private void FormEscalaLouvor_Load(object sender, EventArgs e)
         {
+            carregarCabecalhoEscala();
             lbNomeEscala.Left = (this.Width - lbNomeEscala.Width) / 2;
             txtNomeEscala.Left = (this.Width - txtNomeEscala.Width) / 2;
-            carregarTbDatasEscala();
-            carregarCabecalhoEscala();
         }
 
         private void carregarCabecalhoEscala()
@@ -48,31 +47,40 @@ namespace EscalasMetodista.Views.Escalas
             Conexao conexao = new Conexao();
             try
             {
+                carregarTbDatasEscala();
+
                 cmd.Connection = conexao.Conectar();
                 SqlDataReader dr = cmd.ExecuteReader();
+                int i = 0;
 
                 while (dr.Read())
                 {
-                    tbCabecalhoEscala.GrowStyle = TableLayoutPanelGrowStyle.AddColumns;
-                    subfuncoes = new Label();
-                    subfuncoes.Text = dr[0].ToString();
-                    subfuncoes.ForeColor = Color.Black;
-                    subfuncoes.TextAlign = ContentAlignment.MiddleCenter;
-                    subfuncoes.Dock = DockStyle.Fill;
-                    tbCabecalhoEscala.Controls.Add(subfuncoes);
+                    tbEscala.SuspendLayout();
+                    funcao = new Label();
+                    funcao.Name = "coluna" + dr[0].ToString();
+                    funcao.Text = dr[0].ToString();
+                    funcao.ForeColor = Color.White;
+                    funcao.BackColor = Color.Transparent;
+                    funcao.TextAlign = ContentAlignment.MiddleCenter;
+                    funcao.Dock = DockStyle.Fill;
+                    tbEscala.Controls.Add(funcao);
+                    tbEscala.ResumeLayout();
+                    i++;
                 }
 
-                //tbCabecalhoEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
+                tbEscala.Refresh();
+
+                //tbEscalas.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
                 //pessoas = new Label();
                 //pessoas.Text = "teste";
-                //subfuncoes.ForeColor = Color.Black;
+                //funcao.ForeColor = Color.Black;
                 //pessoas.TextAlign = ContentAlignment.MiddleCenter;
                 //pessoas.Dock = DockStyle.Fill;
-                //tbCabecalhoEscala.SuspendLayout();
-                //tbCabecalhoEscala.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
-                //tbCabecalhoEscala.Controls.Add(pessoas);
-                //tbCabecalhoEscala.RowCount += 1;
-                //tbCabecalhoEscala.ResumeLayout();
+                //tbEscalas.SuspendLayout();
+                //tbEscalas.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+                //tbEscalas.Controls.Add(pessoas);
+                //tbEscalas.RowCount += 1;
+                //tbEscalas.ResumeLayout();
             }
             catch (Exception erro)
             {
@@ -86,33 +94,25 @@ namespace EscalasMetodista.Views.Escalas
 
         private void carregarTbDatasEscala()
         {
-
-            int i = 0;
-
-            while (dataInicio != dataFim && i < dias.Days)
+            int i = 1;
+            while (dataInicio != dataFim)
             {
-                tbCabecalhoEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-                tbCabecalhoEscala.RowStyles.Add(new RowStyle(SizeType.Absolute, 64));
+                tbEscala.SuspendLayout();
+                tbEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
+                tbEscala.RowStyles.Add(new RowStyle(SizeType.Absolute, 68));
                 datas = new Label();
+                datas.Name = "data";
                 datas.Text = dataInicio.ToString("dd/MM");
                 dataInicio = dataInicio.AddDays(1);
                 datas.TextAlign = ContentAlignment.MiddleCenter;
                 datas.ForeColor = Color.Black;
+                datas.BackColor = Color.Transparent;
                 datas.Dock = DockStyle.Fill;
-                tbCabecalhoEscala.Controls.Add(datas, 0, tbCabecalhoEscala.RowCount);
-                tbCabecalhoEscala.RowCount++;
+                tbEscala.Controls.Add(datas, 0, i);
+                //tbEscalas.RowCount++;
+                i++;
+                tbEscala.ResumeLayout();
             }
-        }
-
-        private void Addlabel(String text)
-        {
-            int qtdLinhas = 0;
-            label = new Label();
-            label.Dock = DockStyle.Fill;
-            label.Text = text;
-            label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            tbCabecalhoEscala.Controls.Add(label, 1, qtdLinhas);
-            qtdLinhas++;
         }
 
         private void FormEscalaLouvor_KeyDown(object sender, KeyEventArgs e)
@@ -127,37 +127,31 @@ namespace EscalasMetodista.Views.Escalas
             }
         }
 
-        private void tbCabecalhoEscala_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        private void tbEscala_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
-            Graphics g = e.Graphics;
+            Graphics g = tbEscala.CreateGraphics();
 
-            //g.DrawRectangle(
-            //    Pens.Gray,
-            //    e.CellBounds.Location.X + 2,
-            //    e.CellBounds.Location.Y + 1,
-            //    e.CellBounds.Width - 2, e.CellBounds.Height - 2);
+            if (e.Column == 0 && e.Row == 0)
+            {
+                e.Graphics.FillRectangle(Brushes.Black, e.CellBounds);
+            }
 
-
-            if (e.Column == 0)
+            else if (e.Column == 0 && e.Row > 0)
             {
                 e.Graphics.FillRectangle(Brushes.DarkGray, e.CellBounds);
+                g.DrawRectangle(new Pen(Brushes.Black, 1.0f), e.CellBounds);
             }
 
-            if (e.Row == 0)
+            else if (e.Row == 0 && e.Column > 0)
             {
-                if (e.Column != 0)
-                {
-                    e.Graphics.FillRectangle(Brushes.Maroon, e.CellBounds);
-                    //carregarCabecalhoEscala();
-                }
+                e.Graphics.FillRectangle(Brushes.Maroon, e.CellBounds);
+                g.DrawRectangle(new Pen(Brushes.Black, 2.0f), e.CellBounds);
             }
 
-            //g.FillRectangle(
-            //    Brushes.White,
-            //    e.CellBounds.Location.X + 2,
-            //    e.CellBounds.Location.Y + 1,
-            //    e.CellBounds.Width - 2,
-            //    e.CellBounds.Height - 2);
+            else if (e.Row > 0 && e.Column > 0)
+            {
+                g.DrawRectangle(new Pen(Brushes.DarkGray, 0.5f), e.CellBounds);
+            }
         }
 
         private void lbNomeEscala_DoubleClick(object sender, EventArgs e)
