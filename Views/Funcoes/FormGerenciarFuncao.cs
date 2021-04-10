@@ -26,28 +26,21 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrWhiteSpace(txtNomePesquisa.Text)) && (string.IsNullOrWhiteSpace(txtIdPesquisa.Text)))
+            if ((string.IsNullOrWhiteSpace(txtPesquisa.Text)))
             {
-                this.CarregarDataGrid(true, null, null, 0);
+                CarregarDataGrid(true, null);
             }
             else
             {
-                if (txtIdPesquisa.Text != "")
-                {
-                    this.CarregarDataGrid(false, "idFuncao", null, Int32.Parse(txtIdPesquisa.Text));
-                }
-                else if (txtNomePesquisa.Text != "")
-                {
-                    this.CarregarDataGrid(false, "descricaoFuncao", txtNomePesquisa.Text, 0);
-                }
+                CarregarDataGrid(false, txtPesquisa.Text);
             }
         }
 
-        private void CarregarDataGrid(Boolean atualizacao, String campo, String valor, int id)
+        private void CarregarDataGrid(Boolean atualizacao, String pesquisa)
         {
             SqlCommand cmd = new SqlCommand();
 
-            if (atualizacao == true)
+            if (atualizacao == true && pesquisa == null)
             {
                 try
                 {
@@ -74,12 +67,12 @@ namespace EscalasMetodista.Views.Funcoes
                 }
                 conexao.Desconectar();
             }
-            else if (valor != null)
+            else if (atualizacao == false && pesquisa != null)
             {
                 try
                 {
                     cmd.Connection = conexao.Conectar();
-                    cmd.CommandText = "SELECT * FROM funcao WHERE "  + campo + " LIKE '%" + valor + "%'";
+                    cmd.CommandText = "SELECT * FROM funcao WHERE cast(idFuncao as varchar) = '" + pesquisa + "' OR descricaoFuncao LIKE '%" + pesquisa + "%'";
 
 
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -93,33 +86,7 @@ namespace EscalasMetodista.Views.Funcoes
                     else
                     {
                         MessageBox.Show("Nenhuma Função foi encontrada!", "Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show("Erro: " + erro.Message);
-                }
-                conexao.Desconectar();
 
-            }
-            else if (valor == null)
-            {
-                try
-                {
-                    cmd.Connection = conexao.Conectar();
-                    cmd.CommandText = "SELECT * FROM funcao WHERE " + campo + " = '" + id + "'";
-
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.HasRows)
-                    {
-                        // Cria uma tabela genérica
-                        DataTable dt = new DataTable();
-                        dt.Load(dr); // Carrega os dados para o DataTable
-                        dgFuncoes.DataSource = dt; // Preenche o DataGridView
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nenhuma Função foi encontrada!", "Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception erro)
@@ -129,6 +96,7 @@ namespace EscalasMetodista.Views.Funcoes
                 conexao.Desconectar();
             }
         }
+
 
         private void dgFuncoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -173,7 +141,7 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void FormGerenciarFunção_Load(object sender, EventArgs e)
         {
-            this.CarregarDataGrid(true, null, null, 0);
+            this.CarregarDataGrid(true, null);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -184,11 +152,6 @@ namespace EscalasMetodista.Views.Funcoes
         private void dgFuncoes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             dgFuncoes.Rows[e.RowIndex].Cells["editar"].ToolTipText = "Clique aqui para editar";
-        }
-
-        private void FormGerenciarFuncao_Activated(object sender, EventArgs e)
-        {
-            this.CarregarDataGrid(true, null, null, 0);
         }
 
         private void FormGerenciarFuncao_KeyDown(object sender, KeyEventArgs e)

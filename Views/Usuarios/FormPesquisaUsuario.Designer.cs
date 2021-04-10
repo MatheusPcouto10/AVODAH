@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPesquisaUsuario));
             this.label3 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIdPessoa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -44,6 +42,8 @@
             this.dgUsuariosPesquisa = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.txtIdPessoa = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuariosPesquisa)).BeginInit();
             this.SuspendLayout();
@@ -68,28 +68,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(249, 26);
             this.txtNome.TabIndex = 41;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(58, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Código:";
-            // 
-            // txtIdPessoa
-            // 
-            this.txtIdPessoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdPessoa.Location = new System.Drawing.Point(62, 68);
-            this.txtIdPessoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIdPessoa.Name = "txtIdPessoa";
-            this.txtIdPessoa.Size = new System.Drawing.Size(103, 26);
-            this.txtIdPessoa.TabIndex = 43;
-            this.txtIdPessoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -157,7 +135,6 @@
             // 
             // cbSubFuncao
             // 
-            this.cbSubFuncao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubFuncao.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncao.FormattingEnabled = true;
@@ -169,7 +146,6 @@
             // 
             // cbFuncao
             // 
-            this.cbFuncao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFuncao.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbFuncao.FormattingEnabled = true;
@@ -264,6 +240,28 @@
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // txtIdPessoa
+            // 
+            this.txtIdPessoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdPessoa.Location = new System.Drawing.Point(62, 68);
+            this.txtIdPessoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdPessoa.Name = "txtIdPessoa";
+            this.txtIdPessoa.Size = new System.Drawing.Size(103, 26);
+            this.txtIdPessoa.TabIndex = 43;
+            this.txtIdPessoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(58, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Código:";
+            // 
             // FormPesquisaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -305,8 +303,6 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIdPessoa;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -318,5 +314,7 @@
         public System.Windows.Forms.DataGridView dgUsuariosPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.TextBox txtIdPessoa;
+        private System.Windows.Forms.Label label1;
     }
 }

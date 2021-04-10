@@ -34,11 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.telaPesquisa = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtIdPesquisa = new System.Windows.Forms.TextBox();
             this.btnPesquisa = new System.Windows.Forms.Button();
-            this.txtNomePesquisa = new System.Windows.Forms.TextBox();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.dgFuncoes = new System.Windows.Forms.DataGridView();
             this.editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -112,11 +109,8 @@
             // 
             this.telaPesquisa.BackColor = System.Drawing.SystemColors.ControlDark;
             this.telaPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
-            this.telaPesquisa.Controls.Add(this.label11);
-            this.telaPesquisa.Controls.Add(this.label7);
-            this.telaPesquisa.Controls.Add(this.txtIdPesquisa);
             this.telaPesquisa.Controls.Add(this.btnPesquisa);
-            this.telaPesquisa.Controls.Add(this.txtNomePesquisa);
+            this.telaPesquisa.Controls.Add(this.txtPesquisa);
             this.telaPesquisa.Controls.Add(this.dgFuncoes);
             this.telaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telaPesquisa.Location = new System.Drawing.Point(4, 26);
@@ -126,45 +120,6 @@
             this.telaPesquisa.Size = new System.Drawing.Size(789, 474);
             this.telaPesquisa.TabIndex = 0;
             this.telaPesquisa.Text = "Pesquisa";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(315, 48);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 17);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Função";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(226, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 17);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "ID";
-            // 
-            // txtIdPesquisa
-            // 
-            this.txtIdPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdPesquisa.BackColor = System.Drawing.Color.White;
-            this.txtIdPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdPesquisa.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtIdPesquisa.Location = new System.Drawing.Point(229, 77);
-            this.txtIdPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIdPesquisa.Name = "txtIdPesquisa";
-            this.txtIdPesquisa.Size = new System.Drawing.Size(83, 23);
-            this.txtIdPesquisa.TabIndex = 13;
-            this.txtIdPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnPesquisa
             // 
@@ -179,7 +134,7 @@
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.Location = new System.Drawing.Point(523, 73);
+            this.btnPesquisa.Location = new System.Drawing.Point(476, 73);
             this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisa.Name = "btnPesquisa";
             this.btnPesquisa.Size = new System.Drawing.Size(44, 26);
@@ -187,18 +142,18 @@
             this.btnPesquisa.UseVisualStyleBackColor = false;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
-            // txtNomePesquisa
+            // txtPesquisa
             // 
-            this.txtNomePesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNomePesquisa.BackColor = System.Drawing.Color.White;
-            this.txtNomePesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNomePesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNomePesquisa.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtNomePesquisa.Location = new System.Drawing.Point(318, 77);
-            this.txtNomePesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNomePesquisa.Name = "txtNomePesquisa";
-            this.txtNomePesquisa.Size = new System.Drawing.Size(199, 23);
-            this.txtNomePesquisa.TabIndex = 11;
+            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisa.BackColor = System.Drawing.Color.White;
+            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPesquisa.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtPesquisa.Location = new System.Drawing.Point(271, 77);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(199, 23);
+            this.txtPesquisa.TabIndex = 11;
             // 
             // dgFuncoes
             // 
@@ -296,7 +251,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Funções";
-            this.Activated += new System.EventHandler(this.FormGerenciarFuncao_Activated);
             this.Load += new System.EventHandler(this.FormGerenciarFunção_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGerenciarFuncao_KeyDown);
             this.panel_rodape.ResumeLayout(false);
@@ -323,10 +277,7 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn editar;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtIdPesquisa;
         private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.TextBox txtNomePesquisa;
+        private System.Windows.Forms.TextBox txtPesquisa;
     }
 }

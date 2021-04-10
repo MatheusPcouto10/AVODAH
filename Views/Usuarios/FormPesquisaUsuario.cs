@@ -75,9 +75,7 @@ namespace EscalasMetodista.Views.Usuarios
             cbSubFuncao.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
 
             (Application.OpenForms["FormGerenciarUsuario"].Controls["tabControl1"]
-          .Controls["telaPesquisa"].Controls["txtIdPesquisa"] as TextBox).Text = txtIdPessoa.Text;
-            (Application.OpenForms["FormGerenciarUsuario"].Controls["tabControl1"]
-                .Controls["telaPesquisa"].Controls["txtNomePesquisa"] as TextBox).Text = txtNome.Text;
+          .Controls["telaPesquisa"].Controls["txtPesquisa"] as TextBox).Text = txtIdPessoa.Text;
 
         }
 

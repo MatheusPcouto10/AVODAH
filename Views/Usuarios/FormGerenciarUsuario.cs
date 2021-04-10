@@ -29,26 +29,15 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrWhiteSpace(txtNomePesquisa.Text)) && (string.IsNullOrWhiteSpace(txtIdPesquisa.Text)))
+            if ((string.IsNullOrWhiteSpace(txtPesquisa.Text)))
             {
                 FormPesquisaUsuario form = new FormPesquisaUsuario();
                 form.ShowDialog();
-                this.CarregarDataGridUsuario(true, null, null, 0);
+                CarregarDataGrid(true, null);
             }
             else
             {
-                if ((string.IsNullOrWhiteSpace(txtNomePesquisa.Text)))
-                {
-                    this.CarregarDataGridUsuario(false, "p.idPessoa", null, Int32.Parse(txtIdPesquisa.Text));
-                }
-                else if (txtIdPesquisa.Text != "" && txtNomePesquisa.Text != "")
-                {
-                    this.CarregarDataGridUsuario(false, "p.idPessoa", null, Int32.Parse(txtIdPesquisa.Text));
-                }
-                else if ((string.IsNullOrWhiteSpace(txtIdPesquisa.Text)))
-                {
-                    this.CarregarDataGridUsuario(false, "p.nome", txtNomePesquisa.Text, 0);
-                }
+                CarregarDataGrid(false, txtPesquisa.Text);
             }
         }
         private void btnSalvarUsuario_Click(object sender, EventArgs e)
@@ -96,8 +85,8 @@ namespace EscalasMetodista.Views.Usuarios
                                 pessoa.update(pessoa, idPessoa, temFuncaoSecundaria);
                                 tabControl1.SelectedIndex = 0;
                                 btnSalvarUsuario.Enabled = false;
-                                txtNomePesquisa.Text = "";
-                                this.CarregarDataGridUsuario(true, null, null, 0);
+                                txtPesquisa.Text = "";
+                                this.CarregarDataGrid(true, null);
                             }
                         }
                     }
@@ -119,7 +108,7 @@ namespace EscalasMetodista.Views.Usuarios
             this.preencheComboBoxTipoUsuario();
             this.preencheComboBoxFuncaoPrincipal();
             this.preencheComboBoxFuncaoSecundaria();
-            this.CarregarDataGridUsuario(true, null, null, 0);
+            this.CarregarDataGrid(true, null);
             btnSalvarUsuario.Enabled = false;
         }
         private void dgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -254,7 +243,7 @@ namespace EscalasMetodista.Views.Usuarios
                 }
             }
         }
-        private void CarregarDataGridUsuario(Boolean atualizacao, String campo, String valor, int id)
+        private void CarregarDataGrid(Boolean atualizacao, String pesquisa)
         {
             SqlCommand cmd = new SqlCommand();
 
@@ -293,9 +282,8 @@ namespace EscalasMetodista.Views.Usuarios
                 }
                 conexao.Desconectar();
             }
-            else if (valor != null)
+            else if (atualizacao == false && pesquisa != null)
             {
-
                 try
                 {
                     cmd.Connection = conexao.Conectar();
@@ -307,7 +295,8 @@ namespace EscalasMetodista.Views.Usuarios
 	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
 	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
 	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
-                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND " + campo + " LIKE '%" + valor + "%'";
+                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk WHERE cast(p.idPessoa as varchar) = '" + pesquisa + "' " +
+                                  "OR p.nome LIKE '%" + pesquisa + "%' OR p.sobrenome LIKE '%" + pesquisa + "%'";
 
 
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -329,42 +318,6 @@ namespace EscalasMetodista.Views.Usuarios
                 }
                 conexao.Desconectar();
 
-            }
-            else if (valor == null)
-            {
-
-                try
-                {
-                    cmd.Connection = conexao.Conectar();
-                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
-                                  f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
-                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
-                                  FROM pessoa AS p 
-	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
-	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
-	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
-	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
-                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND " + campo + " = '" + id + "'";
-
-
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.HasRows)
-                    {
-                        // Cria uma tabela genérica
-                        DataTable dt = new DataTable();
-                        dt.Load(dr); // Carrega os dados para o DataTable
-                        dgUsuarios.DataSource = dt; // Preenche o DataGridView
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show("Erro: " + erro.Message);
-                }
-                conexao.Desconectar();
             }
         }
         private void preencheComboBoxTipoUsuario()
@@ -541,21 +494,8 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void btnAtualizarDatagrid_Click(object sender, EventArgs e)
         {
-            this.CarregarDataGridUsuario(true, null, null, 0);
-            txtIdPesquisa.Text = "";
-            txtNomePesquisa.Text = "";
-        }
-
-        private void FormGerenciarUsuario_Activated(object sender, EventArgs e)
-        {
-            if (txtIdPesquisa.Text != "")
-            {
-                this.CarregarDataGridUsuario(false, "p.idPessoa", null, Int32.Parse(txtIdPesquisa.Text));
-            }
-            else
-            {
-                this.CarregarDataGridUsuario(true, null, null, 0);
-            }
+            this.CarregarDataGrid(true, null);
+            txtPesquisa.Text = "";
         }
     }
 }
