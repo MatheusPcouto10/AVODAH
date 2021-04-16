@@ -18,7 +18,7 @@ namespace EscalasMetodista.Views.Usuarios
     {
         Pessoa pessoa = new Pessoa();
         SqlCommand cmd = new SqlCommand();
-        public Boolean temFuncaoSecundaria = false;
+        public bool temFuncaoSecundaria = false;
         public FormCadastrarUsuario()
         {
             InitializeComponent();
@@ -30,6 +30,7 @@ namespace EscalasMetodista.Views.Usuarios
             pessoa.Sobrenome = txtSobrenome.Text;
             pessoa.Email = txtEmail.Text;
             pessoa.Senha = txtSenha.Text;
+            if ((string.IsNullOrWhiteSpace(txtSenha.Text))) { MessageBox.Show("Informe uma senha", "Dados Inválidos", MessageBoxButtons.OK, MessageBoxIcon.Error);}
             pessoa.dataCadastro = dtCadastro.Value;
             pessoa.tipoUsuario.idTipoUsuario = (int)cbTipoUsuario.SelectedValue;
             pessoa.Status = "Ativo";
@@ -286,6 +287,31 @@ namespace EscalasMetodista.Views.Usuarios
         {
             cbFuncaoSecundaria.Text = "Selecione...";
             cbSubFuncaoSecundaria.Text = "Selecione...";
+        }
+
+        private void cbFuncaoPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbSubFuncaoPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbFuncaoSecundaria_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbSubFuncaoSecundaria_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbTipoUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }

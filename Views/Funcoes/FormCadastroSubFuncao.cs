@@ -103,6 +103,15 @@ namespace EscalasMetodista.Views
             {
                 cbFuncoes.Text = funcao;
             }
+            else
+            {
+                cbFuncoes.Text = "Selecione";
+            }
+        }
+
+        private void cbFuncoes_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }

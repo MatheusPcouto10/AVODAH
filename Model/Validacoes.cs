@@ -21,7 +21,7 @@ namespace EscalasMetodista.Model
             return resultadoValidacao;
         }
 
-        public static Boolean ValidarObjeto(object obj)
+        public static bool ValidarObjeto(object obj)
         {
             var erros = Validacoes.getValidationErros(obj);
             foreach (var error in erros)
@@ -32,7 +32,7 @@ namespace EscalasMetodista.Model
             return true;
         }
 
-        public static Boolean verificaUnico(String campo, String tabela, String valor, Boolean update, int idPessoa, String idCampo)
+        public static bool verificaUnico(String campo, String tabela, String valor, Boolean update, int idPessoa, String idCampo)
         {
             SqlCommand cmd = new SqlCommand();
 

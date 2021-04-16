@@ -19,7 +19,7 @@ namespace EscalasMetodista.Views.Usuarios
         Pessoa pessoa = new Pessoa();
         SqlCommand cmd = new SqlCommand();
         Conexao conexao = new Conexao();
-        public Boolean temFuncaoSecundaria = false;
+        public bool temFuncaoSecundaria = false;
         public int idPessoa;
 
         public FormGerenciarUsuario()
@@ -45,12 +45,11 @@ namespace EscalasMetodista.Views.Usuarios
             pessoa.Nome = txtNome.Text;
             pessoa.Sobrenome = txtSobrenome.Text;
             pessoa.Email = txtEmail.Text;
-            pessoa.Senha = txtSenha.Text;
             pessoa.dataCadastro = dtCadastro.Value;
             pessoa.tipoUsuario.idTipoUsuario = (int)cbTipoUsuario.SelectedValue;
             pessoa.Status = cbStatus.Text;
 
-            if (cbFuncaoPrincipal.Text != "Selecione...")
+            if (cbSubFuncaoPrincipal.Text != "Selecione...")
             {
                 pessoa.funcaoPrincipal.idSubFuncao = (int)cbSubFuncaoPrincipal.SelectedValue;
 
@@ -67,8 +66,7 @@ namespace EscalasMetodista.Views.Usuarios
 
                 try
                 {
-                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, true, idPessoa, "idPessoa") == true ||
-                        Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text, true, idPessoa, "idPessoa") == true)
+                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, true, idPessoa, "idPessoa") == true)
                     {
                         MessageBox.Show("O e-mail e/ou senha já está em uso!", "E-mail/Senha já Cadastrado ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -108,6 +106,12 @@ namespace EscalasMetodista.Views.Usuarios
             this.preencheComboBoxTipoUsuario();
             this.preencheComboBoxFuncaoPrincipal();
             this.preencheComboBoxFuncaoSecundaria();
+            cbStatus.Text = "Selecione...";
+            cbTipoUsuario.Text = "Selecione...";
+            cbFuncaoPrincipal.Text = "Selecione...";
+            cbFuncaoSecundaria.Text = "Selecione...";
+            cbSubFuncaoPrincipal.Text = "Selecione...";
+            cbSubFuncaoSecundaria.Text = "Selecione...";
             this.CarregarDataGrid(true, null);
             btnSalvarUsuario.Enabled = false;
         }
@@ -119,8 +123,16 @@ namespace EscalasMetodista.Views.Usuarios
             //verificar se a coluna clicada é a de editar
             if (dgUsuarios.Columns[e.ColumnIndex] == dgUsuarios.Columns["editar"])
             {
+                txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+                txtSobrenome.Text = dgUsuarios.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
+                txtEmail.Text = dgUsuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
+                cbTipoUsuario.Text = dgUsuarios.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
+                cbStatus.Text = dgUsuarios.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                cbFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
+                cbSubFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
+                dtCadastro.Text = dgUsuarios.Rows[e.RowIndex].Cells["dataCadastro"].Value.ToString();
 
-                if (dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value == DBNull.Value)
+                if (string.IsNullOrWhiteSpace(dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString()))
                 {
                     cbFuncaoSecundaria.Text = "Selecione...";
                     cbSubFuncaoSecundaria.Text = "Selecione...";
@@ -130,16 +142,6 @@ namespace EscalasMetodista.Views.Usuarios
                     cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value.ToString();
                     cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString();
                 }
-
-                txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
-                txtSobrenome.Text = dgUsuarios.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
-                txtEmail.Text = dgUsuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
-                txtSenha.Text = dgUsuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
-                cbTipoUsuario.Text = dgUsuarios.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
-                cbStatus.Text = dgUsuarios.Rows[e.RowIndex].Cells["status"].Value.ToString();
-                cbFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
-                cbSubFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
-                dtCadastro.Text = dgUsuarios.Rows[e.RowIndex].Cells["dataCadastro"].Value.ToString();
 
                 tabControl1.SelectedIndex = 1;
                 btnSalvarUsuario.Enabled = true;
@@ -162,7 +164,6 @@ namespace EscalasMetodista.Views.Usuarios
             txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
             txtSobrenome.Text = dgUsuarios.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
             txtEmail.Text = dgUsuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
-            txtSenha.Text = dgUsuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
             cbTipoUsuario.Text = dgUsuarios.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
             cbStatus.Text = dgUsuarios.Rows[e.RowIndex].Cells["status"].Value.ToString();
             cbFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
@@ -199,10 +200,6 @@ namespace EscalasMetodista.Views.Usuarios
                         coluna.Width = 140;
                         coluna.HeaderText = "E-mail";
                         break;
-                    case "senha":
-                        coluna.Visible = false;
-                        coluna.HeaderText = "Senha";
-                        break;
                     case "descricao":
                         coluna.Width = 80;
                         coluna.HeaderText = "Tipo de Usuário";
@@ -236,7 +233,7 @@ namespace EscalasMetodista.Views.Usuarios
                         break;
                     case "editar":
                         coluna.Width = 40;
-                        coluna.DisplayIndex = 12;
+                        coluna.DisplayIndex = 11;
                         break;
                     default:
                         break;
@@ -252,7 +249,7 @@ namespace EscalasMetodista.Views.Usuarios
                 try
                 {
                     cmd.Connection = conexao.Conectar();
-                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
+                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, t.descricao, 
                                   f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
                                   f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
                                   FROM pessoa AS p 
@@ -447,25 +444,7 @@ namespace EscalasMetodista.Views.Usuarios
                 conexao.Desconectar();
             }
         }
-        private void cbFuncaoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.preencheComboBoxSubFuncaoPrincipal();
-        }
-        private void cbFuncaoSecundaria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.preencheComboboxSubFuncaoSecundaria();
-        }
-        private void checkMostrarSenha_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkMostrarSenha.Checked)
-            {
-                txtSenha.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtSenha.UseSystemPasswordChar = true;
-            }
-        }
+
         private void btnLimparFuncaoPrincipal_Click(object sender, EventArgs e)
         {
             cbFuncaoPrincipal.Text = "Selecione...";
@@ -496,6 +475,62 @@ namespace EscalasMetodista.Views.Usuarios
         {
             this.CarregarDataGrid(true, null);
             txtPesquisa.Text = "";
+        }
+
+        private void cbFuncaoPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbSubFuncaoPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbFuncaoSecundaria_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbSubFuncaoSecundaria_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbTipoUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbStatus_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0)
+            {
+                txtNome.Text = null;
+                txtSobrenome.Text = null;
+                txtEmail.Text = null;
+                cbStatus.Text = "Selecione...";
+                cbTipoUsuario.Text = "Selecione...";
+                cbFuncaoPrincipal.Text = "Selecione...";
+                cbFuncaoSecundaria.Text = "Selecione...";
+                cbSubFuncaoPrincipal.Text = "Selecione...";
+                cbSubFuncaoSecundaria.Text = "Selecione...";
+            }
+        }
+
+        private void cbFuncaoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            preencheComboBoxSubFuncaoPrincipal();
+        }
+
+        private void cbFuncaoSecundaria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            preencheComboboxSubFuncaoSecundaria();
         }
     }
 }

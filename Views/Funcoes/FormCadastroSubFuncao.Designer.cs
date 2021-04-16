@@ -50,7 +50,6 @@
             // 
             // cbFuncoes
             // 
-            this.cbFuncoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFuncoes.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncoes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             this.cbFuncoes.FormattingEnabled = true;
@@ -59,6 +58,8 @@
             this.cbFuncoes.Name = "cbFuncoes";
             this.cbFuncoes.Size = new System.Drawing.Size(267, 26);
             this.cbFuncoes.TabIndex = 36;
+            this.cbFuncoes.Text = "Selecione";
+            this.cbFuncoes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbFuncoes_KeyDown);
             // 
             // labelNomeProduto
             // 

@@ -153,15 +153,15 @@
             // 
             this.cbTipoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbTipoUsuario.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbTipoUsuario.FormattingEnabled = true;
-            this.cbTipoUsuario.Location = new System.Drawing.Point(603, 409);
+            this.cbTipoUsuario.Location = new System.Drawing.Point(560, 409);
             this.cbTipoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipoUsuario.Name = "cbTipoUsuario";
-            this.cbTipoUsuario.Size = new System.Drawing.Size(167, 28);
+            this.cbTipoUsuario.Size = new System.Drawing.Size(188, 28);
             this.cbTipoUsuario.TabIndex = 48;
+            this.cbTipoUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbTipoUsuario_KeyDown);
             // 
             // label7
             // 
@@ -169,7 +169,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(599, 369);
+            this.label7.Location = new System.Drawing.Point(556, 369);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(166, 20);
             this.label7.TabIndex = 54;
@@ -225,11 +225,11 @@
             this.groupBox1.Controls.Add(this.cbFuncaoPrincipal);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(603, 115);
+            this.groupBox1.Location = new System.Drawing.Point(560, 115);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(420, 107);
+            this.groupBox1.Size = new System.Drawing.Size(463, 107);
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Função Principal";
@@ -244,7 +244,7 @@
             this.btnLimparFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimparFuncaoPrincipal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(400, 9);
+            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(443, 9);
             this.btnLimparFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimparFuncaoPrincipal.Name = "btnLimparFuncaoPrincipal";
             this.btnLimparFuncaoPrincipal.Size = new System.Drawing.Size(20, 20);
@@ -257,11 +257,12 @@
             this.cbSubFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncaoPrincipal.FormattingEnabled = true;
-            this.cbSubFuncaoPrincipal.Location = new System.Drawing.Point(195, 45);
+            this.cbSubFuncaoPrincipal.Location = new System.Drawing.Point(245, 45);
             this.cbSubFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSubFuncaoPrincipal.Name = "cbSubFuncaoPrincipal";
-            this.cbSubFuncaoPrincipal.Size = new System.Drawing.Size(202, 28);
+            this.cbSubFuncaoPrincipal.Size = new System.Drawing.Size(212, 28);
             this.cbSubFuncaoPrincipal.TabIndex = 38;
+            this.cbSubFuncaoPrincipal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSubFuncaoPrincipal_KeyDown);
             // 
             // cbFuncaoPrincipal
             // 
@@ -271,9 +272,10 @@
             this.cbFuncaoPrincipal.Location = new System.Drawing.Point(6, 45);
             this.cbFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFuncaoPrincipal.Name = "cbFuncaoPrincipal";
-            this.cbFuncaoPrincipal.Size = new System.Drawing.Size(169, 28);
+            this.cbFuncaoPrincipal.Size = new System.Drawing.Size(222, 28);
             this.cbFuncaoPrincipal.TabIndex = 31;
             this.cbFuncaoPrincipal.SelectedIndexChanged += new System.EventHandler(this.cbFuncaoPrincipal_SelectedIndexChanged);
+            this.cbFuncaoPrincipal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbFuncaoPrincipal_KeyDown);
             // 
             // groupBox2
             // 
@@ -283,11 +285,11 @@
             this.groupBox2.Controls.Add(this.cbFuncaoSecundaria);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(603, 242);
+            this.groupBox2.Location = new System.Drawing.Point(560, 242);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(420, 107);
+            this.groupBox2.Size = new System.Drawing.Size(463, 107);
             this.groupBox2.TabIndex = 63;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Função Secundária";
@@ -302,7 +304,7 @@
             this.btnLimparFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimparFuncaoSecundaria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(400, 8);
+            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(443, 8);
             this.btnLimparFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimparFuncaoSecundaria.Name = "btnLimparFuncaoSecundaria";
             this.btnLimparFuncaoSecundaria.Size = new System.Drawing.Size(20, 20);
@@ -315,11 +317,12 @@
             this.cbSubFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncaoSecundaria.FormattingEnabled = true;
-            this.cbSubFuncaoSecundaria.Location = new System.Drawing.Point(195, 45);
+            this.cbSubFuncaoSecundaria.Location = new System.Drawing.Point(245, 46);
             this.cbSubFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSubFuncaoSecundaria.Name = "cbSubFuncaoSecundaria";
-            this.cbSubFuncaoSecundaria.Size = new System.Drawing.Size(202, 28);
+            this.cbSubFuncaoSecundaria.Size = new System.Drawing.Size(212, 28);
             this.cbSubFuncaoSecundaria.TabIndex = 38;
+            this.cbSubFuncaoSecundaria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSubFuncaoSecundaria_KeyDown);
             // 
             // cbFuncaoSecundaria
             // 
@@ -329,9 +332,10 @@
             this.cbFuncaoSecundaria.Location = new System.Drawing.Point(6, 45);
             this.cbFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFuncaoSecundaria.Name = "cbFuncaoSecundaria";
-            this.cbFuncaoSecundaria.Size = new System.Drawing.Size(169, 28);
+            this.cbFuncaoSecundaria.Size = new System.Drawing.Size(222, 28);
             this.cbFuncaoSecundaria.TabIndex = 31;
             this.cbFuncaoSecundaria.SelectedIndexChanged += new System.EventHandler(this.cbFuncaoSecundaria_SelectedIndexChanged);
+            this.cbFuncaoSecundaria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbFuncaoSecundaria_KeyDown);
             // 
             // checkMostrarSenha
             // 

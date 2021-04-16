@@ -19,12 +19,7 @@ namespace EscalasMetodista.Views
 
         private void linkGithub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/MatheusPcouto10");
-        }
-
-        private void linkLinkedin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.linkedin.com/in/matheuspcouto/");
+            System.Diagnostics.Process.Start("https://matheuspcouto10.github.io/");
         }
 
         private void linkInstagram_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

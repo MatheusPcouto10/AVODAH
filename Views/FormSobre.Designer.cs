@@ -34,9 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.linkGithub = new System.Windows.Forms.LinkLabel();
-            this.linkLinkedin = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.linkPortfolio = new System.Windows.Forms.LinkLabel();
             this.linkInstagram = new System.Windows.Forms.LinkLabel();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,53 +97,26 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(197, 355);
+            this.label4.Location = new System.Drawing.Point(188, 355);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 20);
+            this.label4.Size = new System.Drawing.Size(99, 20);
             this.label4.TabIndex = 28;
-            this.label4.Text = "Github:";
+            this.label4.Text = "Portfólio:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkGithub
+            // linkPortfolio
             // 
-            this.linkGithub.AutoSize = true;
-            this.linkGithub.BackColor = System.Drawing.Color.Transparent;
-            this.linkGithub.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkGithub.LinkColor = System.Drawing.SystemColors.Control;
-            this.linkGithub.Location = new System.Drawing.Point(166, 392);
-            this.linkGithub.Name = "linkGithub";
-            this.linkGithub.Size = new System.Drawing.Size(143, 18);
-            this.linkGithub.TabIndex = 29;
-            this.linkGithub.TabStop = true;
-            this.linkGithub.Text = "MatheusPcouto10";
-            this.linkGithub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGithub_LinkClicked);
-            // 
-            // linkLinkedin
-            // 
-            this.linkLinkedin.AutoSize = true;
-            this.linkLinkedin.BackColor = System.Drawing.Color.Transparent;
-            this.linkLinkedin.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLinkedin.LinkColor = System.Drawing.SystemColors.Control;
-            this.linkLinkedin.Location = new System.Drawing.Point(162, 464);
-            this.linkLinkedin.Name = "linkLinkedin";
-            this.linkLinkedin.Size = new System.Drawing.Size(144, 18);
-            this.linkLinkedin.TabIndex = 31;
-            this.linkLinkedin.TabStop = true;
-            this.linkLinkedin.Text = "in/matheuspcouto";
-            this.linkLinkedin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLinkedin_LinkClicked);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(189, 427);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 20);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Linkedin:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkPortfolio.AutoSize = true;
+            this.linkPortfolio.BackColor = System.Drawing.Color.Transparent;
+            this.linkPortfolio.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkPortfolio.LinkColor = System.Drawing.SystemColors.Control;
+            this.linkPortfolio.Location = new System.Drawing.Point(98, 392);
+            this.linkPortfolio.Name = "linkPortfolio";
+            this.linkPortfolio.Size = new System.Drawing.Size(279, 18);
+            this.linkPortfolio.TabIndex = 29;
+            this.linkPortfolio.TabStop = true;
+            this.linkPortfolio.Text = "https://matheuspcouto10.github.io/";
+            this.linkPortfolio.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGithub_LinkClicked);
             // 
             // linkInstagram
             // 
@@ -153,7 +124,7 @@
             this.linkInstagram.BackColor = System.Drawing.Color.Transparent;
             this.linkInstagram.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkInstagram.LinkColor = System.Drawing.SystemColors.Control;
-            this.linkInstagram.Location = new System.Drawing.Point(162, 536);
+            this.linkInstagram.Location = new System.Drawing.Point(162, 486);
             this.linkInstagram.Name = "linkInstagram";
             this.linkInstagram.Size = new System.Drawing.Size(151, 18);
             this.linkInstagram.TabIndex = 33;
@@ -167,7 +138,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(133, 499);
+            this.label6.Location = new System.Drawing.Point(133, 449);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(208, 20);
             this.label6.TabIndex = 32;
@@ -182,9 +153,7 @@
             this.ClientSize = new System.Drawing.Size(474, 591);
             this.Controls.Add(this.linkInstagram);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.linkLinkedin);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.linkGithub);
+            this.Controls.Add(this.linkPortfolio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -211,9 +180,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.LinkLabel linkGithub;
-        private System.Windows.Forms.LinkLabel linkLinkedin;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.LinkLabel linkPortfolio;
         private System.Windows.Forms.LinkLabel linkInstagram;
         private System.Windows.Forms.Label label6;
     }
