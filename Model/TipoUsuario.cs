@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace EscalasMetodista.Model
 {
-    class TipoUsuario : DaoTipoUsuario<TipoUsuario>
+    class TipoUsuario : DefaultDao<TipoUsuario>
     {
         public int idTipoUsuario { get; set; }
 
@@ -44,7 +44,7 @@ namespace EscalasMetodista.Model
             throw new NotImplementedException();
         }
 
-        public TipoUsuario findById(int id)
+        public TipoUsuario find(int id)
         {
             throw new NotImplementedException();
         }

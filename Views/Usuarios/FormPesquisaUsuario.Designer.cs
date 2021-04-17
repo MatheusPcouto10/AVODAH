@@ -97,6 +97,7 @@
             this.cbStatus.Size = new System.Drawing.Size(167, 28);
             this.cbStatus.TabIndex = 73;
             this.cbStatus.Text = "Selecione...";
+            this.cbStatus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbStatus_KeyDown);
             // 
             // groupBox2
             // 
@@ -143,6 +144,7 @@
             this.cbSubFuncao.Name = "cbSubFuncao";
             this.cbSubFuncao.Size = new System.Drawing.Size(225, 28);
             this.cbSubFuncao.TabIndex = 38;
+            this.cbSubFuncao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSubFuncao_KeyDown);
             // 
             // cbFuncao
             // 
@@ -155,6 +157,7 @@
             this.cbFuncao.Size = new System.Drawing.Size(169, 28);
             this.cbFuncao.TabIndex = 31;
             this.cbFuncao.SelectedIndexChanged += new System.EventHandler(this.cbFuncao_SelectedIndexChanged);
+            this.cbFuncao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbFuncao_KeyDown);
             // 
             // label9
             // 
@@ -181,6 +184,7 @@
             this.cbTipoUsuario.Size = new System.Drawing.Size(167, 28);
             this.cbTipoUsuario.TabIndex = 76;
             this.cbTipoUsuario.Text = "Selecione...";
+            this.cbTipoUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbTipoUsuario_KeyDown);
             // 
             // dgUsuariosPesquisa
             // 

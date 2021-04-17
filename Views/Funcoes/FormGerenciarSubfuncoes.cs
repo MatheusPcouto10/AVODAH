@@ -40,7 +40,7 @@ namespace EscalasMetodista.Views.Funcoes
             }
         }
 
-        private void CarregarDataGrid(Boolean atualizacao, String pesquisa)
+        private void CarregarDataGrid(bool atualizacao, string pesquisa)
         {
             SqlCommand cmd = new SqlCommand();
 
@@ -100,7 +100,6 @@ namespace EscalasMetodista.Views.Funcoes
                     MessageBox.Show("Erro: " + erro.Message);
                 }
                 conexao.Desconectar();
-
             }
         }
 
@@ -123,7 +122,7 @@ namespace EscalasMetodista.Views.Funcoes
 
         private void FormGerenciarSubfuncoes_Load(object sender, EventArgs e)
         {
-            this.CarregarDataGrid(true, null);
+            CarregarDataGrid(true, null);
         }
 
         private void dgFuncoes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -182,6 +181,11 @@ namespace EscalasMetodista.Views.Funcoes
             form.updateFuncao = true;
             form.funcao = dgSubFuncoes.Rows[e.RowIndex].Cells["descricaoFuncao"].Value.ToString();
             form.Show();
+        }
+
+        private void FormGerenciarSubfuncoes_Activated(object sender, EventArgs e)
+        {
+            CarregarDataGrid(true, null);
         }
     }
 }

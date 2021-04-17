@@ -36,7 +36,7 @@ namespace EscalasMetodista.Views.Funcoes
             }
         }
 
-        private void CarregarDataGrid(Boolean atualizacao, String pesquisa)
+        private void CarregarDataGrid(bool atualizacao, string pesquisa)
         {
             SqlCommand cmd = new SqlCommand();
 
@@ -176,6 +176,11 @@ namespace EscalasMetodista.Views.Funcoes
             form.txtDescricaoFuncao.Text = descricaoFuncao;
             form.updateFuncao = true;
             form.Show();
+        }
+
+        private void FormGerenciarFuncao_Activated(object sender, EventArgs e)
+        {
+            CarregarDataGrid(true, null);
         }
     }
 }

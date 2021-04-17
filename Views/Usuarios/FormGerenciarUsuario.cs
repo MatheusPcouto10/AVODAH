@@ -232,7 +232,7 @@ namespace EscalasMetodista.Views.Usuarios
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "editar":
-                        coluna.Width = 40;
+                        coluna.Width = 50;
                         coluna.DisplayIndex = 11;
                         break;
                     default:
@@ -240,7 +240,7 @@ namespace EscalasMetodista.Views.Usuarios
                 }
             }
         }
-        private void CarregarDataGrid(Boolean atualizacao, String pesquisa)
+        private void CarregarDataGrid(bool atualizacao, string pesquisa)
         {
             SqlCommand cmd = new SqlCommand();
 

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace EscalasMetodista.Model
 {
-    class SubFuncao : DaoSubFuncao<SubFuncao>
+    class SubFuncao : DefaultDao<SubFuncao>
     {
         public int idSubFuncao { get; set; }
 
@@ -46,7 +46,7 @@ namespace EscalasMetodista.Model
             throw new NotImplementedException();
         }
 
-        public SubFuncao findById(int id)
+        public SubFuncao find(int id)
         {
             throw new NotImplementedException();
         }

@@ -251,6 +251,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Funções";
+            this.Activated += new System.EventHandler(this.FormGerenciarFuncao_Activated);
             this.Load += new System.EventHandler(this.FormGerenciarFunção_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGerenciarFuncao_KeyDown);
             this.panel_rodape.ResumeLayout(false);

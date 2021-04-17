@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace EscalasMetodista.Dao
 {
-    interface DaoSubFuncao<T>
+    interface DefaultDao<T>
     {
         void create(T t);
         void update(T t, int id);
         void delete(int id);
-        T findById(int id);
+        T find(int id);
     }
 }

@@ -231,6 +231,7 @@
             this.Name = "FormGerenciarSubfuncoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Sub-Funções";
+            this.Activated += new System.EventHandler(this.FormGerenciarSubfuncoes_Activated);
             this.Load += new System.EventHandler(this.FormGerenciarSubfuncoes_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGerenciarSubfuncoes_KeyDown);
             this.tabControl1.ResumeLayout(false);

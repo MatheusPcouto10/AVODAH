@@ -32,7 +32,7 @@ namespace EscalasMetodista.Model
             return true;
         }
 
-        public static bool verificaUnico(String campo, String tabela, String valor, Boolean update, int idPessoa, String idCampo)
+        public static bool verificaUnico(string campo, string tabela, string valor, bool update, int idPessoa, string idCampo)
         {
             SqlCommand cmd = new SqlCommand();
 

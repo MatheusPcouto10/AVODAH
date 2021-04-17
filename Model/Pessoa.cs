@@ -34,9 +34,6 @@ namespace EscalasMetodista.Model
         //[Required(ErrorMessage = "Informe uma Senha")]
         public String Senha { get; set; }
 
-        SqlCommand cmd = new SqlCommand();
-        Conexao conexao = new Conexao();
-
         [Required(ErrorMessage = "É necessário ter uma Função Principal")]
         public SubFuncao funcaoPrincipal = new SubFuncao();
         public SubFuncao funcaoSecundaria = new SubFuncao();
@@ -60,6 +57,9 @@ namespace EscalasMetodista.Model
             get => this.tipoUsuario;
             set => this.tipoUsuario = value;
         }
+
+        SqlCommand cmd = new SqlCommand();
+        Conexao conexao = new Conexao();
 
         public void create(Pessoa t, Boolean temFuncaoSecundaria)
         {
@@ -104,12 +104,12 @@ namespace EscalasMetodista.Model
             throw new NotImplementedException();
         }
 
-        public Pessoa findById(int id)
+        public Pessoa find(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void update(Pessoa t, int idPessoas, Boolean temFuncaoSecundaria)
+        public void update(Pessoa t, int idPessoas, bool temFuncaoSecundaria)
         {
             try
             {
@@ -118,7 +118,6 @@ namespace EscalasMetodista.Model
                     cmd.CommandText = "UPDATE pessoa SET nome = '" + t.Nome +
                                                                      "', sobrenome = '" + t.Sobrenome +
                                                                      "', email = '" + t.Email +
-                                                                     "', senha = '" + t.Senha +
                                                                      "', tipoUsuario_fk = " + t.tipoUsuario.idTipoUsuario +
                                                                      ", funcaoPrincipal_fk = " + t.funcaoPrincipal.idSubFuncao +
                                                                      ", funcaoSecundaria_fk = " + t.funcaoSecundaria.idSubFuncao +
@@ -136,7 +135,6 @@ namespace EscalasMetodista.Model
                     cmd.CommandText = "UPDATE pessoa SET nome = '" + t.Nome +
                                                                      "', sobrenome = '" + t.Sobrenome +
                                                                      "', email = '" + t.Email +
-                                                                     "', senha = '" + t.Senha +
                                                                      "', tipoUsuario_fk = " + t.tipoUsuario.idTipoUsuario +
                                                                      ", funcaoPrincipal_fk = " + t.funcaoPrincipal.idSubFuncao +
                                                                      ", funcaoSecundaria_fk = NULL" +

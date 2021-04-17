@@ -48,15 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexão\Conexao.cs" />
-    <Compile Include="Dao\DaoFuncao.cs" />
+    <Compile Include="Dao\DefaultDao.cs" />
     <Compile Include="Dao\DaoPessoa.cs" />
-    <Compile Include="Dao\DaoSubFuncao.cs" />
-    <Compile Include="Dao\DaoTipoUsuario.cs" />
     <Compile Include="Model\Funcao.cs" />
     <Compile Include="Model\Pessoa.cs" />
     <Compile Include="Model\SubFuncao.cs" />
     <Compile Include="Model\TipoUsuario.cs" />
-    <Compile Include="Model\Validacoes.cs" />
+    <Compile Include="Util\Validacoes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,10 +73,10 @@
     <Compile Include="Views\Escalas\FormPersonalizarEscala.Designer.cs">
       <DependentUpon>FormPersonalizarEscala.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormSobre.cs">
+    <Compile Include="Views\Outros\FormSobre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormSobre.Designer.cs">
+    <Compile Include="Views\Outros\FormSobre.Designer.cs">
       <DependentUpon>FormSobre.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Usuarios\FormAlterarSenha.cs">
@@ -99,16 +97,16 @@
     <Compile Include="Views\Funcoes\FormCadastroSubFuncao.Designer.cs">
       <DependentUpon>FormCadastroSubFuncao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormLogin.cs">
+    <Compile Include="Views\Outros\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormLogin.Designer.cs">
+    <Compile Include="Views\Outros\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormMenu.cs">
+    <Compile Include="Views\Outros\FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormMenu.Designer.cs">
+    <Compile Include="Views\Outros\FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -149,7 +147,7 @@
     <EmbeddedResource Include="Views\Escalas\FormPersonalizarEscala.resx">
       <DependentUpon>FormPersonalizarEscala.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormSobre.resx">
+    <EmbeddedResource Include="Views\Outros\FormSobre.resx">
       <DependentUpon>FormSobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuarios\FormAlterarSenha.resx">
@@ -161,10 +159,10 @@
     <EmbeddedResource Include="Views\Funcoes\FormCadastroSubFuncao.resx">
       <DependentUpon>FormCadastroSubFuncao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormLogin.resx">
+    <EmbeddedResource Include="Views\Outros\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormMenu.resx">
+    <EmbeddedResource Include="Views\Outros\FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

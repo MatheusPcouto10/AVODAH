@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EscalasMetodista.Model
 {
-    class Funcao : DaoFuncao<Funcao>
+    class Funcao : DefaultDao<Funcao>
     {
         public int idFuncao { get; set; }
 
@@ -45,7 +45,7 @@ namespace EscalasMetodista.Model
             throw new NotImplementedException();
         }
 
-        public Funcao findById(int id)
+        public Funcao find(int id)
         {
             throw new NotImplementedException();
         }

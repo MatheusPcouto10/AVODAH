@@ -372,5 +372,25 @@ namespace EscalasMetodista.Views.Usuarios
                     break;
             }
         }
+
+        private void cbStatus_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbTipoUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbFuncao_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbSubFuncao_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
     }
 }
