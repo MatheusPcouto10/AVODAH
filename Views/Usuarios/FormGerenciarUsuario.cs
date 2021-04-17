@@ -19,7 +19,7 @@ namespace EscalasMetodista.Views.Usuarios
         Pessoa pessoa = new Pessoa();
         SqlCommand cmd = new SqlCommand();
         Conexao conexao = new Conexao();
-        public bool temFuncaoSecundaria = false;
+        public bool temFuncaoSecundaria = true;
         public int idPessoa;
 
         public FormGerenciarUsuario()
@@ -103,16 +103,10 @@ namespace EscalasMetodista.Views.Usuarios
         }
         private void FormGerenciarUsuario_Load(object sender, EventArgs e)
         {
-            this.preencheComboBoxTipoUsuario();
-            this.preencheComboBoxFuncaoPrincipal();
-            this.preencheComboBoxFuncaoSecundaria();
-            cbStatus.Text = "Selecione...";
-            cbTipoUsuario.Text = "Selecione...";
-            cbFuncaoPrincipal.Text = "Selecione...";
-            cbFuncaoSecundaria.Text = "Selecione...";
-            cbSubFuncaoPrincipal.Text = "Selecione...";
-            cbSubFuncaoSecundaria.Text = "Selecione...";
-            this.CarregarDataGrid(true, null);
+            CarregarDataGrid(true, null);
+            preencheComboBoxTipoUsuario();
+            preencheComboBoxFuncaoPrincipal();
+            preencheComboBoxFuncaoSecundaria();
             btnSalvarUsuario.Enabled = false;
         }
         private void dgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -123,6 +117,19 @@ namespace EscalasMetodista.Views.Usuarios
             //verificar se a coluna clicada é a de editar
             if (dgUsuarios.Columns[e.ColumnIndex] == dgUsuarios.Columns["editar"])
             {
+                if (dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString() == "-")
+                {
+                    cbFuncaoSecundaria.Text = "Selecione...";
+                    cbSubFuncaoSecundaria.Text = "Selecione...";
+                    temFuncaoSecundaria = false;
+                }
+                else
+                {
+                    cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value.ToString();
+                    cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString();
+                    temFuncaoSecundaria = true;
+                }
+
                 txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
                 txtSobrenome.Text = dgUsuarios.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
                 txtEmail.Text = dgUsuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
@@ -132,16 +139,6 @@ namespace EscalasMetodista.Views.Usuarios
                 cbSubFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
                 dtCadastro.Text = dgUsuarios.Rows[e.RowIndex].Cells["dataCadastro"].Value.ToString();
 
-                if (string.IsNullOrWhiteSpace(dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString()))
-                {
-                    cbFuncaoSecundaria.Text = "Selecione...";
-                    cbSubFuncaoSecundaria.Text = "Selecione...";
-                }
-                else
-                {
-                    cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value.ToString();
-                    cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString();
-                }
 
                 tabControl1.SelectedIndex = 1;
                 btnSalvarUsuario.Enabled = true;
@@ -150,28 +147,7 @@ namespace EscalasMetodista.Views.Usuarios
         private void dgUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value == DBNull.Value)
-            {
-                cbFuncaoSecundaria.Text = "Selecione...";
-                cbSubFuncaoSecundaria.Text = "Selecione...";
-            }
-            else
-            {
-                cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value.ToString();
-                cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString();
-            }
-
-            txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
-            txtSobrenome.Text = dgUsuarios.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
-            txtEmail.Text = dgUsuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
-            cbTipoUsuario.Text = dgUsuarios.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
-            cbStatus.Text = dgUsuarios.Rows[e.RowIndex].Cells["status"].Value.ToString();
-            cbFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
-            cbSubFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
-            dtCadastro.Text = dgUsuarios.Rows[e.RowIndex].Cells["dataCadastro"].Value.ToString();
-
-            tabControl1.SelectedIndex = 1;
-            btnSalvarUsuario.Enabled = true;
+            dgUsuarios_CellContentClick(null, null);
         }
         private void dgUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -251,7 +227,7 @@ namespace EscalasMetodista.Views.Usuarios
                     cmd.Connection = conexao.Conectar();
                     cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, t.descricao, 
                                   f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
-                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
+                                  ISNULL(f2.descricaoFuncao, '-') AS 'Função Secundária',  ISNULL(s2.descricao, '-') AS 'Sub-Função Secundária', p.dataCadastro, p.status
                                   FROM pessoa AS p 
 	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
 	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
@@ -284,9 +260,9 @@ namespace EscalasMetodista.Views.Usuarios
                 try
                 {
                     cmd.Connection = conexao.Conectar();
-                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, p.senha, t.descricao, 
+                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, p.email, t.descricao, 
                                   f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
-                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.dataCadastro, p.status
+                                  ISNULL(f2.descricaoFuncao, '-') AS 'Função Secundária',  ISNULL(s2.descricao, '-') AS 'Sub-Função Secundária', p.dataCadastro, p.status
                                   FROM pessoa AS p 
 	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
 	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
@@ -444,17 +420,6 @@ namespace EscalasMetodista.Views.Usuarios
                 conexao.Desconectar();
             }
         }
-
-        private void btnLimparFuncaoPrincipal_Click(object sender, EventArgs e)
-        {
-            cbFuncaoPrincipal.Text = "Selecione...";
-            cbSubFuncaoPrincipal.Text = "Selecione...";
-        }
-        private void btnLimparFuncaoSecundaria_Click(object sender, EventArgs e)
-        {
-            cbFuncaoSecundaria.Text = "Selecione...";
-            cbSubFuncaoSecundaria.Text = "Selecione...";
-        }
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -487,12 +452,12 @@ namespace EscalasMetodista.Views.Usuarios
             e.SuppressKeyPress = true;
         }
 
-        private void cbFuncaoSecundaria_KeyDown(object sender, KeyEventArgs e)
+        private void cbSubFuncaoSecundaria_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
         }
 
-        private void cbSubFuncaoSecundaria_KeyDown(object sender, KeyEventArgs e)
+        private void cbFuncaoSecundaria_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
         }
@@ -521,6 +486,11 @@ namespace EscalasMetodista.Views.Usuarios
                 cbSubFuncaoPrincipal.Text = "Selecione...";
                 cbSubFuncaoSecundaria.Text = "Selecione...";
             }
+            if (tabControl1.SelectedIndex == 1 && temFuncaoSecundaria == false)
+            {
+                cbFuncaoSecundaria.Text = "Selecione...";
+                cbSubFuncaoSecundaria.Text = "Selecione...";
+            }
         }
 
         private void cbFuncaoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
@@ -532,5 +502,18 @@ namespace EscalasMetodista.Views.Usuarios
         {
             preencheComboboxSubFuncaoSecundaria();
         }
+
+        private void btnLimparFuncaoSecundaria_Click(object sender, EventArgs e)
+        {
+            cbFuncaoSecundaria.Text = "Selecione...";
+            cbSubFuncaoSecundaria.Text = "Selecione...";
+        }
+
+        private void btnLimparFuncaoPrincipal_Click(object sender, EventArgs e)
+        {
+            cbFuncaoPrincipal.Text = "Selecione...";
+            cbSubFuncaoPrincipal.Text = "Selecione...";
+        }
+
     }
 }

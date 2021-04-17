@@ -176,7 +176,7 @@ namespace EscalasMetodista.Views.Escalas
             this.tbEscala.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
             this.tbEscala.Location = new System.Drawing.Point(0, 137);
             this.tbEscala.Name = "tbEscala";
-            this.tbEscala.RowCount = 12;
+            this.tbEscala.RowCount = 15;
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
@@ -189,7 +189,10 @@ namespace EscalasMetodista.Views.Escalas
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tbEscala.Size = new System.Drawing.Size(2195, 1020);
+            this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tbEscala.Size = new System.Drawing.Size(2195, 1275);
             this.tbEscala.TabIndex = 6;
             this.tbEscala.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.tbEscala_CellPaint);
             // 
@@ -206,7 +209,7 @@ namespace EscalasMetodista.Views.Escalas
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
             // btnSalvarEscalaComo
             // 
@@ -216,7 +219,7 @@ namespace EscalasMetodista.Views.Escalas
             this.btnSalvarEscalaComo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSalvarEscalaComo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalvarEscalaComo.Name = "btnSalvarEscalaComo";
-            this.btnSalvarEscalaComo.Size = new System.Drawing.Size(120, 22);
+            this.btnSalvarEscalaComo.Size = new System.Drawing.Size(120, 28);
             this.btnSalvarEscalaComo.Text = "Salvar Como";
             // 
             // planilhaxlsToolStripMenuItem
@@ -234,7 +237,7 @@ namespace EscalasMetodista.Views.Escalas
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // btnImprimir
             // 
@@ -243,13 +246,13 @@ namespace EscalasMetodista.Views.Escalas
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(80, 22);
+            this.btnImprimir.Size = new System.Drawing.Size(80, 28);
             this.btnImprimir.Text = "Imprimir";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // btnPreencherEscala
             // 
@@ -260,7 +263,7 @@ namespace EscalasMetodista.Views.Escalas
             this.preencherTudoToolStripMenuItem});
             this.btnPreencherEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnPreencherEscala.Name = "btnPreencherEscala";
-            this.btnPreencherEscala.Size = new System.Drawing.Size(154, 22);
+            this.btnPreencherEscala.Size = new System.Drawing.Size(154, 28);
             this.btnPreencherEscala.Text = "Preencher Escala";
             // 
             // btnPreencherEscalaLinha
@@ -287,7 +290,7 @@ namespace EscalasMetodista.Views.Escalas
             this.toolStripSeparator6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripSeparator6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
             // 
             // btnVoltar
             // 
@@ -297,7 +300,7 @@ namespace EscalasMetodista.Views.Escalas
             this.btnVoltar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(79, 25);
+            this.btnVoltar.Size = new System.Drawing.Size(79, 31);
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -311,7 +314,7 @@ namespace EscalasMetodista.Views.Escalas
             this.btnLimparEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnLimparEscala.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLimparEscala.Name = "btnLimparEscala";
-            this.btnLimparEscala.Size = new System.Drawing.Size(128, 22);
+            this.btnLimparEscala.Size = new System.Drawing.Size(128, 28);
             this.btnLimparEscala.Text = "Limpar Escala";
             // 
             // limparLinhaToolStripMenuItem
@@ -335,7 +338,7 @@ namespace EscalasMetodista.Views.Escalas
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
             // btnAdicionar
             // 
@@ -345,7 +348,7 @@ namespace EscalasMetodista.Views.Escalas
             this.btnAdicionar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(95, 22);
+            this.btnAdicionar.Size = new System.Drawing.Size(95, 28);
             this.btnAdicionar.Text = "Adicionar";
             // 
             // toolStripMenuItem1
@@ -402,6 +405,7 @@ namespace EscalasMetodista.Views.Escalas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MinimumSize = new System.Drawing.Size(1918, 735);
             this.Name = "FormEscala";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
