@@ -31,12 +31,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEscala));
             this.panel_botoes = new System.Windows.Forms.Panel();
-            this.txtNomeEscala = new System.Windows.Forms.TextBox();
-            this.lbNomeEscala = new System.Windows.Forms.Label();
-            this.logo_metodista = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tbEscala = new System.Windows.Forms.TableLayoutPanel();
+            this.menuEscala = new System.Windows.Forms.ToolStrip();
             this.btnSalvarEscala = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalvarEscalaComo = new System.Windows.Forms.ToolStripDropDownButton();
@@ -59,26 +54,223 @@ namespace EscalasMetodista.Views.Escalas
             this.btnAdicionar = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuEscala = new System.Windows.Forms.ToolStrip();
+            this.txtNomeEscala = new System.Windows.Forms.TextBox();
+            this.lbNomeEscala = new System.Windows.Forms.Label();
+            this.logo_metodista = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbEscala = new System.Windows.Forms.TableLayoutPanel();
             this.panel_botoes.SuspendLayout();
+            this.menuEscala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).BeginInit();
             this.tbEscala.SuspendLayout();
-            this.menuEscala.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_botoes
             // 
             this.panel_botoes.BackColor = System.Drawing.SystemColors.ControlText;
             this.panel_botoes.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
+            this.panel_botoes.Controls.Add(this.menuEscala);
             this.panel_botoes.Controls.Add(this.txtNomeEscala);
             this.panel_botoes.Controls.Add(this.lbNomeEscala);
             this.panel_botoes.Controls.Add(this.logo_metodista);
-            this.panel_botoes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_botoes.Location = new System.Drawing.Point(0, 0);
             this.panel_botoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_botoes.Name = "panel_botoes";
-            this.panel_botoes.Size = new System.Drawing.Size(2010, 109);
+            this.panel_botoes.Size = new System.Drawing.Size(3255, 148);
             this.panel_botoes.TabIndex = 3;
+            // 
+            // menuEscala
+            // 
+            this.menuEscala.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.menuEscala.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.menuEscala.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.menuEscala.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuEscala.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnSalvarEscala,
+            this.toolStripSeparator3,
+            this.btnSalvarEscalaComo,
+            this.toolStripSeparator2,
+            this.btnImprimir,
+            this.toolStripSeparator1,
+            this.btnPreencherEscala,
+            this.toolStripSeparator6,
+            this.btnVoltar,
+            this.btnLimparEscala,
+            this.toolStripSeparator4,
+            this.btnAdicionar});
+            this.menuEscala.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuEscala.Location = new System.Drawing.Point(0, 123);
+            this.menuEscala.Name = "menuEscala";
+            this.menuEscala.Size = new System.Drawing.Size(3255, 25);
+            this.menuEscala.Stretch = true;
+            this.menuEscala.TabIndex = 8;
+            // 
+            // btnSalvarEscala
+            // 
+            this.btnSalvarEscala.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSalvarEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSalvarEscala.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarEscala.Image")));
+            this.btnSalvarEscala.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalvarEscala.Name = "btnSalvarEscala";
+            this.btnSalvarEscala.Size = new System.Drawing.Size(65, 22);
+            this.btnSalvarEscala.Text = "Salvar ";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnSalvarEscalaComo
+            // 
+            this.btnSalvarEscalaComo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.planilhaxlsToolStripMenuItem,
+            this.pDFToolStripMenuItem});
+            this.btnSalvarEscalaComo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSalvarEscalaComo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalvarEscalaComo.Name = "btnSalvarEscalaComo";
+            this.btnSalvarEscalaComo.Size = new System.Drawing.Size(120, 22);
+            this.btnSalvarEscalaComo.Text = "Salvar Como";
+            // 
+            // planilhaxlsToolStripMenuItem
+            // 
+            this.planilhaxlsToolStripMenuItem.Name = "planilhaxlsToolStripMenuItem";
+            this.planilhaxlsToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.planilhaxlsToolStripMenuItem.Text = "Planilha (.xls)";
+            // 
+            // pDFToolStripMenuItem
+            // 
+            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.pDFToolStripMenuItem.Text = "PDF";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnImprimir.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(80, 22);
+            this.btnImprimir.Text = "Imprimir";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnPreencherEscala
+            // 
+            this.btnPreencherEscala.BackColor = System.Drawing.Color.Transparent;
+            this.btnPreencherEscala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnPreencherEscalaLinha,
+            this.btnPreencherColuna,
+            this.preencherTudoToolStripMenuItem});
+            this.btnPreencherEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPreencherEscala.Name = "btnPreencherEscala";
+            this.btnPreencherEscala.Size = new System.Drawing.Size(154, 22);
+            this.btnPreencherEscala.Text = "Preencher Escala";
+            // 
+            // btnPreencherEscalaLinha
+            // 
+            this.btnPreencherEscalaLinha.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPreencherEscalaLinha.Name = "btnPreencherEscalaLinha";
+            this.btnPreencherEscalaLinha.Size = new System.Drawing.Size(228, 26);
+            this.btnPreencherEscalaLinha.Text = "Preencher Linha";
+            // 
+            // btnPreencherColuna
+            // 
+            this.btnPreencherColuna.Name = "btnPreencherColuna";
+            this.btnPreencherColuna.Size = new System.Drawing.Size(228, 26);
+            this.btnPreencherColuna.Text = "Preencher Coluna";
+            // 
+            // preencherTudoToolStripMenuItem
+            // 
+            this.preencherTudoToolStripMenuItem.Name = "preencherTudoToolStripMenuItem";
+            this.preencherTudoToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.preencherTudoToolStripMenuItem.Text = "Preencher Tudo";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripSeparator6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnVoltar.Font = new System.Drawing.Font("Verdana", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Image = global::EscalasMetodista.Properties.Resources.sair;
+            this.btnVoltar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(79, 25);
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            // 
+            // btnLimparEscala
+            // 
+            this.btnLimparEscala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.limparLinhaToolStripMenuItem,
+            this.limparColunaToolStripMenuItem,
+            this.limparTudoToolStripMenuItem});
+            this.btnLimparEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnLimparEscala.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLimparEscala.Name = "btnLimparEscala";
+            this.btnLimparEscala.Size = new System.Drawing.Size(128, 22);
+            this.btnLimparEscala.Text = "Limpar Escala";
+            // 
+            // limparLinhaToolStripMenuItem
+            // 
+            this.limparLinhaToolStripMenuItem.Name = "limparLinhaToolStripMenuItem";
+            this.limparLinhaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.limparLinhaToolStripMenuItem.Text = "Limpar Linha";
+            // 
+            // limparColunaToolStripMenuItem
+            // 
+            this.limparColunaToolStripMenuItem.Name = "limparColunaToolStripMenuItem";
+            this.limparColunaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.limparColunaToolStripMenuItem.Text = "Limpar Coluna";
+            // 
+            // limparTudoToolStripMenuItem
+            // 
+            this.limparTudoToolStripMenuItem.Name = "limparTudoToolStripMenuItem";
+            this.limparTudoToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.limparTudoToolStripMenuItem.Text = "Limpar Tudo";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.btnAdicionar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(95, 22);
+            this.btnAdicionar.Text = "Adicionar";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(222, 26);
+            this.toolStripMenuItem1.Text = "Adicionar Linha";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(222, 26);
+            this.toolStripMenuItem2.Text = "Adicionar Coluna";
             // 
             // txtNomeEscala
             // 
@@ -87,7 +279,7 @@ namespace EscalasMetodista.Views.Escalas
             this.txtNomeEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomeEscala.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold);
             this.txtNomeEscala.ForeColor = System.Drawing.Color.White;
-            this.txtNomeEscala.Location = new System.Drawing.Point(857, 35);
+            this.txtNomeEscala.Location = new System.Drawing.Point(1499, 35);
             this.txtNomeEscala.MaxLength = 40;
             this.txtNomeEscala.Name = "txtNomeEscala";
             this.txtNomeEscala.Size = new System.Drawing.Size(205, 28);
@@ -102,7 +294,7 @@ namespace EscalasMetodista.Views.Escalas
             this.lbNomeEscala.BackColor = System.Drawing.Color.Transparent;
             this.lbNomeEscala.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNomeEscala.ForeColor = System.Drawing.Color.White;
-            this.lbNomeEscala.Location = new System.Drawing.Point(857, 35);
+            this.lbNomeEscala.Location = new System.Drawing.Point(1499, 35);
             this.lbNomeEscala.Name = "lbNomeEscala";
             this.lbNomeEscala.Size = new System.Drawing.Size(203, 29);
             this.lbNomeEscala.TabIndex = 7;
@@ -152,29 +344,32 @@ namespace EscalasMetodista.Views.Escalas
             // 
             // tbEscala
             // 
-            this.tbEscala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEscala.AutoScroll = true;
             this.tbEscala.AutoSize = true;
+            this.tbEscala.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tbEscala.BackColor = System.Drawing.Color.White;
-            this.tbEscala.ColumnCount = 11;
+            this.tbEscala.ColumnCount = 15;
             this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
-            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tbEscala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
             this.tbEscala.Controls.Add(this.label10, 1, 0);
             this.tbEscala.Controls.Add(this.label1, 0, 0);
-            this.tbEscala.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEscala.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEscala.ForeColor = System.Drawing.Color.White;
             this.tbEscala.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
-            this.tbEscala.Location = new System.Drawing.Point(0, 137);
+            this.tbEscala.Location = new System.Drawing.Point(0, 150);
             this.tbEscala.Name = "tbEscala";
             this.tbEscala.RowCount = 15;
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
@@ -192,201 +387,9 @@ namespace EscalasMetodista.Views.Escalas
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tbEscala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tbEscala.Size = new System.Drawing.Size(2195, 1275);
+            this.tbEscala.Size = new System.Drawing.Size(3255, 1275);
             this.tbEscala.TabIndex = 6;
             this.tbEscala.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.tbEscala_CellPaint);
-            // 
-            // btnSalvarEscala
-            // 
-            this.btnSalvarEscala.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnSalvarEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnSalvarEscala.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarEscala.Image")));
-            this.btnSalvarEscala.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalvarEscala.Name = "btnSalvarEscala";
-            this.btnSalvarEscala.Size = new System.Drawing.Size(65, 22);
-            this.btnSalvarEscala.Text = "Salvar ";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
-            // 
-            // btnSalvarEscalaComo
-            // 
-            this.btnSalvarEscalaComo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.planilhaxlsToolStripMenuItem,
-            this.pDFToolStripMenuItem});
-            this.btnSalvarEscalaComo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnSalvarEscalaComo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalvarEscalaComo.Name = "btnSalvarEscalaComo";
-            this.btnSalvarEscalaComo.Size = new System.Drawing.Size(120, 28);
-            this.btnSalvarEscalaComo.Text = "Salvar Como";
-            // 
-            // planilhaxlsToolStripMenuItem
-            // 
-            this.planilhaxlsToolStripMenuItem.Name = "planilhaxlsToolStripMenuItem";
-            this.planilhaxlsToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.planilhaxlsToolStripMenuItem.Text = "Planilha (.xls)";
-            // 
-            // pDFToolStripMenuItem
-            // 
-            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
-            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.pDFToolStripMenuItem.Text = "PDF";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnImprimir.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(80, 28);
-            this.btnImprimir.Text = "Imprimir";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
-            // 
-            // btnPreencherEscala
-            // 
-            this.btnPreencherEscala.BackColor = System.Drawing.Color.Transparent;
-            this.btnPreencherEscala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnPreencherEscalaLinha,
-            this.btnPreencherColuna,
-            this.preencherTudoToolStripMenuItem});
-            this.btnPreencherEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnPreencherEscala.Name = "btnPreencherEscala";
-            this.btnPreencherEscala.Size = new System.Drawing.Size(154, 28);
-            this.btnPreencherEscala.Text = "Preencher Escala";
-            // 
-            // btnPreencherEscalaLinha
-            // 
-            this.btnPreencherEscalaLinha.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnPreencherEscalaLinha.Name = "btnPreencherEscalaLinha";
-            this.btnPreencherEscalaLinha.Size = new System.Drawing.Size(228, 26);
-            this.btnPreencherEscalaLinha.Text = "Preencher Linha";
-            // 
-            // btnPreencherColuna
-            // 
-            this.btnPreencherColuna.Name = "btnPreencherColuna";
-            this.btnPreencherColuna.Size = new System.Drawing.Size(228, 26);
-            this.btnPreencherColuna.Text = "Preencher Coluna";
-            // 
-            // preencherTudoToolStripMenuItem
-            // 
-            this.preencherTudoToolStripMenuItem.Name = "preencherTudoToolStripMenuItem";
-            this.preencherTudoToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
-            this.preencherTudoToolStripMenuItem.Text = "Preencher Tudo";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toolStripSeparator6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnVoltar.Font = new System.Drawing.Font("Verdana", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Image = global::EscalasMetodista.Properties.Resources.sair;
-            this.btnVoltar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(79, 31);
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // btnLimparEscala
-            // 
-            this.btnLimparEscala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.limparLinhaToolStripMenuItem,
-            this.limparColunaToolStripMenuItem,
-            this.limparTudoToolStripMenuItem});
-            this.btnLimparEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnLimparEscala.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLimparEscala.Name = "btnLimparEscala";
-            this.btnLimparEscala.Size = new System.Drawing.Size(128, 28);
-            this.btnLimparEscala.Text = "Limpar Escala";
-            // 
-            // limparLinhaToolStripMenuItem
-            // 
-            this.limparLinhaToolStripMenuItem.Name = "limparLinhaToolStripMenuItem";
-            this.limparLinhaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.limparLinhaToolStripMenuItem.Text = "Limpar Linha";
-            // 
-            // limparColunaToolStripMenuItem
-            // 
-            this.limparColunaToolStripMenuItem.Name = "limparColunaToolStripMenuItem";
-            this.limparColunaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.limparColunaToolStripMenuItem.Text = "Limpar Coluna";
-            // 
-            // limparTudoToolStripMenuItem
-            // 
-            this.limparTudoToolStripMenuItem.Name = "limparTudoToolStripMenuItem";
-            this.limparTudoToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.limparTudoToolStripMenuItem.Text = "Limpar Tudo";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
-            this.btnAdicionar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(95, 28);
-            this.btnAdicionar.Text = "Adicionar";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(222, 26);
-            this.toolStripMenuItem1.Text = "Adicionar Linha";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(222, 26);
-            this.toolStripMenuItem2.Text = "Adicionar Coluna";
-            // 
-            // menuEscala
-            // 
-            this.menuEscala.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.menuEscala.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.menuEscala.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuEscala.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSalvarEscala,
-            this.toolStripSeparator3,
-            this.btnSalvarEscalaComo,
-            this.toolStripSeparator2,
-            this.btnImprimir,
-            this.toolStripSeparator1,
-            this.btnPreencherEscala,
-            this.toolStripSeparator6,
-            this.btnVoltar,
-            this.btnLimparEscala,
-            this.toolStripSeparator4,
-            this.btnAdicionar});
-            this.menuEscala.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuEscala.Location = new System.Drawing.Point(0, 109);
-            this.menuEscala.Name = "menuEscala";
-            this.menuEscala.Size = new System.Drawing.Size(2010, 25);
-            this.menuEscala.Stretch = true;
-            this.menuEscala.TabIndex = 7;
             // 
             // FormEscala
             // 
@@ -398,14 +401,12 @@ namespace EscalasMetodista.Views.Escalas
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(2031, 688);
-            this.Controls.Add(this.menuEscala);
+            this.ClientSize = new System.Drawing.Size(1473, 688);
             this.Controls.Add(this.tbEscala);
             this.Controls.Add(this.panel_botoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(1918, 735);
             this.Name = "FormEscala";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -413,11 +414,11 @@ namespace EscalasMetodista.Views.Escalas
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormEscalaLouvor_KeyDown);
             this.panel_botoes.ResumeLayout(false);
             this.panel_botoes.PerformLayout();
+            this.menuEscala.ResumeLayout(false);
+            this.menuEscala.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).EndInit();
             this.tbEscala.ResumeLayout(false);
             this.tbEscala.PerformLayout();
-            this.menuEscala.ResumeLayout(false);
-            this.menuEscala.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,9 +430,7 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.PictureBox logo_metodista;
         private System.Windows.Forms.TextBox txtNomeEscala;
         public System.Windows.Forms.Label lbNomeEscala;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TableLayoutPanel tbEscala;
+        private System.Windows.Forms.ToolStrip menuEscala;
         private System.Windows.Forms.ToolStripButton btnSalvarEscala;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripDropDownButton btnSalvarEscalaComo;
@@ -454,6 +453,8 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.ToolStripDropDownButton btnAdicionar;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStrip menuEscala;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TableLayoutPanel tbEscala;
     }
 }

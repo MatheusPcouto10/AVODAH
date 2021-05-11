@@ -16,7 +16,7 @@ namespace EscalasMetodista.Views.Escalas
     {
         public int tipoEscala;
         SqlCommand cmd = new SqlCommand();
-        private Label funcao, datas, pessoas;
+        private Label funcao, datas;
         public DateTime dataInicio, dataFim;
         public TimeSpan dias;
         public String intervaloEscala;
@@ -47,8 +47,6 @@ namespace EscalasMetodista.Views.Escalas
             Conexao conexao = new Conexao();
             try
             {
-                carregarTbDatasEscala();
-
                 cmd.Connection = conexao.Conectar();
                 SqlDataReader dr = cmd.ExecuteReader();
                 int i = 0;
@@ -68,19 +66,8 @@ namespace EscalasMetodista.Views.Escalas
                     i++;
                 }
 
+                carregarTbDatasEscala();
                 tbEscala.Refresh();
-
-                //tbEscalas.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-                //pessoas = new Label();
-                //pessoas.Text = "teste";
-                //funcao.ForeColor = Color.Black;
-                //pessoas.TextAlign = ContentAlignment.MiddleCenter;
-                //pessoas.Dock = DockStyle.Fill;
-                //tbEscalas.SuspendLayout();
-                //tbEscalas.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
-                //tbEscalas.Controls.Add(pessoas);
-                //tbEscalas.RowCount += 1;
-                //tbEscalas.ResumeLayout();
             }
             catch (Exception erro)
             {
@@ -95,7 +82,7 @@ namespace EscalasMetodista.Views.Escalas
         private void carregarTbDatasEscala()
         {
             int i = 1;
-            while (dataInicio != dataFim)
+            while (dataInicio <= dataFim)
             {
                 tbEscala.SuspendLayout();
                 tbEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
@@ -103,12 +90,13 @@ namespace EscalasMetodista.Views.Escalas
                 datas = new Label();
                 datas.Name = "data";
                 datas.Text = dataInicio.ToString("dd/MM");
-                dataInicio = dataInicio.AddDays(1);
                 datas.TextAlign = ContentAlignment.MiddleCenter;
                 datas.ForeColor = Color.Black;
                 datas.BackColor = Color.Transparent;
-                datas.Dock = DockStyle.Fill;
+                datas.TextAlign = ContentAlignment.MiddleCenter;
+                datas.Anchor = Anchor = (AnchorStyles.Top | AnchorStyles.Bottom);
                 tbEscala.Controls.Add(datas, 0, i);
+                dataInicio = dataInicio.AddDays(1);
                 //tbEscalas.RowCount++;
                 i++;
                 tbEscala.ResumeLayout();
@@ -139,7 +127,7 @@ namespace EscalasMetodista.Views.Escalas
             else if (e.Column == 0 && e.Row > 0)
             {
                 e.Graphics.FillRectangle(Brushes.DarkGray, e.CellBounds);
-                g.DrawRectangle(new Pen(Brushes.Black, 1.0f), e.CellBounds);
+                g.DrawRectangle(new Pen(Brushes.Black, 2.0f), e.CellBounds);
             }
 
             else if (e.Row == 0 && e.Column > 0)

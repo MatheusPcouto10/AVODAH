@@ -31,7 +31,7 @@ namespace EscalasMetodista.Model
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Informe um email válido. Ex: exemplo@exemplo.com")]
         public String Email { get; set; }
 
-        //[Required(ErrorMessage = "Informe uma Senha")]
+        [Required(ErrorMessage = "Informe uma Senha")]
         public String Senha { get; set; }
 
         [Required(ErrorMessage = "É necessário ter uma Função Principal")]

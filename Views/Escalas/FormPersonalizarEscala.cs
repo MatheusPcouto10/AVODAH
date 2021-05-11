@@ -27,6 +27,11 @@ namespace EscalasMetodista.Views.Escalas
             txtNomeEscala.Text = null;
             dtInicioEscala.ResetText();
             dtFimEscala.ResetText();
+
+            for (int i = 0; i < clDiasSemanaEscala.Items.Count; i++)
+            {
+                clDiasSemanaEscala.SetItemCheckState(i, CheckState.Unchecked);
+            }
         }
 
         private void btnCriarEscala_Click(object sender, EventArgs e)
@@ -50,7 +55,7 @@ namespace EscalasMetodista.Views.Escalas
                     form.lbNomeEscala.Text = txtNomeEscala.Text;
                     form.tipoEscala = (int)cbTipoEscala.SelectedValue;
                     form.Show();
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch (Exception erro)
@@ -116,6 +121,8 @@ namespace EscalasMetodista.Views.Escalas
         {
             preencheComboBoxTipoEscala();
             preencheComboBoxIntervalo();
+            cbTipoEscala.Text = "Selecione...";
+            cbIntervalo.Text = "Selecione...";
             dtInicioEscala.MinDate = DateTime.Today;
             dtFimEscala.MinDate = DateTime.Today;
         }
@@ -142,6 +149,8 @@ namespace EscalasMetodista.Views.Escalas
             if ((int)cbIntervalo.SelectedValue == 2)
             {
                 dataInicio = dataInicio.AddDays(6);
+                //dtFimEscala.Value = dataInicio;
+                //MessageBox.Show(dtFimEscala.Value.DayOfWeek.ToString());
                 dtFimEscala.MaxDate = dataInicio;
                 dtFimEscala.Refresh();
             }
@@ -156,6 +165,27 @@ namespace EscalasMetodista.Views.Escalas
                 dataInicio = dataInicio.AddMonths(3).AddDays(-1);
                 dtFimEscala.MaxDate = dataInicio;
                 dtFimEscala.Refresh();
+            }
+        }
+
+        private void cbTipoEscala_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbIntervalo_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void clDiasSemanaEscala_SelectedValueChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i <= (clDiasSemanaEscala.Items.Count - 1); i++)
+            {
+                if (clDiasSemanaEscala.GetItemChecked(7))
+                {
+                    clDiasSemanaEscala.SetItemCheckState(i, CheckState.Checked);
+                }
             }
         }
     }
