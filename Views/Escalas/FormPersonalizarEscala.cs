@@ -38,18 +38,16 @@ namespace EscalasMetodista.Views.Escalas
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtNomeEscala.Text))
+                if (cbTipoEscala.Text == "Selecione.." || cbIntervalo.Text == "Selecione..." || string.IsNullOrWhiteSpace(txtNomeEscala.Text))
                 {
-                    MessageBox.Show("O nome da escala não pode ficar em branco.", "Campo em Branco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Campos não informados. Por favor informe.", "Campo em Branco", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     DateTime dataInicio = new DateTime(dtInicioEscala.Value.Year, dtInicioEscala.Value.Month, dtInicioEscala.Value.Day);
                     DateTime dataFim = new DateTime(dtFimEscala.Value.Year, dtFimEscala.Value.Month, dtFimEscala.Value.Day);
-                    TimeSpan dias = dataFim - dataInicio;
 
-                    FormEscala form = new FormEscala();
-                    form.dias = dias;
+                    FormEscala form = new FormEscala(gerarDatas(dataInicio, dataFim));
                     form.dataInicio = dataInicio;
                     form.dataFim = dataFim;
                     form.lbNomeEscala.Text = txtNomeEscala.Text;
@@ -63,6 +61,57 @@ namespace EscalasMetodista.Views.Escalas
                 MessageBox.Show("Erro: " + erro.Message);
             }
         }
+
+        public List<DateTime> gerarDatas(DateTime inicio, DateTime fim)
+        {
+            List<DateTime> datas = new List<DateTime>();
+            List<String> diasSemana = new List<String>();
+            DateTime dataIncremento = inicio;
+            formataDiasSemana();
+
+            if (clDiasSemanaEscala.GetItemChecked(7)){ clDiasSemanaEscala.SetItemCheckState(7, CheckState.Unchecked); }
+
+            for (int i = 0; i <= (clDiasSemanaEscala.CheckedItems.Count); i++)
+            {
+                if (clDiasSemanaEscala.GetItemChecked(i))
+                {
+                    diasSemana.Add(clDiasSemanaEscala.Items[i].ToString());
+                }
+            }
+
+            while (dataIncremento <= fim)
+            {
+                if (diasSemana.Contains(dataIncremento.DayOfWeek.ToString()))
+                {
+                    datas.Add(dataIncremento);
+                }
+                dataIncremento = dataIncremento.AddDays(1);
+            }
+
+            return datas;
+        }
+
+        public void formataDiasSemana()
+        {
+            clDiasSemanaEscala.Items[0] = "Monday";
+            clDiasSemanaEscala.Items[1] = "Tuesday";
+            clDiasSemanaEscala.Items[2] = "Wednesday";
+            clDiasSemanaEscala.Items[3] = "Thursday";
+            clDiasSemanaEscala.Items[4] = "Friday";
+            clDiasSemanaEscala.Items[5] = "Saturday";
+            clDiasSemanaEscala.Items[6] = "Sunday";
+        }
+        private void clDiasSemanaEscala_SelectedValueChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i <= (clDiasSemanaEscala.Items.Count - 1); i++)
+            {
+                if (clDiasSemanaEscala.GetItemChecked(7))
+                {
+                    clDiasSemanaEscala.SetItemCheckState(i, CheckState.Checked);
+                }
+            }
+        }
+
         private void preencheComboBoxTipoEscala()
         {
 
@@ -149,8 +198,6 @@ namespace EscalasMetodista.Views.Escalas
             if ((int)cbIntervalo.SelectedValue == 2)
             {
                 dataInicio = dataInicio.AddDays(6);
-                //dtFimEscala.Value = dataInicio;
-                //MessageBox.Show(dtFimEscala.Value.DayOfWeek.ToString());
                 dtFimEscala.MaxDate = dataInicio;
                 dtFimEscala.Refresh();
             }
@@ -176,17 +223,6 @@ namespace EscalasMetodista.Views.Escalas
         private void cbIntervalo_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
-        }
-
-        private void clDiasSemanaEscala_SelectedValueChanged(object sender, EventArgs e)
-        {
-            for (int i = 0; i <= (clDiasSemanaEscala.Items.Count - 1); i++)
-            {
-                if (clDiasSemanaEscala.GetItemChecked(7))
-                {
-                    clDiasSemanaEscala.SetItemCheckState(i, CheckState.Checked);
-                }
-            }
         }
     }
 }

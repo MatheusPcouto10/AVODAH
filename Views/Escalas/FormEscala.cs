@@ -18,8 +18,13 @@ namespace EscalasMetodista.Views.Escalas
         SqlCommand cmd = new SqlCommand();
         private Label funcao, datas;
         public DateTime dataInicio, dataFim;
-        public TimeSpan dias;
-        public String intervaloEscala;
+        List<DateTime> datasEscala = null;
+
+        public FormEscala(List<DateTime> lista)
+        {
+            datasEscala = lista;
+            InitializeComponent();
+        }
 
         public FormEscala()
         {
@@ -81,15 +86,16 @@ namespace EscalasMetodista.Views.Escalas
 
         private void carregarTbDatasEscala()
         {
-            int i = 1;
+            int i = 0;
             while (dataInicio <= dataFim)
             {
                 tbEscala.SuspendLayout();
                 tbEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
                 tbEscala.RowStyles.Add(new RowStyle(SizeType.Absolute, 68));
                 datas = new Label();
-                datas.Name = "data";
-                datas.Text = dataInicio.ToString("dd/MM");
+                datas.Name = "data" + datasEscala[i].ToString("dd/MM");
+                datas.Text = datasEscala[i].ToString("dd/MM");
+                i++;
                 datas.TextAlign = ContentAlignment.MiddleCenter;
                 datas.ForeColor = Color.Black;
                 datas.BackColor = Color.Transparent;
@@ -98,7 +104,6 @@ namespace EscalasMetodista.Views.Escalas
                 tbEscala.Controls.Add(datas, 0, i);
                 dataInicio = dataInicio.AddDays(1);
                 //tbEscalas.RowCount++;
-                i++;
                 tbEscala.ResumeLayout();
             }
         }
