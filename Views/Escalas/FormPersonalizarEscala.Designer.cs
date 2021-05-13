@@ -44,6 +44,7 @@ namespace EscalasMetodista.Views.Escalas
             this.cbTipoEscala = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.clDiasSemanaEscala = new System.Windows.Forms.CheckedListBox();
+            this.checkTodos = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label9
@@ -228,19 +229,32 @@ namespace EscalasMetodista.Views.Escalas
             this.clDiasSemanaEscala.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.clDiasSemanaEscala.FormattingEnabled = true;
             this.clDiasSemanaEscala.Items.AddRange(new object[] {
-            "Segunda",
-            "Terça",
-            "Quarta",
-            "Quinta",
-            "Sexta",
-            "Sábado",
-            "Domingo",
-            "Todos os dias"});
+            "segunda-feira",
+            "terça-feira",
+            "quarta-feira",
+            "quinta-feira",
+            "sexta-feira",
+            "sábado",
+            "domingo"});
             this.clDiasSemanaEscala.Location = new System.Drawing.Point(597, 180);
             this.clDiasSemanaEscala.Name = "clDiasSemanaEscala";
-            this.clDiasSemanaEscala.Size = new System.Drawing.Size(167, 152);
+            this.clDiasSemanaEscala.Size = new System.Drawing.Size(137, 133);
             this.clDiasSemanaEscala.TabIndex = 92;
             this.clDiasSemanaEscala.SelectedValueChanged += new System.EventHandler(this.clDiasSemanaEscala_SelectedValueChanged);
+            // 
+            // checkTodos
+            // 
+            this.checkTodos.AutoSize = true;
+            this.checkTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.checkTodos.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
+            this.checkTodos.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.checkTodos.Location = new System.Drawing.Point(597, 313);
+            this.checkTodos.Name = "checkTodos";
+            this.checkTodos.Size = new System.Drawing.Size(137, 21);
+            this.checkTodos.TabIndex = 93;
+            this.checkTodos.Text = "Todos os dias";
+            this.checkTodos.UseVisualStyleBackColor = false;
+            this.checkTodos.CheckedChanged += new System.EventHandler(this.checkTodos_CheckedChanged);
             // 
             // FormPersonalizarEscala
             // 
@@ -248,6 +262,7 @@ namespace EscalasMetodista.Views.Escalas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EscalasMetodista.Properties.Resources.dark_material_design_wallpaper__1_in_4k_by_tgs266_d9j7yts;
             this.ClientSize = new System.Drawing.Size(864, 450);
+            this.Controls.Add(this.checkTodos);
             this.Controls.Add(this.clDiasSemanaEscala);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -291,5 +306,6 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.CheckedListBox clDiasSemanaEscala;
         private System.Windows.Forms.DateTimePicker dtInicioEscala;
         private System.Windows.Forms.DateTimePicker dtFimEscala;
+        private System.Windows.Forms.CheckBox checkTodos;
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,10 @@ namespace EscalasMetodista.Views.Escalas
     public partial class FormPersonalizarEscala : Form
     {
         SqlCommand cmd = new SqlCommand();
+        private bool todosChecados = false;
         public FormPersonalizarEscala()
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-br");
             InitializeComponent();
         }
 
@@ -67,11 +70,8 @@ namespace EscalasMetodista.Views.Escalas
             List<DateTime> datas = new List<DateTime>();
             List<String> diasSemana = new List<String>();
             DateTime dataIncremento = inicio;
-            formataDiasSemana();
 
-            if (clDiasSemanaEscala.GetItemChecked(7)){ clDiasSemanaEscala.SetItemCheckState(7, CheckState.Unchecked); }
-
-            for (int i = 0; i <= (clDiasSemanaEscala.CheckedItems.Count); i++)
+            for (int i = 0; i <= (clDiasSemanaEscala.Items.Count - 1); i++)
             {
                 if (clDiasSemanaEscala.GetItemChecked(i))
                 {
@@ -81,7 +81,7 @@ namespace EscalasMetodista.Views.Escalas
 
             while (dataIncremento <= fim)
             {
-                if (diasSemana.Contains(dataIncremento.DayOfWeek.ToString()))
+                if (diasSemana.Contains(dataIncremento.ToString("dddd")))
                 {
                     datas.Add(dataIncremento);
                 }
@@ -91,23 +91,30 @@ namespace EscalasMetodista.Views.Escalas
             return datas;
         }
 
-        public void formataDiasSemana()
-        {
-            clDiasSemanaEscala.Items[0] = "Monday";
-            clDiasSemanaEscala.Items[1] = "Tuesday";
-            clDiasSemanaEscala.Items[2] = "Wednesday";
-            clDiasSemanaEscala.Items[3] = "Thursday";
-            clDiasSemanaEscala.Items[4] = "Friday";
-            clDiasSemanaEscala.Items[5] = "Saturday";
-            clDiasSemanaEscala.Items[6] = "Sunday";
-        }
         private void clDiasSemanaEscala_SelectedValueChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i <= (clDiasSemanaEscala.Items.Count - 1); i++)
+            if (clDiasSemanaEscala.CheckedItems.Count != 7)
             {
-                if (clDiasSemanaEscala.GetItemChecked(7))
+                checkTodos.Checked = false;
+                todosChecados = false;
+            }
+           
+        }
+
+        private void checkTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkTodos.Checked == true)
+            {
+                for (int i = 0; i <= (clDiasSemanaEscala.Items.Count - 1); i++)
                 {
-                    clDiasSemanaEscala.SetItemCheckState(i, CheckState.Checked);
+                    clDiasSemanaEscala.SetItemChecked(i, true);
+                }
+            }
+            else if (checkTodos.Checked == false && todosChecados == true)
+            {
+                for (int i = 0; i <= (clDiasSemanaEscala.Items.Count - 1); i++)
+                {
+                    clDiasSemanaEscala.SetItemChecked(i, false);
                 }
             }
         }
@@ -224,5 +231,6 @@ namespace EscalasMetodista.Views.Escalas
         {
             e.SuppressKeyPress = true;
         }
+
     }
 }
