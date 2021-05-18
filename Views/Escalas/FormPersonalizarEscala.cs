@@ -16,7 +16,6 @@ namespace EscalasMetodista.Views.Escalas
     public partial class FormPersonalizarEscala : Form
     {
         SqlCommand cmd = new SqlCommand();
-        private bool todosChecados = false;
         public FormPersonalizarEscala()
         {
             System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-br");
@@ -85,6 +84,11 @@ namespace EscalasMetodista.Views.Escalas
                 {
                     datas.Add(dataIncremento);
                 }
+                // se não tiver nenhum dia da semana selecionado, adiciona todos
+                if (diasSemana.Count == 0)
+                {
+                    datas.Add(dataIncremento);
+                }
                 dataIncremento = dataIncremento.AddDays(1);
             }
 
@@ -96,9 +100,7 @@ namespace EscalasMetodista.Views.Escalas
             if (clDiasSemanaEscala.CheckedItems.Count != 7)
             {
                 checkTodos.Checked = false;
-                todosChecados = false;
             }
-           
         }
 
         private void checkTodos_CheckedChanged(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace EscalasMetodista.Views.Escalas
                     clDiasSemanaEscala.SetItemChecked(i, true);
                 }
             }
-            else if (checkTodos.Checked == false && todosChecados == true)
+            else if (checkTodos.Checked == false && clDiasSemanaEscala.CheckedItems.Count == 7)
             {
                 for (int i = 0; i <= (clDiasSemanaEscala.Items.Count - 1); i++)
                 {
@@ -231,6 +233,5 @@ namespace EscalasMetodista.Views.Escalas
         {
             e.SuppressKeyPress = true;
         }
-
     }
 }

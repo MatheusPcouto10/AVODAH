@@ -238,7 +238,7 @@ namespace EscalasMetodista.Views.Escalas
             "domingo"});
             this.clDiasSemanaEscala.Location = new System.Drawing.Point(597, 180);
             this.clDiasSemanaEscala.Name = "clDiasSemanaEscala";
-            this.clDiasSemanaEscala.Size = new System.Drawing.Size(137, 133);
+            this.clDiasSemanaEscala.Size = new System.Drawing.Size(184, 133);
             this.clDiasSemanaEscala.TabIndex = 92;
             this.clDiasSemanaEscala.SelectedValueChanged += new System.EventHandler(this.clDiasSemanaEscala_SelectedValueChanged);
             // 
@@ -248,11 +248,11 @@ namespace EscalasMetodista.Views.Escalas
             this.checkTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.checkTodos.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.checkTodos.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.checkTodos.Location = new System.Drawing.Point(597, 313);
+            this.checkTodos.Location = new System.Drawing.Point(597, 319);
             this.checkTodos.Name = "checkTodos";
-            this.checkTodos.Size = new System.Drawing.Size(137, 21);
+            this.checkTodos.Size = new System.Drawing.Size(163, 21);
             this.checkTodos.TabIndex = 93;
-            this.checkTodos.Text = "Todos os dias";
+            this.checkTodos.Text = "Selecionar Todos";
             this.checkTodos.UseVisualStyleBackColor = false;
             this.checkTodos.CheckedChanged += new System.EventHandler(this.checkTodos_CheckedChanged);
             // 

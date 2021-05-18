@@ -54,11 +54,11 @@ namespace EscalasMetodista.Views.Escalas
             {
                 cmd.Connection = conexao.Conectar();
                 SqlDataReader dr = cmd.ExecuteReader();
-                int i = 0;
 
                 while (dr.Read())
                 {
                     tbEscala.SuspendLayout();
+                    tbEscala.GrowStyle = TableLayoutPanelGrowStyle.AddColumns;
                     funcao = new Label();
                     funcao.Name = "coluna" + dr[0].ToString();
                     funcao.Text = dr[0].ToString();
@@ -68,11 +68,9 @@ namespace EscalasMetodista.Views.Escalas
                     funcao.Dock = DockStyle.Fill;
                     tbEscala.Controls.Add(funcao);
                     tbEscala.ResumeLayout();
-                    i++;
                 }
-
-                carregarTbDatasEscala();
                 tbEscala.Refresh();
+                carregarTbDatasEscala();
             }
             catch (Exception erro)
             {
@@ -86,26 +84,34 @@ namespace EscalasMetodista.Views.Escalas
 
         private void carregarTbDatasEscala()
         {
-            int i = 0;
-            while (dataInicio <= dataFim)
+            try
             {
-                tbEscala.SuspendLayout();
-                tbEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-                tbEscala.RowStyles.Add(new RowStyle(SizeType.Absolute, 68));
-                datas = new Label();
-                datas.Name = "data" + datasEscala[i].ToString("dd/MM");
-                datas.Text = datasEscala[i].ToString("dd/MM");
-                i++;
-                datas.TextAlign = ContentAlignment.MiddleCenter;
-                datas.ForeColor = Color.Black;
-                datas.BackColor = Color.Transparent;
-                datas.TextAlign = ContentAlignment.MiddleCenter;
-                datas.Anchor = Anchor = (AnchorStyles.Top | AnchorStyles.Bottom);
-                tbEscala.Controls.Add(datas, 0, i);
-                dataInicio = dataInicio.AddDays(1);
-                //tbEscalas.RowCount++;
-                tbEscala.ResumeLayout();
+                int i = 0;
+                while (dataInicio <= dataFim)
+                {
+                    tbEscala.SuspendLayout();
+                    tbEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
+                    tbEscala.RowStyles.Add(new RowStyle(SizeType.Absolute, 68));
+                    datas = new Label();
+                    datas.Name = "data" + datasEscala[i].ToString("dd/MM");
+                    datas.Text = datasEscala[i].ToString("dd/MM");
+                    i++;
+                    datas.TextAlign = ContentAlignment.MiddleCenter;
+                    datas.ForeColor = Color.Black;
+                    datas.BackColor = Color.Transparent;
+                    datas.TextAlign = ContentAlignment.MiddleCenter;
+                    datas.Anchor = Anchor = (AnchorStyles.Top | AnchorStyles.Bottom);
+                    tbEscala.Controls.Add(datas, 0, i);
+                    dataInicio = dataInicio.AddDays(1);
+                    //tbEscalas.RowCount++;
+                    tbEscala.ResumeLayout();
+                }
             }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+
         }
 
         private void FormEscalaLouvor_KeyDown(object sender, KeyEventArgs e)
