@@ -55,10 +55,11 @@ namespace EscalasMetodista.Views.Escalas
                 cmd.Connection = conexao.Conectar();
                 SqlDataReader dr = cmd.ExecuteReader();
 
+                carregarTbDatasEscala();
+
                 while (dr.Read())
                 {
                     tbEscala.SuspendLayout();
-                    tbEscala.GrowStyle = TableLayoutPanelGrowStyle.AddColumns;
                     funcao = new Label();
                     funcao.Name = "coluna" + dr[0].ToString();
                     funcao.Text = dr[0].ToString();
@@ -70,7 +71,6 @@ namespace EscalasMetodista.Views.Escalas
                     tbEscala.ResumeLayout();
                 }
                 tbEscala.Refresh();
-                carregarTbDatasEscala();
             }
             catch (Exception erro)
             {
@@ -86,8 +86,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             try
             {
-                int i = 0;
-                while (dataInicio <= dataFim)
+                for (int i = 0; i < datasEscala.Count; i++)
                 {
                     tbEscala.SuspendLayout();
                     tbEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
@@ -95,15 +94,12 @@ namespace EscalasMetodista.Views.Escalas
                     datas = new Label();
                     datas.Name = "data" + datasEscala[i].ToString("dd/MM");
                     datas.Text = datasEscala[i].ToString("dd/MM");
-                    i++;
                     datas.TextAlign = ContentAlignment.MiddleCenter;
                     datas.ForeColor = Color.Black;
                     datas.BackColor = Color.Transparent;
                     datas.TextAlign = ContentAlignment.MiddleCenter;
                     datas.Anchor = Anchor = (AnchorStyles.Top | AnchorStyles.Bottom);
-                    tbEscala.Controls.Add(datas, 0, i);
-                    dataInicio = dataInicio.AddDays(1);
-                    //tbEscalas.RowCount++;
+                    tbEscala.Controls.Add(datas, 0, i + 1);
                     tbEscala.ResumeLayout();
                 }
             }
