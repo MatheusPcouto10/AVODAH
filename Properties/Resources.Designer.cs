@@ -215,6 +215,16 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loadBar {
+            get {
+                object obj = ResourceManager.GetObject("loadBar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ocLJYEKLE1aHAy9jGKX_2g_store_banner_image {
             get {
                 object obj = ResourceManager.GetObject("ocLJYEKLE1aHAy9jGKX_2g_store_banner_image", resourceCulture);

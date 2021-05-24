@@ -50,8 +50,6 @@ namespace EscalasMetodista.Views.Escalas
                     DateTime dataFim = new DateTime(dtFimEscala.Value.Year, dtFimEscala.Value.Month, dtFimEscala.Value.Day);
 
                     FormEscala form = new FormEscala(gerarDatas(dataInicio, dataFim));
-                    form.dataInicio = dataInicio;
-                    form.dataFim = dataFim;
                     form.lbNomeEscala.Text = txtNomeEscala.Text;
                     form.tipoEscala = (int)cbTipoEscala.SelectedValue;
                     form.Show();

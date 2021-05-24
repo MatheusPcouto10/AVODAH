@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,13 +18,15 @@ namespace EscalasMetodista.Views.Escalas
         public int tipoEscala;
         SqlCommand cmd = new SqlCommand();
         private Label funcao, datas;
-        public DateTime dataInicio, dataFim;
         List<DateTime> datasEscala = null;
+        FormCarregamento form = new FormCarregamento();
 
         public FormEscala(List<DateTime> lista)
         {
             datasEscala = lista;
             InitializeComponent();
+            form.Show();
+            Application.DoEvents();
         }
 
         public FormEscala()
@@ -44,6 +47,8 @@ namespace EscalasMetodista.Views.Escalas
             carregarCabecalhoEscala();
             lbNomeEscala.Left = (this.Width - lbNomeEscala.Width) / 2;
             txtNomeEscala.Left = (this.Width - txtNomeEscala.Width) / 2;
+
+            form.Dispose();
         }
 
         private void carregarCabecalhoEscala()

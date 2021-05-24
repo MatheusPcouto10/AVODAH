@@ -35,3 +35,4 @@ C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.exe
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.pdb
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.csprojAssemblyReference.cache
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Escalas.FormCarregamento.resources
