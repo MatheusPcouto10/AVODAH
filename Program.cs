@@ -20,7 +20,7 @@ namespace EscalasMetodista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPersonalizarEscala());
+            Application.Run(new FormMenu());
         }
     }
 }

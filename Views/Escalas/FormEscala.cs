@@ -1,5 +1,6 @@
 ﻿using EscalasMetodista.Conexão;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,8 @@ namespace EscalasMetodista.Views.Escalas
 {
     public partial class FormEscala : Form
     {
-        public int tipoEscala;
+        public int tipoEscala { get; set; }
         SqlCommand cmd = new SqlCommand();
-        private Label funcao, datas;
         List<DateTime> datasEscala = null;
         FormCarregamento form = new FormCarregamento();
 
@@ -25,8 +25,8 @@ namespace EscalasMetodista.Views.Escalas
         {
             datasEscala = lista;
             InitializeComponent();
-            form.Show();
-            Application.DoEvents();
+            //form.Show();
+            //Application.DoEvents();
         }
 
         public FormEscala()
@@ -44,75 +44,11 @@ namespace EscalasMetodista.Views.Escalas
 
         private void FormEscalaLouvor_Load(object sender, EventArgs e)
         {
-            carregarCabecalhoEscala();
+            formatarDataGrid();
             lbNomeEscala.Left = (this.Width - lbNomeEscala.Width) / 2;
             txtNomeEscala.Left = (this.Width - txtNomeEscala.Width) / 2;
 
-            form.Dispose();
-        }
-
-        private void carregarCabecalhoEscala()
-        {
-            cmd.CommandText = "SELECT descricao FROM SubFuncao WHERE idFuncao_fk = " + tipoEscala;
-            Conexao conexao = new Conexao();
-            try
-            {
-                cmd.Connection = conexao.Conectar();
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                carregarTbDatasEscala();
-
-                while (dr.Read())
-                {
-                    tbEscala.SuspendLayout();
-                    funcao = new Label();
-                    funcao.Name = "coluna" + dr[0].ToString();
-                    funcao.Text = dr[0].ToString();
-                    funcao.ForeColor = Color.White;
-                    funcao.BackColor = Color.Transparent;
-                    funcao.TextAlign = ContentAlignment.MiddleCenter;
-                    funcao.Dock = DockStyle.Fill;
-                    tbEscala.Controls.Add(funcao);
-                    tbEscala.ResumeLayout();
-                }
-                tbEscala.Refresh();
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro: " + erro.Message);
-            }
-            finally
-            {
-                conexao.Desconectar();
-            }
-        }
-
-        private void carregarTbDatasEscala()
-        {
-            try
-            {
-                for (int i = 0; i < datasEscala.Count; i++)
-                {
-                    tbEscala.SuspendLayout();
-                    tbEscala.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-                    tbEscala.RowStyles.Add(new RowStyle(SizeType.Absolute, 68));
-                    datas = new Label();
-                    datas.Name = "data" + datasEscala[i].ToString("dd/MM");
-                    datas.Text = datasEscala[i].ToString("dd/MM");
-                    datas.TextAlign = ContentAlignment.MiddleCenter;
-                    datas.ForeColor = Color.Black;
-                    datas.BackColor = Color.Transparent;
-                    datas.TextAlign = ContentAlignment.MiddleCenter;
-                    datas.Anchor = Anchor = (AnchorStyles.Top | AnchorStyles.Bottom);
-                    tbEscala.Controls.Add(datas, 0, i + 1);
-                    tbEscala.ResumeLayout();
-                }
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro: " + erro.Message);
-            }
-
+            //form.Dispose();
         }
 
         private void FormEscalaLouvor_KeyDown(object sender, KeyEventArgs e)
@@ -127,37 +63,33 @@ namespace EscalasMetodista.Views.Escalas
             }
         }
 
-        private void tbEscala_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
-        {
-            Graphics g = tbEscala.CreateGraphics();
-
-            if (e.Column == 0 && e.Row == 0)
-            {
-                e.Graphics.FillRectangle(Brushes.Black, e.CellBounds);
-            }
-
-            else if (e.Column == 0 && e.Row > 0)
-            {
-                e.Graphics.FillRectangle(Brushes.DarkGray, e.CellBounds);
-                g.DrawRectangle(new Pen(Brushes.Black, 2.0f), e.CellBounds);
-            }
-
-            else if (e.Row == 0 && e.Column > 0)
-            {
-                e.Graphics.FillRectangle(Brushes.Maroon, e.CellBounds);
-                g.DrawRectangle(new Pen(Brushes.Black, 2.0f), e.CellBounds);
-            }
-
-            else if (e.Row > 0 && e.Column > 0)
-            {
-                g.DrawRectangle(new Pen(Brushes.DarkGray, 0.5f), e.CellBounds);
-            }
-        }
 
         private void lbNomeEscala_DoubleClick(object sender, EventArgs e)
         {
             txtNomeEscala.Visible = true;
             lbNomeEscala.Visible = false;
+        }
+
+        private void preencherTudoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cmd.CommandText = "select p.nome, s.idSubFuncao, s.descricao from Pessoa p join SubFuncao s on p.funcaoPrincipal_fk = s.idSubFuncao " +
+                              "where s.idFuncao_fk = " + tipoEscala;
+
+            Conexao conexao = new Conexao();
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
         }
 
         private void editarNomeEscala()
@@ -173,6 +105,111 @@ namespace EscalasMetodista.Views.Escalas
                 lbNomeEscala.Visible = true;
                 lbNomeEscala.Left = (this.Width - lbNomeEscala.Width) / 2;
                 txtNomeEscala.Left = (this.Width - txtNomeEscala.Width) / 2;
+            }
+        }
+
+        //private void getSubfuncoes()
+        //{
+        //    cmd.CommandText = "SELECT * FROM SubFuncao WHERE idFuncao_fk = " + tipoEscala;
+        //    Conexao conexao = new Conexao();
+
+        //    try
+        //    {
+        //        cmd.Connection = conexao.Conectar();
+        //        SqlDataReader dr = cmd.ExecuteReader();
+
+        //        while (dr.Read())
+        //        {
+        //            dadosSubFuncao.Add(dr[2].ToString(), dr[0].ToString());
+        //        }
+
+        //    }
+        //    catch (Exception erro)
+        //    {
+        //        MessageBox.Show("Erro: " + erro.Message);
+        //    }
+        //    finally
+        //    {
+        //        conexao.Desconectar();
+        //    }
+        //}
+
+        private void getDatas()
+        {
+            try
+            {
+                for (int i = 0; i < datasEscala.Count; i++)
+                {
+                    tbEscala.Rows.Add(datasEscala[i].ToString("dd/MM"));
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+        }
+
+
+        private void getdadosCabecalho()
+        {
+            cmd.CommandText = "SELECT descricao FROM SubFuncao WHERE idFuncao_fk = " + tipoEscala;
+            Conexao conexao = new Conexao();
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                SqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    tbEscala.Columns.Add(dt.Rows[i][0].ToString().ToLower(), dt.Rows[i][0].ToString());
+                }
+
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+
+        private void formatarDataGrid()
+        {
+            getdadosCabecalho();
+            getDatas();
+
+            foreach (DataGridViewRow linha in tbEscala.Rows)
+            {
+                linha.Height = 60;
+            }
+
+            foreach (DataGridViewColumn coluna in tbEscala.Columns)
+            {
+                switch (coluna.Name)
+                {
+                    case "dates":
+                        coluna.Width = 120;
+                        coluna.HeaderText = "DATAS";
+                        coluna.HeaderCell.Style.BackColor = Color.Black;
+                        coluna.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        break;
+                    case "observacoes":
+                        coluna.Width = 170;
+                        coluna.HeaderText = "COMENTÁRIOS";
+                        coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        break;
+                    default:
+                        coluna.Width = 170;
+                        coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        break;
+                }
             }
         }
     }
