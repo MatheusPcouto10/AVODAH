@@ -11,18 +11,22 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EscalasMetodista.Model;
 
 namespace EscalasMetodista.Views.Escalas
 {
     public partial class FormEscala : Form
     {
         public int tipoEscala { get; set; }
+        private List<DateTime> datasEscala { get; set; }
+
+        private int indicesColunasSelecionadas { get; set; }
+
         SqlCommand cmd = new SqlCommand();
-        List<DateTime> datasEscala = null;
+
+        private List<SubFuncao> listaSubFuncoes = new List<SubFuncao>();
+
         FormCarregamento form = new FormCarregamento();
-        private string descricaoSubFuncao { get; set; }
-        private int totalColunasSelecionadas { get; set; }
-        private int indexColunaSelecionada { get; set; }
 
         public FormEscala(List<DateTime> lista)
         {
@@ -110,31 +114,46 @@ namespace EscalasMetodista.Views.Escalas
         }
 
 
-        private void getdadosCabecalho()
+        private void getSubFuncoes()
         {
-            cmd.CommandText = "SELECT descricao FROM SubFuncao WHERE idFuncao_fk = " + tipoEscala;
+            cmd.CommandText = "SELECT * FROM SubFuncao WHERE idFuncao_fk = " + tipoEscala;
             Conexao conexao = new Conexao();
 
             try
             {
                 cmd.Connection = conexao.Conectar();
-                SqlDataReader dr = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 int indiceColuna = 2;
-                dt.Load(dr);
+                dt.Load(cmd.ExecuteReader());
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    tbEscala.Columns[indiceColuna].HeaderText = dt.Rows[i][0].ToString();
+                    tbEscala.Columns[indiceColuna].HeaderText = dt.Rows[i][2].ToString();
                     indiceColuna++;
+
+                    SubFuncao subFuncao = new SubFuncao();
+                    subFuncao.Descricao = dt.Rows[i][2].ToString();
+                    subFuncao.idSubFuncao = (int)dt.Rows[i][0];
+                    subFuncao.idFuncao_fk = (int)dt.Rows[i][1];
+
+                    listaSubFuncoes.Add(subFuncao);
                 }
 
                 if (dt.Rows.Count > tbEscala.ColumnCount)
                 {
                     for (int i = tbEscala.ColumnCount; i < dt.Rows.Count; i++)
                     {
-                        tbEscala.Columns.Add(dt.Rows[i][0].ToString(), dt.Rows[i][0].ToString());
+                        tbEscala.Columns.Add(dt.Rows[i][2].ToString(), dt.Rows[i][2].ToString());
                         tbEscala.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        tbEscala.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                        SubFuncao subFuncao = new SubFuncao();
+                        subFuncao.Descricao = dt.Rows[i][2].ToString();
+                        subFuncao.idSubFuncao = (int)dt.Rows[i][0];
+                        subFuncao.idFuncao_fk = (int)dt.Rows[i][1];
+
+                        listaSubFuncoes.Add(subFuncao);
+
                     }
                 }
 
@@ -151,7 +170,7 @@ namespace EscalasMetodista.Views.Escalas
 
         private void formatarDataGrid()
         {
-            getdadosCabecalho();
+            getSubFuncoes();
             getDatas();
 
             foreach (DataGridViewRow linha in tbEscala.Rows)
@@ -171,7 +190,7 @@ namespace EscalasMetodista.Views.Escalas
                         break;
                     case "observacoes":
                         coluna.Width = 170;
-                        coluna.HeaderText = "COMENTÁRIOS";
+                        coluna.HeaderText = "Observação";
                         coluna.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     default:
@@ -192,11 +211,13 @@ namespace EscalasMetodista.Views.Escalas
 
         private void tbEscala_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
+            if (e.RowIndex == -1 && e.ColumnIndex > 1)
             {
                 btnPreencherColunaUnica.Text = "Preencher Esta Coluna";
                 tbEscala.SelectionMode = DataGridViewSelectionMode.ColumnHeaderSelect;
                 btnPreencherColunaUnica.Visible = true;
+                indicesColunasSelecionadas = e.ColumnIndex;
+
 
             }
             else if (e.ColumnIndex == -1)
@@ -216,37 +237,44 @@ namespace EscalasMetodista.Views.Escalas
         private void btnPreencherColunaUnica_Click(object sender, EventArgs e)
         {
 
-            for (int i = 0; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.Selected); i++)
-            {
-                descricaoSubFuncao = tbEscala.SelectedColumns[i].HeaderText;
-                indexColunaSelecionada = tbEscala.SelectedColumns[i].Index;
-            }
-
-            cmd.CommandText = "SELECT p.nome FROM Pessoa p JOIN SubFuncao s on p.funcaoPrincipal_fk = s.idSubFuncao WHERE s.descricao = '" + descricaoSubFuncao + "' AND s.idFuncao_fk = " + tipoEscala;
-            Conexao conexao = new Conexao();
-
             try
             {
+                List<string> pessoasColuna = new List<string>();
+
+                Conexao conexao = new Conexao();
+
                 cmd.Connection = conexao.Conectar();
+
+                cmd.CommandText = @"SELECT p.nome FROM Pessoa p 
+                                JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
+                                JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
+                                WHERE (s1.idSubFuncao in (" + idSubfuncoes() + ") OR s2.idSubFuncao in (" + idSubfuncoes() + ")) AND (s1.idFuncao_fk = " + tipoEscala + " OR s2.idFuncao_fk = " + tipoEscala + ")";
+
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                if (dr.HasRows == false)
+                while (dr.Read())
+                {
+                    pessoasColuna.Add(dr.GetString(0));
+                }
+
+                conexao.Desconectar();
+
+                if (pessoasColuna.Count == 0)
                 {
                     MessageBox.Show("Nenhuma pessoa com essa função foi encontrada!");
                     return;
                 }
-                DataTable dt = new DataTable();
-                dt.Load(dr);
 
-                for (int i = 0; i < dt.Rows.Count; i++)
+                for (int i = 0; i < pessoasColuna.Count; i++)
                 {
-                    tbEscala[indexColunaSelecionada, i].Value = dt.Rows[i][0].ToString();
+                    tbEscala[indicesColunasSelecionadas, i].Value = pessoasColuna[i];
                 }
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Erro: " + erro.Message);
             }
+
         }
 
         private void btnPreencherColuna_Click(object sender, EventArgs e)
@@ -262,6 +290,25 @@ namespace EscalasMetodista.Views.Escalas
         private void btnPreencherTudo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private String idSubfuncoes()
+        {
+            string ids = "";
+
+            for (int i = 0; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.Selected); i++)
+            {
+                foreach (SubFuncao s in listaSubFuncoes)
+                {
+                    if (s.Descricao == tbEscala.SelectedColumns[i].HeaderText)
+                    {
+                        ids = ids + s.idSubFuncao + ",";
+                        indicesColunasSelecionadas = tbEscala.SelectedColumns[i].Index;
+                    }
+                }
+            }
+
+            return ids.Remove(ids.Length - 1);
         }
     }
 }
