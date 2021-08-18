@@ -146,8 +146,38 @@ namespace EscalasMetodista.Views.Usuarios
         }
         private void dgUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            // pegar o id para editar
+            idPessoa = Convert.ToInt32(dgUsuarios.Rows[e.RowIndex].Cells["idPessoa"].Value.ToString());
 
-            dgUsuarios_CellContentClick(null, null);
+            //verificar se a coluna clicada é a de editar
+            if (dgUsuarios.Columns[e.ColumnIndex] == dgUsuarios.Columns["editar"])
+            {
+                if (dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString() == "-")
+                {
+                    cbFuncaoSecundaria.Text = "Selecione...";
+                    cbSubFuncaoSecundaria.Text = "Selecione...";
+                    temFuncaoSecundaria = false;
+                }
+                else
+                {
+                    cbFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Secundária"].Value.ToString();
+                    cbSubFuncaoSecundaria.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Secundária"].Value.ToString();
+                    temFuncaoSecundaria = true;
+                }
+
+                txtNome.Text = dgUsuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+                txtSobrenome.Text = dgUsuarios.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
+                txtEmail.Text = dgUsuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
+                cbTipoUsuario.Text = dgUsuarios.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
+                cbStatus.Text = dgUsuarios.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                cbFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
+                cbSubFuncaoPrincipal.Text = dgUsuarios.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
+                dtCadastro.Text = dgUsuarios.Rows[e.RowIndex].Cells["dataCadastro"].Value.ToString();
+
+
+                tabControl1.SelectedIndex = 1;
+                btnSalvarUsuario.Enabled = true;
+            }
         }
         private void dgUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

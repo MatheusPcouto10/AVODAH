@@ -20,7 +20,9 @@ namespace EscalasMetodista.Views.Escalas
         public int tipoEscala { get; set; }
         private List<DateTime> datasEscala { get; set; }
 
-        private int indicesColunasSelecionadas { get; set; }
+        private int indiceColunaSelecionada { get; set; }
+
+        private int indiceLinhaSelecionada { get; set; }
 
         SqlCommand cmd = new SqlCommand();
 
@@ -216,7 +218,8 @@ namespace EscalasMetodista.Views.Escalas
                 btnPreencherColunaUnica.Text = "Preencher Esta Coluna";
                 tbEscala.SelectionMode = DataGridViewSelectionMode.ColumnHeaderSelect;
                 btnPreencherColunaUnica.Visible = true;
-                indicesColunasSelecionadas = e.ColumnIndex;
+                indiceColunaSelecionada = e.ColumnIndex;
+                indiceLinhaSelecionada = 0;
 
 
             }
@@ -225,11 +228,15 @@ namespace EscalasMetodista.Views.Escalas
                 btnPreencherColunaUnica.Text = "Preencher Esta Linha";
                 tbEscala.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
                 btnPreencherColunaUnica.Visible = true;
+                indiceColunaSelecionada = 0;
+                indiceLinhaSelecionada = e.RowIndex;
             }
             else
             {
                 tbEscala.SelectionMode = DataGridViewSelectionMode.ColumnHeaderSelect;
                 btnPreencherColunaUnica.Visible = false;
+                indiceColunaSelecionada = 0;
+                indiceLinhaSelecionada = 0;
             }
 
         }
@@ -239,36 +246,77 @@ namespace EscalasMetodista.Views.Escalas
 
             try
             {
-                List<string> pessoasColuna = new List<string>();
+                if (indiceColunaSelecionada != 0)
+                {
+                    List<string> pessoasColuna = new List<string>();
 
-                Conexao conexao = new Conexao();
+                    Conexao conexao = new Conexao();
 
-                cmd.Connection = conexao.Conectar();
+                    cmd.Connection = conexao.Conectar();
 
-                cmd.CommandText = @"SELECT p.nome FROM Pessoa p 
+                    cmd.CommandText = @"SELECT p.nome FROM Pessoa p 
                                 JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
-                                JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
-                                WHERE (s1.idSubFuncao in (" + idSubfuncoes() + ") OR s2.idSubFuncao in (" + idSubfuncoes() + ")) AND (s1.idFuncao_fk = " + tipoEscala + " OR s2.idFuncao_fk = " + tipoEscala + ")";
+                                LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
+                                WHERE p.funcaoPrincipal_fk in (" + idSubfuncoes() + ") OR (p.funcaoSecundaria_fk in (" + idSubfuncoes() + ") OR p.funcaoSecundaria_fk IS NULL)" +
+                                    " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala;
 
-                SqlDataReader dr = cmd.ExecuteReader();
+                    SqlDataReader dr = cmd.ExecuteReader();
 
-                while (dr.Read())
+                    while (dr.Read())
+                    {
+                        pessoasColuna.Add(dr.GetString(0));
+                    }
+
+                    conexao.Desconectar();
+
+                    if (pessoasColuna.Count == 0)
+                    {
+                        MessageBox.Show("Nenhuma pessoa com essa função foi encontrada!");
+                        return;
+                    }
+
+                    for (int i = 0; i < pessoasColuna.Count; i++)
+                    {
+                        tbEscala[indiceColunaSelecionada, i].Value = pessoasColuna[i];
+                    }
+                }
+                else
                 {
-                    pessoasColuna.Add(dr.GetString(0));
+                    List<string> pessoasLinha = new List<string>();
+
+                    Conexao conexao = new Conexao();
+
+                    cmd.Connection = conexao.Conectar();
+
+                    cmd.CommandText = @"SELECT min(p.nome) FROM Pessoa p 
+                                JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
+                                LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
+                                WHERE p.funcaoPrincipal_fk in (" + idSubfuncoes() + ") OR (p.funcaoSecundaria_fk in (" + idSubfuncoes() + ") OR p.funcaoSecundaria_fk IS NULL)" +
+                                " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala +
+                                " group by s1.idSubFuncao" +
+                                " order by s1.idSubFuncao";
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        pessoasLinha.Add(dr.GetString(0));
+                    }
+
+                    conexao.Desconectar();
+
+                    if (pessoasLinha.Count == 0)
+                    {
+                        MessageBox.Show("Nenhuma pessoa com essa função foi encontrada!");
+                        return;
+                    }
+
+                    for (int i = 0; i < pessoasLinha.Count; i++)
+                    {
+                        tbEscala[i + 2, indiceLinhaSelecionada].Value = pessoasLinha[i];
+                    }
                 }
 
-                conexao.Desconectar();
-
-                if (pessoasColuna.Count == 0)
-                {
-                    MessageBox.Show("Nenhuma pessoa com essa função foi encontrada!");
-                    return;
-                }
-
-                for (int i = 0; i < pessoasColuna.Count; i++)
-                {
-                    tbEscala[indicesColunasSelecionadas, i].Value = pessoasColuna[i];
-                }
             }
             catch (Exception erro)
             {
@@ -296,14 +344,29 @@ namespace EscalasMetodista.Views.Escalas
         {
             string ids = "";
 
-            for (int i = 0; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.Selected); i++)
+            if (indiceColunaSelecionada != 0)
             {
-                foreach (SubFuncao s in listaSubFuncoes)
+                for (int i = 0; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.Selected); i++)
                 {
-                    if (s.Descricao == tbEscala.SelectedColumns[i].HeaderText)
+                    foreach (SubFuncao s in listaSubFuncoes)
                     {
-                        ids = ids + s.idSubFuncao + ",";
-                        indicesColunasSelecionadas = tbEscala.SelectedColumns[i].Index;
+                        if (s.Descricao == tbEscala.SelectedColumns[i].HeaderText)
+                        {
+                            ids = ids + s.idSubFuncao + ",";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 2; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.None) - 2; i++)
+                {
+                    foreach (SubFuncao s in listaSubFuncoes)
+                    {
+                        if (s.Descricao == tbEscala.Columns[i].HeaderText)
+                        {
+                            ids = ids + s.idSubFuncao + ",";
+                        }
                     }
                 }
             }
