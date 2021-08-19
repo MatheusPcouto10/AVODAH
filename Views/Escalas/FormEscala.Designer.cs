@@ -30,10 +30,10 @@ namespace EscalasMetodista.Views.Escalas
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEscala));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_botoes = new System.Windows.Forms.Panel();
             this.menuEscala = new System.Windows.Forms.ToolStrip();
             this.btnSalvarEscala = new System.Windows.Forms.ToolStripButton();
@@ -51,15 +51,14 @@ namespace EscalasMetodista.Views.Escalas
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnVoltar = new System.Windows.Forms.ToolStripButton();
             this.btnLimparEscala = new System.Windows.Forms.ToolStripDropDownButton();
-            this.limparLinhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.limparColunaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.limparTudoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLimparLinha = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLimparColuna = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLimparTudo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAdicionar = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnPreencherColunaUnica = new System.Windows.Forms.ToolStripButton();
             this.txtNomeEscala = new System.Windows.Forms.TextBox();
             this.lbNomeEscala = new System.Windows.Forms.Label();
             this.logo_metodista = new System.Windows.Forms.PictureBox();
@@ -119,8 +118,7 @@ namespace EscalasMetodista.Views.Escalas
             this.btnLimparEscala,
             this.toolStripSeparator4,
             this.btnAdicionar,
-            this.toolStripSeparator5,
-            this.btnPreencherColunaUnica});
+            this.toolStripSeparator5});
             this.menuEscala.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuEscala.Location = new System.Drawing.Point(0, 95);
             this.menuEscala.Name = "menuEscala";
@@ -243,32 +241,35 @@ namespace EscalasMetodista.Views.Escalas
             // btnLimparEscala
             // 
             this.btnLimparEscala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.limparLinhaToolStripMenuItem,
-            this.limparColunaToolStripMenuItem,
-            this.limparTudoToolStripMenuItem});
+            this.btnLimparLinha,
+            this.btnLimparColuna,
+            this.btnLimparTudo});
             this.btnLimparEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnLimparEscala.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLimparEscala.Name = "btnLimparEscala";
             this.btnLimparEscala.Size = new System.Drawing.Size(111, 22);
             this.btnLimparEscala.Text = "Limpar Escala";
             // 
-            // limparLinhaToolStripMenuItem
+            // btnLimparLinha
             // 
-            this.limparLinhaToolStripMenuItem.Name = "limparLinhaToolStripMenuItem";
-            this.limparLinhaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.limparLinhaToolStripMenuItem.Text = "Limpar Linha";
+            this.btnLimparLinha.Name = "btnLimparLinha";
+            this.btnLimparLinha.Size = new System.Drawing.Size(167, 22);
+            this.btnLimparLinha.Text = "Limpar Linha";
+            this.btnLimparLinha.Click += new System.EventHandler(this.btnLimparLinha_Click);
             // 
-            // limparColunaToolStripMenuItem
+            // btnLimparColuna
             // 
-            this.limparColunaToolStripMenuItem.Name = "limparColunaToolStripMenuItem";
-            this.limparColunaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.limparColunaToolStripMenuItem.Text = "Limpar Coluna";
+            this.btnLimparColuna.Name = "btnLimparColuna";
+            this.btnLimparColuna.Size = new System.Drawing.Size(167, 22);
+            this.btnLimparColuna.Text = "Limpar Coluna";
+            this.btnLimparColuna.Click += new System.EventHandler(this.btnLimparColuna_Click);
             // 
-            // limparTudoToolStripMenuItem
+            // btnLimparTudo
             // 
-            this.limparTudoToolStripMenuItem.Name = "limparTudoToolStripMenuItem";
-            this.limparTudoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.limparTudoToolStripMenuItem.Text = "Limpar Tudo";
+            this.btnLimparTudo.Name = "btnLimparTudo";
+            this.btnLimparTudo.Size = new System.Drawing.Size(167, 22);
+            this.btnLimparTudo.Text = "Limpar Tudo";
+            this.btnLimparTudo.Click += new System.EventHandler(this.btnLimparTudo_Click);
             // 
             // toolStripSeparator4
             // 
@@ -302,20 +303,6 @@ namespace EscalasMetodista.Views.Escalas
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnPreencherColunaUnica
-            // 
-            this.btnPreencherColunaUnica.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.btnPreencherColunaUnica.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnPreencherColunaUnica.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnPreencherColunaUnica.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPreencherColunaUnica.Image = ((System.Drawing.Image)(resources.GetObject("btnPreencherColunaUnica.Image")));
-            this.btnPreencherColunaUnica.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPreencherColunaUnica.Name = "btnPreencherColunaUnica";
-            this.btnPreencherColunaUnica.Size = new System.Drawing.Size(158, 22);
-            this.btnPreencherColunaUnica.Text = "Preencher Esta Coluna";
-            this.btnPreencherColunaUnica.Visible = false;
-            this.btnPreencherColunaUnica.Click += new System.EventHandler(this.btnPreencherColunaUnica_Click);
             // 
             // txtNomeEscala
             // 
@@ -371,14 +358,14 @@ namespace EscalasMetodista.Views.Escalas
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEscala.BackgroundColor = System.Drawing.SystemColors.Control;
             this.tbEscala.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tbEscala.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tbEscala.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tbEscala.ColumnHeadersHeight = 60;
             this.tbEscala.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dates,
@@ -395,29 +382,29 @@ namespace EscalasMetodista.Views.Escalas
             this.Column12,
             this.Column13,
             this.Column14});
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tbEscala.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tbEscala.DefaultCellStyle = dataGridViewCellStyle2;
             this.tbEscala.EnableHeadersVisualStyles = false;
             this.tbEscala.Location = new System.Drawing.Point(0, 117);
             this.tbEscala.Name = "tbEscala";
             this.tbEscala.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tbEscala.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEscala.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tbEscala.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEscala.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tbEscala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect;
             this.tbEscala.Size = new System.Drawing.Size(1123, 459);
             this.tbEscala.TabIndex = 4;
@@ -562,9 +549,9 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton btnVoltar;
         private System.Windows.Forms.ToolStripDropDownButton btnLimparEscala;
-        private System.Windows.Forms.ToolStripMenuItem limparLinhaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem limparColunaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem limparTudoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnLimparLinha;
+        private System.Windows.Forms.ToolStripMenuItem btnLimparColuna;
+        private System.Windows.Forms.ToolStripMenuItem btnLimparTudo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripDropDownButton btnAdicionar;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
@@ -585,6 +572,5 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton btnPreencherColunaUnica;
     }
 }
