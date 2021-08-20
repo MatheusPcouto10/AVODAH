@@ -87,15 +87,18 @@ namespace EscalasMetodista.Views.Escalas
             }
         }
 
-        private void getDatas()
+        private void getDatas(bool preenchimento)
         {
             try
             {
-                for (int i = 0; i <= 15; i++)
+                if (!preenchimento)
                 {
-                    tbEscala.Rows.Add("");
+                    for (int i = 0; i <= 15; i++)
+                    {
+                        tbEscala.Rows.Add("");
+                    }
                 }
-
+                
                 if (datasEscala.Count > tbEscala.RowCount)
                 {
                     for (int i = tbEscala.RowCount; i < datasEscala.Count; i++)
@@ -181,7 +184,7 @@ namespace EscalasMetodista.Views.Escalas
         private void formatarDataGrid()
         {
             getSubFuncoes();
-            getDatas();
+            getDatas(false);
 
             foreach (DataGridViewRow linha in tbEscala.Rows)
             {
@@ -226,6 +229,12 @@ namespace EscalasMetodista.Views.Escalas
                 indiceColunaSelecionada = e.ColumnIndex;
                 indiceLinhaSelecionada = 99;
             }
+            else if (e.ColumnIndex == 0)
+            {
+                tbEscala.SelectionMode = DataGridViewSelectionMode.ColumnHeaderSelect;
+                indiceColunaSelecionada = e.ColumnIndex;
+                indiceLinhaSelecionada = 99;
+            }
             else if (e.ColumnIndex == -1)
             {
                 tbEscala.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
@@ -243,15 +252,18 @@ namespace EscalasMetodista.Views.Escalas
 
         private void btnPreencherColuna_Click(object sender, EventArgs e)
         {
-
+            
             if (indiceColunaSelecionada == 99)
             {
                 MessageBox.Show("É necessário selecionar uma coluna antes do preenchimento!", "Nenhuma Coluna Selecionada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            if (indiceColunaSelecionada == 0) getDatas(true); return;
+
             try
             {
+                //List<Pessoa> pessoasColuna = new List<Pessoa>();
                 List<string> pessoasColuna = new List<string>();
 
                 Conexao conexao = new Conexao();
@@ -270,14 +282,24 @@ namespace EscalasMetodista.Views.Escalas
                                 JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
                                 LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
                                 WHERE p.funcaoPrincipal_fk = " + s.idSubFuncao + " OR (p.funcaoSecundaria_fk = " + s.idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
-                            " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + "order by NEWID()";
+                                " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + "order by NEWID()";
 
                             dr = cmd.ExecuteReader();
 
+                            if (!dr.HasRows)
+                            {
+                                MessageBox.Show("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, "Nenhuma Pessoa Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
 
                             while (dr.Read())
                             {
                                 pessoasColuna.Add(dr.GetString(1));
+                            }
+
+                            for (int j = 0; j < datasEscala.Count; j++)
+                            {
+                                pessoasColuna.Add(pessoasColuna[j]);
                             }
 
                             conexao.Desconectar();
@@ -287,7 +309,7 @@ namespace EscalasMetodista.Views.Escalas
 
                 Random r = new Random();
 
-                for (int j = 0; j < pessoasColuna.Count; j++)
+                for (int j = 0; j < datasEscala.Count; j++)
                 {
                     if (tipoEscala == 1 && indiceColunaSelecionada == 3)
                     {
@@ -316,6 +338,7 @@ namespace EscalasMetodista.Views.Escalas
             {
                 Conexao conexao = new Conexao();
 
+                //List<Pessoa> pessoasLinha = new List<Pessoa>();
                 List<string> pessoasLinha = new List<string>();
 
                 SqlDataReader dr;
@@ -332,23 +355,31 @@ namespace EscalasMetodista.Views.Escalas
                                 JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
                                 LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
                                 WHERE p.funcaoPrincipal_fk = " + s.idSubFuncao + " OR (p.funcaoSecundaria_fk = " + s.idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
-                            " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + "order by NEWID()";
+                                " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + "order by NEWID()";
 
                             dr = cmd.ExecuteReader();
-                            dr.Read();
 
-                            if (tipoEscala == 1 && tbEscala.Columns[i].Index == 3)
+                            if (!dr.HasRows)
                             {
-                                while (dr.Read())
-                                {
-                                    pessoasLinha.Add(dr.GetString(1));
-                                }
-
-                                tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[0] + ", " + pessoasLinha[1] + ", " + pessoasLinha[2];
-
+                                i++;
                             }
                             else
-                                tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = dr.GetString(1);
+                            {
+                                dr.Read();
+
+                                if (tipoEscala == 1 && tbEscala.Columns[i].Index == 3)
+                                {
+                                    while (dr.Read())
+                                    {
+                                        pessoasLinha.Add(dr.GetString(1));
+                                    }
+
+                                    tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[0] + ", " + pessoasLinha[1] + ", " + pessoasLinha[2];
+
+                                }
+                                else
+                                    tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = dr.GetString(1);
+                            }
 
                             conexao.Desconectar();
                         }
@@ -365,10 +396,81 @@ namespace EscalasMetodista.Views.Escalas
         private void btnPreencherTudo_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                getDatas(true);
+
+                //List<Pessoa> pessoasColuna = new List<Pessoa>();
+                List<string> pessoasColuna = new List<string>();
+
+                Conexao conexao = new Conexao();
+
+                Random r = new Random();
+
+                SqlDataReader dr;
+
+                for (int i = 2; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.None) - 2; i++)
+                {
+                    foreach (SubFuncao s in listaSubFuncoes)
+                    {
+                        if (s.Descricao == tbEscala.Columns[i].HeaderText)
+                        {
+                            cmd.Connection = conexao.Conectar();
+
+                            cmd.CommandText = @"SELECT * FROM Pessoa p 
+                                JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
+                                LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
+                                WHERE p.funcaoPrincipal_fk = " + s.idSubFuncao + " OR (p.funcaoSecundaria_fk = " + s.idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
+                                " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + "order by NEWID()";
+
+                            dr = cmd.ExecuteReader();
+
+                            if (!dr.HasRows)
+                            {
+                                i++;
+                            }
+                            else
+                            {
+                                while (dr.Read())
+                                {
+                                    pessoasColuna.Add(dr.GetString(1));
+                                }
+
+                                for (int k = 0; k < datasEscala.Count; k++)
+                                {
+                                    pessoasColuna.Add(pessoasColuna[k]);
+
+                                    if (tipoEscala == 1 && i == 3)
+                                    {
+                                        tbEscala[i, k].Value = pessoasColuna[r.Next(pessoasColuna.Count)] + ", " + pessoasColuna[r.Next(pessoasColuna.Count)] + ", " + pessoasColuna[r.Next(pessoasColuna.Count)];
+                                    }
+                                    else
+                                        tbEscala[i, k].Value = pessoasColuna[k];
+                                }
+                            }
+
+                            pessoasColuna = new List<string>();
+
+                        }
+
+                        conexao.Desconectar();
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
         }
 
         private void btnLimparLinha_Click(object sender, EventArgs e)
         {
+            if (indiceLinhaSelecionada == 99)
+            {
+                MessageBox.Show("É necessário selecionar uma linha!", "Nenhuma Linha Selecionada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             for (int i = 2; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.None) - 2; i++)
             {
                 tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = null;
@@ -377,6 +479,12 @@ namespace EscalasMetodista.Views.Escalas
 
         private void btnLimparColuna_Click(object sender, EventArgs e)
         {
+            if (indiceColunaSelecionada == 99)
+            {
+                MessageBox.Show("É necessário selecionar uma coluna!", "Nenhuma Coluna Selecionada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             for (int i = 0; i < tbEscala.RowCount; i++)
             {
                 tbEscala[indiceColunaSelecionada, i].Value = null;
@@ -389,9 +497,9 @@ namespace EscalasMetodista.Views.Escalas
             {
                 for (int j = 0; j < tbEscala.RowCount; j++)
                 {
-                    tbEscala[tbEscala.Columns[i].Index, tbEscala.Rows[j].Index].Value = null;
+                    tbEscala[i, j].Value = null;
                 }
-                
+
             }
         }
     }
