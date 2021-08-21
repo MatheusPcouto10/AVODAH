@@ -72,10 +72,10 @@
             this.panel_rodape.Controls.Add(this.btnVoltar);
             this.panel_rodape.Controls.Add(this.label1);
             this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_rodape.Location = new System.Drawing.Point(0, 654);
-            this.panel_rodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_rodape.Location = new System.Drawing.Point(0, 531);
+            this.panel_rodape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_rodape.Name = "panel_rodape";
-            this.panel_rodape.Size = new System.Drawing.Size(1113, 45);
+            this.panel_rodape.Size = new System.Drawing.Size(835, 37);
             this.panel_rodape.TabIndex = 5;
             // 
             // btnVoltar
@@ -85,10 +85,10 @@
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVoltar.Location = new System.Drawing.Point(12, 11);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVoltar.Location = new System.Drawing.Point(9, 9);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(95, 30);
+            this.btnVoltar.Size = new System.Drawing.Size(71, 24);
             this.btnVoltar.TabIndex = 19;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
@@ -101,9 +101,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(386, 14);
+            this.label1.Location = new System.Drawing.Point(290, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 17);
+            this.label1.Size = new System.Drawing.Size(286, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Desenvolvido por Matheus Pimentel - 2020";
             // 
@@ -114,9 +115,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1113, 70);
+            this.panel1.Size = new System.Drawing.Size(835, 57);
             this.panel1.TabIndex = 7;
             // 
             // label2
@@ -126,9 +127,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(400, 21);
+            this.label2.Location = new System.Drawing.Point(300, 17);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(312, 29);
+            this.label2.Size = new System.Drawing.Size(249, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "CADASTRAR USUÁRIO";
             // 
@@ -140,10 +142,10 @@
             this.btnSalvarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarUsuario.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnSalvarUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalvarUsuario.Location = new System.Drawing.Point(387, 601);
-            this.btnSalvarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalvarUsuario.Location = new System.Drawing.Point(290, 488);
+            this.btnSalvarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalvarUsuario.Name = "btnSalvarUsuario";
-            this.btnSalvarUsuario.Size = new System.Drawing.Size(165, 39);
+            this.btnSalvarUsuario.Size = new System.Drawing.Size(124, 32);
             this.btnSalvarUsuario.TabIndex = 47;
             this.btnSalvarUsuario.Text = "SALVAR";
             this.btnSalvarUsuario.UseVisualStyleBackColor = false;
@@ -156,10 +158,10 @@
             this.cbTipoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbTipoUsuario.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbTipoUsuario.FormattingEnabled = true;
-            this.cbTipoUsuario.Location = new System.Drawing.Point(560, 409);
+            this.cbTipoUsuario.Location = new System.Drawing.Point(420, 332);
             this.cbTipoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipoUsuario.Name = "cbTipoUsuario";
-            this.cbTipoUsuario.Size = new System.Drawing.Size(188, 28);
+            this.cbTipoUsuario.Size = new System.Drawing.Size(142, 24);
             this.cbTipoUsuario.TabIndex = 48;
             this.cbTipoUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbTipoUsuario_KeyDown);
             // 
@@ -169,9 +171,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(556, 369);
+            this.label7.Location = new System.Drawing.Point(417, 300);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 20);
+            this.label7.Size = new System.Drawing.Size(136, 17);
             this.label7.TabIndex = 54;
             this.label7.Text = "Tipo de Usuário:";
             // 
@@ -183,10 +186,10 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimpar.Location = new System.Drawing.Point(560, 601);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpar.Location = new System.Drawing.Point(420, 488);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(165, 39);
+            this.btnLimpar.Size = new System.Drawing.Size(124, 32);
             this.btnLimpar.TabIndex = 59;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -200,9 +203,10 @@
             this.dtCadastro.CalendarMonthBackground = System.Drawing.Color.Gray;
             this.dtCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtCadastro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtCadastro.Location = new System.Drawing.Point(798, 409);
+            this.dtCadastro.Location = new System.Drawing.Point(598, 332);
+            this.dtCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtCadastro.Name = "dtCadastro";
-            this.dtCadastro.Size = new System.Drawing.Size(225, 24);
+            this.dtCadastro.Size = new System.Drawing.Size(170, 21);
             this.dtCadastro.TabIndex = 60;
             // 
             // label8
@@ -211,9 +215,10 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(794, 369);
+            this.label8.Location = new System.Drawing.Point(596, 300);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(179, 20);
+            this.label8.Size = new System.Drawing.Size(148, 17);
             this.label8.TabIndex = 61;
             this.label8.Text = "Data de Cadastro:";
             // 
@@ -225,11 +230,11 @@
             this.groupBox1.Controls.Add(this.cbFuncaoPrincipal);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(560, 115);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(420, 93);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(463, 107);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(347, 87);
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Função Principal";
@@ -244,10 +249,10 @@
             this.btnLimparFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimparFuncaoPrincipal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(443, 9);
-            this.btnLimparFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(332, 7);
+            this.btnLimparFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimparFuncaoPrincipal.Name = "btnLimparFuncaoPrincipal";
-            this.btnLimparFuncaoPrincipal.Size = new System.Drawing.Size(20, 20);
+            this.btnLimparFuncaoPrincipal.Size = new System.Drawing.Size(15, 16);
             this.btnLimparFuncaoPrincipal.TabIndex = 66;
             this.btnLimparFuncaoPrincipal.UseVisualStyleBackColor = false;
             this.btnLimparFuncaoPrincipal.Click += new System.EventHandler(this.btnLimparFuncaoPrincipal_Click);
@@ -257,10 +262,10 @@
             this.cbSubFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncaoPrincipal.FormattingEnabled = true;
-            this.cbSubFuncaoPrincipal.Location = new System.Drawing.Point(245, 45);
-            this.cbSubFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbSubFuncaoPrincipal.Location = new System.Drawing.Point(184, 37);
+            this.cbSubFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbSubFuncaoPrincipal.Name = "cbSubFuncaoPrincipal";
-            this.cbSubFuncaoPrincipal.Size = new System.Drawing.Size(212, 28);
+            this.cbSubFuncaoPrincipal.Size = new System.Drawing.Size(160, 24);
             this.cbSubFuncaoPrincipal.TabIndex = 38;
             this.cbSubFuncaoPrincipal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSubFuncaoPrincipal_KeyDown);
             // 
@@ -269,10 +274,10 @@
             this.cbFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbFuncaoPrincipal.FormattingEnabled = true;
-            this.cbFuncaoPrincipal.Location = new System.Drawing.Point(6, 45);
-            this.cbFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFuncaoPrincipal.Location = new System.Drawing.Point(4, 37);
+            this.cbFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFuncaoPrincipal.Name = "cbFuncaoPrincipal";
-            this.cbFuncaoPrincipal.Size = new System.Drawing.Size(222, 28);
+            this.cbFuncaoPrincipal.Size = new System.Drawing.Size(168, 24);
             this.cbFuncaoPrincipal.TabIndex = 31;
             this.cbFuncaoPrincipal.SelectedIndexChanged += new System.EventHandler(this.cbFuncaoPrincipal_SelectedIndexChanged);
             this.cbFuncaoPrincipal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbFuncaoPrincipal_KeyDown);
@@ -285,11 +290,11 @@
             this.groupBox2.Controls.Add(this.cbFuncaoSecundaria);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(560, 242);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(420, 197);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(463, 107);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(347, 87);
             this.groupBox2.TabIndex = 63;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Função Secundária";
@@ -304,10 +309,10 @@
             this.btnLimparFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimparFuncaoSecundaria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(443, 8);
-            this.btnLimparFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(332, 6);
+            this.btnLimparFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimparFuncaoSecundaria.Name = "btnLimparFuncaoSecundaria";
-            this.btnLimparFuncaoSecundaria.Size = new System.Drawing.Size(20, 20);
+            this.btnLimparFuncaoSecundaria.Size = new System.Drawing.Size(15, 16);
             this.btnLimparFuncaoSecundaria.TabIndex = 65;
             this.btnLimparFuncaoSecundaria.UseVisualStyleBackColor = false;
             this.btnLimparFuncaoSecundaria.Click += new System.EventHandler(this.btnLimparFuncaoSecundaria_Click);
@@ -317,10 +322,10 @@
             this.cbSubFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSubFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbSubFuncaoSecundaria.FormattingEnabled = true;
-            this.cbSubFuncaoSecundaria.Location = new System.Drawing.Point(245, 46);
-            this.cbSubFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbSubFuncaoSecundaria.Location = new System.Drawing.Point(184, 37);
+            this.cbSubFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbSubFuncaoSecundaria.Name = "cbSubFuncaoSecundaria";
-            this.cbSubFuncaoSecundaria.Size = new System.Drawing.Size(212, 28);
+            this.cbSubFuncaoSecundaria.Size = new System.Drawing.Size(160, 24);
             this.cbSubFuncaoSecundaria.TabIndex = 38;
             this.cbSubFuncaoSecundaria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSubFuncaoSecundaria_KeyDown);
             // 
@@ -329,10 +334,10 @@
             this.cbFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.cbFuncaoSecundaria.FormattingEnabled = true;
-            this.cbFuncaoSecundaria.Location = new System.Drawing.Point(6, 45);
-            this.cbFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFuncaoSecundaria.Location = new System.Drawing.Point(4, 37);
+            this.cbFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFuncaoSecundaria.Name = "cbFuncaoSecundaria";
-            this.cbFuncaoSecundaria.Size = new System.Drawing.Size(222, 28);
+            this.cbFuncaoSecundaria.Size = new System.Drawing.Size(168, 24);
             this.cbFuncaoSecundaria.TabIndex = 31;
             this.cbFuncaoSecundaria.SelectedIndexChanged += new System.EventHandler(this.cbFuncaoSecundaria_SelectedIndexChanged);
             this.cbFuncaoSecundaria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbFuncaoSecundaria_KeyDown);
@@ -343,9 +348,10 @@
             this.checkMostrarSenha.BackColor = System.Drawing.Color.Transparent;
             this.checkMostrarSenha.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.checkMostrarSenha.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkMostrarSenha.Location = new System.Drawing.Point(223, 382);
+            this.checkMostrarSenha.Location = new System.Drawing.Point(167, 310);
+            this.checkMostrarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkMostrarSenha.Name = "checkMostrarSenha";
-            this.checkMostrarSenha.Size = new System.Drawing.Size(141, 21);
+            this.checkMostrarSenha.Size = new System.Drawing.Size(119, 17);
             this.checkMostrarSenha.TabIndex = 64;
             this.checkMostrarSenha.Text = "Mostrar senha";
             this.checkMostrarSenha.UseVisualStyleBackColor = false;
@@ -358,9 +364,10 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(143, 467);
+            this.label6.Location = new System.Drawing.Point(107, 379);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(174, 20);
+            this.label6.Size = new System.Drawing.Size(145, 17);
             this.label6.TabIndex = 53;
             this.label6.Text = "Confirmar Senha:";
             // 
@@ -368,10 +375,10 @@
             // 
             this.txtConfirmarSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarSenha.Location = new System.Drawing.Point(147, 508);
-            this.txtConfirmarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConfirmarSenha.Location = new System.Drawing.Point(110, 413);
+            this.txtConfirmarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtConfirmarSenha.Name = "txtConfirmarSenha";
-            this.txtConfirmarSenha.Size = new System.Drawing.Size(267, 26);
+            this.txtConfirmarSenha.Size = new System.Drawing.Size(201, 22);
             this.txtConfirmarSenha.TabIndex = 52;
             this.txtConfirmarSenha.UseSystemPasswordChar = true;
             // 
@@ -382,9 +389,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(143, 379);
+            this.label4.Location = new System.Drawing.Point(107, 308);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 20);
+            this.label4.Size = new System.Drawing.Size(62, 17);
             this.label4.TabIndex = 46;
             this.label4.Text = "Senha:";
             // 
@@ -392,10 +400,10 @@
             // 
             this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(147, 420);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSenha.Location = new System.Drawing.Point(110, 341);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(267, 26);
+            this.txtSenha.Size = new System.Drawing.Size(201, 22);
             this.txtSenha.TabIndex = 45;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -406,9 +414,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(143, 291);
+            this.label5.Location = new System.Drawing.Point(107, 236);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 20);
+            this.label5.Size = new System.Drawing.Size(62, 17);
             this.label5.TabIndex = 44;
             this.label5.Text = "E-mail:";
             // 
@@ -416,10 +425,10 @@
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(147, 332);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Location = new System.Drawing.Point(110, 270);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(267, 26);
+            this.txtEmail.Size = new System.Drawing.Size(201, 22);
             this.txtEmail.TabIndex = 43;
             // 
             // label3
@@ -428,28 +437,31 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(143, 203);
+            this.label3.Location = new System.Drawing.Point(107, 165);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.Size = new System.Drawing.Size(103, 17);
             this.label3.TabIndex = 42;
             this.label3.Text = "Sobrenome:";
             // 
             // txtSobrenome
             // 
+            this.txtSobrenome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSobrenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSobrenome.Location = new System.Drawing.Point(147, 244);
-            this.txtSobrenome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSobrenome.Location = new System.Drawing.Point(110, 198);
+            this.txtSobrenome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSobrenome.Name = "txtSobrenome";
-            this.txtSobrenome.Size = new System.Drawing.Size(267, 26);
+            this.txtSobrenome.Size = new System.Drawing.Size(201, 22);
             this.txtSobrenome.TabIndex = 41;
             // 
             // txtNome
             // 
+            this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(147, 156);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNome.Location = new System.Drawing.Point(110, 127);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(267, 26);
+            this.txtNome.Size = new System.Drawing.Size(201, 22);
             this.txtNome.TabIndex = 39;
             // 
             // labelNome
@@ -458,20 +470,21 @@
             this.labelNome.BackColor = System.Drawing.Color.Transparent;
             this.labelNome.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.labelNome.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelNome.Location = new System.Drawing.Point(143, 115);
+            this.labelNome.Location = new System.Drawing.Point(107, 93);
+            this.labelNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(71, 20);
+            this.labelNome.Size = new System.Drawing.Size(58, 17);
             this.labelNome.TabIndex = 40;
             this.labelNome.Text = "Nome:";
             // 
             // FormCadastrarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1113, 699);
+            this.ClientSize = new System.Drawing.Size(835, 568);
             this.Controls.Add(this.checkMostrarSenha);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -496,6 +509,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormCadastrarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Usuário";

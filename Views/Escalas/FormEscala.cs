@@ -28,6 +28,8 @@ namespace EscalasMetodista.Views.Escalas
 
         private List<SubFuncao> listaSubFuncoes = new List<SubFuncao>();
 
+        List<Pessoa> pessoasLinha = new List<Pessoa>();
+
         FormCarregamento form = new FormCarregamento();
 
         public FormEscala(List<DateTime> lista)
@@ -98,7 +100,7 @@ namespace EscalasMetodista.Views.Escalas
                         tbEscala.Rows.Add("");
                     }
                 }
-                
+
                 if (datasEscala.Count > tbEscala.RowCount)
                 {
                     for (int i = tbEscala.RowCount; i < datasEscala.Count; i++)
@@ -244,84 +246,89 @@ namespace EscalasMetodista.Views.Escalas
             else
             {
                 tbEscala.SelectionMode = DataGridViewSelectionMode.ColumnHeaderSelect;
-                indiceColunaSelecionada = 0;
-                indiceLinhaSelecionada = 0;
+                indiceColunaSelecionada = 99;
+                indiceLinhaSelecionada = 99;
             }
 
         }
 
         private void btnPreencherColuna_Click(object sender, EventArgs e)
         {
-            
+
             if (indiceColunaSelecionada == 99)
             {
                 MessageBox.Show("É necessário selecionar uma coluna antes do preenchimento!", "Nenhuma Coluna Selecionada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (indiceColunaSelecionada == 0) getDatas(true); return;
-
-            try
+            if (indiceColunaSelecionada == 0)
             {
-                //List<Pessoa> pessoasColuna = new List<Pessoa>();
-                List<string> pessoasColuna = new List<string>();
-
-                Conexao conexao = new Conexao();
-
-                SqlDataReader dr;
-
-                for (int i = 0; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.Selected); i++)
+                getDatas(true);
+            }
+            else
+            {
+                try
                 {
-                    foreach (SubFuncao s in listaSubFuncoes)
-                    {
-                        if (s.Descricao == tbEscala.SelectedColumns[i].HeaderText)
-                        {
-                            cmd.Connection = conexao.Conectar();
+                    //List<Pessoa> pessoasColuna = new List<Pessoa>();
+                    List<string> pessoasColuna = new List<string>();
 
-                            cmd.CommandText = @"SELECT * FROM Pessoa p 
+                    Conexao conexao = new Conexao();
+
+                    SqlDataReader dr;
+
+                    for (int i = 0; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.Selected); i++)
+                    {
+                        foreach (SubFuncao s in listaSubFuncoes)
+                        {
+                            if (s.Descricao == tbEscala.SelectedColumns[i].HeaderText)
+                            {
+                                cmd.Connection = conexao.Conectar();
+
+                                cmd.CommandText = @"SELECT p.* FROM Pessoa p 
                                 JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
                                 LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
                                 WHERE p.funcaoPrincipal_fk = " + s.idSubFuncao + " OR (p.funcaoSecundaria_fk = " + s.idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
-                                " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + "order by NEWID()";
+                                    " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + "order by NEWID()";
 
-                            dr = cmd.ExecuteReader();
+                                dr = cmd.ExecuteReader();
 
-                            if (!dr.HasRows)
-                            {
-                                MessageBox.Show("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, "Nenhuma Pessoa Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
+                                if (!dr.HasRows)
+                                {
+                                    MessageBox.Show("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, "Nenhuma Pessoa Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+
+                                while (dr.Read())
+                                {
+                                    pessoasColuna.Add(dr.GetString(1));
+                                }
+
+                                for (int j = 0; j < datasEscala.Count; j++)
+                                {
+                                    pessoasColuna.Add(pessoasColuna[j]);
+                                }
+
+                                conexao.Desconectar();
                             }
-
-                            while (dr.Read())
-                            {
-                                pessoasColuna.Add(dr.GetString(1));
-                            }
-
-                            for (int j = 0; j < datasEscala.Count; j++)
-                            {
-                                pessoasColuna.Add(pessoasColuna[j]);
-                            }
-
-                            conexao.Desconectar();
                         }
                     }
-                }
 
-                Random r = new Random();
+                    Random r = new Random();
 
-                for (int j = 0; j < datasEscala.Count; j++)
-                {
-                    if (tipoEscala == 1 && indiceColunaSelecionada == 3)
+                    for (int j = 0; j < datasEscala.Count; j++)
                     {
-                        tbEscala[indiceColunaSelecionada, j].Value = pessoasColuna[r.Next(pessoasColuna.Count)] + ", " + pessoasColuna[r.Next(pessoasColuna.Count)] + ", " + pessoasColuna[r.Next(pessoasColuna.Count)];
+                        if (tipoEscala == 1 && indiceColunaSelecionada == 3)
+                        {
+                            tbEscala[indiceColunaSelecionada, j].Value = pessoasColuna[r.Next(pessoasColuna.Count)] + ", " + pessoasColuna[r.Next(pessoasColuna.Count)] + ", " + pessoasColuna[r.Next(pessoasColuna.Count)];
+                        }
+                        else
+                            tbEscala[indiceColunaSelecionada, j].Value = pessoasColuna[j];
                     }
-                    else
-                        tbEscala[indiceColunaSelecionada, j].Value = pessoasColuna[j];
                 }
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro: " + erro.Message);
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro: " + erro.Message);
+                }
             }
         }
 
@@ -338,53 +345,74 @@ namespace EscalasMetodista.Views.Escalas
             {
                 Conexao conexao = new Conexao();
 
-                //List<Pessoa> pessoasLinha = new List<Pessoa>();
-                List<string> pessoasLinha = new List<string>();
-
                 SqlDataReader dr;
 
-                for (int i = 2; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.None) - 2; i++)
-                {
-                    foreach (SubFuncao s in listaSubFuncoes)
-                    {
-                        if (s.Descricao == tbEscala.Columns[i].HeaderText)
-                        {
-                            cmd.Connection = conexao.Conectar();
+                int totalColunas = tbEscala.ColumnCount - (tbEscala.ColumnCount - (listaSubFuncoes.Count + 2));
 
-                            cmd.CommandText = @"SELECT * FROM Pessoa p 
+                for (int i = 2; i < totalColunas; i++)
+                {
+                    bool add = true;
+
+                    cmd.Connection = conexao.Conectar();
+
+                    cmd.CommandText = "SELECT TOP " + (listaSubFuncoes[i - 2].idSubFuncao != 2 ? "1 " : "3 ") + @" p.* FROM Pessoa p 
                                 JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
                                 LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
-                                WHERE p.funcaoPrincipal_fk = " + s.idSubFuncao + " OR (p.funcaoSecundaria_fk = " + s.idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
-                                " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + "order by NEWID()";
+                                WHERE p.funcaoPrincipal_fk = " + listaSubFuncoes[i - 2].idSubFuncao + " OR (p.funcaoSecundaria_fk = " + listaSubFuncoes[i - 2].idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
+                                " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + " AND p.status = 'Ativo' order by NEWID()";
 
-                            dr = cmd.ExecuteReader();
+                    dr = cmd.ExecuteReader();
 
-                            if (!dr.HasRows)
+                    if (!dr.HasRows)
+                    {
+                        tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = null;
+                    }
+                    else
+                    {
+                        while (dr.Read())
+                        {
+                            Pessoa pessoa = new Pessoa();
+                            pessoa.idPessoa = dr.GetInt32(0);
+                            pessoa.Nome = dr.GetString(1);
+                            pessoa.Sobrenome = dr.GetString(2);
+                            pessoa.Email = dr.GetString(3);
+
+                            if (pessoasLinha.Exists(p => p.idPessoa == pessoa.idPessoa).Equals(false))
                             {
-                                i++;
+                                pessoasLinha.Add(pessoa);
+                                add = true;
                             }
                             else
                             {
-                                dr.Read();
+                                add = false;
+                                i--;
+                            }
+                               
+                        }
 
-                                if (tipoEscala == 1 && tbEscala.Columns[i].Index == 3)
+                        if (add)
+                        {
+                            if (tipoEscala == 1)
+                            {
+                                if (tbEscala.Columns[i].Index == 3)
                                 {
-                                    while (dr.Read())
-                                    {
-                                        pessoasLinha.Add(dr.GetString(1));
-                                    }
-
-                                    tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[0] + ", " + pessoasLinha[1] + ", " + pessoasLinha[2];
-
+                                    tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[1].Nome + ", " + pessoasLinha[2].Nome + ", " + pessoasLinha[3].Nome;
                                 }
                                 else
-                                    tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = dr.GetString(1);
+                                {
+                                    tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[pessoasLinha.Count > 1 ? i : 0].Nome;
+                                }
                             }
-
-                            conexao.Desconectar();
+                            else
+                                tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[pessoasLinha.Count - 1].Nome;
                         }
+
+                        tbEscala[0, indiceLinhaSelecionada].Value = datasEscala.Count > indiceLinhaSelecionada ? datasEscala[indiceLinhaSelecionada].ToString("dd/MM") : null;
                     }
+
+                    conexao.Desconectar();
                 }
+                pessoasLinha = new List<Pessoa>();
             }
 
             catch (Exception erro)
@@ -398,6 +426,14 @@ namespace EscalasMetodista.Views.Escalas
 
             try
             {
+                //for (int i = 0; i < tbEscala.RowCount; i++)
+                //{
+                //    btnPreencherEscalaLinha_Click(null, null);
+                //    indiceLinhaSelecionada++;
+                //    pessoasLinha = new List<Pessoa>();
+                //}
+                //indiceLinhaSelecionada = 0;
+
                 getDatas(true);
 
                 //List<Pessoa> pessoasColuna = new List<Pessoa>();
@@ -417,7 +453,7 @@ namespace EscalasMetodista.Views.Escalas
                         {
                             cmd.Connection = conexao.Conectar();
 
-                            cmd.CommandText = @"SELECT * FROM Pessoa p 
+                            cmd.CommandText = @"SELECT p.* FROM Pessoa p 
                                 JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
                                 LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
                                 WHERE p.funcaoPrincipal_fk = " + s.idSubFuncao + " OR (p.funcaoSecundaria_fk = " + s.idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
@@ -450,7 +486,6 @@ namespace EscalasMetodista.Views.Escalas
                             }
 
                             pessoasColuna = new List<string>();
-
                         }
 
                         conexao.Desconectar();
