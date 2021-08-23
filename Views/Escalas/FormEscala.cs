@@ -77,7 +77,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (string.IsNullOrWhiteSpace(txtNomeEscala.Text))
             {
-                MessageBox.Show("O nome da escala não pode ficar em branco.", "Campo em Branco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Validacoes.mensagemErro("O nome da escala não pode ficar em branco.", ToolTipIcon.Error, "Campo em Branco", lbNomeEscala);
             }
             else
             {
@@ -219,7 +219,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (MessageBox.Show("Deseja realmente sair? Você pode perder todo o trabalho feito.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Hide();
+                this.Close();
             }
         }
 
@@ -257,7 +257,7 @@ namespace EscalasMetodista.Views.Escalas
 
             if (indiceColunaSelecionada == 99)
             {
-                MessageBox.Show("É necessário selecionar uma coluna antes do preenchimento!", "Nenhuma Coluna Selecionada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Validacoes.mensagemErro("É necessário selecionar uma coluna antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Coluna Selecionada", menuEscala);
                 return;
             }
 
@@ -294,7 +294,7 @@ namespace EscalasMetodista.Views.Escalas
 
                                 if (!dr.HasRows)
                                 {
-                                    MessageBox.Show("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, "Nenhuma Pessoa Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    Validacoes.mensagemErro("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, ToolTipIcon.Error, "Nenhuma Pessoa Encontrada", menuEscala);
                                     return;
                                 }
 
@@ -337,7 +337,7 @@ namespace EscalasMetodista.Views.Escalas
 
             if (indiceLinhaSelecionada == 99)
             {
-                MessageBox.Show("É necessário selecionar uma linha antes do preenchimento!", "Nenhuma Linha Selecionada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Validacoes.mensagemErro("É necessário selecionar uma linha antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Linha Selecionada", menuEscala);
                 return;
             }
 
@@ -353,9 +353,11 @@ namespace EscalasMetodista.Views.Escalas
                 {
                     bool add = true;
 
+                    string top = listaSubFuncoes[i - 2].idSubFuncao != 2 ? "1 " : "10 ";
+
                     cmd.Connection = conexao.Conectar();
 
-                    cmd.CommandText = "SELECT TOP " + (listaSubFuncoes[i - 2].idSubFuncao != 2 ? "1 " : "3 ") + @" p.* FROM Pessoa p 
+                    cmd.CommandText = "SELECT TOP " + top + @" p.* FROM Pessoa p 
                                 JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
                                 LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
                                 WHERE p.funcaoPrincipal_fk = " + listaSubFuncoes[i - 2].idSubFuncao + " OR (p.funcaoSecundaria_fk = " + listaSubFuncoes[i - 2].idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
@@ -369,8 +371,26 @@ namespace EscalasMetodista.Views.Escalas
                     }
                     else
                     {
-                        while (dr.Read())
+
+                        if (listaSubFuncoes[i - 2].idSubFuncao == 2)
                         {
+                            while (dr.Read() && pessoasLinha.Count <= 4)
+                            {
+                                Pessoa pessoa = new Pessoa();
+                                pessoa.idPessoa = dr.GetInt32(0);
+                                pessoa.Nome = dr.GetString(1);
+                                pessoa.Sobrenome = dr.GetString(2);
+                                pessoa.Email = dr.GetString(3);
+
+                                if (pessoasLinha.Exists(p => p.idPessoa == pessoa.idPessoa).Equals(false))
+                                {
+                                    pessoasLinha.Add(pessoa);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            dr.Read();
                             Pessoa pessoa = new Pessoa();
                             pessoa.idPessoa = dr.GetInt32(0);
                             pessoa.Nome = dr.GetString(1);
@@ -382,12 +402,17 @@ namespace EscalasMetodista.Views.Escalas
                                 pessoasLinha.Add(pessoa);
                                 add = true;
                             }
+
+                            else if (verificaPessoaFuncao(listaSubFuncoes[i - 2].idSubFuncao).Equals(false))
+                            {
+                                tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = null;
+                                add = false;
+                            }
                             else
                             {
                                 add = false;
                                 i--;
                             }
-                               
                         }
 
                         if (add)
@@ -398,10 +423,7 @@ namespace EscalasMetodista.Views.Escalas
                                 {
                                     tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[1].Nome + ", " + pessoasLinha[2].Nome + ", " + pessoasLinha[3].Nome;
                                 }
-                                else
-                                {
-                                    tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[pessoasLinha.Count > 1 ? i : 0].Nome;
-                                }
+                                else { tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[pessoasLinha.Count > 1 ? pessoasLinha.Count - 1 : 0].Nome; }
                             }
                             else
                                 tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[pessoasLinha.Count - 1].Nome;
@@ -423,74 +445,18 @@ namespace EscalasMetodista.Views.Escalas
 
         private void btnPreencherTudo_Click(object sender, EventArgs e)
         {
-
             try
             {
-                //for (int i = 0; i < tbEscala.RowCount; i++)
-                //{
-                //    btnPreencherEscalaLinha_Click(null, null);
-                //    indiceLinhaSelecionada++;
-                //    pessoasLinha = new List<Pessoa>();
-                //}
-                //indiceLinhaSelecionada = 0;
+                indiceLinhaSelecionada = 0;
 
-                getDatas(true);
-
-                //List<Pessoa> pessoasColuna = new List<Pessoa>();
-                List<string> pessoasColuna = new List<string>();
-
-                Conexao conexao = new Conexao();
-
-                Random r = new Random();
-
-                SqlDataReader dr;
-
-                for (int i = 2; i < tbEscala.Columns.GetColumnCount(DataGridViewElementStates.None) - 2; i++)
+                for (int i = 0; i < datasEscala.Count; i++)
                 {
-                    foreach (SubFuncao s in listaSubFuncoes)
-                    {
-                        if (s.Descricao == tbEscala.Columns[i].HeaderText)
-                        {
-                            cmd.Connection = conexao.Conectar();
-
-                            cmd.CommandText = @"SELECT p.* FROM Pessoa p 
-                                JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
-                                LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
-                                WHERE p.funcaoPrincipal_fk = " + s.idSubFuncao + " OR (p.funcaoSecundaria_fk = " + s.idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
-                                " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala + "order by NEWID()";
-
-                            dr = cmd.ExecuteReader();
-
-                            if (!dr.HasRows)
-                            {
-                                i++;
-                            }
-                            else
-                            {
-                                while (dr.Read())
-                                {
-                                    pessoasColuna.Add(dr.GetString(1));
-                                }
-
-                                for (int k = 0; k < datasEscala.Count; k++)
-                                {
-                                    pessoasColuna.Add(pessoasColuna[k]);
-
-                                    if (tipoEscala == 1 && i == 3)
-                                    {
-                                        tbEscala[i, k].Value = pessoasColuna[r.Next(pessoasColuna.Count)] + ", " + pessoasColuna[r.Next(pessoasColuna.Count)] + ", " + pessoasColuna[r.Next(pessoasColuna.Count)];
-                                    }
-                                    else
-                                        tbEscala[i, k].Value = pessoasColuna[k];
-                                }
-                            }
-
-                            pessoasColuna = new List<string>();
-                        }
-
-                        conexao.Desconectar();
-                    }
+                    btnPreencherEscalaLinha_Click(null, null);
+                    indiceLinhaSelecionada++;
+                    pessoasLinha = new List<Pessoa>();
                 }
+                indiceLinhaSelecionada = 99;
+
             }
             catch (Exception erro)
             {
@@ -498,11 +464,82 @@ namespace EscalasMetodista.Views.Escalas
             }
         }
 
+        private bool verificaPessoaFuncao(int idSubFuncao)
+        {
+            List<string> pessoasTemp = new List<string>();
+
+            Conexao conexao = new Conexao();
+
+            cmd.Connection = conexao.Conectar();
+
+            cmd.CommandText = @"SELECT p.* FROM Pessoa p 
+                                JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
+                                LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
+                                WHERE p.funcaoPrincipal_fk = " + idSubFuncao + " OR (p.funcaoSecundaria_fk = " + idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
+                                " AND s1.idFuncao_fk = " + tipoEscala + " AND s2.idFuncao_fk = " + tipoEscala;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                pessoasTemp.Add(dr.GetString(1));
+            }
+
+            if (pessoasTemp.Count > 1)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        private void verificaRegistrosRepetidos()
+        {
+            int totalColunas = tbEscala.ColumnCount - (tbEscala.ColumnCount - (listaSubFuncoes.Count + 2));
+
+            List<string> pessoasTemp = new List<string>();
+
+            int itensDuplicados = 0;
+
+            string linhasDuplicadas = "";
+
+            for (int j = 0; j < tbEscala.RowCount; j++)
+            {
+                for (int i = 2; i < totalColunas; i++)
+                {
+                    if (tbEscala[i, j].Value != null)
+                    {
+                        if (tbEscala[i, j].Value.ToString().Trim().Length != 0)
+                        {
+                            pessoasTemp.Add(tbEscala[i, j].Value.ToString().ToUpper());
+
+                            itensDuplicados = pessoasTemp.GroupBy(p => p)
+                                                         .Where(x => x.Count() > 1)
+                                                         .Sum(x => x.Count());
+                        }
+                    }
+                }
+
+                if (itensDuplicados > 0)
+                {
+                    linhasDuplicadas = linhasDuplicadas + j + ", ";
+                    itensDuplicados = 0;
+                }
+            }
+
+            if (linhasDuplicadas != null)
+            {
+                linhasDuplicadas = linhasDuplicadas.Remove(linhasDuplicadas.Trim().Length - 1);
+
+                Validacoes.mensagemErro("Existem valores duplicados nas linhas: " + linhasDuplicadas, ToolTipIcon.Warning, "Registros Duplicados", menuEscala);
+            }
+        }
+
         private void btnLimparLinha_Click(object sender, EventArgs e)
         {
             if (indiceLinhaSelecionada == 99)
             {
-                MessageBox.Show("É necessário selecionar uma linha!", "Nenhuma Linha Selecionada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Validacoes.mensagemErro("É necessário selecionar uma linha antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Linha Selecionada", menuEscala);
                 return;
             }
 
@@ -516,7 +553,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (indiceColunaSelecionada == 99)
             {
-                MessageBox.Show("É necessário selecionar uma coluna!", "Nenhuma Coluna Selecionada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Validacoes.mensagemErro("É necessário selecionar uma coluna antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Coluna Selecionada", menuEscala);
                 return;
             }
 

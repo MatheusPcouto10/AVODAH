@@ -63,5 +63,19 @@ namespace EscalasMetodista.Model
                 return false;
             }
         }
+
+        public static void mensagemErro(string mensagem, ToolTipIcon icone, string titulo, Control control)
+        {
+            ToolTip balaoMensagem = new ToolTip();
+
+            balaoMensagem.IsBalloon = true;
+
+            balaoMensagem.ToolTipIcon = icone;
+
+            balaoMensagem.ToolTipTitle = titulo;
+
+            balaoMensagem.Show(mensagem, control, 5000);
+
+        }
     }
 }

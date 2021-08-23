@@ -33,9 +33,7 @@ namespace EscalasMetodista
             {
                 this.btnFuncoes.Visible = false;
                 this.btnUsuarios.Visible = false;
-                this.btnRelatorios.Visible = false;
                 toolStripSeparator4.Visible = false;
-                toolStripSeparator5.Visible = false;
                 toolStripSeparator6.Visible = false;
             }
         }
@@ -46,7 +44,7 @@ namespace EscalasMetodista
             {
                 FormLogin form = new FormLogin();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
         }
 

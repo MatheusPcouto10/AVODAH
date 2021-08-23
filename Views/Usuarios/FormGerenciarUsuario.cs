@@ -111,6 +111,11 @@ namespace EscalasMetodista.Views.Usuarios
         }
         private void dgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+
             // pegar o id para editar
             idPessoa = Convert.ToInt32(dgUsuarios.Rows[e.RowIndex].Cells["idPessoa"].Value.ToString());
 
