@@ -64,7 +64,7 @@ namespace EscalasMetodista.Model
             }
         }
 
-        public static void mensagemErro(string mensagem, ToolTipIcon icone, string titulo, Control control)
+        public static void mensagem(string mensagem, ToolTipIcon icone, string titulo, Control control)
         {
             ToolTip balaoMensagem = new ToolTip();
 

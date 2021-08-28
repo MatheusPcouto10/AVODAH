@@ -40,7 +40,7 @@ namespace EscalasMetodista.Views.Escalas
             this.btnSalvarEscala = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalvarEscalaComo = new System.Windows.Forms.ToolStripDropDownButton();
-            this.planilhaxlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExportarXls = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
@@ -145,7 +145,7 @@ namespace EscalasMetodista.Views.Escalas
             // btnSalvarEscalaComo
             // 
             this.btnSalvarEscalaComo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.planilhaxlsToolStripMenuItem,
+            this.btnExportarXls,
             this.pDFToolStripMenuItem});
             this.btnSalvarEscalaComo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSalvarEscalaComo.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -153,16 +153,17 @@ namespace EscalasMetodista.Views.Escalas
             this.btnSalvarEscalaComo.Size = new System.Drawing.Size(102, 22);
             this.btnSalvarEscalaComo.Text = "Salvar Como";
             // 
-            // planilhaxlsToolStripMenuItem
+            // btnExportarXls
             // 
-            this.planilhaxlsToolStripMenuItem.Name = "planilhaxlsToolStripMenuItem";
-            this.planilhaxlsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.planilhaxlsToolStripMenuItem.Text = "Planilha (.xls)";
+            this.btnExportarXls.Name = "btnExportarXls";
+            this.btnExportarXls.Size = new System.Drawing.Size(180, 22);
+            this.btnExportarXls.Text = "Excel ";
+            this.btnExportarXls.Click += new System.EventHandler(this.btnExportarXls_Click);
             // 
             // pDFToolStripMenuItem
             // 
             this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
-            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pDFToolStripMenuItem.Text = "PDF";
             // 
             // toolStripSeparator2
@@ -540,7 +541,7 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.ToolStripButton btnSalvarEscala;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripDropDownButton btnSalvarEscalaComo;
-        private System.Windows.Forms.ToolStripMenuItem planilhaxlsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnExportarXls;
         private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnImprimir;

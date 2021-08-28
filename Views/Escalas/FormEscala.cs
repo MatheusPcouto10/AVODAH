@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EscalasMetodista.Model;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace EscalasMetodista.Views.Escalas
 {
@@ -77,7 +78,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (string.IsNullOrWhiteSpace(txtNomeEscala.Text))
             {
-                Validacoes.mensagemErro("O nome da escala não pode ficar em branco.", ToolTipIcon.Error, "Campo em Branco", lbNomeEscala);
+                Validacoes.mensagem("O nome da escala não pode ficar em branco.", ToolTipIcon.Error, "Campo em Branco", lbNomeEscala);
             }
             else
             {
@@ -257,7 +258,7 @@ namespace EscalasMetodista.Views.Escalas
 
             if (indiceColunaSelecionada == 99)
             {
-                Validacoes.mensagemErro("É necessário selecionar uma coluna antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Coluna Selecionada", menuEscala);
+                Validacoes.mensagem("É necessário selecionar uma coluna antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Coluna Selecionada", menuEscala);
                 return;
             }
 
@@ -294,7 +295,7 @@ namespace EscalasMetodista.Views.Escalas
 
                                 if (!dr.HasRows)
                                 {
-                                    Validacoes.mensagemErro("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, ToolTipIcon.Error, "Nenhuma Pessoa Encontrada", menuEscala);
+                                    Validacoes.mensagem("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, ToolTipIcon.Error, "Nenhuma Pessoa Encontrada", menuEscala);
                                     return;
                                 }
 
@@ -337,7 +338,7 @@ namespace EscalasMetodista.Views.Escalas
 
             if (indiceLinhaSelecionada == 99)
             {
-                Validacoes.mensagemErro("É necessário selecionar uma linha antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Linha Selecionada", menuEscala);
+                Validacoes.mensagem("É necessário selecionar uma linha antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Linha Selecionada", menuEscala);
                 return;
             }
 
@@ -531,7 +532,7 @@ namespace EscalasMetodista.Views.Escalas
             {
                 linhasDuplicadas = linhasDuplicadas.Remove(linhasDuplicadas.Trim().Length - 1);
 
-                Validacoes.mensagemErro("Existem valores duplicados nas linhas: " + linhasDuplicadas, ToolTipIcon.Warning, "Registros Duplicados", menuEscala);
+                Validacoes.mensagem("Existem valores duplicados nas linhas: " + linhasDuplicadas, ToolTipIcon.Warning, "Registros Duplicados", menuEscala);
             }
         }
 
@@ -539,7 +540,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (indiceLinhaSelecionada == 99)
             {
-                Validacoes.mensagemErro("É necessário selecionar uma linha antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Linha Selecionada", menuEscala);
+                Validacoes.mensagem("É necessário selecionar uma linha antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Linha Selecionada", menuEscala);
                 return;
             }
 
@@ -553,7 +554,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (indiceColunaSelecionada == 99)
             {
-                Validacoes.mensagemErro("É necessário selecionar uma coluna antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Coluna Selecionada", menuEscala);
+                Validacoes.mensagem("É necessário selecionar uma coluna antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Coluna Selecionada", menuEscala);
                 return;
             }
 
@@ -572,6 +573,83 @@ namespace EscalasMetodista.Views.Escalas
                     tbEscala[i, j].Value = null;
                 }
 
+            }
+        }
+
+        private void btnExportarXls_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int totalColunas = tbEscala.ColumnCount - (tbEscala.ColumnCount - listaSubFuncoes.Count + 2);
+
+                SaveFileDialog salvar = new SaveFileDialog();
+                salvar.Title = "Exportar para o Excel";
+                salvar.Filter = "Arquivo do Excel *.xls | *.xls";
+                salvar.FileName = lbNomeEscala.Text;
+
+                // Inicia o componente Excel
+                Excel.Application xlApp;
+                Excel.Workbook xlWorkBook;
+                Excel.Worksheet xlWorkSheet;
+                object misValue = System.Reflection.Missing.Value;
+
+                //Cria uma planilha temporária na memória do computador
+                xlApp = new Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add(misValue);
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                for (int i = 0; i < tbEscala.ColumnCount; i++)
+                {
+                    for (int j = 0; j < datasEscala.Count; j++)
+                    {
+                       int  linha = j + 1, coluna = i + 1;
+
+                        xlWorkSheet.Rows[linha].RowHeight = 40;
+
+                        if (linha > 1)
+                        {
+                            xlWorkSheet.Cells[linha, coluna] = tbEscala[i, j].Value == null ? "" : tbEscala[i, j].Value;
+                        }
+                        else
+                            xlWorkSheet.Cells[linha, coluna] = tbEscala.Columns[i].HeaderText;
+                    }
+                }
+
+                xlWorkSheet.Range["A1", "A99"].Columns.ColumnWidth = 20;
+                xlWorkSheet.Range["B1", "Z99"].Columns.ColumnWidth = 25;
+
+                if (tipoEscala == 1)
+                {
+                    xlWorkSheet.Range["D1", "D99"].Columns.ColumnWidth = 35;
+                }
+
+                xlWorkSheet.Range["B1", "Z1"].Interior.Color = Color.DarkRed;
+                xlWorkSheet.Range["A1", "A1"].Interior.Color = Color.Black;
+
+                xlWorkSheet.Range["A1", "Z99"].Font.Name = "Microsoft Sans Serif";
+                xlWorkSheet.Range["A1", "Z1"].Font.Size = 14;
+                xlWorkSheet.Range["A2", "Z99"].Font.Size = 11;
+                xlWorkSheet.Range["A1", "Z1"].Font.Color = Color.White;
+                xlWorkSheet.Range["A2", "Z99"].Font.Color = Color.Black;
+                xlWorkSheet.Range["A1", "Z1"].Font.Bold = true;
+
+                xlWorkSheet.Range["A1", "Z99"].Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                xlWorkSheet.Range["A1", "Z99"].Style.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                xlWorkSheet.Range["A1", "Z99"].Style.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+
+                salvar.ShowDialog();
+
+                //Salva o arquivo de acordo com a documentação do Excel.
+                xlWorkBook.SaveAs(salvar.FileName, Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue, misValue,
+                Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                if (xlWorkBook.Saved == true) Validacoes.mensagem(null, ToolTipIcon.None, "Arquivo salvo com sucesso!", menuEscala);
+                xlWorkBook.Close(true, misValue, misValue);
+                xlApp.Quit();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
             }
         }
     }
