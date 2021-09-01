@@ -32,12 +32,10 @@ namespace EscalasMetodista.Model
             return true;
         }
 
-        public static bool verificaUnico(string campo, string tabela, string valor, bool update, int idPessoa, string idCampo)
+        public static bool verificaUnico(string campo, string tabela, string valor, int idPessoa, string idCampo)
         {
             SqlCommand cmd = new SqlCommand();
 
-            if (update == true)
-            {
                 cmd.CommandText = "SELECT " + campo + " FROM " + tabela + " WHERE " + campo + " = '" + valor + "' AND " + idCampo + " != " + idPessoa;
                 Conexao conexao = new Conexao();
                 cmd.Connection = conexao.Conectar();
@@ -48,27 +46,13 @@ namespace EscalasMetodista.Model
                     return true;
                 }
                 return false;
-            }
-            else
-            {
-                cmd.CommandText = "SELECT " + campo + " FROM " + tabela + " WHERE " + campo + " = '" + valor + "'";
-                Conexao conexao = new Conexao();
-                cmd.Connection = conexao.Conectar();
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                if (dr.HasRows)
-                {
-                    return true;
-                }
-                return false;
-            }
         }
 
         public static void mensagem(string mensagem, ToolTipIcon icone, string titulo, Control control)
         {
             ToolTip balaoMensagem = new ToolTip();
 
-            balaoMensagem.IsBalloon = true;
+            balaoMensagem.IsBalloon = false;
 
             balaoMensagem.ToolTipIcon = icone;
 

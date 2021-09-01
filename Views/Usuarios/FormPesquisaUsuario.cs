@@ -26,61 +26,32 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            // Atualização
-            if ((txtIdPessoa.Text == "") && (txtNome.Text == "") && (cbSubFuncao.Text == "Selecione...")
-                && (cbStatus.Text == "Selecione...") && (cbTipoUsuario.Text == "Selecione..."))
+
+            if (txtCodigoNome.Text == null && cbSubFuncao.Text == "Selecione..." && cbTipoUsuario.Text == "Selecione...")
             {
-                this.CarregarDataGrid(true, null, null, 0);
+                this.CarregarDataGrid(false);
+                return;
             }
-            // Pesquisa por ID
-            else if ((txtNome.Text == "") && (cbSubFuncao.Text == "Selecione...")
-                && (cbStatus.Text == "Selecione...") && (cbTipoUsuario.Text == "Selecione..."))
-            {
-                this.CarregarDataGrid(false, "p.idPessoa", txtIdPessoa.Text, 0);
-            }
-            // Pesquisa por Nome
-            else if ((txtIdPessoa.Text == "") && (cbSubFuncao.Text == "Selecione...")
-               && (cbStatus.Text == "Selecione...") && (cbTipoUsuario.Text == "Selecione..."))
-            {
-                this.CarregarDataGrid(false, "p.nome", txtNome.Text, 0);
-            }
-            // Pesquisa por Sub-Função Principal
-            else if ((txtIdPessoa.Text == "") && (txtNome.Text == "") && (cbStatus.Text == "Selecione...")
-                    && (cbTipoUsuario.Text == "Selecione..."))
-            {
-                this.CarregarDataGrid(false, "p.funcaoPrincipal_fk", null, (int)cbSubFuncao.SelectedValue);
-            }
-            // Pesquisa por Status
-            else if ((txtIdPessoa.Text == "") && (txtNome.Text == "") && (cbSubFuncao.Text == "Selecione...")
-                    && (cbTipoUsuario.Text == "Selecione..."))
-            {
-                this.CarregarDataGrid(false, "p.status", cbStatus.Text, 0);
-            }
-            // Pesquisa por Tipo de Usuário
-            else if ((txtIdPessoa.Text == "") && (txtNome.Text == "") && (cbSubFuncao.Text == "Selecione...")
-                    && (cbStatus.Text == "Selecione..."))
-            {
-                this.CarregarDataGrid(false, "p.tipoUsuario_fk", null, (int)cbTipoUsuario.SelectedValue);
-            }
+            this.CarregarDataGrid(true);
 
         }
 
         private void dgUsuariosPesquisa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtNome.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["nome"].Value.ToString();
-            txtIdPessoa.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["idPessoa"].Value.ToString();
+            txtCodigoNome.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["idPessoa"].Value.ToString() + " - " + dgUsuariosPesquisa.Rows[e.RowIndex].Cells["nome"].Value.ToString() + " " + dgUsuariosPesquisa.Rows[e.RowIndex].Cells["sobrenome"].Value.ToString();
             cbTipoUsuario.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
-            cbStatus.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["status"].Value.ToString();
             cbFuncao.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["Função Principal"].Value.ToString();
             cbSubFuncao.Text = dgUsuariosPesquisa.Rows[e.RowIndex].Cells["Sub-Função Principal"].Value.ToString();
-
-            (Application.OpenForms["FormGerenciarUsuario"].Controls["tabControl1"]
-          .Controls["telaPesquisa"].Controls["txtPesquisa"] as TextBox).Text = txtIdPessoa.Text;
 
         }
 
         private void dgUsuariosPesquisa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Application.OpenForms["FormCadastrarUsuario"].Close();
+
+            FormCadastrarUsuario form = new FormCadastrarUsuario((int)dgUsuariosPesquisa.Rows[e.RowIndex].Cells["idPessoa"].Value);
+            form.Show();
+
             this.Close();
         }
 
@@ -91,42 +62,41 @@ namespace EscalasMetodista.Views.Usuarios
                 switch (coluna.Name)
                 {
                     case "idPessoa":
-                        coluna.Width = 50;
+                        coluna.Width = 60;
                         coluna.HeaderText = "ID";
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "nome":
-                        coluna.Width = 90;
+                        coluna.Width = 110;
                         coluna.HeaderText = "Nome";
                         break;
                     case "sobrenome":
-                        coluna.Width = 90;
+                        coluna.Width = 110;
                         coluna.HeaderText = "Sobrenome";
                         break;
+                    case "email":
+                        coluna.Width = 110;
+                        coluna.HeaderText = "E-mail";
+                        break;
                     case "descricao":
-                        coluna.Width = 80;
+                        coluna.Width = 90;
                         coluna.HeaderText = "Tipo de Usuário";
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "Função Principal":
-                        coluna.Width = 70;
+                        coluna.Width = 90;
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "Sub-Função Principal":
-                        coluna.Width = 70;
+                        coluna.Width = 90;
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "Função Secundária":
-                        coluna.Width = 70;
+                        coluna.Width = 90;
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "Sub-Função Secundária":
-                        coluna.Width = 70;
-                        coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                        break;
-                    case "status":
-                        coluna.Width = 60;
-                        coluna.HeaderText = "Status";
+                        coluna.Width = 90;
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     default:
@@ -137,125 +107,94 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void FormPesquisaUsuario_Load(object sender, EventArgs e)
         {
+            this.CarregarDataGrid(false);
             this.preencheComboBoxTipoUsuario();
             this.preencheComboBoxFuncao();
-            this.CarregarDataGrid(true, null, null, 0);
             cbFuncao.Text = "Selecione...";
             cbSubFuncao.Text = "Selecione...";
             cbTipoUsuario.Text = "Selecione...";
-            cbStatus.Text = "Selecione...";
+            txtCodigoNome.Text = null;
+
         }
 
-        private void CarregarDataGrid(Boolean atualizacao, String campo, String valor, int id)
+        private void CarregarDataGrid(bool pesquisa)
         {
             SqlCommand cmd = new SqlCommand();
 
-            if (atualizacao == true)
+            string campoPesquisa = null;
+
+            if (txtCodigoNome.Text != null)
             {
-                try
-                {
-                    cmd.Connection = conexao.Conectar();
-                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, t.descricao, 
-                                  f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
-                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.status
-                                  FROM pessoa AS p 
-	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
-	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
-	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
-	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
-                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk";
-
-
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.HasRows)
-                    {
-                        // Cria uma tabela genérica
-                        DataTable dt = new DataTable();
-                        dt.Load(dr); // Carrega os dados para o DataTable
-                        dgUsuariosPesquisa.DataSource = dt; // Preenche o DataGridView
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show("Erro: " + erro.Message);
-                }
-                conexao.Desconectar();
+                campoPesquisa = "AND (p.idPessoa IS NULL OR cast(p.idPessoa as varchar) = '" + txtCodigoNome.Text + "') OR (p.nome IS NULL OR p.nome LIKE '%" + txtCodigoNome.Text + "%') " +
+                                  "OR (p.sobrenome IS NULL OR p.sobrenome LIKE '%" + txtCodigoNome.Text + "%') ";
             }
-            else if (valor != null)
+
+            if (cbFuncao.Text != "Selecione...")
             {
-
-                try
-                {
-                    cmd.Connection = conexao.Conectar();
-                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, t.descricao, 
-                                  f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
-                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.status
-                                  FROM pessoa AS p 
-	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
-	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
-	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
-	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
-                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND " + campo + " LIKE '" + valor + "'";
-
-
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.HasRows)
-                    {
-                        // Cria uma tabela genérica
-                        DataTable dt = new DataTable();
-                        dt.Load(dr); // Carrega os dados para o DataTable
-                        dgUsuariosPesquisa.DataSource = dt; // Preenche o DataGridView
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show("Erro: " + erro.Message);
-                }
-                conexao.Desconectar();
-
+                campoPesquisa = "AND (f1.descricaoFuncao IS NULL OR f1.descricaoFuncao = '" + cbFuncao.Text + "') ";
             }
-            else if (valor == null)
-            {
 
-                try
+            if (cbSubFuncao.Text != "Selecione...")
+            {
+                campoPesquisa = "AND (s1.descricao IS NULL OR s1.descricao = '" + cbSubFuncao.Text + "') ";
+            }
+
+
+            if (cbTipoUsuario.Text != "Selecione...")
+            {
+                campoPesquisa = "AND (t.descricao IS NULL OR t.descricao = '" + cbTipoUsuario.Text + "') ";
+            }
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+
+                if (pesquisa)
                 {
-                    cmd.Connection = conexao.Conectar();
-                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, t.descricao, 
+                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, t.descricao, p.email,
                                   f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
-                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária', p.status
+                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária'
                                   FROM pessoa AS p 
 	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
 	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
 	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
 	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
-                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk AND " + campo + " = " + id;
-
-
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.HasRows)
-                    {
-                        // Cria uma tabela genérica
-                        DataTable dt = new DataTable();
-                        dt.Load(dr); // Carrega os dados para o DataTable
-                        dgUsuariosPesquisa.DataSource = dt; // Preenche o DataGridView
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk
+								  WHERE	p.status = 'Ativo' " + campoPesquisa;
                 }
-                catch (Exception erro)
+                else
                 {
-                    MessageBox.Show("Erro: " + erro.Message);
+                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, t.descricao, p.email,
+                                  f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
+                                  f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária'
+                                  FROM pessoa AS p 
+	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
+	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
+	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
+	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
+                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk
+								  WHERE	p.status = 'Ativo'";
                 }
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    // Cria uma tabela genérica
+                    DataTable dt = new DataTable();
+                    dt.Load(dr); // Carrega os dados para o DataTable
+                    dgUsuariosPesquisa.DataSource = dt; // Preenche o DataGridView
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
                 conexao.Desconectar();
             }
         }
@@ -350,11 +289,9 @@ namespace EscalasMetodista.Views.Usuarios
         {
             cbFuncao.Text = "Selecione...";
             cbSubFuncao.Text = "Selecione...";
-            cbStatus.Text = "Selecione...";
             cbTipoUsuario.Text = "Selecione...";
-            txtIdPessoa.Text = "";
-            txtNome.Text = "";
-            this.CarregarDataGrid(true, null, null, 0);
+            txtCodigoNome.Text = null;
+            this.CarregarDataGrid(false);
         }
 
         private void cbFuncao_SelectedIndexChanged(object sender, EventArgs e)

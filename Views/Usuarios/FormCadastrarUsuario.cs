@@ -18,10 +18,19 @@ namespace EscalasMetodista.Views.Usuarios
     {
         Pessoa pessoa = new Pessoa();
         SqlCommand cmd = new SqlCommand();
-        public bool temFuncaoSecundaria = false;
+        private bool temFuncaoSecundaria = false;
+        private bool update = false;
+        private int idPessoaPesquisa { get; set; }
         public FormCadastrarUsuario()
         {
             InitializeComponent();
+        }
+
+        public FormCadastrarUsuario(int id)
+        {
+            InitializeComponent();
+            idPessoaPesquisa = id;
+            update = true;
         }
 
         private void btnSalvarUsuario_Click(object sender, EventArgs e)
@@ -29,11 +38,16 @@ namespace EscalasMetodista.Views.Usuarios
             pessoa.Nome = txtNome.Text;
             pessoa.Sobrenome = txtSobrenome.Text;
             pessoa.Email = txtEmail.Text;
-            pessoa.Senha = txtSenha.Text;
-            if ((string.IsNullOrWhiteSpace(txtSenha.Text))) { MessageBox.Show("Informe uma senha", "Dados Inválidos", MessageBoxButtons.OK, MessageBoxIcon.Error);}
-            pessoa.dataCadastro = dtCadastro.Value;
+
+            if (!update)
+            {
+                pessoa.idPessoa = pessoa.getId();
+                pessoa.Senha = gerarSenha();
+                pessoa.dataCadastro = DateTime.Today;
+                pessoa.Status = "Ativo";
+            }
+
             pessoa.tipoUsuario.idTipoUsuario = (int)cbTipoUsuario.SelectedValue;
-            pessoa.Status = "Ativo";
 
             if (cbFuncaoPrincipal.Text != "Selecione...")
             {
@@ -52,31 +66,38 @@ namespace EscalasMetodista.Views.Usuarios
 
                 try
                 {
-                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, false, 0, null) == true ||
-                        Validacoes.verificaUnico("senha", "pessoa", txtSenha.Text, false, 0, null) == true)
+                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, pessoa.idPessoa, "idPessoa") == true)
                     {
-                        MessageBox.Show("O e-mail e/ou senha já está em uso!", "E-mail/Senha já Cadastrado ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Validacoes.mensagem("O e-mail já está em uso!", ToolTipIcon.Error, "Dados já cadastrados", txtEmail);
+                        return;
                     }
-                    else
+                    if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
                     {
-                        if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
-                        {
-                            MessageBox.Show("As sub-funções não podem ser iguais!", "Sub-Função Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox1);
+                        Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox2);
+                        return;
+                    }
+                    if (Validacoes.ValidarObjeto(pessoa) == true)
+                    {
+                        if (update)
+                            pessoa.update(pessoa, pessoa.idPessoa, temFuncaoSecundaria);
                         else
+                            pessoa.create(pessoa, temFuncaoSecundaria);
+
+                        //this.btnLimpar_Click(null, null);
+                        pessoa = pessoa.find(pessoa.idPessoa);
+
+                        if (pessoa != null)
                         {
-                            if (txtConfirmarSenha.Text == txtSenha.Text)
-                            {
-                                if (Validacoes.ValidarObjeto(pessoa) == true)
-                                {
-                                    pessoa.create(pessoa, temFuncaoSecundaria);
-                                    this.btnLimpar_Click(null, null);
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("As senhas informadas não são iguais!", "Senha não Correspondente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            txtNome.Text = pessoa.Nome;
+                            txtSobrenome.Text = pessoa.Sobrenome;
+                            txtEmail.Text = pessoa.Email;
+                            cbFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.idFuncao_fk;
+                            cbFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idFuncao_fk;
+                            cbSubFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.idSubFuncao;
+                            cbSubFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idSubFuncao;
+                            cbTipoUsuario.SelectedValue = pessoa.tipoUsuario.idTipoUsuario;
+                            btnExcluir.Enabled = true;
                         }
                     }
                 }
@@ -88,9 +109,21 @@ namespace EscalasMetodista.Views.Usuarios
             }
             else
             {
-                MessageBox.Show("É Necessário ter uma Função Principal!", "Função Principal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Validacoes.mensagem("É Necessário ter uma Função Principal!", ToolTipIcon.Error, "Função Principal", cbFuncaoPrincipal);
+            }
+        }
+
+        private string gerarSenha()
+        {
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ023456789";
+            string senha = "";
+            Random random = new Random();
+            for (int f = 0; f < 6; f++)
+            {
+                senha = senha + chars.Substring(random.Next(0, chars.Length - 1), 1);
             }
 
+            return senha;
         }
 
         private void preencheComboBoxTipoUsuario()
@@ -234,8 +267,6 @@ namespace EscalasMetodista.Views.Usuarios
             txtNome.Text = null;
             txtSobrenome.Text = null;
             txtEmail.Text = null;
-            txtSenha.Text = null;
-            txtConfirmarSenha.Text = null;
             cbTipoUsuario.Text = "Selecione...";
             cbFuncaoPrincipal.Text = "Selecione...";
             cbFuncaoSecundaria.Text = "Selecione...";
@@ -248,11 +279,32 @@ namespace EscalasMetodista.Views.Usuarios
             this.preencheComboBoxFuncaoPrincipal();
             this.preencheComboBoxFuncaoSecundaria();
             this.preencheComboBoxTipoUsuario();
-            cbTipoUsuario.Text = "Selecione...";
-            cbFuncaoPrincipal.Text = "Selecione...";
-            cbFuncaoSecundaria.Text = "Selecione...";
-            cbSubFuncaoPrincipal.Text = "Selecione...";
-            cbSubFuncaoSecundaria.Text = "Selecione...";
+
+            if (update)
+            {
+                pessoa = pessoa.find(idPessoaPesquisa);
+
+                if (pessoa != null)
+                {
+                    txtNome.Text = pessoa.Nome;
+                    txtSobrenome.Text = pessoa.Sobrenome;
+                    txtEmail.Text = pessoa.Email;
+                    cbFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.idFuncao_fk;
+                    cbFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idFuncao_fk;
+                    cbSubFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.idSubFuncao;
+                    cbSubFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idSubFuncao;
+                    cbTipoUsuario.SelectedValue = pessoa.tipoUsuario.idTipoUsuario;
+                    btnExcluir.Enabled = true;
+                }
+            }
+            else
+            {
+                cbTipoUsuario.Text = "Selecione...";
+                cbFuncaoPrincipal.Text = "Selecione...";
+                cbFuncaoSecundaria.Text = "Selecione...";
+                cbSubFuncaoPrincipal.Text = "Selecione...";
+                cbSubFuncaoSecundaria.Text = "Selecione...";
+            }
         }
 
         private void cbFuncaoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
@@ -263,18 +315,6 @@ namespace EscalasMetodista.Views.Usuarios
         private void cbFuncaoSecundaria_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.preencheComboboxSubFuncaoSecundaria();
-        }
-
-        private void checkMostrarSenha_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkMostrarSenha.Checked)
-            {
-                txtSenha.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtSenha.UseSystemPasswordChar = true;
-            }
         }
 
         private void btnLimparFuncaoPrincipal_Click(object sender, EventArgs e)
@@ -312,6 +352,21 @@ namespace EscalasMetodista.Views.Usuarios
         private void cbTipoUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente excluir este usuário?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                pessoa.delete(pessoa.idPessoa);
+                btnLimpar_Click(null, null);
+            }
+        }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            FormPesquisaUsuario form = new FormPesquisaUsuario();
+            form.ShowDialog();
         }
     }
 }

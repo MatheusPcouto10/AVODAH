@@ -48,7 +48,38 @@ namespace EscalasMetodista.Model
 
         public SubFuncao find(int id)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand();
+            SubFuncao sub = new SubFuncao();
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                cmd.CommandText = @"SELECT s.* FROM SubFuncao s join Funcao f on s.idFuncao_fk = f.idFuncao WHERE s.idSubFuncao = " + id;
+
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    sub.idSubFuncao = dr.GetInt32(0);
+                    sub.idFuncao_fk = dr.GetInt32(1);
+                    sub.Descricao = dr.GetString(2);
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma Funçao principal foi encontrada!", "Funçao Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+
+            return sub != null ? sub : null;
         }
 
         public void update(SubFuncao t, int idSubFuncoes)

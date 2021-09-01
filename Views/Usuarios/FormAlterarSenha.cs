@@ -44,7 +44,7 @@ namespace EscalasMetodista.Views
 
                         if (dr.GetString(0) == txtSenhaAtual.Text)
                         {
-                            if (Validacoes.verificaUnico("senha", "pessoa", txtNovaSenha.Text, false, 0, null) == true)
+                            if (Validacoes.verificaUnico("senha", "pessoa", txtNovaSenha.Text, 0, null) == true)
                             {
                                 MessageBox.Show("A senha informada já está em uso!", "Senha já Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
@@ -52,15 +52,8 @@ namespace EscalasMetodista.Views
                             {
                                 if (txtNovaSenha.Text == txtConfirmarSenha.Text)
                                 {
-                                    conexao.Desconectar();
-                                    cmd.CommandText = "UPDATE pessoa SET senha = '" + txtNovaSenha.Text +
-                                                      "' WHERE idPessoa = " + UsuarioSession.idUsuario;
-
-                                    cmd.Connection = conexao.Conectar();
-                                    cmd.ExecuteNonQuery();
-                                    conexao.Desconectar();
-                                    MessageBox.Show("Senha alterada com sucesso!");
-                                    this.Hide();
+                                    Pessoa pessoa = new Pessoa();
+                                    pessoa.updateSenha(txtNovaSenha.Text, UsuarioSession.idUsuario);
                                 }
                                 else
                                 {

@@ -101,13 +101,101 @@ namespace EscalasMetodista.Model
 
         public void delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                cmd.CommandText = "UPDATE pessoa SET status = 'Inativo' WHERE idPessoa = " + id;
+                cmd.Connection = conexao.Conectar();
+                cmd.ExecuteNonQuery();
+                conexao.Desconectar();
+
+                MessageBox.Show("Usuário excluído com sucesso!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
         }
 
         public Pessoa find(int id)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand();
+            Pessoa pessoa = new Pessoa();
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                cmd.CommandText = @"SELECT p.* FROM pessoa AS p 
+	                              LEFT JOIN SubFuncao AS s1 ON s1.idSubFuncao = p.funcaoPrincipal_fk 
+	                              LEFT JOIN Funcao AS f1 ON f1.idFuncao = s1.idFuncao_fk 
+	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
+	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
+                                  INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk WHERE p.status = 'Ativo' AND p.idPessoa = " + id;
+
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    pessoa.idPessoa = dr.GetInt32(0);
+                    pessoa.Nome = dr.GetString(1);
+                    pessoa.Sobrenome = dr.GetString(2);
+                    pessoa.Email = dr.GetString(3);
+                    pessoa.tipoUsuario = tipoUsuario.find(dr.GetInt32(5));
+                    pessoa.funcaoPrincipal = funcaoPrincipal.find(dr.GetInt32(6));
+                    pessoa.funcaoSecundaria = funcaoSecundaria.find(dr.GetInt32(7));
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+
+            return pessoa != null ? pessoa : null;
         }
+        public int getId()
+        {
+            SqlCommand cmd = new SqlCommand();
+            int id = 0;
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                cmd.CommandText = "SELECT MAX(idPessoa) FROM Pessoa";
+
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    id = dr.GetInt32(0);
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+
+            return id + 1;
+        }
+
+
 
         public void update(Pessoa t, int idPessoas, bool temFuncaoSecundaria)
         {
@@ -121,9 +209,7 @@ namespace EscalasMetodista.Model
                                                                      "', tipoUsuario_fk = " + t.tipoUsuario.idTipoUsuario +
                                                                      ", funcaoPrincipal_fk = " + t.funcaoPrincipal.idSubFuncao +
                                                                      ", funcaoSecundaria_fk = " + t.funcaoSecundaria.idSubFuncao +
-                                                                     ", dataCadastro = '" + t.dataCadastro +
-                                                                     "', status = '" + t.Status +
-                                                                     "' WHERE idPessoa LIKE '" + idPessoas + "'";
+                                                                     " WHERE idPessoa = " + idPessoas;
                     cmd.Connection = conexao.Conectar();
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
@@ -138,15 +224,32 @@ namespace EscalasMetodista.Model
                                                                      "', tipoUsuario_fk = " + t.tipoUsuario.idTipoUsuario +
                                                                      ", funcaoPrincipal_fk = " + t.funcaoPrincipal.idSubFuncao +
                                                                      ", funcaoSecundaria_fk = NULL" +
-                                                                     ", dataCadastro = '" + t.dataCadastro +
-                                                                     "', status = '" + t.Status +
-                                                                     "' WHERE idPessoa LIKE '" + idPessoas + "'";
+                                                                     " WHERE idPessoa = " + idPessoas;
                     cmd.Connection = conexao.Conectar();
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
 
                     MessageBox.Show("Alteração feita com sucesso!");
                 }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+        }
+
+        public void updateSenha(string senha, int idPessoas)
+        {
+            try
+            {
+
+                cmd.CommandText = "UPDATE pessoa SET senha = '" + senha + "' WHERE idPessoa = " + idPessoas;
+                cmd.Connection = conexao.Conectar();
+                cmd.ExecuteNonQuery();
+                conexao.Desconectar();
+
+                MessageBox.Show("Senha atualizada com sucesso!");
 
             }
             catch (Exception ex)

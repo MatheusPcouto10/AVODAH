@@ -46,7 +46,37 @@ namespace EscalasMetodista.Model
 
         public TipoUsuario find(int id)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand();
+            TipoUsuario tipo = new TipoUsuario();
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                cmd.CommandText = @"SELECT t.* FROM TipoUsuario AS t WHERE t.idTipoUsuario = " + id;
+
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    tipo.idTipoUsuario = dr.GetInt32(0);
+                    tipo.Descricao = dr.GetString(1);
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum Tipo de Usuário foi encontrado!", "Tipo de Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro: " + erro.Message);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+
+            return tipo != null ? tipo : null;
         }
 
         public void update(TipoUsuario t, int idTipoUsuarios)

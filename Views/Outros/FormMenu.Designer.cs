@@ -41,7 +41,6 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnUsuarios = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnCadastrarUsuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGerenciarUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFuncoes = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnCadastrarFuncao = new System.Windows.Forms.ToolStripMenuItem();
@@ -150,7 +149,7 @@
             // btnNovaEscalaPersonalizada
             // 
             this.btnNovaEscalaPersonalizada.Name = "btnNovaEscalaPersonalizada";
-            this.btnNovaEscalaPersonalizada.Size = new System.Drawing.Size(180, 22);
+            this.btnNovaEscalaPersonalizada.Size = new System.Drawing.Size(171, 22);
             this.btnNovaEscalaPersonalizada.Text = "Gerar Nova Escala ";
             this.btnNovaEscalaPersonalizada.Click += new System.EventHandler(this.btnNovaEscalaPersonalizada_Click);
             // 
@@ -162,8 +161,7 @@
             // btnUsuarios
             // 
             this.btnUsuarios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnCadastrarUsuario,
-            this.btnGerenciarUsuario});
+            this.btnCadastrarUsuario});
             this.btnUsuarios.Image = global::EscalasMetodista.Properties.Resources._1486504843_collaboration_group_people_men_user_team_users_81379;
             this.btnUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUsuarios.Name = "btnUsuarios";
@@ -176,13 +174,6 @@
             this.btnCadastrarUsuario.Size = new System.Drawing.Size(180, 22);
             this.btnCadastrarUsuario.Text = "Cadastrar Usuário";
             this.btnCadastrarUsuario.Click += new System.EventHandler(this.novoUsuarioToolStripMenuItem_Click);
-            // 
-            // btnGerenciarUsuario
-            // 
-            this.btnGerenciarUsuario.Name = "btnGerenciarUsuario";
-            this.btnGerenciarUsuario.Size = new System.Drawing.Size(180, 22);
-            this.btnGerenciarUsuario.Text = "Gerenciar Usuário";
-            this.btnGerenciarUsuario.Click += new System.EventHandler(this.gerenciarUsuarioToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
@@ -482,7 +473,6 @@
         private System.Windows.Forms.Label labelData;
         private System.Windows.Forms.ToolStripDropDownButton btnUsuarios;
         private System.Windows.Forms.ToolStripMenuItem btnCadastrarUsuario;
-        private System.Windows.Forms.ToolStripMenuItem btnGerenciarUsuario;
         private System.Windows.Forms.ToolStripDropDownButton btnFuncoes;
         private System.Windows.Forms.ToolStripMenuItem btnCadastrarFuncao;
         private System.Windows.Forms.ToolStripMenuItem btnCadastrarSubFuncao;

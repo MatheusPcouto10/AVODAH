@@ -35,7 +35,7 @@ namespace EscalasMetodista.Views
 
             if (updateFuncao == true)
             {
-                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, true, idSubFuncao, "idSubFuncao") == true)
+                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, idSubFuncao, "idSubFuncao") == true)
                 {
                     MessageBox.Show("Já existe uma Sub-Função Cadastrada!", "Sub-Função já Existente ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -53,7 +53,7 @@ namespace EscalasMetodista.Views
             }
             else
             {
-                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, false, 0, null) == true)
+                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, 0, null) == true)
                 {
                     MessageBox.Show("Já existe uma Sub-Função Cadastrada!", "Sub-Função já Existente ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
