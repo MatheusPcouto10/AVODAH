@@ -1,4 +1,5 @@
 ﻿using EscalasMetodista.Conexão;
+using EscalasMetodista.Model;
 using EscalasMetodista.Session;
 using System;
 using System.Collections.Generic;
@@ -25,9 +26,9 @@ namespace EscalasMetodista
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "SELECT idPessoa, nome, sobrenome, email, senha, tipoUsuario_fk, status FROM pessoa " +
-                              "where email = '" + txtEmail.Text +
-                              "' AND senha = '" + txtSenha.Text + "'";
+            cmd.CommandText = "SELECT idPessoa, nome, sobrenome, email, senha, tipoUsuario_fk FROM pessoa " +
+                              "WHERE email = '" + txtEmail.Text +
+                              "' AND senha = '" + txtSenha.Text + "' AND status = 'Ativo'";
 
             try
             {
@@ -42,21 +43,13 @@ namespace EscalasMetodista
                     UsuarioSession.idUsuario = Convert.ToInt32(dr[0].ToString());
                     UsuarioSession.nomeUsuario = dr[1].ToString();
                     UsuarioSession.sobrenomeUsuario = dr[2].ToString();
-                    string statusUsuario = dr[6].ToString();
 
-                    if (statusUsuario.Equals("Ativo"))
-                    {
-                        formMenu.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("O Usuário está Inativo", "Inatividade", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    formMenu.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Usuário e/ou senha incorretos!", "Dados incorretos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Validacoes.mensagem("Usuário e/ou senha incorretos!", ToolTipIcon.Error, "Dados incorretos", txtSenha);
                 }
 
             }
@@ -64,7 +57,10 @@ namespace EscalasMetodista
             {
                 MessageBox.Show("Erro: " + ex);
             }
-            conexao.Desconectar();
+            finally
+            {
+                conexao.Desconectar();
+            }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)

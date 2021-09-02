@@ -37,6 +37,7 @@
             this.linkPortfolio = new System.Windows.Forms.LinkLabel();
             this.linkInstagram = new System.Windows.Forms.LinkLabel();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,10 +45,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources._006;
-            this.pictureBox1.Location = new System.Drawing.Point(103, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(77, 9);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(269, 134);
+            this.pictureBox1.Size = new System.Drawing.Size(202, 109);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
@@ -58,9 +59,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(102, 162);
+            this.label1.Location = new System.Drawing.Point(76, 132);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 29);
+            this.label1.Size = new System.Drawing.Size(218, 23);
             this.label1.TabIndex = 25;
             this.label1.Text = "Escalas - Metodista\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,9 +73,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(74, 208);
+            this.label2.Location = new System.Drawing.Point(56, 169);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(326, 36);
+            this.label2.Size = new System.Drawing.Size(261, 28);
             this.label2.TabIndex = 26;
             this.label2.Text = "Sistema de Administração de Escalas \r\ngerais da Igreja Metodista em Palmas.\r\n";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,9 +87,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(101, 261);
+            this.label3.Location = new System.Drawing.Point(76, 212);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(273, 60);
+            this.label3.Size = new System.Drawing.Size(222, 51);
             this.label3.TabIndex = 27;
             this.label3.Text = "Matheus Pimentel Do Couto\r\nSistemas de Informação\r\nUNITINS - 2021\r\n";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -97,9 +101,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(188, 355);
+            this.label4.Location = new System.Drawing.Point(141, 288);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 28;
             this.label4.Text = "Portfólio:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,9 +115,10 @@
             this.linkPortfolio.BackColor = System.Drawing.Color.Transparent;
             this.linkPortfolio.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkPortfolio.LinkColor = System.Drawing.SystemColors.Control;
-            this.linkPortfolio.Location = new System.Drawing.Point(98, 392);
+            this.linkPortfolio.Location = new System.Drawing.Point(74, 318);
+            this.linkPortfolio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkPortfolio.Name = "linkPortfolio";
-            this.linkPortfolio.Size = new System.Drawing.Size(279, 18);
+            this.linkPortfolio.Size = new System.Drawing.Size(233, 14);
             this.linkPortfolio.TabIndex = 29;
             this.linkPortfolio.TabStop = true;
             this.linkPortfolio.Text = "https://matheuspcouto10.github.io/";
@@ -124,9 +130,10 @@
             this.linkInstagram.BackColor = System.Drawing.Color.Transparent;
             this.linkInstagram.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkInstagram.LinkColor = System.Drawing.SystemColors.Control;
-            this.linkInstagram.Location = new System.Drawing.Point(162, 486);
+            this.linkInstagram.Location = new System.Drawing.Point(122, 395);
+            this.linkInstagram.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkInstagram.Name = "linkInstagram";
-            this.linkInstagram.Size = new System.Drawing.Size(151, 18);
+            this.linkInstagram.Size = new System.Drawing.Size(127, 14);
             this.linkInstagram.TabIndex = 33;
             this.linkInstagram.TabStop = true;
             this.linkInstagram.Text = "@palmasmetodista";
@@ -138,19 +145,35 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(133, 449);
+            this.label6.Location = new System.Drawing.Point(100, 365);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 20);
+            this.label6.Size = new System.Drawing.Size(173, 17);
             this.label6.TabIndex = 32;
             this.label6.Text = "Instagram da Igreja:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Location = new System.Drawing.Point(62, 440);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(233, 26);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Copyright © 2021 — Desenvolvido por \r\nMatheus Pimentel Do Couto";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormSobre
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
-            this.ClientSize = new System.Drawing.Size(474, 591);
+            this.ClientSize = new System.Drawing.Size(356, 488);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.linkInstagram);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.linkPortfolio);
@@ -161,6 +184,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSobre";
@@ -183,5 +207,6 @@
         private System.Windows.Forms.LinkLabel linkPortfolio;
         private System.Windows.Forms.LinkLabel linkInstagram;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

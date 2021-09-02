@@ -27,13 +27,9 @@ namespace EscalasMetodista.Views.Funcoes
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
             if ((string.IsNullOrWhiteSpace(txtPesquisa.Text)))
-            {
                 CarregarDataGrid(true, null);
-            }
             else
-            {
                 CarregarDataGrid(false, txtPesquisa.Text);
-            }
         }
 
         private void CarregarDataGrid(bool atualizacao, string pesquisa)
@@ -57,9 +53,7 @@ namespace EscalasMetodista.Views.Funcoes
                         dgFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                    {
                         MessageBox.Show("Nenhuma Função foi encontrada!", "Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
                 }
                 catch (Exception erro)
                 {
@@ -84,10 +78,7 @@ namespace EscalasMetodista.Views.Funcoes
                         dgFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                    {
                         MessageBox.Show("Nenhuma Função foi encontrada!", "Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    }
                 }
                 catch (Exception erro)
                 {
@@ -126,11 +117,11 @@ namespace EscalasMetodista.Views.Funcoes
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "descricaoFuncao":
-                        coluna.Width = 420;
+                        coluna.Width = 580;
                         coluna.HeaderText = "Função";
                         break;
                     case "editar":
-                        coluna.Width = 40;
+                        coluna.Width = 45;
                         coluna.DisplayIndex = 2;
                         break;
                     default:
@@ -181,6 +172,13 @@ namespace EscalasMetodista.Views.Funcoes
         private void FormGerenciarFuncao_Activated(object sender, EventArgs e)
         {
             CarregarDataGrid(true, null);
+        }
+
+        private void btnCadastrarNovo_Click(object sender, EventArgs e)
+        {
+            FormCadastroFuncao form = new FormCadastroFuncao();
+            form.updateFuncao = false;
+            form.ShowDialog();
         }
     }
 }

@@ -600,7 +600,7 @@ namespace EscalasMetodista.Views.Escalas
 
                 for (int i = 0; i < tbEscala.ColumnCount; i++)
                 {
-                    for (int j = 0; j < datasEscala.Count; j++)
+                    for (int j = 0; j < tbEscala.RowCount; j++)
                     {
                        int  linha = j + 1, coluna = i + 1;
 
@@ -642,9 +642,10 @@ namespace EscalasMetodista.Views.Escalas
                 //Salva o arquivo de acordo com a documentação do Excel.
                 xlWorkBook.SaveAs(salvar.FileName, Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue, misValue,
                 Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-                if (xlWorkBook.Saved == true) Validacoes.mensagem(null, ToolTipIcon.None, "Arquivo salvo com sucesso!", menuEscala);
                 xlWorkBook.Close(true, misValue, misValue);
                 xlApp.Quit();
+
+                System.Diagnostics.Process.Start(salvar.FileName);
 
             }
             catch (Exception erro)

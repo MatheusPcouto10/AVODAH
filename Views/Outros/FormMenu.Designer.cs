@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_rodape = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
@@ -43,8 +43,6 @@
             this.btnCadastrarUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFuncoes = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btnCadastrarFuncao = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCadastrarSubFuncao = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGerenciarFuncao = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGerenciarSubFuncao = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSair = new System.Windows.Forms.ToolStripButton();
@@ -87,11 +85,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(292, 11);
+            this.label1.Location = new System.Drawing.Point(245, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 13);
+            this.label1.Size = new System.Drawing.Size(435, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Desenvolvido por Matheus Pimentel - 2021";
+            this.label1.Text = "Copyright © 2021 — Desenvolvido por Matheus Pimentel Do Couto";
             // 
             // toolStripMenu
             // 
@@ -171,7 +169,7 @@
             // btnCadastrarUsuario
             // 
             this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
-            this.btnCadastrarUsuario.Size = new System.Drawing.Size(180, 22);
+            this.btnCadastrarUsuario.Size = new System.Drawing.Size(167, 22);
             this.btnCadastrarUsuario.Text = "Cadastrar Usuário";
             this.btnCadastrarUsuario.Click += new System.EventHandler(this.novoUsuarioToolStripMenuItem_Click);
             // 
@@ -183,8 +181,6 @@
             // btnFuncoes
             // 
             this.btnFuncoes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnCadastrarFuncao,
-            this.btnCadastrarSubFuncao,
             this.btnGerenciarFuncao,
             this.btnGerenciarSubFuncao});
             this.btnFuncoes.Image = global::EscalasMetodista.Properties.Resources.System_preferences_46991;
@@ -193,32 +189,18 @@
             this.btnFuncoes.Size = new System.Drawing.Size(84, 24);
             this.btnFuncoes.Text = "Funções";
             // 
-            // btnCadastrarFuncao
-            // 
-            this.btnCadastrarFuncao.Name = "btnCadastrarFuncao";
-            this.btnCadastrarFuncao.Size = new System.Drawing.Size(196, 22);
-            this.btnCadastrarFuncao.Text = "Cadastrar Função";
-            this.btnCadastrarFuncao.Click += new System.EventHandler(this.novaFunçaoToolStripMenuItem_Click);
-            // 
-            // btnCadastrarSubFuncao
-            // 
-            this.btnCadastrarSubFuncao.Name = "btnCadastrarSubFuncao";
-            this.btnCadastrarSubFuncao.Size = new System.Drawing.Size(196, 22);
-            this.btnCadastrarSubFuncao.Text = "Cadastrar Sub-Função";
-            this.btnCadastrarSubFuncao.Click += new System.EventHandler(this.novaSubFunçaoToolStripMenuItem_Click);
-            // 
             // btnGerenciarFuncao
             // 
             this.btnGerenciarFuncao.Name = "btnGerenciarFuncao";
-            this.btnGerenciarFuncao.Size = new System.Drawing.Size(196, 22);
-            this.btnGerenciarFuncao.Text = "Gerenciar Funções";
+            this.btnGerenciarFuncao.Size = new System.Drawing.Size(143, 22);
+            this.btnGerenciarFuncao.Text = "Funções";
             this.btnGerenciarFuncao.Click += new System.EventHandler(this.gerenciarFunçoesToolStripMenuItem_Click);
             // 
             // btnGerenciarSubFuncao
             // 
             this.btnGerenciarSubFuncao.Name = "btnGerenciarSubFuncao";
-            this.btnGerenciarSubFuncao.Size = new System.Drawing.Size(196, 22);
-            this.btnGerenciarSubFuncao.Text = "Gerenciar Sub-Funções";
+            this.btnGerenciarSubFuncao.Size = new System.Drawing.Size(143, 22);
+            this.btnGerenciarSubFuncao.Text = "Sub-Funções";
             this.btnGerenciarSubFuncao.Click += new System.EventHandler(this.gerenciarSubFunçoesToolStripMenuItem_Click);
             // 
             // btnSair
@@ -324,14 +306,14 @@
             this.dgEscalas.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
             this.dgEscalas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgEscalas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 7.8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgEscalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 7.8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgEscalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgEscalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEscalas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.descricao,
@@ -381,7 +363,7 @@
             this.btnPesquisa.Location = new System.Drawing.Point(372, 39);
             this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(47, 26);
+            this.btnPesquisa.Size = new System.Drawing.Size(47, 21);
             this.btnPesquisa.TabIndex = 1;
             this.btnPesquisa.UseVisualStyleBackColor = false;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
@@ -474,8 +456,6 @@
         private System.Windows.Forms.ToolStripDropDownButton btnUsuarios;
         private System.Windows.Forms.ToolStripMenuItem btnCadastrarUsuario;
         private System.Windows.Forms.ToolStripDropDownButton btnFuncoes;
-        private System.Windows.Forms.ToolStripMenuItem btnCadastrarFuncao;
-        private System.Windows.Forms.ToolStripMenuItem btnCadastrarSubFuncao;
         private System.Windows.Forms.ToolStripMenuItem btnGerenciarFuncao;
         private System.Windows.Forms.ToolStripMenuItem btnGerenciarSubFuncao;
         private System.Windows.Forms.ToolStripMenuItem btnNovaEscalaPersonalizada;

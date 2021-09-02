@@ -127,9 +127,6 @@
   <data name="seo-social-web-network-internet_322_icon-icons.com_61532" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\seo-social-web-network-internet_322_icon-icons.com_61532.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8595" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8595.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iconfinder-folder-4341292_120540" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder-folder-4341292_120540.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,11 +148,11 @@
   <data name="2741104" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2741104.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cruz_chama_metodista" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cruz_chama_metodista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark_material_design_wallpaper__1_in_4k_by_tgs266-d9j7yts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_material_design_wallpaper__1_in_4k_by_tgs266-d9j7yts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="006" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\006.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1486504829-clipboard-tasks-report-business-checking-verification-list_81387" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1486504829-clipboard-tasks-report-business-checking-verification-list_81387.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,17 +160,23 @@
   <data name="1486504843-collaboration-group-people-men-user-team-users_81379" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1486504843-collaboration-group-people-men-user-team-users_81379.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="8595" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8595.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="kisspng-united-states-win-the-white-house-hotel-business-c-refresh-icon-5b0ecd3859cd92.0718737115276966963679" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-united-states-win-the-white-house-hotel-business-c-refresh-icon-5b0ecd3859cd92.0718737115276966963679.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="006" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\006.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cruz_chama_metodista" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cruz_chama_metodista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dark_material_design_wallpaper__1_in_4k_by_tgs266-d9j7yts" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_material_design_wallpaper__1_in_4k_by_tgs266-d9j7yts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fundo-futurista-moderno-do-circuito-metalico-cinzento-vermelho_33869-1252" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fundo-futurista-moderno-do-circuito-metalico-cinzento-vermelho_33869-1252.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loadBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loadBar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searchmagnifierinterfacesymbol1_79893" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchmagnifierinterfacesymbol1_79893.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,7 +184,7 @@
   <data name="kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loadBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loadBar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

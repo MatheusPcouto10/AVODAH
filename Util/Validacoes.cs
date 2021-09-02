@@ -42,9 +42,8 @@ namespace EscalasMetodista.Model
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.HasRows)
-                {
                     return true;
-                }
+
                 return false;
         }
 

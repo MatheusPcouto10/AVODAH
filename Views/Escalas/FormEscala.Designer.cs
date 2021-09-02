@@ -29,22 +29,17 @@ namespace EscalasMetodista.Views.Escalas
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEscala));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEscala));
             this.panel_botoes = new System.Windows.Forms.Panel();
             this.menuEscala = new System.Windows.Forms.ToolStrip();
-            this.btnSalvarEscala = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalvarEscalaComo = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnExportarXls = new System.Windows.Forms.ToolStripMenuItem();
-            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPreencherEscala = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnPreencherEscalaLinha = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPreencherColuna = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,14 +51,12 @@ namespace EscalasMetodista.Views.Escalas
             this.btnLimparColuna = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLimparTudo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAdicionar = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.txtNomeEscala = new System.Windows.Forms.TextBox();
             this.lbNomeEscala = new System.Windows.Forms.Label();
             this.logo_metodista = new System.Windows.Forms.PictureBox();
             this.tbEscala = new System.Windows.Forms.DataGridView();
+            this.panel_rodape = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.dates = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +75,7 @@ namespace EscalasMetodista.Views.Escalas
             this.menuEscala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbEscala)).BeginInit();
+            this.panel_rodape.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_botoes
@@ -107,19 +101,13 @@ namespace EscalasMetodista.Views.Escalas
             this.menuEscala.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menuEscala.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuEscala.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSalvarEscala,
-            this.toolStripSeparator3,
             this.btnSalvarEscalaComo,
             this.toolStripSeparator2,
-            this.btnImprimir,
-            this.toolStripSeparator1,
             this.btnPreencherEscala,
             this.toolStripSeparator6,
             this.btnVoltar,
             this.btnLimparEscala,
-            this.toolStripSeparator4,
-            this.btnAdicionar,
-            this.toolStripSeparator5});
+            this.toolStripSeparator4});
             this.menuEscala.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuEscala.Location = new System.Drawing.Point(0, 95);
             this.menuEscala.Name = "menuEscala";
@@ -127,26 +115,10 @@ namespace EscalasMetodista.Views.Escalas
             this.menuEscala.Stretch = true;
             this.menuEscala.TabIndex = 8;
             // 
-            // btnSalvarEscala
-            // 
-            this.btnSalvarEscala.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnSalvarEscala.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnSalvarEscala.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarEscala.Image")));
-            this.btnSalvarEscala.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalvarEscala.Name = "btnSalvarEscala";
-            this.btnSalvarEscala.Size = new System.Drawing.Size(57, 22);
-            this.btnSalvarEscala.Text = "Salvar ";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
             // btnSalvarEscalaComo
             // 
             this.btnSalvarEscalaComo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnExportarXls,
-            this.pDFToolStripMenuItem});
+            this.btnExportarXls});
             this.btnSalvarEscalaComo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSalvarEscalaComo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalvarEscalaComo.Name = "btnSalvarEscalaComo";
@@ -156,35 +128,14 @@ namespace EscalasMetodista.Views.Escalas
             // btnExportarXls
             // 
             this.btnExportarXls.Name = "btnExportarXls";
-            this.btnExportarXls.Size = new System.Drawing.Size(180, 22);
+            this.btnExportarXls.Size = new System.Drawing.Size(113, 22);
             this.btnExportarXls.Text = "Excel ";
             this.btnExportarXls.Click += new System.EventHandler(this.btnExportarXls_Click);
-            // 
-            // pDFToolStripMenuItem
-            // 
-            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
-            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pDFToolStripMenuItem.Text = "PDF";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnImprimir.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(69, 22);
-            this.btnImprimir.Text = "Imprimir";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // btnPreencherEscala
             // 
@@ -278,34 +229,6 @@ namespace EscalasMetodista.Views.Escalas
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
-            this.btnAdicionar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(82, 22);
-            this.btnAdicionar.Text = "Adicionar";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
-            this.toolStripMenuItem1.Text = "Adicionar Linha";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(184, 22);
-            this.toolStripMenuItem2.Text = "Adicionar Coluna";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
             // txtNomeEscala
             // 
             this.txtNomeEscala.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -393,7 +316,7 @@ namespace EscalasMetodista.Views.Escalas
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tbEscala.DefaultCellStyle = dataGridViewCellStyle3;
             this.tbEscala.EnableHeadersVisualStyles = false;
-            this.tbEscala.Location = new System.Drawing.Point(0, 117);
+            this.tbEscala.Location = new System.Drawing.Point(0, 123);
             this.tbEscala.Name = "tbEscala";
             this.tbEscala.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -408,15 +331,40 @@ namespace EscalasMetodista.Views.Escalas
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEscala.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.tbEscala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect;
-            this.tbEscala.Size = new System.Drawing.Size(1123, 459);
+            this.tbEscala.Size = new System.Drawing.Size(1123, 420);
             this.tbEscala.TabIndex = 4;
             this.tbEscala.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbEscala_CellClick);
+            // 
+            // panel_rodape
+            // 
+            this.panel_rodape.BackColor = System.Drawing.Color.Black;
+            this.panel_rodape.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
+            this.panel_rodape.Controls.Add(this.label1);
+            this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_rodape.Location = new System.Drawing.Point(0, 539);
+            this.panel_rodape.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_rodape.Name = "panel_rodape";
+            this.panel_rodape.Size = new System.Drawing.Size(1122, 37);
+            this.panel_rodape.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(344, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(435, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Copyright © 2021 — Desenvolvido por Matheus Pimentel Do Couto";
             // 
             // dates
             // 
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dates.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dates.Frozen = true;
             this.dates.HeaderText = "";
             this.dates.Name = "dates";
             this.dates.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -510,6 +458,7 @@ namespace EscalasMetodista.Views.Escalas
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1122, 576);
+            this.Controls.Add(this.panel_rodape);
             this.Controls.Add(this.tbEscala);
             this.Controls.Add(this.panel_botoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -527,6 +476,8 @@ namespace EscalasMetodista.Views.Escalas
             this.menuEscala.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbEscala)).EndInit();
+            this.panel_rodape.ResumeLayout(false);
+            this.panel_rodape.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -538,14 +489,9 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.TextBox txtNomeEscala;
         public System.Windows.Forms.Label lbNomeEscala;
         private System.Windows.Forms.ToolStrip menuEscala;
-        private System.Windows.Forms.ToolStripButton btnSalvarEscala;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripDropDownButton btnSalvarEscalaComo;
         private System.Windows.Forms.ToolStripMenuItem btnExportarXls;
-        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton btnImprimir;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripDropDownButton btnPreencherEscala;
         private System.Windows.Forms.ToolStripMenuItem btnPreencherEscalaLinha;
         private System.Windows.Forms.ToolStripMenuItem btnPreencherColuna;
@@ -557,11 +503,9 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.ToolStripMenuItem btnLimparColuna;
         private System.Windows.Forms.ToolStripMenuItem btnLimparTudo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripDropDownButton btnAdicionar;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.DataGridView tbEscala;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.Panel panel_rodape;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dates;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

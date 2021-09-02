@@ -31,13 +31,9 @@ namespace EscalasMetodista.Views.Funcoes
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
             if ((string.IsNullOrWhiteSpace(txtPesquisa.Text)))
-            {
                 CarregarDataGrid(true, null);
-            }
             else
-            {
                 CarregarDataGrid(false, txtPesquisa.Text);
-            }
         }
 
         private void CarregarDataGrid(bool atualizacao, string pesquisa)
@@ -50,7 +46,7 @@ namespace EscalasMetodista.Views.Funcoes
                 {
                     cmd.Connection = conexao.Conectar();
                     cmd.CommandText = @"SELECT s.idSubFuncao, s.descricao, f.descricaoFuncao FROM subFuncao AS s INNER JOIN funcao AS f 
-                                      ON f.idFuncao = s.idFuncao_fk";
+                                      ON f.idFuncao = s.idFuncao_fk order by s.idSubFuncao, f.descricaoFuncao";
 
 
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -62,9 +58,7 @@ namespace EscalasMetodista.Views.Funcoes
                         dgSubFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                    {
                         MessageBox.Show("Nenhuma Sub-Função foi encontrada!", "Sub-Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
                 }
                 catch (Exception erro)
                 {
@@ -79,7 +73,7 @@ namespace EscalasMetodista.Views.Funcoes
                     cmd.Connection = conexao.Conectar();
                     cmd.CommandText ="SELECT s.idSubFuncao, s.descricao, f.descricaoFuncao FROM subFuncao AS s INNER JOIN funcao AS f " +
                                      "ON f.idFuncao = s.idFuncao_fk WHERE cast(s.idSubFuncao as varchar) = '" + pesquisa + "' OR s.descricao LIKE '%" + pesquisa + "%' " +
-                                     "OR f.descricaoFuncao LIKE '%" + pesquisa + "%'";
+                                     "OR f.descricaoFuncao LIKE '%" + pesquisa + "%' order by s.idSubFuncao, f.descricaoFuncao";
 
 
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -91,9 +85,7 @@ namespace EscalasMetodista.Views.Funcoes
                         dgSubFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                    {
                         MessageBox.Show("Nenhuma Sub-Função foi encontrada!", "Sub-Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
                 }
                 catch (Exception erro)
                 {
@@ -142,15 +134,15 @@ namespace EscalasMetodista.Views.Funcoes
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "descricao":
-                        coluna.Width = 200;
+                        coluna.Width = 300;
                         coluna.HeaderText = "Sub-Função";
                         break;
                     case "descricaoFuncao":
-                        coluna.Width = 200;
+                        coluna.Width = 300;
                         coluna.HeaderText = "Função";
                         break;
                     case "editar":
-                        coluna.Width = 40;
+                        coluna.Width = 45;
                         coluna.DisplayIndex = 3;
                         break;
                     default:
@@ -186,6 +178,13 @@ namespace EscalasMetodista.Views.Funcoes
         private void FormGerenciarSubfuncoes_Activated(object sender, EventArgs e)
         {
             CarregarDataGrid(true, null);
+        }
+
+        private void btnCadastrarNovo_Click(object sender, EventArgs e)
+        {
+            FormCadastroSubFuncao form = new FormCadastroSubFuncao();
+            form.updateFuncao = false;
+            form.ShowDialog();
         }
     }
 }

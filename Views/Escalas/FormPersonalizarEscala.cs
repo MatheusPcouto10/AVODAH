@@ -1,4 +1,5 @@
 ﻿using EscalasMetodista.Conexão;
+using EscalasMetodista.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +43,7 @@ namespace EscalasMetodista.Views.Escalas
             {
                 if (cbTipoEscala.Text == "Selecione.." || cbIntervalo.Text == "Selecione..." || string.IsNullOrWhiteSpace(txtNomeEscala.Text))
                 {
-                    MessageBox.Show("Campos não informados. Por favor informe.", "Campo em Branco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   Validacoes.mensagem("Campos não informados. Por favor informe.", ToolTipIcon.Error, "Campo em Branco", txtNomeEscala);
                 }
                 else
                 {

@@ -37,7 +37,7 @@ namespace EscalasMetodista.Views
             {
                 if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, idSubFuncao, "idSubFuncao") == true)
                 {
-                    MessageBox.Show("Já existe uma Sub-Função Cadastrada!", "Sub-Função já Existente ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Validacoes.mensagem("Já existe uma Sub-Função Cadastrada!", ToolTipIcon.Error, "Sub-Função já Existente ", txtDescricao);
                 }
                 else
                 {
@@ -53,9 +53,9 @@ namespace EscalasMetodista.Views
             }
             else
             {
-                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, 0, null) == true)
+                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, 0, "idSubFuncao") == true)
                 {
-                    MessageBox.Show("Já existe uma Sub-Função Cadastrada!", "Sub-Função já Existente ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Validacoes.mensagem("Já existe uma Sub-Função Cadastrada!", ToolTipIcon.Error, "Sub-Função já Existente ", txtDescricao);
                 }
                 else
                 {
@@ -99,14 +99,11 @@ namespace EscalasMetodista.Views
         private void FormCadastroSubFuncao_Load(object sender, EventArgs e)
         {
             this.preencheComboBoxFuncoes();
+
             if (updateFuncao == true)
-            {
                 cbFuncoes.Text = funcao;
-            }
             else
-            {
-                cbFuncoes.Text = "Selecione";
-            }
+                cbFuncoes.Text = "Selecione...";
         }
 
         private void cbFuncoes_KeyDown(object sender, KeyEventArgs e)
