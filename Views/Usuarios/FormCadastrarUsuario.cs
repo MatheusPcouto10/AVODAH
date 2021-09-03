@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace EscalasMetodista.Views.Usuarios
 {
@@ -31,86 +32,7 @@ namespace EscalasMetodista.Views.Usuarios
             InitializeComponent();
             idPessoaPesquisa = id;
             update = true;
-        }
-
-        private void btnSalvarUsuario_Click(object sender, EventArgs e)
-        {
-            pessoa.Nome = txtNome.Text;
-            pessoa.Sobrenome = txtSobrenome.Text;
-            pessoa.Email = txtEmail.Text;
-
-            if (!update)
-            {
-                pessoa.idPessoa = pessoa.getId();
-                pessoa.Senha = gerarSenha();
-                pessoa.dataCadastro = DateTime.Today;
-                pessoa.Status = "Ativo";
-            }
-
-            pessoa.tipoUsuario.idTipoUsuario = (int)cbTipoUsuario.SelectedValue;
-
-            if (cbFuncaoPrincipal.Text != "Selecione...")
-            {
-                pessoa.funcaoPrincipal.idSubFuncao = (int)cbSubFuncaoPrincipal.SelectedValue;
-
-
-                if (cbSubFuncaoSecundaria.Text != "Selecione...")
-                {
-                    pessoa.funcaoSecundaria.idSubFuncao = (int)cbSubFuncaoSecundaria.SelectedValue;
-                    temFuncaoSecundaria = true;
-                }
-                else if (cbSubFuncaoSecundaria.Text == "Selecione...")
-                {
-                    temFuncaoSecundaria = false;
-                }
-
-                try
-                {
-                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, pessoa.idPessoa, "idPessoa") == true)
-                    {
-                        Validacoes.mensagem("O e-mail já está em uso!", ToolTipIcon.Error, "Dados já cadastrados", txtEmail);
-                        return;
-                    }
-                    if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
-                    {
-                        Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox1);
-                        Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox2);
-                        return;
-                    }
-                    if (Validacoes.ValidarObjeto(pessoa) == true)
-                    {
-                        if (update)
-                            pessoa.update(pessoa, pessoa.idPessoa, temFuncaoSecundaria);
-                        else
-                            pessoa.create(pessoa, temFuncaoSecundaria);
-
-                        //this.btnLimpar_Click(null, null);
-                        pessoa = pessoa.find(pessoa.idPessoa);
-
-                        if (pessoa != null)
-                        {
-                            txtNome.Text = pessoa.Nome;
-                            txtSobrenome.Text = pessoa.Sobrenome;
-                            txtEmail.Text = pessoa.Email;
-                            cbFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.idFuncao_fk;
-                            cbFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idFuncao_fk;
-                            cbSubFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.idSubFuncao;
-                            cbSubFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idSubFuncao;
-                            cbTipoUsuario.SelectedValue = pessoa.tipoUsuario.idTipoUsuario;
-                            btnExcluir.Enabled = true;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show("Erro: " + ex);
-                }
-            }
-            else
-            {
-                Validacoes.mensagem("É Necessário ter uma Função Principal!", ToolTipIcon.Error, "Função Principal", cbFuncaoPrincipal);
-            }
+            btnSalvar.IconChar = IconChar.Pen;
         }
 
         private string gerarSenha()
@@ -262,23 +184,18 @@ namespace EscalasMetodista.Views.Usuarios
             this.Hide();
         }
 
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            txtNome.Text = null;
-            txtSobrenome.Text = null;
-            txtEmail.Text = null;
-            cbTipoUsuario.Text = "Selecione...";
-            cbFuncaoPrincipal.Text = "Selecione...";
-            cbFuncaoSecundaria.Text = "Selecione...";
-            cbSubFuncaoPrincipal.Text = "Selecione...";
-            cbSubFuncaoSecundaria.Text = "Selecione...";
-        }
-
         private void FormCadastrarUsuario_Load(object sender, EventArgs e)
         {
             this.preencheComboBoxFuncaoPrincipal();
             this.preencheComboBoxFuncaoSecundaria();
             this.preencheComboBoxTipoUsuario();
+
+            if (!btnDeletar.Enabled)
+            {
+                btnDeletar.ForeColor = Color.DarkGray;
+            }
+            else
+                btnDeletar.ForeColor = Color.Black;
 
             if (update)
             {
@@ -289,12 +206,22 @@ namespace EscalasMetodista.Views.Usuarios
                     txtNome.Text = pessoa.Nome;
                     txtSobrenome.Text = pessoa.Sobrenome;
                     txtEmail.Text = pessoa.Email;
-                    cbFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.idFuncao_fk;
-                    cbFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idFuncao_fk;
+                    cbFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.funcao.idFuncao;
                     cbSubFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.idSubFuncao;
-                    cbSubFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idSubFuncao;
+
+                    if (pessoa.funcaoSecundaria != null)
+                    {
+                        cbFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.funcao.idFuncao;
+                        cbSubFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idSubFuncao;
+                    }
+                    else
+                    {
+                        cbFuncaoSecundaria.Text = "Selecione...";
+                        cbSubFuncaoSecundaria.Text = "Selecione...";
+                    }
+                    
                     cbTipoUsuario.SelectedValue = pessoa.tipoUsuario.idTipoUsuario;
-                    btnExcluir.Enabled = true;
+                    btnDeletar.Enabled = true;
                 }
             }
             else
@@ -354,19 +281,153 @@ namespace EscalasMetodista.Views.Usuarios
             e.SuppressKeyPress = true;
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void btnDeletar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente excluir este usuário?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 pessoa.delete(pessoa.idPessoa);
-                btnLimpar_Click(null, null);
+                btnLimparForm_Click(null, null);
             }
         }
 
-        private void btnPesquisa_Click(object sender, EventArgs e)
+        private void btnLimparForm_Click(object sender, EventArgs e)
+        {
+            txtNome.Text = null;
+            txtSobrenome.Text = null;
+            txtEmail.Text = null;
+            cbTipoUsuario.Text = "Selecione...";
+            cbFuncaoPrincipal.Text = "Selecione...";
+            cbFuncaoSecundaria.Text = "Selecione...";
+            cbSubFuncaoPrincipal.Text = "Selecione...";
+            cbSubFuncaoSecundaria.Text = "Selecione...";
+            update = false;
+            btnSalvar.IconChar = IconChar.Plus;
+            pessoa = new Pessoa();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            pessoa.Nome = txtNome.Text;
+            pessoa.Sobrenome = txtSobrenome.Text;
+            pessoa.Email = txtEmail.Text;
+
+            if (!update)
+            {
+                pessoa.idPessoa = pessoa.getId();
+                pessoa.Senha = gerarSenha();
+                pessoa.dataCadastro = DateTime.Today;
+                pessoa.Status = "Ativo";
+            }
+
+            pessoa.tipoUsuario.idTipoUsuario = (int)cbTipoUsuario.SelectedValue;
+
+            if (cbFuncaoPrincipal.Text != "Selecione...")
+            {
+                SubFuncao sub = new SubFuncao();
+                pessoa.funcaoPrincipal = sub.find((int)cbSubFuncaoPrincipal.SelectedValue);
+
+
+                if (cbSubFuncaoSecundaria.Text != "Selecione...")
+                {
+                    pessoa.funcaoSecundaria = sub.find((int) cbSubFuncaoSecundaria.SelectedValue);
+                    temFuncaoSecundaria = true;
+                }
+                else 
+                    temFuncaoSecundaria = false;
+
+                try
+                {
+                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, pessoa.idPessoa, "idPessoa") == true)
+                    {
+                        Validacoes.mensagem("O e-mail já está em uso!", ToolTipIcon.Error, "Dados já cadastrados", txtEmail);
+                        return;
+                    }
+                    if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
+                    {
+                        Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox1);
+                        Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox2);
+                        return;
+                    }
+                    if (Validacoes.ValidarObjeto(pessoa) == true)
+                    {
+                        if (update)
+                        {
+                            pessoa.update(pessoa, pessoa.idPessoa, temFuncaoSecundaria);
+                        }
+                        else
+                            pessoa.create(pessoa, temFuncaoSecundaria);
+
+                        //this.btnLimpar_Click(null, null);
+                        pessoa = pessoa.find(pessoa.idPessoa);
+
+                        if (pessoa != null)
+                        {
+                            txtNome.Text = pessoa.Nome;
+                            txtSobrenome.Text = pessoa.Sobrenome;
+                            txtEmail.Text = pessoa.Email;
+                            cbFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.funcao.idFuncao;
+                            cbSubFuncaoPrincipal.SelectedValue = pessoa.funcaoPrincipal.idSubFuncao;
+
+                            if (pessoa.funcaoSecundaria != null)
+                            {
+                                cbFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.funcao.idFuncao;
+                                cbSubFuncaoSecundaria.SelectedValue = pessoa.funcaoSecundaria.idSubFuncao;
+                            }
+                            else
+                            {
+                                cbFuncaoSecundaria.Text = "Selecione...";
+                                cbSubFuncaoSecundaria.Text = "Selecione...";
+                            }
+
+                            cbTipoUsuario.SelectedValue = pessoa.tipoUsuario.idTipoUsuario;
+                            btnDeletar.Enabled = true;
+                            btnSalvar.IconChar = IconChar.Pen;
+                            update = true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Erro: " + ex);
+                }
+            }
+            else
+            {
+                Validacoes.mensagem("É Necessário ter uma Função Principal!", ToolTipIcon.Error, "Função Principal", cbFuncaoPrincipal);
+            }
+        }
+
+        private void btnConsultarUsuario_Click(object sender, EventArgs e)
         {
             FormPesquisaUsuario form = new FormPesquisaUsuario();
             form.ShowDialog();
+        }
+
+        private void btnLimparForm_MouseHover(object sender, EventArgs e)
+        {
+            btnLimparForm.BackColor = Color.LightGray;
+            btnLimparForm.ForeColor = Color.Black;
+            btnLimparForm.IconColor = Color.Black;
+            btnLimparForm.FlatAppearance.BorderColor = Color.Black;
+        }
+
+        private void btnLimparForm_MouseLeave(object sender, EventArgs e)
+        {
+            btnLimparForm.BackColor = Color.Transparent;
+            btnLimparForm.ForeColor = Color.LightGray;
+            btnLimparForm.IconColor = Color.LightGray;
+            btnLimparForm.FlatAppearance.BorderColor = Color.LightGray;
+        }
+
+        private void btnDeletar_EnabledChanged(object sender, EventArgs e)
+        {
+            if (!btnDeletar.Enabled)
+            {
+                btnDeletar.ForeColor = Color.DarkGray;
+            }
+            else
+                btnDeletar.ForeColor = Color.Black;
         }
     }
 }

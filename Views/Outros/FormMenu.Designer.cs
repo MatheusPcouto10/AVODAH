@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_rodape = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
@@ -56,9 +56,9 @@
             this.dgEscalas = new System.Windows.Forms.DataGridView();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataAlteracao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisaEscala = new System.Windows.Forms.TextBox();
             this.logo_metodista = new System.Windows.Forms.PictureBox();
+            this.btnPesquisa = new System.Windows.Forms.Button();
             this.panel_rodape.SuspendLayout();
             this.toolStripMenu.SuspendLayout();
             this.panel_principal.SuspendLayout();
@@ -306,14 +306,14 @@
             this.dgEscalas.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
             this.dgEscalas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgEscalas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 7.8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgEscalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 7.8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgEscalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgEscalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEscalas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.descricao,
@@ -347,27 +347,6 @@
             this.dataAlteracao.ReadOnly = true;
             this.dataAlteracao.Width = 125;
             // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.kisspng_forest_lake_computer_icons_inspection_white_wine_search_bar_5addbd8c2df2a6_8041717315244814201882;
-            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPesquisa.FlatAppearance.BorderSize = 0;
-            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.Location = new System.Drawing.Point(372, 39);
-            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(47, 21);
-            this.btnPesquisa.TabIndex = 1;
-            this.btnPesquisa.UseVisualStyleBackColor = false;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            // 
             // txtPesquisaEscala
             // 
             this.txtPesquisaEscala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -391,6 +370,27 @@
             this.logo_metodista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo_metodista.TabIndex = 0;
             this.logo_metodista.TabStop = false;
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.kisspng_forest_lake_computer_icons_inspection_white_wine_search_bar_5addbd8c2df2a6_8041717315244814201882;
+            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPesquisa.FlatAppearance.BorderSize = 0;
+            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.Location = new System.Drawing.Point(372, 39);
+            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(47, 21);
+            this.btnPesquisa.TabIndex = 1;
+            this.btnPesquisa.UseVisualStyleBackColor = false;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // FormMenu
             // 
@@ -434,7 +434,6 @@
         private System.Windows.Forms.Panel panel_botoes;
         private System.Windows.Forms.DataGridView dgEscalas;
         private System.Windows.Forms.TextBox txtPesquisaEscala;
-        private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.Panel panel_rodape;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -459,6 +458,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnGerenciarFuncao;
         private System.Windows.Forms.ToolStripMenuItem btnGerenciarSubFuncao;
         private System.Windows.Forms.ToolStripMenuItem btnNovaEscalaPersonalizada;
+        private System.Windows.Forms.Button btnPesquisa;
     }
 }
 

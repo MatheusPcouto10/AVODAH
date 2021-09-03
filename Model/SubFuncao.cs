@@ -15,11 +15,20 @@ namespace EscalasMetodista.Model
     {
         public int idSubFuncao { get; set; }
 
-        public int idFuncao_fk { get; set; }
-
         [Required(ErrorMessage = "Insira o nome da Sub-Função")]
         [RegularExpression(@"^[a-zA-Z0-9À-ú-/ç()'\s]{1,40}$", ErrorMessage = "Caracteres especiais não são permitidos no nome.")]
         public String Descricao { get; set; }
+
+        [Required(ErrorMessage = "É necessário ter uma Função")]
+        public Funcao funcao = new Funcao();
+
+        [Required(ErrorMessage = "É necessário ter uma Função")]
+        public Funcao funcoes
+        {
+            get => this.funcao;
+            set => this.funcao = value;
+        }
+
 
         SqlCommand cmd = new SqlCommand();
         Conexao conexao = new Conexao();
@@ -28,7 +37,7 @@ namespace EscalasMetodista.Model
             try
             {
                 cmd.CommandText = "INSERT INTO subfuncao(descricao, idFuncao_fk) " +
-                                  "values('" + t.Descricao + "', '" + t.idFuncao_fk + "')";
+                                  "values('" + t.Descricao + "', '" + t.funcao.idFuncao + "')";
 
                 cmd.Connection = conexao.Conectar();
                 cmd.ExecuteNonQuery();
@@ -62,7 +71,7 @@ namespace EscalasMetodista.Model
                 {
                     dr.Read();
                     sub.idSubFuncao = dr.GetInt32(0);
-                    sub.idFuncao_fk = dr.GetInt32(1);
+                    sub.funcao = funcao.find(dr.GetInt32(1));
                     sub.Descricao = dr.GetString(2);
                 }
                 else
@@ -87,7 +96,7 @@ namespace EscalasMetodista.Model
             try
             {
                 cmd.CommandText = "UPDATE subfuncao SET descricao = '" + t.Descricao +
-                                                                     "', idFuncao_fk = '" + t.idFuncao_fk +
+                                                                     "', idFuncao_fk = '" + t.funcao.idFuncao +
                                                                      "' WHERE idSubFuncao LIKE '" + idSubFuncoes + "'";
                 cmd.Connection = conexao.Conectar();
                 cmd.ExecuteNonQuery();

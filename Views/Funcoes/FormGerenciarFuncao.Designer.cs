@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGerenciarFuncao));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.telaPesquisa = new System.Windows.Forms.TabPage();
-            this.btnCadastrarNovo = new System.Windows.Forms.Button();
-            this.btnPesquisa = new System.Windows.Forms.Button();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.dgFuncoes = new System.Windows.Forms.DataGridView();
-            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,131 +39,19 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tabControl1.SuspendLayout();
-            this.telaPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).BeginInit();
+            this.telaPesquisa = new System.Windows.Forms.TabPage();
+            this.btnCadastrarNovo = new FontAwesome.Sharp.IconButton();
+            this.btnPesquisa = new System.Windows.Forms.Button();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.dgFuncoes = new System.Windows.Forms.DataGridView();
+            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panel1.SuspendLayout();
             this.panel_rodape.SuspendLayout();
+            this.telaPesquisa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.telaPesquisa);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(-2, 41);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(713, 410);
-            this.tabControl1.TabIndex = 5;
-            // 
-            // telaPesquisa
-            // 
-            this.telaPesquisa.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.telaPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
-            this.telaPesquisa.Controls.Add(this.btnCadastrarNovo);
-            this.telaPesquisa.Controls.Add(this.btnPesquisa);
-            this.telaPesquisa.Controls.Add(this.txtPesquisa);
-            this.telaPesquisa.Controls.Add(this.dgFuncoes);
-            this.telaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telaPesquisa.Location = new System.Drawing.Point(4, 22);
-            this.telaPesquisa.Margin = new System.Windows.Forms.Padding(2);
-            this.telaPesquisa.Name = "telaPesquisa";
-            this.telaPesquisa.Padding = new System.Windows.Forms.Padding(2);
-            this.telaPesquisa.Size = new System.Drawing.Size(705, 384);
-            this.telaPesquisa.TabIndex = 0;
-            this.telaPesquisa.Text = "Pesquisa";
-            // 
-            // btnCadastrarNovo
-            // 
-            this.btnCadastrarNovo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCadastrarNovo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrarNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarNovo.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarNovo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCadastrarNovo.Location = new System.Drawing.Point(593, 18);
-            this.btnCadastrarNovo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCadastrarNovo.Name = "btnCadastrarNovo";
-            this.btnCadastrarNovo.Size = new System.Drawing.Size(98, 24);
-            this.btnCadastrarNovo.TabIndex = 20;
-            this.btnCadastrarNovo.Text = "Nova Função";
-            this.btnCadastrarNovo.UseVisualStyleBackColor = false;
-            this.btnCadastrarNovo.Click += new System.EventHandler(this.btnCadastrarNovo_Click);
-            // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.kisspng_forest_lake_computer_icons_inspection_white_wine_search_bar_5addbd8c2df2a6_8041717315244814201882;
-            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPesquisa.FlatAppearance.BorderSize = 0;
-            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa.Location = new System.Drawing.Point(413, 59);
-            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(33, 21);
-            this.btnPesquisa.TabIndex = 12;
-            this.btnPesquisa.UseVisualStyleBackColor = false;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisa.BackColor = System.Drawing.Color.White;
-            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisa.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtPesquisa.Location = new System.Drawing.Point(259, 63);
-            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(149, 18);
-            this.txtPesquisa.TabIndex = 11;
-            // 
-            // dgFuncoes
-            // 
-            this.dgFuncoes.AllowUserToAddRows = false;
-            this.dgFuncoes.AllowUserToDeleteRows = false;
-            this.dgFuncoes.AllowUserToOrderColumns = true;
-            this.dgFuncoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgFuncoes.BackgroundColor = System.Drawing.Color.Black;
-            this.dgFuncoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgFuncoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.editar});
-            this.dgFuncoes.GridColor = System.Drawing.Color.Black;
-            this.dgFuncoes.Location = new System.Drawing.Point(10, 104);
-            this.dgFuncoes.Margin = new System.Windows.Forms.Padding(2);
-            this.dgFuncoes.Name = "dgFuncoes";
-            this.dgFuncoes.ReadOnly = true;
-            this.dgFuncoes.RowHeadersVisible = false;
-            this.dgFuncoes.RowHeadersWidth = 51;
-            this.dgFuncoes.RowTemplate.Height = 24;
-            this.dgFuncoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncoes.Size = new System.Drawing.Size(685, 261);
-            this.dgFuncoes.TabIndex = 5;
-            this.dgFuncoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellContentClick);
-            this.dgFuncoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellDoubleClick);
-            this.dgFuncoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgFuncoes_CellFormatting);
-            this.dgFuncoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgFuncoes_DataBindingComplete);
-            // 
-            // editar
-            // 
-            this.editar.HeaderText = "";
-            this.editar.Image = global::EscalasMetodista.Properties.Resources.editar;
-            this.editar.MinimumWidth = 6;
-            this.editar.Name = "editar";
-            this.editar.ReadOnly = true;
-            this.editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editar.Width = 1099;
             // 
             // dataGridViewImageColumn2
             // 
@@ -204,7 +88,7 @@
             // 
             // panel_rodape
             // 
-            this.panel_rodape.BackColor = System.Drawing.Color.Maroon;
+            this.panel_rodape.BackColor = System.Drawing.Color.Black;
             this.panel_rodape.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
             this.panel_rodape.Controls.Add(this.btnVoltar);
             this.panel_rodape.Controls.Add(this.label1);
@@ -255,6 +139,156 @@
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.Width = 1099;
             // 
+            // telaPesquisa
+            // 
+            this.telaPesquisa.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.telaPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
+            this.telaPesquisa.Controls.Add(this.btnCadastrarNovo);
+            this.telaPesquisa.Controls.Add(this.btnPesquisa);
+            this.telaPesquisa.Controls.Add(this.txtPesquisa);
+            this.telaPesquisa.Controls.Add(this.dgFuncoes);
+            this.telaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telaPesquisa.Location = new System.Drawing.Point(4, 22);
+            this.telaPesquisa.Margin = new System.Windows.Forms.Padding(2);
+            this.telaPesquisa.Name = "telaPesquisa";
+            this.telaPesquisa.Padding = new System.Windows.Forms.Padding(2);
+            this.telaPesquisa.Size = new System.Drawing.Size(705, 384);
+            this.telaPesquisa.TabIndex = 0;
+            this.telaPesquisa.Text = "Pesquisa";
+            // 
+            // btnCadastrarNovo
+            // 
+            this.btnCadastrarNovo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCadastrarNovo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrarNovo.FlatAppearance.BorderSize = 2;
+            this.btnCadastrarNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarNovo.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
+            this.btnCadastrarNovo.ForeColor = System.Drawing.Color.Black;
+            this.btnCadastrarNovo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnCadastrarNovo.IconColor = System.Drawing.Color.Black;
+            this.btnCadastrarNovo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCadastrarNovo.IconSize = 20;
+            this.btnCadastrarNovo.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnCadastrarNovo.Location = new System.Drawing.Point(559, 27);
+            this.btnCadastrarNovo.Name = "btnCadastrarNovo";
+            this.btnCadastrarNovo.Size = new System.Drawing.Size(136, 31);
+            this.btnCadastrarNovo.TabIndex = 70;
+            this.btnCadastrarNovo.Text = "Nova Função";
+            this.btnCadastrarNovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrarNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCadastrarNovo.UseVisualStyleBackColor = false;
+            this.btnCadastrarNovo.Click += new System.EventHandler(this.btnCadastrarNovo_Click);
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.BackgroundImage = global::EscalasMetodista.Properties.Resources.kisspng_forest_lake_computer_icons_inspection_white_wine_search_bar_5addbd8c2df2a6_8041717315244814201882;
+            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPesquisa.FlatAppearance.BorderSize = 0;
+            this.btnPesquisa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPesquisa.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa.Location = new System.Drawing.Point(413, 59);
+            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(33, 21);
+            this.btnPesquisa.TabIndex = 12;
+            this.btnPesquisa.UseVisualStyleBackColor = false;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisa.BackColor = System.Drawing.Color.White;
+            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPesquisa.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtPesquisa.Location = new System.Drawing.Point(259, 63);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(149, 18);
+            this.txtPesquisa.TabIndex = 11;
+            // 
+            // dgFuncoes
+            // 
+            this.dgFuncoes.AllowUserToAddRows = false;
+            this.dgFuncoes.AllowUserToDeleteRows = false;
+            this.dgFuncoes.AllowUserToOrderColumns = true;
+            this.dgFuncoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgFuncoes.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgFuncoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgFuncoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFuncoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.editar});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgFuncoes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgFuncoes.GridColor = System.Drawing.Color.Black;
+            this.dgFuncoes.Location = new System.Drawing.Point(10, 104);
+            this.dgFuncoes.Margin = new System.Windows.Forms.Padding(2);
+            this.dgFuncoes.Name = "dgFuncoes";
+            this.dgFuncoes.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgFuncoes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgFuncoes.RowHeadersVisible = false;
+            this.dgFuncoes.RowHeadersWidth = 51;
+            this.dgFuncoes.RowTemplate.Height = 24;
+            this.dgFuncoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgFuncoes.Size = new System.Drawing.Size(685, 261);
+            this.dgFuncoes.TabIndex = 5;
+            this.dgFuncoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellContentClick);
+            this.dgFuncoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncoes_CellDoubleClick);
+            this.dgFuncoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgFuncoes_CellFormatting);
+            this.dgFuncoes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgFuncoes_DataBindingComplete);
+            // 
+            // editar
+            // 
+            this.editar.HeaderText = "";
+            this.editar.Image = global::EscalasMetodista.Properties.Resources.editar;
+            this.editar.MinimumWidth = 6;
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            this.editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editar.Width = 1099;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.telaPesquisa);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(-2, 41);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(713, 410);
+            this.tabControl1.TabIndex = 5;
+            // 
             // FormGerenciarFuncao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,26 +298,25 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel_rodape);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FormGerenciarFuncao";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Funções";
             this.Activated += new System.EventHandler(this.FormGerenciarFuncao_Activated);
             this.Load += new System.EventHandler(this.FormGerenciarFunção_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGerenciarFuncao_KeyDown);
-            this.tabControl1.ResumeLayout(false);
-            this.telaPesquisa.ResumeLayout(false);
-            this.telaPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_rodape.ResumeLayout(false);
             this.panel_rodape.PerformLayout();
+            this.telaPesquisa.ResumeLayout(false);
+            this.telaPesquisa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFuncoes)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -293,15 +326,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage telaPesquisa;
-        public System.Windows.Forms.DataGridView dgFuncoes;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn editar;
+        private System.Windows.Forms.TabPage telaPesquisa;
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.TextBox txtPesquisa;
-        private System.Windows.Forms.Button btnCadastrarNovo;
+        public System.Windows.Forms.DataGridView dgFuncoes;
+        private System.Windows.Forms.DataGridViewImageColumn editar;
+        private System.Windows.Forms.TabControl tabControl1;
+        private FontAwesome.Sharp.IconButton btnCadastrarNovo;
     }
 }

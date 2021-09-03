@@ -148,9 +148,10 @@ namespace EscalasMetodista.Views.Escalas
                     indiceColuna++;
 
                     SubFuncao subFuncao = new SubFuncao();
-                    subFuncao.Descricao = dt.Rows[i][2].ToString();
-                    subFuncao.idSubFuncao = (int)dt.Rows[i][0];
-                    subFuncao.idFuncao_fk = (int)dt.Rows[i][1];
+                    subFuncao = subFuncao.find((int)dt.Rows[i][0]);
+                    //subFuncao.Descricao = dt.Rows[i][2].ToString();
+                    //subFuncao.idSubFuncao = (int)dt.Rows[i][0];
+                    //subFuncao.funcao = (int)dt.Rows[i][1];
 
                     listaSubFuncoes.Add(subFuncao);
                 }
@@ -164,9 +165,7 @@ namespace EscalasMetodista.Views.Escalas
                         tbEscala.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                         SubFuncao subFuncao = new SubFuncao();
-                        subFuncao.Descricao = dt.Rows[i][2].ToString();
-                        subFuncao.idSubFuncao = (int)dt.Rows[i][0];
-                        subFuncao.idFuncao_fk = (int)dt.Rows[i][1];
+                        subFuncao = subFuncao.find((int)dt.Rows[i][0]);
 
                         listaSubFuncoes.Add(subFuncao);
 
@@ -602,16 +601,15 @@ namespace EscalasMetodista.Views.Escalas
                 {
                     for (int j = 0; j < tbEscala.RowCount; j++)
                     {
-                       int  linha = j + 1, coluna = i + 1;
+                        int linha = j + 1, coluna = i + 1;
 
                         xlWorkSheet.Rows[linha].RowHeight = 40;
 
-                        if (linha > 1)
-                        {
-                            xlWorkSheet.Cells[linha, coluna] = tbEscala[i, j].Value == null ? "" : tbEscala[i, j].Value;
-                        }
-                        else
+                        if (linha == 1)
                             xlWorkSheet.Cells[linha, coluna] = tbEscala.Columns[i].HeaderText;
+
+                        else
+                            xlWorkSheet.Cells[linha, coluna] = tbEscala[i, j - 1].Value == null ? "" : tbEscala[i , j - 1].Value;
                     }
                 }
 

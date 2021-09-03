@@ -21,7 +21,23 @@ namespace EscalasMetodista.Views
             InitializeComponent();
         }
 
-        private void btnAlterarSenha_Click(object sender, EventArgs e)
+        private void checkMostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkMostrarSenha.Checked)
+            {
+                txtSenhaAtual.UseSystemPasswordChar = false;
+                txtConfirmarSenha.UseSystemPasswordChar = false;
+                txtNovaSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtNovaSenha.UseSystemPasswordChar = true;
+                txtSenhaAtual.UseSystemPasswordChar = true;
+                txtConfirmarSenha.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
@@ -64,22 +80,7 @@ namespace EscalasMetodista.Views
             {
                 MessageBox.Show("Erro: " + ex);
             }
-        }
-
-        private void checkMostrarSenha_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkMostrarSenha.Checked)
-            {
-                txtSenhaAtual.UseSystemPasswordChar = false;
-                txtConfirmarSenha.UseSystemPasswordChar = false;
-                txtNovaSenha.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtNovaSenha.UseSystemPasswordChar = true;
-                txtSenhaAtual.UseSystemPasswordChar = true;
-                txtConfirmarSenha.UseSystemPasswordChar = true;
-            }
+            this.Close();
         }
     }
 }

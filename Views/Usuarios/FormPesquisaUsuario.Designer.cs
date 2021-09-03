@@ -38,8 +38,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.dgUsuariosPesquisa = new System.Windows.Forms.DataGridView();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnLimparForm = new FontAwesome.Sharp.IconButton();
+            this.btnPesquisar = new FontAwesome.Sharp.IconButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuariosPesquisa)).BeginInit();
             this.SuspendLayout();
@@ -179,39 +179,53 @@
             this.dgUsuariosPesquisa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuariosPesquisa_CellDoubleClick);
             this.dgUsuariosPesquisa.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgUsuariosPesquisa_DataBindingComplete);
             // 
+            // btnLimparForm
+            // 
+            this.btnLimparForm.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimparForm.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnLimparForm.FlatAppearance.BorderSize = 2;
+            this.btnLimparForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparForm.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLimparForm.ForeColor = System.Drawing.Color.LightGray;
+            this.btnLimparForm.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnLimparForm.IconColor = System.Drawing.Color.LightGray;
+            this.btnLimparForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimparForm.IconSize = 22;
+            this.btnLimparForm.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnLimparForm.Location = new System.Drawing.Point(591, 136);
+            this.btnLimparForm.Name = "btnLimparForm";
+            this.btnLimparForm.Size = new System.Drawing.Size(142, 29);
+            this.btnLimparForm.TabIndex = 80;
+            this.btnLimparForm.Text = "LIMPAR";
+            this.btnLimparForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimparForm.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLimparForm.UseVisualStyleBackColor = true;
+            this.btnLimparForm.Click += new System.EventHandler(this.btnLimparForm_Click);
+            this.btnLimparForm.MouseLeave += new System.EventHandler(this.btnLimparForm_MouseLeave);
+            this.btnLimparForm.MouseHover += new System.EventHandler(this.btnLimparForm_MouseHover);
+            // 
             // btnPesquisar
             // 
-            this.btnPesquisar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnPesquisar.BackColor = System.Drawing.Color.DarkOrange;
             this.btnPesquisar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPesquisar.FlatAppearance.BorderSize = 2;
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnPesquisar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPesquisar.Location = new System.Drawing.Point(796, 136);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPesquisar.ForeColor = System.Drawing.Color.Black;
+            this.btnPesquisar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnPesquisar.IconColor = System.Drawing.Color.Black;
+            this.btnPesquisar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPesquisar.IconSize = 22;
+            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnPesquisar.Location = new System.Drawing.Point(759, 136);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(124, 32);
-            this.btnPesquisar.TabIndex = 79;
+            this.btnPesquisar.Size = new System.Drawing.Size(142, 31);
+            this.btnPesquisar.TabIndex = 81;
             this.btnPesquisar.Text = "PESQUISAR";
+            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.Orange;
-            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimpar.FlatAppearance.BorderSize = 2;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimpar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimpar.Location = new System.Drawing.Point(652, 136);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(124, 32);
-            this.btnLimpar.TabIndex = 80;
-            this.btnLimpar.Text = "LIMPAR";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // FormPesquisaUsuario
             // 
@@ -221,15 +235,15 @@
             this.BackgroundImage = global::EscalasMetodista.Properties.Resources.dark_material_design_wallpaper__1_in_4k_by_tgs266_d9j7yts;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(931, 413);
-            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnPesquisar);
+            this.Controls.Add(this.btnLimparForm);
             this.Controls.Add(this.dgUsuariosPesquisa);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbTipoUsuario);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtCodigoNome);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -258,7 +272,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbTipoUsuario;
         public System.Windows.Forms.DataGridView dgUsuariosPesquisa;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnLimpar;
+        private FontAwesome.Sharp.IconButton btnLimparForm;
+        private FontAwesome.Sharp.IconButton btnPesquisar;
     }
 }

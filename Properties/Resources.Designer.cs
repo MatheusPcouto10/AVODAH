@@ -133,9 +133,39 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3563935 {
+            get {
+                object obj = ResourceManager.GetObject("3563935", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _367502_PAXLKG_681 {
+            get {
+                object obj = ResourceManager.GetObject("367502-PAXLKG-681", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8595 {
             get {
                 object obj = ResourceManager.GetObject("8595", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9793 {
+            get {
+                object obj = ResourceManager.GetObject("9793", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

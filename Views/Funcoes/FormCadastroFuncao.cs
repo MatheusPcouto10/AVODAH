@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace EscalasMetodista.Views
 {
@@ -23,7 +24,7 @@ namespace EscalasMetodista.Views
             InitializeComponent();
         }
 
-        private void btnSalvarFuncao_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             funcoes.descricaoFuncao = txtDescricaoFuncao.Text;
             if (updateFuncao == true)
@@ -54,12 +55,21 @@ namespace EscalasMetodista.Views
                     if (Validacoes.ValidarObjeto(funcoes) == true)
                     {
                         funcoes.create(funcoes);
-                        txtDescricaoFuncao.Text = "";
                         updateFuncao = false;
+                        this.Close();
+                        txtDescricaoFuncao.Text = "";
                     }
-                    
+
                 }
             }
+        }
+
+        private void FormCadastroFuncao_Load(object sender, EventArgs e)
+        {
+            if (updateFuncao)
+                btnSalvar.IconChar = IconChar.Pen;
+            else
+                btnSalvar.IconChar = IconChar.Plus;
         }
     }
 }

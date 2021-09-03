@@ -232,5 +232,21 @@ namespace EscalasMetodista.Views.Escalas
         {
             e.SuppressKeyPress = true;
         }
+
+        private void btnLimpar_MouseHover(object sender, EventArgs e)
+        {
+            btnLimpar.BackColor = Color.LightGray;
+            btnLimpar.ForeColor = Color.Black;
+            btnLimpar.IconColor = Color.Black;
+            btnLimpar.FlatAppearance.BorderColor = Color.Black;
+        }
+
+        private void btnLimpar_MouseLeave(object sender, EventArgs e)
+        {
+            btnLimpar.BackColor = Color.Transparent;
+            btnLimpar.ForeColor = Color.LightGray;
+            btnLimpar.IconColor = Color.LightGray;
+            btnLimpar.FlatAppearance.BorderColor = Color.LightGray;
+        }
     }
 }

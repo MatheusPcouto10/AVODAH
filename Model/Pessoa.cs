@@ -143,7 +143,11 @@ namespace EscalasMetodista.Model
                     pessoa.Email = dr.GetString(3);
                     pessoa.tipoUsuario = tipoUsuario.find(dr.GetInt32(5));
                     pessoa.funcaoPrincipal = funcaoPrincipal.find(dr.GetInt32(6));
-                    pessoa.funcaoSecundaria = funcaoSecundaria.find(dr.GetInt32(7));
+
+                    if (string.IsNullOrEmpty(dr[7].ToString()))
+                        pessoa.funcaoSecundaria = null;
+                    else
+                        pessoa.funcaoSecundaria = funcaoSecundaria.find(dr.GetInt32(7));
                 }
                 else
                 {

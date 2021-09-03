@@ -47,10 +47,13 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void dgUsuariosPesquisa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Application.OpenForms["FormCadastrarUsuario"].Close();
+            Application.OpenForms["FormCadastrarUsuario"].Hide();
 
-            FormCadastrarUsuario form = new FormCadastrarUsuario((int)dgUsuariosPesquisa.Rows[e.RowIndex].Cells["idPessoa"].Value);
-            form.Show();
+
+            FormCadastrarUsuario form2 = new FormCadastrarUsuario((int)dgUsuariosPesquisa.Rows[e.RowIndex].Cells["idPessoa"].Value);
+            form2.Show();
+
+            Application.OpenForms["FormCadastrarUsuario"].Close();
 
             this.Close();
         }
@@ -285,15 +288,6 @@ namespace EscalasMetodista.Views.Usuarios
             cbSubFuncao.Text = "Selecione...";
         }
 
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            cbFuncao.Text = "Selecione...";
-            cbSubFuncao.Text = "Selecione...";
-            cbTipoUsuario.Text = "Selecione...";
-            txtCodigoNome.Text = null;
-            this.CarregarDataGrid(false);
-        }
-
         private void cbFuncao_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.preencheComboBoxSubFuncao();
@@ -310,11 +304,6 @@ namespace EscalasMetodista.Views.Usuarios
             }
         }
 
-        private void cbStatus_KeyDown(object sender, KeyEventArgs e)
-        {
-            e.SuppressKeyPress = true;
-        }
-
         private void cbTipoUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
@@ -328,6 +317,31 @@ namespace EscalasMetodista.Views.Usuarios
         private void cbSubFuncao_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
+        }
+
+        private void btnLimparForm_Click(object sender, EventArgs e)
+        {
+            cbFuncao.Text = "Selecione...";
+            cbSubFuncao.Text = "Selecione...";
+            cbTipoUsuario.Text = "Selecione...";
+            txtCodigoNome.Text = null;
+            this.CarregarDataGrid(false);
+        }
+
+        private void btnLimparForm_MouseHover(object sender, EventArgs e)
+        {
+            btnLimparForm.BackColor = Color.LightGray;
+            btnLimparForm.ForeColor = Color.Black;
+            btnLimparForm.IconColor = Color.Black;
+            btnLimparForm.FlatAppearance.BorderColor = Color.Black;
+        }
+
+        private void btnLimparForm_MouseLeave(object sender, EventArgs e)
+        {
+            btnLimparForm.BackColor = Color.Transparent;
+            btnLimparForm.ForeColor = Color.LightGray;
+            btnLimparForm.IconColor = Color.LightGray;
+            btnLimparForm.FlatAppearance.BorderColor = Color.LightGray;
         }
     }
 }

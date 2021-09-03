@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGerenciarSubfuncoes));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.telaPesquisa = new System.Windows.Forms.TabPage();
-            this.btnCadastrarNovo = new System.Windows.Forms.Button();
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.dgSubFuncoes = new System.Windows.Forms.DataGridView();
@@ -41,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCadastrarNovo = new FontAwesome.Sharp.IconButton();
             this.tabControl1.SuspendLayout();
             this.telaPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSubFuncoes)).BeginInit();
@@ -78,22 +78,6 @@
             this.telaPesquisa.Size = new System.Drawing.Size(732, 379);
             this.telaPesquisa.TabIndex = 0;
             this.telaPesquisa.Text = "Pesquisa";
-            // 
-            // btnCadastrarNovo
-            // 
-            this.btnCadastrarNovo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCadastrarNovo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrarNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarNovo.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarNovo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCadastrarNovo.Location = new System.Drawing.Point(603, 14);
-            this.btnCadastrarNovo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCadastrarNovo.Name = "btnCadastrarNovo";
-            this.btnCadastrarNovo.Size = new System.Drawing.Size(117, 24);
-            this.btnCadastrarNovo.TabIndex = 21;
-            this.btnCadastrarNovo.Text = "Nova Sub-Função";
-            this.btnCadastrarNovo.UseVisualStyleBackColor = false;
-            this.btnCadastrarNovo.Click += new System.EventHandler(this.btnCadastrarNovo_Click);
             // 
             // btnPesquisa
             // 
@@ -236,6 +220,29 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "GERENCIAR SUB-FUNÇÕES";
             // 
+            // btnCadastrarNovo
+            // 
+            this.btnCadastrarNovo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCadastrarNovo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrarNovo.FlatAppearance.BorderSize = 2;
+            this.btnCadastrarNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarNovo.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
+            this.btnCadastrarNovo.ForeColor = System.Drawing.Color.Black;
+            this.btnCadastrarNovo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnCadastrarNovo.IconColor = System.Drawing.Color.Black;
+            this.btnCadastrarNovo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCadastrarNovo.IconSize = 20;
+            this.btnCadastrarNovo.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnCadastrarNovo.Location = new System.Drawing.Point(566, 22);
+            this.btnCadastrarNovo.Name = "btnCadastrarNovo";
+            this.btnCadastrarNovo.Size = new System.Drawing.Size(159, 31);
+            this.btnCadastrarNovo.TabIndex = 71;
+            this.btnCadastrarNovo.Text = "Nova Sub-Função";
+            this.btnCadastrarNovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrarNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCadastrarNovo.UseVisualStyleBackColor = false;
+            this.btnCadastrarNovo.Click += new System.EventHandler(this.btnCadastrarNovo_Click);
+            // 
             // FormGerenciarSubfuncoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +288,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.TextBox txtPesquisa;
-        private System.Windows.Forms.Button btnCadastrarNovo;
+        private FontAwesome.Sharp.IconButton btnCadastrarNovo;
     }
 }

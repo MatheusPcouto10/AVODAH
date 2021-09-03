@@ -34,10 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSalvarUsuario = new System.Windows.Forms.Button();
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimparFuncaoPrincipal = new System.Windows.Forms.Button();
             this.cbSubFuncaoPrincipal = new System.Windows.Forms.ComboBox();
@@ -52,8 +50,10 @@
             this.txtSobrenome = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.labelNome = new System.Windows.Forms.Label();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnPesquisa = new System.Windows.Forms.Button();
+            this.btnSalvar = new FontAwesome.Sharp.IconButton();
+            this.btnDeletar = new FontAwesome.Sharp.IconButton();
+            this.btnLimparForm = new FontAwesome.Sharp.IconButton();
+            this.btnConsultarUsuario = new FontAwesome.Sharp.IconButton();
             this.panel_rodape.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -129,25 +129,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "CADASTRAR USUÁRIO";
             // 
-            // btnSalvarUsuario
-            // 
-            this.btnSalvarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvarUsuario.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSalvarUsuario.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSalvarUsuario.FlatAppearance.BorderSize = 2;
-            this.btnSalvarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarUsuario.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSalvarUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalvarUsuario.Location = new System.Drawing.Point(226, 495);
-            this.btnSalvarUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalvarUsuario.Name = "btnSalvarUsuario";
-            this.btnSalvarUsuario.Size = new System.Drawing.Size(124, 32);
-            this.btnSalvarUsuario.TabIndex = 47;
-            this.btnSalvarUsuario.Text = "SALVAR";
-            this.btnSalvarUsuario.UseVisualStyleBackColor = false;
-            this.btnSalvarUsuario.Click += new System.EventHandler(this.btnSalvarUsuario_Click);
-            // 
             // cbTipoUsuario
             // 
             this.cbTipoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -178,25 +159,6 @@
             this.label7.Size = new System.Drawing.Size(136, 17);
             this.label7.TabIndex = 54;
             this.label7.Text = "Tipo de Usuário:";
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpar.BackColor = System.Drawing.Color.LightGray;
-            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimpar.FlatAppearance.BorderSize = 2;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimpar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimpar.Location = new System.Drawing.Point(484, 495);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(124, 32);
-            this.btnLimpar.TabIndex = 59;
-            this.btnLimpar.Text = "LIMPAR";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // groupBox1
             // 
@@ -410,45 +372,103 @@
             this.labelNome.TabIndex = 40;
             this.labelNome.Text = "Nome:";
             // 
-            // btnExcluir
+            // btnSalvar
             // 
-            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnSalvar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSalvar.FlatAppearance.BorderSize = 2;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSalvar.ForeColor = System.Drawing.Color.Black;
+            this.btnSalvar.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnSalvar.IconColor = System.Drawing.Color.Black;
+            this.btnSalvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSalvar.IconSize = 22;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnSalvar.Location = new System.Drawing.Point(226, 480);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(124, 31);
+            this.btnSalvar.TabIndex = 67;
+            this.btnSalvar.Text = "SALVAR";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcluir.BackColor = System.Drawing.Color.Maroon;
-            this.btnExcluir.Enabled = false;
-            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnExcluir.FlatAppearance.BorderSize = 2;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnExcluir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnExcluir.Location = new System.Drawing.Point(354, 495);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(124, 32);
-            this.btnExcluir.TabIndex = 65;
-            this.btnExcluir.Text = "EXCLUIR";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnDeletar.BackColor = System.Drawing.Color.Maroon;
+            this.btnDeletar.Enabled = false;
+            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDeletar.FlatAppearance.BorderSize = 2;
+            this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletar.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDeletar.ForeColor = System.Drawing.Color.Black;
+            this.btnDeletar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDeletar.IconColor = System.Drawing.Color.Black;
+            this.btnDeletar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDeletar.IconSize = 22;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnDeletar.Location = new System.Drawing.Point(357, 480);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(122, 31);
+            this.btnDeletar.TabIndex = 68;
+            this.btnDeletar.Text = "EXCLUIR";
+            this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDeletar.UseVisualStyleBackColor = false;
+            this.btnDeletar.EnabledChanged += new System.EventHandler(this.btnDeletar_EnabledChanged);
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
-            // btnPesquisa
+            // btnLimparForm
             // 
-            this.btnPesquisa.BackColor = System.Drawing.Color.Peru;
-            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnPesquisa.FlatAppearance.BorderSize = 2;
-            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPesquisa.Image = global::EscalasMetodista.Properties.Resources.searchmagnifierinterfacesymbol1_79893;
-            this.btnPesquisa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisa.Location = new System.Drawing.Point(585, 88);
-            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(195, 26);
-            this.btnPesquisa.TabIndex = 66;
-            this.btnPesquisa.Text = "Consultar Usuário";
-            this.btnPesquisa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisa.UseVisualStyleBackColor = false;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            this.btnLimparForm.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimparForm.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnLimparForm.FlatAppearance.BorderSize = 2;
+            this.btnLimparForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparForm.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLimparForm.ForeColor = System.Drawing.Color.LightGray;
+            this.btnLimparForm.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnLimparForm.IconColor = System.Drawing.Color.LightGray;
+            this.btnLimparForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimparForm.IconSize = 22;
+            this.btnLimparForm.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnLimparForm.Location = new System.Drawing.Point(486, 480);
+            this.btnLimparForm.Name = "btnLimparForm";
+            this.btnLimparForm.Size = new System.Drawing.Size(122, 31);
+            this.btnLimparForm.TabIndex = 69;
+            this.btnLimparForm.Text = "LIMPAR";
+            this.btnLimparForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimparForm.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLimparForm.UseVisualStyleBackColor = true;
+            this.btnLimparForm.Click += new System.EventHandler(this.btnLimparForm_Click);
+            this.btnLimparForm.MouseLeave += new System.EventHandler(this.btnLimparForm_MouseLeave);
+            this.btnLimparForm.MouseHover += new System.EventHandler(this.btnLimparForm_MouseHover);
+            // 
+            // btnConsultarUsuario
+            // 
+            this.btnConsultarUsuario.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnConsultarUsuario.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnConsultarUsuario.FlatAppearance.BorderSize = 2;
+            this.btnConsultarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarUsuario.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
+            this.btnConsultarUsuario.ForeColor = System.Drawing.Color.Black;
+            this.btnConsultarUsuario.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnConsultarUsuario.IconColor = System.Drawing.Color.Black;
+            this.btnConsultarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConsultarUsuario.IconSize = 22;
+            this.btnConsultarUsuario.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnConsultarUsuario.Location = new System.Drawing.Point(606, 83);
+            this.btnConsultarUsuario.Name = "btnConsultarUsuario";
+            this.btnConsultarUsuario.Size = new System.Drawing.Size(174, 31);
+            this.btnConsultarUsuario.TabIndex = 70;
+            this.btnConsultarUsuario.Text = "Consultar Usuário";
+            this.btnConsultarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnConsultarUsuario.UseVisualStyleBackColor = false;
+            this.btnConsultarUsuario.Click += new System.EventHandler(this.btnConsultarUsuario_Click);
             // 
             // FormCadastrarUsuario
             // 
@@ -458,14 +478,14 @@
             this.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 568);
-            this.Controls.Add(this.btnPesquisa);
-            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnConsultarUsuario);
+            this.Controls.Add(this.btnLimparForm);
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbTipoUsuario);
-            this.Controls.Add(this.btnSalvarUsuario);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label3);
@@ -501,10 +521,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSalvarUsuario;
         private System.Windows.Forms.ComboBox cbTipoUsuario;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.ComboBox cbSubFuncaoPrincipal;
         public System.Windows.Forms.ComboBox cbFuncaoPrincipal;
@@ -519,7 +537,9 @@
         public System.Windows.Forms.TextBox txtSobrenome;
         public System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label labelNome;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnPesquisa;
+        private FontAwesome.Sharp.IconButton btnSalvar;
+        private FontAwesome.Sharp.IconButton btnDeletar;
+        private FontAwesome.Sharp.IconButton btnLimparForm;
+        private FontAwesome.Sharp.IconButton btnConsultarUsuario;
     }
 }

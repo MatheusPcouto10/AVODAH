@@ -1,5 +1,6 @@
 ﻿using EscalasMetodista.Conexão;
 using EscalasMetodista.Model;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,48 +26,6 @@ namespace EscalasMetodista.Views
         public FormCadastroSubFuncao()
         {
             InitializeComponent();
-        }
-
-        private void btnCadastrarSubFuncao_Click(object sender, EventArgs e)
-        {
-
-            subFuncoes.Descricao = txtDescricao.Text;
-            subFuncoes.idFuncao_fk = (int)cbFuncoes.SelectedValue;
-
-            if (updateFuncao == true)
-            {
-                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, idSubFuncao, "idSubFuncao") == true)
-                {
-                    Validacoes.mensagem("Já existe uma Sub-Função Cadastrada!", ToolTipIcon.Error, "Sub-Função já Existente ", txtDescricao);
-                }
-                else
-                {
-                    if (Validacoes.ValidarObjeto(subFuncoes) == true)
-                    {
-                        subFuncoes.update(subFuncoes, idSubFuncao);
-                        updateFuncao = false;
-                        this.Close();
-                        txtDescricao.Text = "";
-                    }
-                }
-
-            }
-            else
-            {
-                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, 0, "idSubFuncao") == true)
-                {
-                    Validacoes.mensagem("Já existe uma Sub-Função Cadastrada!", ToolTipIcon.Error, "Sub-Função já Existente ", txtDescricao);
-                }
-                else
-                {
-                    if (Validacoes.ValidarObjeto(subFuncoes) == true)
-                    {
-                        subFuncoes.create(subFuncoes);
-                        txtDescricao.Text = "";
-                        updateFuncao = false;
-                    } 
-                }
-            }
         }
 
         private void preencheComboBoxFuncoes()
@@ -100,15 +59,64 @@ namespace EscalasMetodista.Views
         {
             this.preencheComboBoxFuncoes();
 
-            if (updateFuncao == true)
+            if (updateFuncao)
+            {
                 cbFuncoes.Text = funcao;
+                btnSalvar.IconChar = IconChar.Pen;
+            }
             else
+            {
+                btnSalvar.IconChar = IconChar.Plus;
                 cbFuncoes.Text = "Selecione...";
+            }
         }
 
         private void cbFuncoes_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Funcao fun = new Funcao();
+            subFuncoes.Descricao = txtDescricao.Text;
+            subFuncoes.funcao = fun.find((int)cbFuncoes.SelectedValue);
+
+            if (updateFuncao == true)
+            {
+                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, idSubFuncao, "idSubFuncao") == true)
+                {
+                    Validacoes.mensagem("Já existe uma Sub-Função Cadastrada!", ToolTipIcon.Error, "Sub-Função já Existente ", txtDescricao);
+                }
+                else
+                {
+                    if (Validacoes.ValidarObjeto(subFuncoes) == true)
+                    {
+                        subFuncoes.update(subFuncoes, idSubFuncao);
+                        updateFuncao = false;
+                        this.Close();
+                        txtDescricao.Text = "";
+                    }
+                }
+
+            }
+            else
+            {
+                if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, 0, "idSubFuncao") == true)
+                {
+                    Validacoes.mensagem("Já existe uma Sub-Função Cadastrada!", ToolTipIcon.Error, "Sub-Função já Existente ", txtDescricao);
+                }
+                else
+                {
+                    if (Validacoes.ValidarObjeto(subFuncoes) == true)
+                    {
+                        subFuncoes.create(subFuncoes);
+                        txtDescricao.Text = "";
+                        updateFuncao = false;
+                        this.Close();
+                    }
+                }
+            }
         }
     }
 }
