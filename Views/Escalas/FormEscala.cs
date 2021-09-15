@@ -29,7 +29,7 @@ namespace EscalasMetodista.Views.Escalas
 
         private List<SubFuncao> listaSubFuncoes = new List<SubFuncao>();
 
-        List<Pessoa> pessoasLinha = new List<Pessoa>();
+        private List<Pessoa> pessoasLinha = new List<Pessoa>();
 
         FormCarregamento form = new FormCarregamento();
 
@@ -138,12 +138,34 @@ namespace EscalasMetodista.Views.Escalas
                 {
                     tbEscala.Columns[indiceColuna].HeaderText = dt.Rows[i][2].ToString();
 
-                    if (tbEscala.Columns[indiceColuna].HeaderText == "VOZ (BACK)")
+                    if (tipoEscala == 1)
+                    {
+                        if (tbEscala.Columns[indiceColuna].HeaderText == "VOZ (BACK)")
+                        {
+                            tbEscala.Columns[indiceColuna].Width = 240;
+                        }
+                        else
+                            tbEscala.Columns[indiceColuna].Width = 170;
+                    }
+
+                    if (tipoEscala == 2 || tipoEscala == 4)
                     {
                         tbEscala.Columns[indiceColuna].Width = 220;
                     }
-                    else
-                        tbEscala.Columns[indiceColuna].Width = 170;
+
+                    if (tipoEscala == 3)
+                    {
+                        if (tbEscala.Columns[indiceColuna].HeaderText == "LANCHE")
+                        {
+                            tbEscala.Columns[indiceColuna].Width = 220;
+                        }
+                        else if (tbEscala.Columns[indiceColuna].HeaderText == "LIMPEZA - CORREDOR")
+                        {
+                            tbEscala.Columns[indiceColuna].Width = 400;
+                        }
+                        else
+                            tbEscala.Columns[indiceColuna].Width = 650;
+                    }
 
                     indiceColuna++;
 
@@ -350,11 +372,11 @@ namespace EscalasMetodista.Views.Escalas
                 {
                     bool add = true;
 
-                    string top = listaSubFuncoes[i - 2].idSubFuncao != 2 ? "1 " : "10 ";
+                    string top = listaSubFuncoes[i - 2].idSubFuncao == 2 || listaSubFuncoes[i - 2].idSubFuncao == 22 || listaSubFuncoes[i - 2].idSubFuncao == 24 ? "p.* " : "TOP 1 p.*";
 
                     cmd.Connection = conexao.Conectar();
 
-                    cmd.CommandText = "SELECT TOP " + top + @" p.* FROM Pessoa p 
+                    cmd.CommandText = "SELECT " + top + @" FROM Pessoa p 
                                 JOIN SubFuncao s1 on p.funcaoPrincipal_fk = s1.idSubFuncao 
                                 LEFT JOIN SubFuncao s2 on p.funcaoSecundaria_fk = s2.idSubFuncao 
                                 WHERE p.funcaoPrincipal_fk = " + listaSubFuncoes[i - 2].idSubFuncao + " OR (p.funcaoSecundaria_fk = " + listaSubFuncoes[i - 2].idSubFuncao + " OR p.funcaoSecundaria_fk IS NULL)" +
@@ -372,6 +394,38 @@ namespace EscalasMetodista.Views.Escalas
                         if (listaSubFuncoes[i - 2].idSubFuncao == 2)
                         {
                             while (dr.Read() && pessoasLinha.Count <= 4)
+                            {
+                                Pessoa pessoa = new Pessoa();
+                                pessoa.idPessoa = dr.GetInt32(0);
+                                pessoa.Nome = dr.GetString(1);
+                                pessoa.Sobrenome = dr.GetString(2);
+                                pessoa.Email = dr.GetString(3);
+
+                                if (pessoasLinha.Exists(p => p.idPessoa == pessoa.idPessoa).Equals(false))
+                                {
+                                    pessoasLinha.Add(pessoa);
+                                }
+                            }
+                        }
+                        else if (listaSubFuncoes[i - 2].idSubFuncao == 22)
+                        {
+                            while (dr.Read() && pessoasLinha.Count < 5)
+                            {
+                                Pessoa pessoa = new Pessoa();
+                                pessoa.idPessoa = dr.GetInt32(0);
+                                pessoa.Nome = dr.GetString(1);
+                                pessoa.Sobrenome = dr.GetString(2);
+                                pessoa.Email = dr.GetString(3);
+
+                                if (pessoasLinha.Exists(p => p.idPessoa == pessoa.idPessoa).Equals(false))
+                                {
+                                    pessoasLinha.Add(pessoa);
+                                }
+                            }
+                        }
+                        else if (listaSubFuncoes[i - 2].idSubFuncao == 24)
+                        {
+                            while (dr.Read() && pessoasLinha.Count <= 8)
                             {
                                 Pessoa pessoa = new Pessoa();
                                 pessoa.idPessoa = dr.GetInt32(0);
@@ -422,8 +476,19 @@ namespace EscalasMetodista.Views.Escalas
                                 }
                                 else { tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[pessoasLinha.Count > 1 ? pessoasLinha.Count - 1 : 0].Nome; }
                             }
-                            else
-                                tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[pessoasLinha.Count - 1].Nome;
+                            else if (tipoEscala == 3)
+                            {
+                                if (tbEscala.Columns[i].Index == 2)
+                                {
+                                    tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[1].Nome + ", " + pessoasLinha[2].Nome + ", " + pessoasLinha[3].Nome + ", " + pessoasLinha[4].Nome;
+                                }
+                                else if (tbEscala.Columns[i].Index == 4)
+                                {
+                                    tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[6].Nome + ", " + pessoasLinha[7].Nome;
+                                }
+                                else { tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[5].Nome; }
+                            }
+                            else { tbEscala[tbEscala.Columns[i].Index, indiceLinhaSelecionada].Value = pessoasLinha[pessoasLinha.Count - 1].Nome; }
                         }
 
                         tbEscala[0, indiceLinhaSelecionada].Value = datasEscala.Count > indiceLinhaSelecionada ? datasEscala[indiceLinhaSelecionada].ToString("dd/MM") : null;
@@ -611,11 +676,29 @@ namespace EscalasMetodista.Views.Escalas
                 }
 
                 xlWorkSheet.Range["A1", "A99"].Columns.ColumnWidth = 20;
-                xlWorkSheet.Range["B1", "Z99"].Columns.ColumnWidth = 25;
+                xlWorkSheet.Range["B1", "B99"].Columns.ColumnWidth = 30;
+
 
                 if (tipoEscala == 1)
                 {
+                    xlWorkSheet.Range["A1", "A99"].Columns.ColumnWidth = 20;
+                    xlWorkSheet.Range["B1", "Z99"].Columns.ColumnWidth = 30;
+                    xlWorkSheet.Range["D1", "D99"].Columns.ColumnWidth = 40;
+                }
+
+
+                if (tipoEscala == 2 || tipoEscala == 4)
+                {
+                    xlWorkSheet.Range["A1", "A99"].Columns.ColumnWidth = 20;
+                    xlWorkSheet.Range["B1", "B99"].Columns.ColumnWidth = 30;
+                    xlWorkSheet.Range["C1", "Z99"].Columns.ColumnWidth = 35;
+                }
+
+                if (tipoEscala == 3)
+                {
+                    xlWorkSheet.Range["C1", "C99"].Columns.ColumnWidth = 90;
                     xlWorkSheet.Range["D1", "D99"].Columns.ColumnWidth = 35;
+                    xlWorkSheet.Range["E1", "E99"].Columns.ColumnWidth = 60;
                 }
 
                 xlWorkSheet.Range["B1", "Z1"].Interior.Color = Color.DarkRed;

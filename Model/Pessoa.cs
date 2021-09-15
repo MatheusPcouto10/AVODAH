@@ -16,11 +16,11 @@ namespace EscalasMetodista.Model
         public int idPessoa { get; set; }
 
         [Required(ErrorMessage = "Informe o Nome")]
-        [RegularExpression(@"^[a-zA-ZÀ-úç'\s]{1,20}$", ErrorMessage = "Números e caracteres especiais não são permitidos.")]
+        [RegularExpression(@"^[a-zA-ZÀ-úç'\s]{1,40}$", ErrorMessage = "Números e caracteres especiais não são permitidos.")]
         public String Nome { get; set; }
 
         //[Required(ErrorMessage = "Informe o Sobrenome")]
-        [RegularExpression(@"^[a-zA-ZÀ-úç'\s]{1,20}$", ErrorMessage = "Números e caracteres especiais não são permitidos.")]
+        [RegularExpression(@"^[a-zA-ZÀ-úç'\s]{1,40}$", ErrorMessage = "Números e caracteres especiais não são permitidos.")]
         public String Sobrenome { get; set; }
         public String Status { get; set; }
 

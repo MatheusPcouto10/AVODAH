@@ -441,16 +441,19 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void cbTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((int)cbTipoUsuario.SelectedValue == 3)
+            if (!update)
             {
-                txtEmail.Enabled = false;
-                txtEmail.Text = null;
-                txtSobrenome.Enabled = false;
-                txtSobrenome.Text = null;
-                return;
+                if ((int)cbTipoUsuario.SelectedValue == 3)
+                {
+                    txtEmail.Enabled = false;
+                    txtEmail.Text = null;
+                    txtSobrenome.Enabled = false;
+                    txtSobrenome.Text = null;
+                    return;
+                }
+                txtEmail.Enabled = true;
+                txtSobrenome.Enabled = true;
             }
-            txtEmail.Enabled = true;
-            txtSobrenome.Enabled = true;
         }
     }
 }
