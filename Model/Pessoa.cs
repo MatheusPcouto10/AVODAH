@@ -19,7 +19,7 @@ namespace EscalasMetodista.Model
         [RegularExpression(@"^[a-zA-ZÀ-úç'\s]{1,20}$", ErrorMessage = "Números e caracteres especiais não são permitidos.")]
         public String Nome { get; set; }
 
-        [Required(ErrorMessage = "Informe o Sobrenome")]
+        //[Required(ErrorMessage = "Informe o Sobrenome")]
         [RegularExpression(@"^[a-zA-ZÀ-úç'\s]{1,20}$", ErrorMessage = "Números e caracteres especiais não são permitidos.")]
         public String Sobrenome { get; set; }
         public String Status { get; set; }
@@ -27,7 +27,7 @@ namespace EscalasMetodista.Model
         [DisplayFormat(DataFormatString = "dd/mm/yyyy")]
         public DateTime dataCadastro { get; set; }
 
-        [Required(ErrorMessage = "Informe um E-mail")]
+        //[Required(ErrorMessage = "Informe um E-mail")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Informe um email válido. Ex: exemplo@exemplo.com")]
         public String Email { get; set; }
 
@@ -51,6 +51,7 @@ namespace EscalasMetodista.Model
             set => this.funcaoSecundaria = value;
         }
 
+        [Required(ErrorMessage = "É necessário ter um Tipo de Usuário")]
         public TipoUsuario tipoUsuario = new TipoUsuario();
         public TipoUsuario TipoUsuarios
         {

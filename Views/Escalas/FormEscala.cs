@@ -149,9 +149,6 @@ namespace EscalasMetodista.Views.Escalas
 
                     SubFuncao subFuncao = new SubFuncao();
                     subFuncao = subFuncao.find((int)dt.Rows[i][0]);
-                    //subFuncao.Descricao = dt.Rows[i][2].ToString();
-                    //subFuncao.idSubFuncao = (int)dt.Rows[i][0];
-                    //subFuncao.funcao = (int)dt.Rows[i][1];
 
                     listaSubFuncoes.Add(subFuncao);
                 }
@@ -609,7 +606,7 @@ namespace EscalasMetodista.Views.Escalas
                             xlWorkSheet.Cells[linha, coluna] = tbEscala.Columns[i].HeaderText;
 
                         else
-                            xlWorkSheet.Cells[linha, coluna] = tbEscala[i, j - 1].Value == null ? "" : tbEscala[i , j - 1].Value;
+                            xlWorkSheet.Cells[linha, coluna] = tbEscala[i, j - 1].Value == null ? "" : tbEscala[i, j - 1].Value;
                     }
                 }
 
