@@ -64,7 +64,7 @@
             this.txtCodigoNome.Location = new System.Drawing.Point(46, 54);
             this.txtCodigoNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigoNome.Name = "txtCodigoNome";
-            this.txtCodigoNome.Size = new System.Drawing.Size(339, 22);
+            this.txtCodigoNome.Size = new System.Drawing.Size(396, 22);
             this.txtCodigoNome.TabIndex = 41;
             // 
             // groupBox2
@@ -75,7 +75,7 @@
             this.groupBox2.Controls.Add(this.cbFuncao);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(406, 11);
+            this.groupBox2.Location = new System.Drawing.Point(487, 21);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -94,7 +94,7 @@
             this.btnLimparFuncao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimparFuncao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncao.Location = new System.Drawing.Point(392, 0);
+            this.btnLimparFuncao.Location = new System.Drawing.Point(392, 7);
             this.btnLimparFuncao.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimparFuncao.Name = "btnLimparFuncao";
             this.btnLimparFuncao.Size = new System.Drawing.Size(15, 16);
@@ -173,7 +173,7 @@
             this.dgUsuariosPesquisa.RowHeadersWidth = 51;
             this.dgUsuariosPesquisa.RowTemplate.Height = 24;
             this.dgUsuariosPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUsuariosPesquisa.Size = new System.Drawing.Size(917, 214);
+            this.dgUsuariosPesquisa.Size = new System.Drawing.Size(981, 214);
             this.dgUsuariosPesquisa.TabIndex = 78;
             this.dgUsuariosPesquisa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuariosPesquisa_CellClick);
             this.dgUsuariosPesquisa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuariosPesquisa_CellDoubleClick);
@@ -192,7 +192,7 @@
             this.btnLimparForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimparForm.IconSize = 22;
             this.btnLimparForm.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimparForm.Location = new System.Drawing.Point(591, 136);
+            this.btnLimparForm.Location = new System.Drawing.Point(673, 138);
             this.btnLimparForm.Name = "btnLimparForm";
             this.btnLimparForm.Size = new System.Drawing.Size(142, 29);
             this.btnLimparForm.TabIndex = 80;
@@ -217,7 +217,7 @@
             this.btnPesquisar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPesquisar.IconSize = 22;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnPesquisar.Location = new System.Drawing.Point(759, 136);
+            this.btnPesquisar.Location = new System.Drawing.Point(841, 138);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(142, 31);
             this.btnPesquisar.TabIndex = 81;
@@ -234,7 +234,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::EscalasMetodista.Properties.Resources.dark_material_design_wallpaper__1_in_4k_by_tgs266_d9j7yts;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(931, 413);
+            this.ClientSize = new System.Drawing.Size(995, 413);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnLimparForm);
             this.Controls.Add(this.dgUsuariosPesquisa);

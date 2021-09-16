@@ -31,7 +31,6 @@ namespace EscalasMetodista.Views.Escalas
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonalizarEscala));
             this.label9 = new System.Windows.Forms.Label();
-            this.cbIntervalo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNomeEscala = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@ namespace EscalasMetodista.Views.Escalas
             this.checkTodos = new System.Windows.Forms.CheckBox();
             this.btnLimpar = new FontAwesome.Sharp.IconButton();
             this.btnCriarEscala = new FontAwesome.Sharp.IconButton();
+            this.cbIntervalo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label9
@@ -53,27 +53,12 @@ namespace EscalasMetodista.Views.Escalas
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(445, 24);
+            this.label9.Location = new System.Drawing.Point(556, 24);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 17);
             this.label9.TabIndex = 79;
             this.label9.Text = "Intervalo:";
-            // 
-            // cbIntervalo
-            // 
-            this.cbIntervalo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbIntervalo.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbIntervalo.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.cbIntervalo.FormattingEnabled = true;
-            this.cbIntervalo.Location = new System.Drawing.Point(448, 57);
-            this.cbIntervalo.Margin = new System.Windows.Forms.Padding(2);
-            this.cbIntervalo.Name = "cbIntervalo";
-            this.cbIntervalo.Size = new System.Drawing.Size(126, 24);
-            this.cbIntervalo.TabIndex = 78;
-            this.cbIntervalo.SelectedIndexChanged += new System.EventHandler(this.cbIntervalo_SelectedIndexChanged);
-            this.cbIntervalo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbIntervalo_KeyDown);
             // 
             // label3
             // 
@@ -132,7 +117,7 @@ namespace EscalasMetodista.Views.Escalas
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(224, 114);
+            this.label1.Location = new System.Drawing.Point(311, 114);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 17);
@@ -148,7 +133,7 @@ namespace EscalasMetodista.Views.Escalas
             this.dtFimEscala.CustomFormat = "";
             this.dtFimEscala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFimEscala.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFimEscala.Location = new System.Drawing.Point(226, 146);
+            this.dtFimEscala.Location = new System.Drawing.Point(313, 146);
             this.dtFimEscala.Margin = new System.Windows.Forms.Padding(2);
             this.dtFimEscala.Name = "dtFimEscala";
             this.dtFimEscala.Size = new System.Drawing.Size(170, 21);
@@ -177,7 +162,7 @@ namespace EscalasMetodista.Views.Escalas
             this.cbTipoEscala.Location = new System.Drawing.Point(314, 57);
             this.cbTipoEscala.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipoEscala.Name = "cbTipoEscala";
-            this.cbTipoEscala.Size = new System.Drawing.Size(126, 24);
+            this.cbTipoEscala.Size = new System.Drawing.Size(221, 24);
             this.cbTipoEscala.TabIndex = 89;
             this.cbTipoEscala.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbTipoEscala_KeyDown);
             // 
@@ -187,7 +172,7 @@ namespace EscalasMetodista.Views.Escalas
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(445, 114);
+            this.label4.Location = new System.Drawing.Point(556, 114);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 17);
@@ -210,7 +195,7 @@ namespace EscalasMetodista.Views.Escalas
             "sexta-feira",
             "sábado",
             "domingo"});
-            this.clDiasSemanaEscala.Location = new System.Drawing.Point(448, 146);
+            this.clDiasSemanaEscala.Location = new System.Drawing.Point(559, 146);
             this.clDiasSemanaEscala.Margin = new System.Windows.Forms.Padding(2);
             this.clDiasSemanaEscala.Name = "clDiasSemanaEscala";
             this.clDiasSemanaEscala.Size = new System.Drawing.Size(138, 105);
@@ -223,7 +208,7 @@ namespace EscalasMetodista.Views.Escalas
             this.checkTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.checkTodos.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.checkTodos.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.checkTodos.Location = new System.Drawing.Point(448, 259);
+            this.checkTodos.Location = new System.Drawing.Point(559, 259);
             this.checkTodos.Margin = new System.Windows.Forms.Padding(2);
             this.checkTodos.Name = "checkTodos";
             this.checkTodos.Size = new System.Drawing.Size(138, 17);
@@ -245,7 +230,7 @@ namespace EscalasMetodista.Views.Escalas
             this.btnLimpar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpar.IconSize = 22;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpar.Location = new System.Drawing.Point(354, 314);
+            this.btnLimpar.Location = new System.Drawing.Point(465, 314);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(122, 31);
             this.btnLimpar.TabIndex = 94;
@@ -270,7 +255,7 @@ namespace EscalasMetodista.Views.Escalas
             this.btnCriarEscala.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCriarEscala.IconSize = 24;
             this.btnCriarEscala.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCriarEscala.Location = new System.Drawing.Point(495, 314);
+            this.btnCriarEscala.Location = new System.Drawing.Point(606, 314);
             this.btnCriarEscala.Name = "btnCriarEscala";
             this.btnCriarEscala.Size = new System.Drawing.Size(124, 31);
             this.btnCriarEscala.TabIndex = 95;
@@ -280,12 +265,27 @@ namespace EscalasMetodista.Views.Escalas
             this.btnCriarEscala.UseVisualStyleBackColor = false;
             this.btnCriarEscala.Click += new System.EventHandler(this.btnCriarEscala_Click);
             // 
+            // cbIntervalo
+            // 
+            this.cbIntervalo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbIntervalo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbIntervalo.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.cbIntervalo.FormattingEnabled = true;
+            this.cbIntervalo.Location = new System.Drawing.Point(559, 57);
+            this.cbIntervalo.Margin = new System.Windows.Forms.Padding(2);
+            this.cbIntervalo.Name = "cbIntervalo";
+            this.cbIntervalo.Size = new System.Drawing.Size(138, 24);
+            this.cbIntervalo.TabIndex = 78;
+            this.cbIntervalo.SelectedIndexChanged += new System.EventHandler(this.cbIntervalo_SelectedIndexChanged);
+            this.cbIntervalo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbIntervalo_KeyDown);
+            // 
             // FormPersonalizarEscala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EscalasMetodista.Properties.Resources.dark_material_design_wallpaper__1_in_4k_by_tgs266_d9j7yts;
-            this.ClientSize = new System.Drawing.Size(648, 366);
+            this.ClientSize = new System.Drawing.Size(752, 366);
             this.Controls.Add(this.btnCriarEscala);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.checkTodos);
@@ -318,7 +318,6 @@ namespace EscalasMetodista.Views.Escalas
         #endregion
 
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbIntervalo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNomeEscala;
         private System.Windows.Forms.Label label8;
@@ -332,5 +331,6 @@ namespace EscalasMetodista.Views.Escalas
         private System.Windows.Forms.CheckBox checkTodos;
         private FontAwesome.Sharp.IconButton btnLimpar;
         private FontAwesome.Sharp.IconButton btnCriarEscala;
+        private System.Windows.Forms.ComboBox cbIntervalo;
     }
 }

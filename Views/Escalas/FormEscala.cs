@@ -639,26 +639,27 @@ namespace EscalasMetodista.Views.Escalas
 
         private void btnExportarXls_Click(object sender, EventArgs e)
         {
+
+            int totalColunas = tbEscala.ColumnCount - (tbEscala.ColumnCount - listaSubFuncoes.Count + 2);
+
+            SaveFileDialog salvar = new SaveFileDialog();
+            salvar.Title = "Exportar para o Excel";
+            salvar.Filter = "Arquivo do Excel *.xlsx | *.xlsx";
+            salvar.FileName = lbNomeEscala.Text;
+
+            // Inicia o componente Excel
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+
+            //Cria uma planilha temporária na memória do computador
+            xlApp = new Excel.Application();
+            xlWorkBook = xlApp.Workbooks.Add(misValue);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
             try
             {
-                int totalColunas = tbEscala.ColumnCount - (tbEscala.ColumnCount - listaSubFuncoes.Count + 2);
-
-                SaveFileDialog salvar = new SaveFileDialog();
-                salvar.Title = "Exportar para o Excel";
-                salvar.Filter = "Arquivo do Excel *.xls | *.xls";
-                salvar.FileName = lbNomeEscala.Text;
-
-                // Inicia o componente Excel
-                Excel.Application xlApp;
-                Excel.Workbook xlWorkBook;
-                Excel.Worksheet xlWorkSheet;
-                object misValue = System.Reflection.Missing.Value;
-
-                //Cria uma planilha temporária na memória do computador
-                xlApp = new Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Add(misValue);
-                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
                 for (int i = 0; i < tbEscala.ColumnCount; i++)
                 {
                     for (int j = 0; j < tbEscala.RowCount; j++)
@@ -674,10 +675,6 @@ namespace EscalasMetodista.Views.Escalas
                             xlWorkSheet.Cells[linha, coluna] = tbEscala[i, j - 1].Value == null ? "" : tbEscala[i, j - 1].Value;
                     }
                 }
-
-                xlWorkSheet.Range["A1", "A99"].Columns.ColumnWidth = 20;
-                xlWorkSheet.Range["B1", "B99"].Columns.ColumnWidth = 30;
-
 
                 if (tipoEscala == 1)
                 {
@@ -696,7 +693,9 @@ namespace EscalasMetodista.Views.Escalas
 
                 if (tipoEscala == 3)
                 {
-                    xlWorkSheet.Range["C1", "C99"].Columns.ColumnWidth = 90;
+                    xlWorkSheet.Range["A1", "A99"].Columns.ColumnWidth = 20;
+                    xlWorkSheet.Range["B1", "B99"].Columns.ColumnWidth = 30;
+                    xlWorkSheet.Range["C1", "C99"].Columns.ColumnWidth = 100;
                     xlWorkSheet.Range["D1", "D99"].Columns.ColumnWidth = 35;
                     xlWorkSheet.Range["E1", "E99"].Columns.ColumnWidth = 60;
                 }
@@ -715,20 +714,26 @@ namespace EscalasMetodista.Views.Escalas
                 xlWorkSheet.Range["A1", "Z99"].Style.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                 xlWorkSheet.Range["A1", "Z99"].Style.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
 
-                salvar.ShowDialog();
+                if (salvar.ShowDialog() == DialogResult.OK)
+                {
+                    //Salva o arquivo de acordo com a documentação do Excel.
+                    xlWorkBook.SaveAs(salvar.FileName, Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue, misValue,
+                    Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                    xlWorkBook.Close(true, misValue, misValue);
 
-                //Salva o arquivo de acordo com a documentação do Excel.
-                xlWorkBook.SaveAs(salvar.FileName, Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue, misValue,
-                Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-                xlWorkBook.Close(true, misValue, misValue);
-                xlApp.Quit();
+                    if (System.IO.File.Exists(salvar.FileName))
+                    {
+                        System.Diagnostics.Process.Start(salvar.FileName);
+                    }
 
-                System.Diagnostics.Process.Start(salvar.FileName);
+                    xlApp.Quit();
+                }
 
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Erro: " + erro.Message);
+                xlApp.Quit();
             }
         }
     }

@@ -189,25 +189,16 @@ namespace EscalasMetodista.Views.Usuarios
             this.preencheComboBoxFuncaoSecundaria();
             this.preencheComboBoxTipoUsuario();
 
-            if (!btnDeletar.Enabled)
-            {
-                btnDeletar.ForeColor = Color.DarkGray;
-            }
-            else
-                btnDeletar.ForeColor = Color.Black;
-
             if (update)
             {
                 setPessoa(idPessoaPesquisa);
+                return;
             }
-            else
-            {
-                cbTipoUsuario.Text = "Selecione...";
-                cbFuncaoPrincipal.Text = "Selecione...";
-                cbFuncaoSecundaria.Text = "Selecione...";
-                cbSubFuncaoPrincipal.Text = "Selecione...";
-                cbSubFuncaoSecundaria.Text = "Selecione...";
-            }
+            cbTipoUsuario.Text = "Selecione...";
+            cbFuncaoPrincipal.Text = "Selecione...";
+            cbFuncaoSecundaria.Text = "Selecione...";
+            cbSubFuncaoPrincipal.Text = "Selecione...";
+            cbSubFuncaoSecundaria.Text = "Selecione...";
         }
 
         private void cbFuncaoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
@@ -439,21 +430,19 @@ namespace EscalasMetodista.Views.Usuarios
                 btnDeletar.ForeColor = Color.Black;
         }
 
-        private void cbTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbTipoUsuario_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (!update)
+
+            if (cbTipoUsuario.SelectedValue != null && (int)cbTipoUsuario.SelectedValue == 3)
             {
-                if ((int)cbTipoUsuario.SelectedValue == 3)
-                {
-                    txtEmail.Enabled = false;
-                    txtEmail.Text = null;
-                    txtSobrenome.Enabled = false;
-                    txtSobrenome.Text = null;
-                    return;
-                }
-                txtEmail.Enabled = true;
-                txtSobrenome.Enabled = true;
+                txtEmail.Enabled = false;
+                txtEmail.Text = null;
+                txtSobrenome.Enabled = false;
+                txtSobrenome.Text = null;
+                return;
             }
+            txtEmail.Enabled = true;
+            txtSobrenome.Enabled = true;
         }
     }
 }

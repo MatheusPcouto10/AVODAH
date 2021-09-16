@@ -28,7 +28,7 @@ namespace EscalasMetodista
         {
             cmd.CommandText = "SELECT idPessoa, nome, sobrenome, email, senha, tipoUsuario_fk FROM pessoa " +
                               "WHERE email = '" + txtEmail.Text +
-                              "' AND senha = '" + txtSenha.Text + "' AND status = 'Ativo'";
+                              "' COLLATE SQL_Latin1_General_CP1_CS_AS AND senha = '" + txtSenha.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS AND status = 'Ativo' AND tipoUsuario_fk <> 3";
 
             try
             {
@@ -46,11 +46,9 @@ namespace EscalasMetodista
 
                     formMenu.Show();
                     this.Hide();
+                    return;
                 }
-                else
-                {
-                    Validacoes.mensagem("Usuário e/ou senha incorretos!", ToolTipIcon.Error, "Dados incorretos", txtSenha);
-                }
+                Validacoes.mensagem("Usuário e/ou senha incorretos!", ToolTipIcon.Error, "Dados incorretos", txtSenha);
 
             }
             catch (Exception ex)
@@ -65,20 +63,16 @@ namespace EscalasMetodista
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            txtEmail.Text = "";
-            txtSenha.Text = "";
+            txtEmail.Text = null;
+            txtSenha.Text = null;
         }
 
         private void checkMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
             if (checkMostrarSenha.Checked)
-            {
                 txtSenha.UseSystemPasswordChar = false;
-            }
             else
-            {
                 txtSenha.UseSystemPasswordChar = true;
-            }
         }
 
         private void FormLogin_KeyDown(object sender, KeyEventArgs e)

@@ -70,16 +70,12 @@ namespace EscalasMetodista.Views.Usuarios
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "nome":
-                        coluna.Width = 110;
+                        coluna.Width = 160;
                         coluna.HeaderText = "Nome";
                         break;
                     case "sobrenome":
-                        coluna.Width = 110;
+                        coluna.Width = 160;
                         coluna.HeaderText = "Sobrenome";
-                        break;
-                    case "email":
-                        coluna.Width = 110;
-                        coluna.HeaderText = "E-mail";
                         break;
                     case "descricao":
                         coluna.Width = 90;
@@ -87,19 +83,19 @@ namespace EscalasMetodista.Views.Usuarios
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "Função Principal":
-                        coluna.Width = 90;
+                        coluna.Width = 100;
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "Sub-Função Principal":
-                        coluna.Width = 90;
+                        coluna.Width = 120;
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "Função Secundária":
-                        coluna.Width = 90;
+                        coluna.Width = 100;
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     case "Sub-Função Secundária":
-                        coluna.Width = 90;
+                        coluna.Width = 120;
                         coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         break;
                     default:
@@ -154,7 +150,7 @@ namespace EscalasMetodista.Views.Usuarios
 
                 if (pesquisa)
                 {
-                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, t.descricao, p.email,
+                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, t.descricao,
                                   f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
                                   f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária'
                                   FROM pessoa AS p 
@@ -167,7 +163,7 @@ namespace EscalasMetodista.Views.Usuarios
                 }
                 else
                 {
-                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, t.descricao, p.email,
+                    cmd.CommandText = @"SELECT p.idPessoa, p.nome, p.sobrenome, t.descricao,
                                   f1.descricaoFuncao AS 'Função Principal', s1.descricao AS 'Sub-Função Principal', 
                                   f2.descricaoFuncao AS 'Função Secundária', s2.descricao AS 'Sub-Função Secundária'
                                   FROM pessoa AS p 
