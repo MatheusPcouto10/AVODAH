@@ -143,6 +143,10 @@ namespace EscalasMetodista.Model
                     pessoa.Sobrenome = dr.GetString(2);
                     pessoa.Email = dr.GetString(3);
                     pessoa.tipoUsuario = tipoUsuario.find(dr.GetInt32(5));
+                    if (pessoa.tipoUsuario.idTipoUsuario != 3)
+                    {
+                        pessoa.Senha = dr.GetString(4);
+                    }
                     pessoa.funcaoPrincipal = funcaoPrincipal.find(dr.GetInt32(6));
 
                     if (string.IsNullOrEmpty(dr[7].ToString()))
@@ -197,7 +201,7 @@ namespace EscalasMetodista.Model
                 conexao.Desconectar();
             }
 
-            return id + 1;
+            return id;
         }
 
 

@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using System.Net;
+using System.Net.Mail;
 
 namespace EscalasMetodista.Views.Usuarios
 {
@@ -201,14 +203,16 @@ namespace EscalasMetodista.Views.Usuarios
             cbSubFuncaoSecundaria.Text = "Selecione...";
         }
 
-        private void cbFuncaoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbFuncaoPrincipal_SelectedValueChanged(object sender, EventArgs e)
         {
-            this.preencheComboBoxSubFuncaoPrincipal();
+            if (cbFuncaoPrincipal.SelectedValue != null)
+                preencheComboBoxSubFuncaoPrincipal();
         }
 
-        private void cbFuncaoSecundaria_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbFuncaoSecundaria_SelectedValueChanged(object sender, EventArgs e)
         {
-            this.preencheComboboxSubFuncaoSecundaria();
+            if (cbFuncaoSecundaria.SelectedValue != null)
+                preencheComboboxSubFuncaoSecundaria();
         }
 
         private void btnLimparFuncaoPrincipal_Click(object sender, EventArgs e)
@@ -322,7 +326,7 @@ namespace EscalasMetodista.Views.Usuarios
 
                 if (!update)
                 {
-                    pessoa.idPessoa = pessoa.getId();
+                    //pessoa.idPessoa = pessoa.getId();
                     pessoa.Senha = pessoa.tipoUsuario.idTipoUsuario == 3 ? null : gerarSenha();
                     pessoa.dataCadastro = DateTime.Today;
                     pessoa.Status = "Ativo";
@@ -356,14 +360,18 @@ namespace EscalasMetodista.Views.Usuarios
                         pessoa.update(pessoa, pessoa.idPessoa, temFuncaoSecundaria);
                     }
                     else
+                    {
                         pessoa.create(pessoa, temFuncaoSecundaria);
 
-                    setPessoa(pessoa.idPessoa);
+                        if (pessoa.tipoUsuario.idTipoUsuario != 3)
+                            sendEmailComSenhaUsuario(pessoa.Nome, pessoa.Email, pessoa.Senha);
+                    }
+
+                    setPessoa(pessoa.getId());
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Erro: " + ex);
             }
         }
@@ -443,6 +451,35 @@ namespace EscalasMetodista.Views.Usuarios
             }
             txtEmail.Enabled = true;
             txtSobrenome.Enabled = true;
+        }
+
+        private void sendEmailComSenhaUsuario(String nome, String email, String senha)
+        {
+            try
+            {
+                using (MailMessage mail = new MailMessage())
+                {
+                    mail.From = new MailAddress("matheuspcouto70@gmail.com");
+                    mail.To.Add(email);
+                    mail.Subject = "Senha de Cadastro do Sistema de Escalas Metodista";
+                    mail.Body = "Olá " + nome + "! vimos que foi realizado seu cadastro no Sistema de Escalas Metodista, sua senha de acesso é: <strong>" + senha + "</strong>";
+                    mail.IsBodyHtml = true;
+
+                    using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587))
+                    {
+                        smtpClient.EnableSsl = true;
+                        smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        smtpClient.UseDefaultCredentials = false;
+                        smtpClient.Credentials = new NetworkCredential("matheuspcouto70@gmail.com", "Mat230500");
+                        smtpClient.Send(mail);
+                        MessageBox.Show("E-mail com senha de acesso enviado para " + email);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex);
+            }
         }
     }
 }

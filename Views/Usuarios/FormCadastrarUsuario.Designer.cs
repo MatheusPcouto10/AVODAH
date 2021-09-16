@@ -221,7 +221,7 @@
             this.cbFuncaoPrincipal.Name = "cbFuncaoPrincipal";
             this.cbFuncaoPrincipal.Size = new System.Drawing.Size(178, 24);
             this.cbFuncaoPrincipal.TabIndex = 31;
-            this.cbFuncaoPrincipal.SelectedIndexChanged += new System.EventHandler(this.cbFuncaoPrincipal_SelectedIndexChanged);
+            this.cbFuncaoPrincipal.SelectedValueChanged += new System.EventHandler(this.cbFuncaoPrincipal_SelectedValueChanged);
             this.cbFuncaoPrincipal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbFuncaoPrincipal_KeyDown);
             // 
             // groupBox2
@@ -284,7 +284,7 @@
             this.cbFuncaoSecundaria.Name = "cbFuncaoSecundaria";
             this.cbFuncaoSecundaria.Size = new System.Drawing.Size(178, 24);
             this.cbFuncaoSecundaria.TabIndex = 31;
-            this.cbFuncaoSecundaria.SelectedIndexChanged += new System.EventHandler(this.cbFuncaoSecundaria_SelectedIndexChanged);
+            this.cbFuncaoSecundaria.SelectedValueChanged += new System.EventHandler(this.cbFuncaoSecundaria_SelectedValueChanged);
             this.cbFuncaoSecundaria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbFuncaoSecundaria_KeyDown);
             // 
             // label5
