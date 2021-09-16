@@ -254,7 +254,7 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente excluir este usuário?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente excluir este usuário? Esta ação não pode ser revertida.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 pessoa.delete(pessoa.idPessoa);
                 btnLimparForm_Click(null, null);
@@ -297,7 +297,7 @@ namespace EscalasMetodista.Views.Usuarios
                     return;
                 }
 
-                if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
+                if ((int)cbSubFuncaoPrincipal.SelectedValue == (int)cbSubFuncaoSecundaria.SelectedValue)
                 {
                     Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox1);
                     Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox2);
@@ -326,7 +326,6 @@ namespace EscalasMetodista.Views.Usuarios
 
                 if (!update)
                 {
-                    //pessoa.idPessoa = pessoa.getId();
                     pessoa.Senha = pessoa.tipoUsuario.idTipoUsuario == 3 ? null : gerarSenha();
                     pessoa.dataCadastro = DateTime.Today;
                     pessoa.Status = "Ativo";
@@ -479,6 +478,45 @@ namespace EscalasMetodista.Views.Usuarios
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex);
+            }
+        }
+
+        private void txtEmail_MouseLeave(object sender, EventArgs e)
+        {
+            if (pessoa.tipoUsuario.idTipoUsuario != 3)
+            {
+                if (!string.IsNullOrEmpty(txtEmail.Text) || !string.IsNullOrWhiteSpace(txtEmail.Text))
+                {
+                    if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, pessoa.idPessoa, "idPessoa") == true)
+                    {
+                        Validacoes.mensagem("O e-mail já está em uso!", ToolTipIcon.Warning, "Dados já cadastrados", txtEmail);
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void cbSubFuncaoPrincipal_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbSubFuncaoSecundaria.SelectedValue != null)
+            {
+                if ((int)cbSubFuncaoPrincipal.SelectedValue == (int)cbSubFuncaoSecundaria.SelectedValue)
+                {
+                    Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Warning, "Sub-Função já Selecionada", groupBox1);
+                    return;
+                }
+            }
+        }
+
+        private void cbSubFuncaoSecundaria_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbSubFuncaoSecundaria.SelectedValue != null)
+            {
+                if ((int)cbSubFuncaoPrincipal.SelectedValue == (int)cbSubFuncaoSecundaria.SelectedValue)
+                {
+                    Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Warning, "Sub-Função já Selecionada", groupBox2);
+                    return;
+                }
             }
         }
     }

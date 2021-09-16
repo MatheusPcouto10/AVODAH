@@ -209,6 +209,7 @@
             this.cbSubFuncaoPrincipal.Name = "cbSubFuncaoPrincipal";
             this.cbSubFuncaoPrincipal.Size = new System.Drawing.Size(160, 24);
             this.cbSubFuncaoPrincipal.TabIndex = 38;
+            this.cbSubFuncaoPrincipal.SelectionChangeCommitted += new System.EventHandler(this.cbSubFuncaoPrincipal_SelectionChangeCommitted);
             this.cbSubFuncaoPrincipal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSubFuncaoPrincipal_KeyDown);
             // 
             // cbFuncaoPrincipal
@@ -272,6 +273,7 @@
             this.cbSubFuncaoSecundaria.Name = "cbSubFuncaoSecundaria";
             this.cbSubFuncaoSecundaria.Size = new System.Drawing.Size(160, 24);
             this.cbSubFuncaoSecundaria.TabIndex = 38;
+            this.cbSubFuncaoSecundaria.SelectionChangeCommitted += new System.EventHandler(this.cbSubFuncaoSecundaria_SelectionChangeCommitted);
             this.cbSubFuncaoSecundaria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSubFuncaoSecundaria_KeyDown);
             // 
             // cbFuncaoSecundaria
@@ -314,6 +316,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(297, 22);
             this.txtEmail.TabIndex = 43;
+            this.txtEmail.MouseLeave += new System.EventHandler(this.txtEmail_MouseLeave);
             // 
             // label3
             // 
@@ -420,7 +423,6 @@
             this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeletar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnDeletar.UseVisualStyleBackColor = false;
-            this.btnDeletar.EnabledChanged += new System.EventHandler(this.btnDeletar_EnabledChanged);
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnLimparForm
