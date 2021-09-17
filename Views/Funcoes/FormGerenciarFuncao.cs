@@ -1,4 +1,5 @@
 ﻿using EscalasMetodista.Conexão;
+using EscalasMetodista.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +54,7 @@ namespace EscalasMetodista.Views.Funcoes
                         dgFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                        MessageBox.Show("Nenhuma Função foi encontrada!", "Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Validacoes.mensagem("Nenhuma Função foi encontrada!", ToolTipIcon.Error, "Função Não Encontrada", btnPesquisa);
                 }
                 catch (Exception erro)
                 {
@@ -78,7 +79,7 @@ namespace EscalasMetodista.Views.Funcoes
                         dgFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                        MessageBox.Show("Nenhuma Função foi encontrada!", "Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Validacoes.mensagem("Nenhuma Sub-Função foi encontrada!", ToolTipIcon.Error, "Sub-Função Não Encontrada", btnPesquisa);
                 }
                 catch (Exception erro)
                 {

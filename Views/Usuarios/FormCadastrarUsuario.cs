@@ -304,13 +304,15 @@ namespace EscalasMetodista.Views.Usuarios
                     return;
                 }
 
-
-                pessoa.tipoUsuario = tipo.find((int)cbTipoUsuario.SelectedValue);
-                pessoa.Nome = txtNome.Text;
-                pessoa.Sobrenome = pessoa.tipoUsuario.idTipoUsuario == 3 ? null : txtSobrenome.Text;
-                pessoa.Email = pessoa.tipoUsuario.idTipoUsuario == 3 ? null : txtEmail.Text;
-
-                if (pessoa.tipoUsuario.idTipoUsuario != 3)
+                if ((int)cbTipoUsuario.SelectedValue == 3)
+                {
+                    if ((int)cbFuncaoSecundaria.SelectedValue != 3 || (int)cbFuncaoPrincipal.SelectedValue != 3)
+                    {
+                        Validacoes.mensagem("O Tipo de Usuário 'Célula' só pode ter funções relacionadas a células.", ToolTipIcon.Error, "Tipo de Usuário inválido para as Funções", cbTipoUsuario);
+                        return;
+                    }
+                }
+                else
                 {
                     if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrWhiteSpace(txtEmail.Text))
                     {
@@ -323,6 +325,11 @@ namespace EscalasMetodista.Views.Usuarios
                         return;
                     }
                 }
+
+                pessoa.tipoUsuario = tipo.find((int)cbTipoUsuario.SelectedValue);
+                pessoa.Nome = txtNome.Text;
+                pessoa.Sobrenome = pessoa.tipoUsuario.idTipoUsuario == 3 ? null : txtSobrenome.Text;
+                pessoa.Email = pessoa.tipoUsuario.idTipoUsuario == 3 ? null : txtEmail.Text;
 
                 if (!update)
                 {
@@ -425,16 +432,6 @@ namespace EscalasMetodista.Views.Usuarios
             btnLimparForm.ForeColor = Color.LightGray;
             btnLimparForm.IconColor = Color.LightGray;
             btnLimparForm.FlatAppearance.BorderColor = Color.LightGray;
-        }
-
-        private void btnDeletar_EnabledChanged(object sender, EventArgs e)
-        {
-            if (!btnDeletar.Enabled)
-            {
-                btnDeletar.ForeColor = Color.DarkGray;
-            }
-            else
-                btnDeletar.ForeColor = Color.Black;
         }
 
         private void cbTipoUsuario_SelectedValueChanged(object sender, EventArgs e)

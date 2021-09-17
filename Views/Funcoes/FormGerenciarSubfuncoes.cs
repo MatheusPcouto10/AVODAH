@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
+using EscalasMetodista.Model;
 
 namespace EscalasMetodista.Views.Funcoes
 {
@@ -58,7 +60,7 @@ namespace EscalasMetodista.Views.Funcoes
                         dgSubFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                        MessageBox.Show("Nenhuma Sub-Função foi encontrada!", "Sub-Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Validacoes.mensagem("Nenhuma Sub-Função foi encontrada!", ToolTipIcon.Error, "Sub-Função Não Encontrada", btnPesquisa);
                 }
                 catch (Exception erro)
                 {
@@ -85,7 +87,7 @@ namespace EscalasMetodista.Views.Funcoes
                         dgSubFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                        MessageBox.Show("Nenhuma Sub-Função foi encontrada!", "Sub-Função Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Validacoes.mensagem("Nenhuma Sub-Função foi encontrada!", ToolTipIcon.Error, "Sub-Função Não Encontrada", btnPesquisa);
                 }
                 catch (Exception erro)
                 {
