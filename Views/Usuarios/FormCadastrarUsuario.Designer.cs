@@ -33,7 +33,7 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,6 +54,7 @@
             this.btnDeletar = new FontAwesome.Sharp.IconButton();
             this.btnLimparForm = new FontAwesome.Sharp.IconButton();
             this.btnConsultarUsuario = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel_rodape.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -107,7 +108,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lbTitulo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -115,19 +116,19 @@
             this.panel1.Size = new System.Drawing.Size(835, 57);
             this.panel1.TabIndex = 7;
             // 
-            // label2
+            // lbTitulo
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(293, 17);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "CADASTRAR USUÁRIO";
+            this.lbTitulo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lbTitulo.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.ForeColor = System.Drawing.Color.White;
+            this.lbTitulo.Location = new System.Drawing.Point(293, 17);
+            this.lbTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(249, 23);
+            this.lbTitulo.TabIndex = 0;
+            this.lbTitulo.Text = "CADASTRAR USUÁRIO";
             // 
             // cbTipoUsuario
             // 
@@ -473,6 +474,22 @@
             this.btnConsultarUsuario.UseVisualStyleBackColor = false;
             this.btnConsultarUsuario.Click += new System.EventHandler(this.btnConsultarUsuario_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(111, 293);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 14);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "(exemplo@exemplo.com)";
+            // 
             // FormCadastrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,6 +498,7 @@
             this.BackgroundImage = global::EscalasMetodista.Properties.Resources.sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 568);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnConsultarUsuario);
             this.Controls.Add(this.btnLimparForm);
             this.Controls.Add(this.btnDeletar);
@@ -523,8 +541,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbTipoUsuario;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.ComboBox cbSubFuncaoPrincipal;
@@ -532,17 +548,20 @@
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.ComboBox cbSubFuncaoSecundaria;
         public System.Windows.Forms.ComboBox cbFuncaoSecundaria;
-        private System.Windows.Forms.Button btnLimparFuncaoSecundaria;
-        private System.Windows.Forms.Button btnLimparFuncaoPrincipal;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtSobrenome;
         public System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label labelNome;
-        private FontAwesome.Sharp.IconButton btnSalvar;
-        private FontAwesome.Sharp.IconButton btnDeletar;
-        private FontAwesome.Sharp.IconButton btnLimparForm;
-        private FontAwesome.Sharp.IconButton btnConsultarUsuario;
+        public System.Windows.Forms.ComboBox cbTipoUsuario;
+        public FontAwesome.Sharp.IconButton btnDeletar;
+        public FontAwesome.Sharp.IconButton btnLimparForm;
+        public FontAwesome.Sharp.IconButton btnConsultarUsuario;
+        public FontAwesome.Sharp.IconButton btnSalvar;
+        public System.Windows.Forms.Button btnLimparFuncaoSecundaria;
+        public System.Windows.Forms.Button btnLimparFuncaoPrincipal;
+        public System.Windows.Forms.Label lbTitulo;
+        private System.Windows.Forms.Label label2;
     }
 }

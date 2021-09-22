@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_rodape = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
-            this.btnPerfil = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btnAlterarSenha = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnEscalas = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btnNovaEscalaPersonalizada = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnUsuarios = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btnCadastrarUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnFuncoes = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btnGerenciarFuncao = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGerenciarSubFuncao = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSobre = new System.Windows.Forms.ToolStripButton();
             this.panel_principal = new System.Windows.Forms.Panel();
             this.labelData = new System.Windows.Forms.Label();
             this.labelIdUsuarioLogado = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.panel_botoes = new System.Windows.Forms.Panel();
             this.dgEscalas = new System.Windows.Forms.DataGridView();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataAlteracao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtPesquisaEscala = new System.Windows.Forms.TextBox();
-            this.logo_metodista = new System.Windows.Forms.PictureBox();
             this.btnPesquisa = new System.Windows.Forms.Button();
+            this.txtPesquisaEscala = new System.Windows.Forms.TextBox();
+            this.btnSair = new System.Windows.Forms.ToolStripButton();
+            this.btnPerfil = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnEditarPerfil = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAlterarSenha = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEscalas = new System.Windows.Forms.ToolStripButton();
+            this.btnUsuarios = new System.Windows.Forms.ToolStripButton();
+            this.btnFuncoes = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnGerenciarFuncao = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGerenciarSubFuncao = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAjuda = new System.Windows.Forms.ToolStripButton();
+            this.btnSobre = new System.Windows.Forms.ToolStripButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logo_metodista = new System.Windows.Forms.PictureBox();
             this.panel_rodape.SuspendLayout();
             this.toolStripMenu.SuspendLayout();
             this.panel_principal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_botoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,140 +96,36 @@
             this.toolStripMenu.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnSair,
             this.btnPerfil,
-            this.toolStripSeparator2,
             this.btnEscalas,
             this.toolStripSeparator3,
             this.btnUsuarios,
             this.toolStripSeparator6,
             this.btnFuncoes,
-            this.btnSair,
             this.toolStripSeparator4,
+            this.btnAjuda,
+            this.toolStripSeparator1,
             this.btnSobre});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.Size = new System.Drawing.Size(925, 27);
             this.toolStripMenu.TabIndex = 5;
             // 
-            // btnPerfil
-            // 
-            this.btnPerfil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAlterarSenha});
-            this.btnPerfil.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnPerfil.Image = global::EscalasMetodista.Properties.Resources._1486564400_account_81513;
-            this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(136, 24);
-            this.btnPerfil.Text = "Bem vindo(a) !";
-            // 
-            // btnAlterarSenha
-            // 
-            this.btnAlterarSenha.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.btnAlterarSenha.Name = "btnAlterarSenha";
-            this.btnAlterarSenha.Size = new System.Drawing.Size(153, 22);
-            this.btnAlterarSenha.Text = "Alterar Senha";
-            this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // btnEscalas
-            // 
-            this.btnEscalas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNovaEscalaPersonalizada});
-            this.btnEscalas.Image = global::EscalasMetodista.Properties.Resources._1486504829_clipboard_tasks_report_business_checking_verification_list_81387;
-            this.btnEscalas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEscalas.Name = "btnEscalas";
-            this.btnEscalas.Size = new System.Drawing.Size(77, 24);
-            this.btnEscalas.Text = "Escalas";
-            // 
-            // btnNovaEscalaPersonalizada
-            // 
-            this.btnNovaEscalaPersonalizada.Name = "btnNovaEscalaPersonalizada";
-            this.btnNovaEscalaPersonalizada.Size = new System.Drawing.Size(171, 22);
-            this.btnNovaEscalaPersonalizada.Text = "Gerar Nova Escala ";
-            this.btnNovaEscalaPersonalizada.Click += new System.EventHandler(this.btnNovaEscalaPersonalizada_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnCadastrarUsuario});
-            this.btnUsuarios.Image = global::EscalasMetodista.Properties.Resources._1486504843_collaboration_group_people_men_user_team_users_81379;
-            this.btnUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(85, 24);
-            this.btnUsuarios.Text = "Usuários";
-            // 
-            // btnCadastrarUsuario
-            // 
-            this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
-            this.btnCadastrarUsuario.Size = new System.Drawing.Size(167, 22);
-            this.btnCadastrarUsuario.Text = "Cadastrar Usuário";
-            this.btnCadastrarUsuario.Click += new System.EventHandler(this.novoUsuarioToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
             // 
-            // btnFuncoes
-            // 
-            this.btnFuncoes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnGerenciarFuncao,
-            this.btnGerenciarSubFuncao});
-            this.btnFuncoes.Image = global::EscalasMetodista.Properties.Resources.System_preferences_46991;
-            this.btnFuncoes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFuncoes.Name = "btnFuncoes";
-            this.btnFuncoes.Size = new System.Drawing.Size(84, 24);
-            this.btnFuncoes.Text = "Funções";
-            // 
-            // btnGerenciarFuncao
-            // 
-            this.btnGerenciarFuncao.Name = "btnGerenciarFuncao";
-            this.btnGerenciarFuncao.Size = new System.Drawing.Size(143, 22);
-            this.btnGerenciarFuncao.Text = "Funções";
-            this.btnGerenciarFuncao.Click += new System.EventHandler(this.gerenciarFunçoesToolStripMenuItem_Click);
-            // 
-            // btnGerenciarSubFuncao
-            // 
-            this.btnGerenciarSubFuncao.Name = "btnGerenciarSubFuncao";
-            this.btnGerenciarSubFuncao.Size = new System.Drawing.Size(143, 22);
-            this.btnGerenciarSubFuncao.Text = "Sub-Funções";
-            this.btnGerenciarSubFuncao.Click += new System.EventHandler(this.gerenciarSubFunçoesToolStripMenuItem_Click);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnSair.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic);
-            this.btnSair.Image = global::EscalasMetodista.Properties.Resources.sair;
-            this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSair.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(53, 27);
-            this.btnSair.Text = "Sair";
-            this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
-            // 
-            // btnSobre
-            // 
-            this.btnSobre.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
-            this.btnSobre.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(41, 24);
-            this.btnSobre.Text = "Sobre";
-            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
             // 
             // panel_principal
             // 
@@ -271,18 +167,10 @@
             this.labelIdUsuarioLogado.Size = new System.Drawing.Size(0, 13);
             this.labelIdUsuarioLogado.TabIndex = 6;
             // 
-            // pictureBox1
+            // toolStripSeparator1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources.cruz_chama_metodista;
-            this.pictureBox1.Location = new System.Drawing.Point(216, 91);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(492, 558);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // panel_botoes
             // 
@@ -306,14 +194,14 @@
             this.dgEscalas.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
             this.dgEscalas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgEscalas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 7.8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgEscalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 7.8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgEscalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgEscalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEscalas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.descricao,
@@ -347,30 +235,6 @@
             this.dataAlteracao.ReadOnly = true;
             this.dataAlteracao.Width = 125;
             // 
-            // txtPesquisaEscala
-            // 
-            this.txtPesquisaEscala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisaEscala.BackColor = System.Drawing.Color.White;
-            this.txtPesquisaEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPesquisaEscala.Font = new System.Drawing.Font("Verdana", 12F);
-            this.txtPesquisaEscala.Location = new System.Drawing.Point(55, 40);
-            this.txtPesquisaEscala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPesquisaEscala.Name = "txtPesquisaEscala";
-            this.txtPesquisaEscala.Size = new System.Drawing.Size(335, 20);
-            this.txtPesquisaEscala.TabIndex = 0;
-            // 
-            // logo_metodista
-            // 
-            this.logo_metodista.BackColor = System.Drawing.Color.Transparent;
-            this.logo_metodista.Image = ((System.Drawing.Image)(resources.GetObject("logo_metodista.Image")));
-            this.logo_metodista.Location = new System.Drawing.Point(91, 12);
-            this.logo_metodista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.logo_metodista.Name = "logo_metodista";
-            this.logo_metodista.Size = new System.Drawing.Size(265, 158);
-            this.logo_metodista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logo_metodista.TabIndex = 0;
-            this.logo_metodista.TabStop = false;
-            // 
             // btnPesquisa
             // 
             this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -391,6 +255,145 @@
             this.btnPesquisa.TabIndex = 1;
             this.btnPesquisa.UseVisualStyleBackColor = false;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            // 
+            // txtPesquisaEscala
+            // 
+            this.txtPesquisaEscala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisaEscala.BackColor = System.Drawing.Color.White;
+            this.txtPesquisaEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPesquisaEscala.Font = new System.Drawing.Font("Verdana", 12F);
+            this.txtPesquisaEscala.Location = new System.Drawing.Point(55, 40);
+            this.txtPesquisaEscala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPesquisaEscala.Name = "txtPesquisaEscala";
+            this.txtPesquisaEscala.Size = new System.Drawing.Size(335, 20);
+            this.txtPesquisaEscala.TabIndex = 0;
+            // 
+            // btnSair
+            // 
+            this.btnSair.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnSair.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic);
+            this.btnSair.Image = global::EscalasMetodista.Properties.Resources.sair;
+            this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSair.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(53, 27);
+            this.btnSair.Text = "Sair";
+            this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnPerfil
+            // 
+            this.btnPerfil.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnPerfil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnEditarPerfil,
+            this.btnAlterarSenha});
+            this.btnPerfil.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPerfil.Image = global::EscalasMetodista.Properties.Resources._1486564400_account_81513;
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.Size = new System.Drawing.Size(136, 24);
+            this.btnPerfil.Text = "Bem vindo(a) !";
+            // 
+            // btnEditarPerfil
+            // 
+            this.btnEditarPerfil.Name = "btnEditarPerfil";
+            this.btnEditarPerfil.Size = new System.Drawing.Size(164, 22);
+            this.btnEditarPerfil.Text = "Editar Perfil";
+            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
+            // 
+            // btnAlterarSenha
+            // 
+            this.btnAlterarSenha.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterarSenha.Name = "btnAlterarSenha";
+            this.btnAlterarSenha.Size = new System.Drawing.Size(164, 22);
+            this.btnAlterarSenha.Text = "Alterar Senha";
+            this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
+            // 
+            // btnEscalas
+            // 
+            this.btnEscalas.Image = global::EscalasMetodista.Properties.Resources._1486504829_clipboard_tasks_report_business_checking_verification_list_81387;
+            this.btnEscalas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEscalas.Name = "btnEscalas";
+            this.btnEscalas.Size = new System.Drawing.Size(94, 24);
+            this.btnEscalas.Text = "Nova Escala";
+            this.btnEscalas.Click += new System.EventHandler(this.btnEscalas_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Image = global::EscalasMetodista.Properties.Resources._1486504843_collaboration_group_people_men_user_team_users_81379;
+            this.btnUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(76, 24);
+            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // btnFuncoes
+            // 
+            this.btnFuncoes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnGerenciarFuncao,
+            this.btnGerenciarSubFuncao});
+            this.btnFuncoes.Image = global::EscalasMetodista.Properties.Resources.System_preferences_46991;
+            this.btnFuncoes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFuncoes.Name = "btnFuncoes";
+            this.btnFuncoes.Size = new System.Drawing.Size(84, 24);
+            this.btnFuncoes.Text = "Funções";
+            // 
+            // btnGerenciarFuncao
+            // 
+            this.btnGerenciarFuncao.Name = "btnGerenciarFuncao";
+            this.btnGerenciarFuncao.Size = new System.Drawing.Size(143, 22);
+            this.btnGerenciarFuncao.Text = "Funções";
+            this.btnGerenciarFuncao.Click += new System.EventHandler(this.gerenciarFunçoesToolStripMenuItem_Click);
+            // 
+            // btnGerenciarSubFuncao
+            // 
+            this.btnGerenciarSubFuncao.Name = "btnGerenciarSubFuncao";
+            this.btnGerenciarSubFuncao.Size = new System.Drawing.Size(143, 22);
+            this.btnGerenciarSubFuncao.Text = "Sub-Funções";
+            this.btnGerenciarSubFuncao.Click += new System.EventHandler(this.gerenciarSubFunçoesToolStripMenuItem_Click);
+            // 
+            // btnAjuda
+            // 
+            this.btnAjuda.Image = global::EscalasMetodista.Properties.Resources._1486504846_clipboard_tasks_report_business_checking_verification_document_81354;
+            this.btnAjuda.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAjuda.Name = "btnAjuda";
+            this.btnAjuda.Size = new System.Drawing.Size(167, 24);
+            this.btnAjuda.Text = "Documentação e Contato";
+            this.btnAjuda.Click += new System.EventHandler(this.btnAjuda_Click);
+            // 
+            // btnSobre
+            // 
+            this.btnSobre.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
+            this.btnSobre.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSobre.Name = "btnSobre";
+            this.btnSobre.Size = new System.Drawing.Size(41, 24);
+            this.btnSobre.Text = "Sobre";
+            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources.cruz_chama_metodista;
+            this.pictureBox1.Location = new System.Drawing.Point(216, 91);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(492, 558);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // logo_metodista
+            // 
+            this.logo_metodista.BackColor = System.Drawing.Color.Transparent;
+            this.logo_metodista.Image = ((System.Drawing.Image)(resources.GetObject("logo_metodista.Image")));
+            this.logo_metodista.Location = new System.Drawing.Point(91, 12);
+            this.logo_metodista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logo_metodista.Name = "logo_metodista";
+            this.logo_metodista.Size = new System.Drawing.Size(265, 158);
+            this.logo_metodista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logo_metodista.TabIndex = 0;
+            this.logo_metodista.TabStop = false;
             // 
             // FormMenu
             // 
@@ -419,10 +422,10 @@
             this.toolStripMenu.PerformLayout();
             this.panel_principal.ResumeLayout(false);
             this.panel_principal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_botoes.ResumeLayout(false);
             this.panel_botoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).EndInit();
             this.ResumeLayout(false);
 
@@ -447,18 +450,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataAlteracao;
         private System.Windows.Forms.ToolStripDropDownButton btnPerfil;
         private System.Windows.Forms.ToolStripMenuItem btnAlterarSenha;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripDropDownButton btnEscalas;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Label labelIdUsuarioLogado;
         private System.Windows.Forms.Label labelData;
-        private System.Windows.Forms.ToolStripDropDownButton btnUsuarios;
-        private System.Windows.Forms.ToolStripMenuItem btnCadastrarUsuario;
         private System.Windows.Forms.ToolStripDropDownButton btnFuncoes;
         private System.Windows.Forms.ToolStripMenuItem btnGerenciarFuncao;
         private System.Windows.Forms.ToolStripMenuItem btnGerenciarSubFuncao;
-        private System.Windows.Forms.ToolStripMenuItem btnNovaEscalaPersonalizada;
         private System.Windows.Forms.Button btnPesquisa;
+        private System.Windows.Forms.ToolStripMenuItem btnEditarPerfil;
+        private System.Windows.Forms.ToolStripButton btnUsuarios;
+        private System.Windows.Forms.ToolStripButton btnEscalas;
+        private System.Windows.Forms.ToolStripButton btnAjuda;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

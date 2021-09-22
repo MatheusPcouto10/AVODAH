@@ -2,6 +2,7 @@
 using EscalasMetodista.Views;
 using EscalasMetodista.Views.Escalas;
 using EscalasMetodista.Views.Funcoes;
+using EscalasMetodista.Views.Outros;
 using EscalasMetodista.Views.Usuarios;
 using System;
 using System.Collections.Generic;
@@ -88,12 +89,6 @@ namespace EscalasMetodista
             form.Show();
         }
 
-        private void novoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormCadastrarUsuario form = new FormCadastrarUsuario();
-            form.Show();
-        }
-
         private void btnAlterarSenha_Click(object sender, EventArgs e)
         {
             FormAlterarSenha form = new FormAlterarSenha();
@@ -127,10 +122,42 @@ namespace EscalasMetodista
             }
         }
 
-        private void btnNovaEscalaPersonalizada_Click(object sender, EventArgs e)
+        private void btnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            FormCadastrarUsuario form = new FormCadastrarUsuario(UsuarioSession.idUsuario);
+            form.cbFuncaoPrincipal.Enabled = false;
+            form.cbFuncaoSecundaria.Enabled = false;
+            form.cbSubFuncaoPrincipal.Enabled = false;
+            form.cbSubFuncaoSecundaria.Enabled = false;
+            form.cbTipoUsuario.Enabled = false;
+            form.btnDeletar.Visible = false;
+            form.btnLimparForm.Visible = false;
+            form.btnConsultarUsuario.Visible = false;
+            form.btnSalvar.Left = (form.Width - form.btnSalvar.Width) / 2;
+            form.lbTitulo.Text = "EDITAR PERFIL";
+            form.Text = "Editar Perfil";
+            form.lbTitulo.Left = (form.Width - form.lbTitulo.Width) / 2;
+            form.btnLimparFuncaoPrincipal.Visible = false;
+            form.btnLimparFuncaoSecundaria.Visible = false;
+            form.ShowDialog();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FormCadastrarUsuario form = new FormCadastrarUsuario();
+            form.Show();
+        }
+
+        private void btnEscalas_Click(object sender, EventArgs e)
         {
             FormPersonalizarEscala form = new FormPersonalizarEscala();
             form.Show();
+        }
+
+        private void btnAjuda_Click(object sender, EventArgs e)
+        {
+            FormAjuda form = new FormAjuda();
+            form.ShowDialog();
         }
     }
 }

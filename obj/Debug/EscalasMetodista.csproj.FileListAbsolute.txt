@@ -39,3 +39,4 @@ C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.csproj.ResolveComReference.cache
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.csproj.CopyComplete
+C:\Users\mathe\OneDrive\Documentos\TCC\Sistema de Escala - TCC\Escalas-Metodista\obj\Debug\EscalasMetodista.Views.Outros.FormAjuda.resources

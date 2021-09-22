@@ -364,16 +364,16 @@ namespace EscalasMetodista.Views.Usuarios
                     if (update)
                     {
                         pessoa.update(pessoa, pessoa.idPessoa, temFuncaoSecundaria);
+                        setPessoa(pessoa.idPessoa);
                     }
                     else
                     {
                         pessoa.create(pessoa, temFuncaoSecundaria);
+                        setPessoa(pessoa.getId());
 
                         if (pessoa.tipoUsuario.idTipoUsuario != 3)
                             sendEmailComSenhaUsuario(pessoa.Nome, pessoa.Email, pessoa.Senha);
                     }
-
-                    setPessoa(pessoa.getId());
                 }
             }
             catch (Exception ex)

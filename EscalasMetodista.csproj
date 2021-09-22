@@ -82,6 +82,12 @@
     <Compile Include="Views\Escalas\FormPersonalizarEscala.Designer.cs">
       <DependentUpon>FormPersonalizarEscala.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Outros\FormAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Outros\FormAjuda.Designer.cs">
+      <DependentUpon>FormAjuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Outros\FormSobre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Escalas\FormPersonalizarEscala.resx">
       <DependentUpon>FormPersonalizarEscala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Outros\FormAjuda.resx">
+      <DependentUpon>FormAjuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Outros\FormSobre.resx">
       <DependentUpon>FormSobre.cs</DependentUpon>
