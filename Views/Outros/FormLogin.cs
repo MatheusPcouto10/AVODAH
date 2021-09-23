@@ -18,6 +18,9 @@ namespace EscalasMetodista
     {
         SqlCommand cmd = new SqlCommand();
         Conexao conexao = new Conexao();
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
 
         public FormLogin()
         {
@@ -48,7 +51,7 @@ namespace EscalasMetodista
                     this.Hide();
                     return;
                 }
-                Validacoes.mensagem("Usuário e/ou senha incorretos!", ToolTipIcon.Error, "Dados incorretos", txtSenha);
+                lbErro.Text = "* Usuário e/ou Senha incorretos";
 
             }
             catch (Exception ex)
@@ -63,8 +66,12 @@ namespace EscalasMetodista
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            txtEmail.Text = null;
-            txtSenha.Text = null;
+            
+            checkMostrarSenha.CheckState = CheckState.Unchecked;
+            txtEmail.Text = "E-mail";
+            txtSenha.UseSystemPasswordChar = false;
+            txtSenha.Text = "Senha";
+            lbErro.Text = null;
         }
 
         private void checkMostrarSenha_CheckedChanged(object sender, EventArgs e)
@@ -89,7 +96,7 @@ namespace EscalasMetodista
 
         private void btnLimpar_MouseHover(object sender, EventArgs e)
         {
-            btnLimpar.BackColor = Color.LightGray;
+            btnLimpar.BackColor = SystemColors.Control;
             btnLimpar.ForeColor = Color.Black;
             btnLimpar.IconColor = Color.Black;
             btnLimpar.FlatAppearance.BorderColor = Color.Black;
@@ -98,14 +105,97 @@ namespace EscalasMetodista
         private void btnLimpar_MouseLeave(object sender, EventArgs e)
         {
             btnLimpar.BackColor = Color.Transparent;
-            btnLimpar.ForeColor = Color.LightGray;
-            btnLimpar.IconColor = Color.LightGray;
-            btnLimpar.FlatAppearance.BorderColor = Color.LightGray;
+            btnLimpar.ForeColor = SystemColors.Control;
+            btnLimpar.IconColor = SystemColors.Control;
+            btnLimpar.FlatAppearance.BorderColor = SystemColors.Control;
         }
 
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            if (txtEmail.Text.Equals("E-mail"))
+            {
+                txtEmail.Text = null;
+
+                if (string.IsNullOrEmpty(txtSenha.Text))
+                {
+                    txtSenha.UseSystemPasswordChar = false;
+                    txtSenha.Text = "Senha";
+                }
+            }
+        }
+
+        private void txtSenha_Enter(object sender, EventArgs e)
+        {
+            if (txtSenha.Text.Equals("Senha"))
+            {
+                txtSenha.Text = null;
+                txtSenha.UseSystemPasswordChar = true;
+
+                if (string.IsNullOrEmpty(txtEmail.Text))
+                    txtEmail.Text = "E-mail";
+            }
+        }
+
+        private void FormLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void FormLogin_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void FormLogin_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            ActiveControl = btnEntrar;
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

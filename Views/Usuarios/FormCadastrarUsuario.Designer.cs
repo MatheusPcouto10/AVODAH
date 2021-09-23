@@ -37,11 +37,11 @@
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnLimparFuncaoPrincipal = new System.Windows.Forms.Button();
+            this.btnLimparFuncaoPrincipal = new FontAwesome.Sharp.IconButton();
             this.cbSubFuncaoPrincipal = new System.Windows.Forms.ComboBox();
             this.cbFuncaoPrincipal = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnLimparFuncaoSecundaria = new System.Windows.Forms.Button();
+            this.btnLimparFuncaoSecundaria = new FontAwesome.Sharp.IconButton();
             this.cbSubFuncaoSecundaria = new System.Windows.Forms.ComboBox();
             this.cbFuncaoSecundaria = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -184,19 +184,16 @@
             // 
             // btnLimparFuncaoPrincipal
             // 
-            this.btnLimparFuncaoPrincipal.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLimparFuncaoPrincipal.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
-            this.btnLimparFuncaoPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimparFuncaoPrincipal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimparFuncaoPrincipal.FlatAppearance.BorderSize = 2;
+            this.btnLimparFuncaoPrincipal.BackColor = System.Drawing.SystemColors.Control;
             this.btnLimparFuncaoPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparFuncaoPrincipal.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimparFuncaoPrincipal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(393, 8);
-            this.btnLimparFuncaoPrincipal.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimparFuncaoPrincipal.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnLimparFuncaoPrincipal.IconColor = System.Drawing.Color.Black;
+            this.btnLimparFuncaoPrincipal.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimparFuncaoPrincipal.IconSize = 15;
+            this.btnLimparFuncaoPrincipal.Location = new System.Drawing.Point(388, 8);
             this.btnLimparFuncaoPrincipal.Name = "btnLimparFuncaoPrincipal";
-            this.btnLimparFuncaoPrincipal.Size = new System.Drawing.Size(15, 16);
-            this.btnLimparFuncaoPrincipal.TabIndex = 66;
+            this.btnLimparFuncaoPrincipal.Size = new System.Drawing.Size(20, 18);
+            this.btnLimparFuncaoPrincipal.TabIndex = 39;
             this.btnLimparFuncaoPrincipal.UseVisualStyleBackColor = false;
             this.btnLimparFuncaoPrincipal.Click += new System.EventHandler(this.btnLimparFuncaoPrincipal_Click);
             // 
@@ -248,19 +245,16 @@
             // 
             // btnLimparFuncaoSecundaria
             // 
-            this.btnLimparFuncaoSecundaria.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLimparFuncaoSecundaria.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
-            this.btnLimparFuncaoSecundaria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimparFuncaoSecundaria.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimparFuncaoSecundaria.FlatAppearance.BorderSize = 2;
+            this.btnLimparFuncaoSecundaria.BackColor = System.Drawing.SystemColors.Control;
             this.btnLimparFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparFuncaoSecundaria.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimparFuncaoSecundaria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(393, 7);
-            this.btnLimparFuncaoSecundaria.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimparFuncaoSecundaria.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnLimparFuncaoSecundaria.IconColor = System.Drawing.Color.Black;
+            this.btnLimparFuncaoSecundaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimparFuncaoSecundaria.IconSize = 15;
+            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(388, 8);
             this.btnLimparFuncaoSecundaria.Name = "btnLimparFuncaoSecundaria";
-            this.btnLimparFuncaoSecundaria.Size = new System.Drawing.Size(15, 16);
-            this.btnLimparFuncaoSecundaria.TabIndex = 65;
+            this.btnLimparFuncaoSecundaria.Size = new System.Drawing.Size(20, 18);
+            this.btnLimparFuncaoSecundaria.TabIndex = 72;
             this.btnLimparFuncaoSecundaria.UseVisualStyleBackColor = false;
             this.btnLimparFuncaoSecundaria.Click += new System.EventHandler(this.btnLimparFuncaoSecundaria_Click);
             // 
@@ -521,6 +515,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FormCadastrarUsuario";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Usuário";
             this.Load += new System.EventHandler(this.FormCadastrarUsuario_Load);
@@ -559,9 +554,9 @@
         public FontAwesome.Sharp.IconButton btnLimparForm;
         public FontAwesome.Sharp.IconButton btnConsultarUsuario;
         public FontAwesome.Sharp.IconButton btnSalvar;
-        public System.Windows.Forms.Button btnLimparFuncaoSecundaria;
-        public System.Windows.Forms.Button btnLimparFuncaoPrincipal;
         public System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.Label label2;
+        public FontAwesome.Sharp.IconButton btnLimparFuncaoPrincipal;
+        public FontAwesome.Sharp.IconButton btnLimparFuncaoSecundaria;
     }
 }

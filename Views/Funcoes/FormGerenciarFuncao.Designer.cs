@@ -304,6 +304,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FormGerenciarFuncao";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Funções";
             this.Activated += new System.EventHandler(this.FormGerenciarFuncao_Activated);

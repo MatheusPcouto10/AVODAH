@@ -56,7 +56,7 @@
             // 
             this.txtSenhaAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenhaAtual.Location = new System.Drawing.Point(55, 41);
-            this.txtSenhaAtual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSenhaAtual.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenhaAtual.Name = "txtSenhaAtual";
             this.txtSenhaAtual.Size = new System.Drawing.Size(201, 22);
             this.txtSenhaAtual.TabIndex = 36;
@@ -79,7 +79,7 @@
             // 
             this.txtNovaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNovaSenha.Location = new System.Drawing.Point(55, 105);
-            this.txtNovaSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNovaSenha.Margin = new System.Windows.Forms.Padding(2);
             this.txtNovaSenha.Name = "txtNovaSenha";
             this.txtNovaSenha.Size = new System.Drawing.Size(201, 22);
             this.txtNovaSenha.TabIndex = 38;
@@ -102,7 +102,7 @@
             // 
             this.txtConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarSenha.Location = new System.Drawing.Point(55, 168);
-            this.txtConfirmarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmarSenha.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmarSenha.Name = "txtConfirmarSenha";
             this.txtConfirmarSenha.Size = new System.Drawing.Size(201, 22);
             this.txtConfirmarSenha.TabIndex = 40;
@@ -115,7 +115,7 @@
             this.checkMostrarSenha.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.checkMostrarSenha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.checkMostrarSenha.Location = new System.Drawing.Point(56, 206);
-            this.checkMostrarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkMostrarSenha.Margin = new System.Windows.Forms.Padding(2);
             this.checkMostrarSenha.Name = "checkMostrarSenha";
             this.checkMostrarSenha.Size = new System.Drawing.Size(119, 17);
             this.checkMostrarSenha.TabIndex = 43;
@@ -163,10 +163,11 @@
             this.Controls.Add(this.txtSenhaAtual);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAlterarSenha";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Senha";
             this.ResumeLayout(false);

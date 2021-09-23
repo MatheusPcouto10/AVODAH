@@ -32,30 +32,18 @@ namespace EscalasMetodista
         {
             if (UsuarioSession.tipoUsuario.Equals(2))
             {
-                this.btnFuncoes.Visible = false;
-                this.btnUsuarios.Visible = false;
-                toolStripSeparator4.Visible = false;
-                toolStripSeparator6.Visible = false;
-            }
-        }
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                FormLogin form = new FormLogin();
-                form.Show();
-                this.Hide();
+                btnFuncoesMenu.Visible = false;
+                btnUsuariosMenu.Visible = false;
             }
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
             DateTime dataHoje = DateTime.Today;
-            this.btnPerfil.Text = "Bem vindo(a) " + UsuarioSession.nomeUsuario + " " + UsuarioSession.sobrenomeUsuario + " !";
-            this.labelIdUsuarioLogado.Text = "Código: " + UsuarioSession.idUsuario;
-            this.labelData.Text = "Data: " + dataHoje.ToString("D");
-            this.controleAcesso();
+            btnPerfil.Text = UsuarioSession.nomeUsuario + " " + UsuarioSession.sobrenomeUsuario;
+            labelIdUsuarioLogado.Text = "Código: " + UsuarioSession.idUsuario;
+            labelData.Text = "Data: " + dataHoje.ToString("D");
+            controleAcesso();
         }
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -83,30 +71,6 @@ namespace EscalasMetodista
             }
         }
 
-        private void gerenciarSubFunçoesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormGerenciarSubfuncoes form = new FormGerenciarSubfuncoes();
-            form.Show();
-        }
-
-        private void btnAlterarSenha_Click(object sender, EventArgs e)
-        {
-            FormAlterarSenha form = new FormAlterarSenha();
-            form.ShowDialog();
-        }
-
-        private void gerenciarFunçoesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormGerenciarFuncao form = new FormGerenciarFuncao();
-            form.Show();
-        }
-
-        private void btnSobre_Click(object sender, EventArgs e)
-        {
-            FormSobre form = new FormSobre();
-            form.ShowDialog();
-        }
-
         private void FormMenu_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -119,6 +83,51 @@ namespace EscalasMetodista
                     break;
                 default:
                     break;
+            }
+        }
+
+
+        private void btnEscalaMenu_Click(object sender, EventArgs e)
+        {
+            FormPersonalizarEscala form = new FormPersonalizarEscala();
+            form.Show();
+        }
+
+        private void btnUsuariosMenu_Click(object sender, EventArgs e)
+        {
+            FormCadastrarUsuario form = new FormCadastrarUsuario();
+            form.Show();
+        }
+
+        private void btnFuncoesMenu_Click(object sender, EventArgs e)
+        {
+            dropBtnFuncoes.Show(btnFuncoesMenu, new Point(0, btnFuncoesMenu.Height));
+        }
+
+        private void btnAjudaMenu_Click(object sender, EventArgs e)
+        {
+            FormAjuda form = new FormAjuda();
+            form.ShowDialog();
+        }
+
+        private void btnSobreMenu_Click(object sender, EventArgs e)
+        {
+            FormSobre form = new FormSobre();
+            form.ShowDialog();
+        }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            dropBtnPerfil.Show(btnPerfil, new Point(0, btnPerfil.Height));
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FormLogin form = new FormLogin();
+                form.Show();
+                this.Hide();
             }
         }
 
@@ -142,22 +151,23 @@ namespace EscalasMetodista
             form.ShowDialog();
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
+        private void btnAlterarSenha_Click(object sender, EventArgs e)
         {
-            FormCadastrarUsuario form = new FormCadastrarUsuario();
-            form.Show();
-        }
-
-        private void btnEscalas_Click(object sender, EventArgs e)
-        {
-            FormPersonalizarEscala form = new FormPersonalizarEscala();
-            form.Show();
-        }
-
-        private void btnAjuda_Click(object sender, EventArgs e)
-        {
-            FormAjuda form = new FormAjuda();
+            FormAlterarSenha form = new FormAlterarSenha();
             form.ShowDialog();
         }
+
+        private void btnFuncoes_Click(object sender, EventArgs e)
+        {
+            FormGerenciarFuncao form = new FormGerenciarFuncao();
+            form.Show();
+        }
+
+        private void btnSubFuncoes_Click(object sender, EventArgs e)
+        {
+            FormGerenciarSubfuncoes form = new FormGerenciarSubfuncoes();
+            form.Show();
+        }
+
     }
 }

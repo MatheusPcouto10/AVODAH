@@ -254,7 +254,7 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente excluir este usuário? Esta ação não pode ser revertida.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente excluir este usuário? Esta ação não pode ser desfeita.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 pessoa.delete(pessoa.idPessoa);
                 btnLimparForm_Click(null, null);

@@ -51,7 +51,7 @@
             this.txtDescricaoFuncao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescricaoFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricaoFuncao.Location = new System.Drawing.Point(57, 54);
-            this.txtDescricaoFuncao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescricaoFuncao.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescricaoFuncao.Name = "txtDescricaoFuncao";
             this.txtDescricaoFuncao.Size = new System.Drawing.Size(201, 22);
             this.txtDescricaoFuncao.TabIndex = 37;
@@ -92,10 +92,11 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroFuncao";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Função";
             this.Load += new System.EventHandler(this.FormCadastroFuncao_Load);

@@ -35,6 +35,23 @@ namespace EscalasMetodista.Views.Escalas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEscala));
+            this.tbEscala = new System.Windows.Forms.DataGridView();
+            this.dates = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel_rodape = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel_botoes = new System.Windows.Forms.Panel();
             this.menuEscala = new System.Windows.Forms.ToolStrip();
             this.btnSalvarEscalaComo = new System.Windows.Forms.ToolStripDropDownButton();
@@ -54,29 +71,186 @@ namespace EscalasMetodista.Views.Escalas
             this.txtNomeEscala = new System.Windows.Forms.TextBox();
             this.lbNomeEscala = new System.Windows.Forms.Label();
             this.logo_metodista = new System.Windows.Forms.PictureBox();
-            this.tbEscala = new System.Windows.Forms.DataGridView();
-            this.panel_rodape = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dates = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.tbEscala)).BeginInit();
+            this.panel_rodape.SuspendLayout();
             this.panel_botoes.SuspendLayout();
             this.menuEscala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbEscala)).BeginInit();
-            this.panel_rodape.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tbEscala
+            // 
+            this.tbEscala.AllowUserToAddRows = false;
+            this.tbEscala.AllowUserToDeleteRows = false;
+            this.tbEscala.AllowUserToOrderColumns = true;
+            this.tbEscala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEscala.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.tbEscala.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tbEscala.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tbEscala.ColumnHeadersHeight = 60;
+            this.tbEscala.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dates,
+            this.observacoes,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tbEscala.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tbEscala.EnableHeadersVisualStyles = false;
+            this.tbEscala.Location = new System.Drawing.Point(0, 123);
+            this.tbEscala.Name = "tbEscala";
+            this.tbEscala.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tbEscala.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEscala.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.tbEscala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect;
+            this.tbEscala.Size = new System.Drawing.Size(1123, 420);
+            this.tbEscala.TabIndex = 4;
+            this.tbEscala.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbEscala_CellClick);
+            // 
+            // dates
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dates.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dates.HeaderText = "";
+            this.dates.Name = "dates";
+            this.dates.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // observacoes
+            // 
+            this.observacoes.HeaderText = "";
+            this.observacoes.Name = "observacoes";
+            this.observacoes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "";
+            this.Column3.Name = "Column3";
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "";
+            this.Column4.Name = "Column4";
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "";
+            this.Column5.Name = "Column5";
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "";
+            this.Column6.Name = "Column6";
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "";
+            this.Column7.Name = "Column7";
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "";
+            this.Column8.Name = "Column8";
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "";
+            this.Column9.Name = "Column9";
+            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "";
+            this.Column10.Name = "Column10";
+            this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "";
+            this.Column11.Name = "Column11";
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "";
+            this.Column12.Name = "Column12";
+            this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "";
+            this.Column13.Name = "Column13";
+            this.Column13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "";
+            this.Column14.Name = "Column14";
+            this.Column14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // panel_rodape
+            // 
+            this.panel_rodape.BackColor = System.Drawing.Color.Black;
+            this.panel_rodape.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
+            this.panel_rodape.Controls.Add(this.label1);
+            this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_rodape.Location = new System.Drawing.Point(0, 539);
+            this.panel_rodape.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_rodape.Name = "panel_rodape";
+            this.panel_rodape.Size = new System.Drawing.Size(1122, 37);
+            this.panel_rodape.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(344, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(435, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Copyright © 2021 — Desenvolvido por Matheus Pimentel Do Couto";
             // 
             // panel_botoes
             // 
@@ -182,11 +356,10 @@ namespace EscalasMetodista.Views.Escalas
             // 
             this.btnVoltar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnVoltar.Font = new System.Drawing.Font("Verdana", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Image = global::EscalasMetodista.Properties.Resources.sair;
             this.btnVoltar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(70, 25);
+            this.btnVoltar.Size = new System.Drawing.Size(50, 25);
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -264,188 +437,14 @@ namespace EscalasMetodista.Views.Escalas
             // logo_metodista
             // 
             this.logo_metodista.BackColor = System.Drawing.Color.Transparent;
-            this.logo_metodista.Image = global::EscalasMetodista.Properties.Resources._006;
+            this.logo_metodista.Image = global::EscalasMetodista.Properties.Resources.Avodah_Line_Red_White;
             this.logo_metodista.Location = new System.Drawing.Point(9, 9);
             this.logo_metodista.Margin = new System.Windows.Forms.Padding(2);
             this.logo_metodista.Name = "logo_metodista";
-            this.logo_metodista.Size = new System.Drawing.Size(126, 70);
+            this.logo_metodista.Size = new System.Drawing.Size(208, 70);
             this.logo_metodista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo_metodista.TabIndex = 4;
             this.logo_metodista.TabStop = false;
-            // 
-            // tbEscala
-            // 
-            this.tbEscala.AllowUserToAddRows = false;
-            this.tbEscala.AllowUserToDeleteRows = false;
-            this.tbEscala.AllowUserToOrderColumns = true;
-            this.tbEscala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEscala.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tbEscala.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tbEscala.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tbEscala.ColumnHeadersHeight = 60;
-            this.tbEscala.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dates,
-            this.observacoes,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tbEscala.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tbEscala.EnableHeadersVisualStyles = false;
-            this.tbEscala.Location = new System.Drawing.Point(0, 123);
-            this.tbEscala.Name = "tbEscala";
-            this.tbEscala.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tbEscala.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEscala.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.tbEscala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect;
-            this.tbEscala.Size = new System.Drawing.Size(1123, 420);
-            this.tbEscala.TabIndex = 4;
-            this.tbEscala.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbEscala_CellClick);
-            // 
-            // panel_rodape
-            // 
-            this.panel_rodape.BackColor = System.Drawing.Color.Black;
-            this.panel_rodape.BackgroundImage = global::EscalasMetodista.Properties.Resources._2741104;
-            this.panel_rodape.Controls.Add(this.label1);
-            this.panel_rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_rodape.Location = new System.Drawing.Point(0, 539);
-            this.panel_rodape.Margin = new System.Windows.Forms.Padding(2);
-            this.panel_rodape.Name = "panel_rodape";
-            this.panel_rodape.Size = new System.Drawing.Size(1122, 37);
-            this.panel_rodape.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(344, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(435, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Copyright © 2021 — Desenvolvido por Matheus Pimentel Do Couto";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "";
-            this.Column14.Name = "Column14";
-            this.Column14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "";
-            this.Column13.Name = "Column13";
-            this.Column13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "";
-            this.Column12.Name = "Column12";
-            this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "";
-            this.Column11.Name = "Column11";
-            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "";
-            this.Column10.Name = "Column10";
-            this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "";
-            this.Column9.Name = "Column9";
-            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "";
-            this.Column8.Name = "Column8";
-            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "";
-            this.Column7.Name = "Column7";
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "";
-            this.Column6.Name = "Column6";
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "";
-            this.Column5.Name = "Column5";
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "";
-            this.Column4.Name = "Column4";
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "";
-            this.Column3.Name = "Column3";
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // observacoes
-            // 
-            this.observacoes.HeaderText = "";
-            this.observacoes.Name = "observacoes";
-            this.observacoes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dates
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dates.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dates.HeaderText = "";
-            this.dates.Name = "dates";
-            this.dates.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FormEscala
             // 
@@ -466,18 +465,19 @@ namespace EscalasMetodista.Views.Escalas
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormEscala";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormEscalaLouvor_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormEscalaLouvor_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.tbEscala)).EndInit();
+            this.panel_rodape.ResumeLayout(false);
+            this.panel_rodape.PerformLayout();
             this.panel_botoes.ResumeLayout(false);
             this.panel_botoes.PerformLayout();
             this.menuEscala.ResumeLayout(false);
             this.menuEscala.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbEscala)).EndInit();
-            this.panel_rodape.ResumeLayout(false);
-            this.panel_rodape.PerformLayout();
             this.ResumeLayout(false);
 
         }

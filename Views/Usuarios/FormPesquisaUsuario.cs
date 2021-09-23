@@ -278,12 +278,6 @@ namespace EscalasMetodista.Views.Usuarios
             }
         }
 
-        private void btnLimparFuncao_Click(object sender, EventArgs e)
-        {
-            cbFuncao.Text = "Selecione...";
-            cbSubFuncao.Text = "Selecione...";
-        }
-
         private void cbFuncao_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.preencheComboBoxSubFuncao();
@@ -338,6 +332,12 @@ namespace EscalasMetodista.Views.Usuarios
             btnLimparForm.ForeColor = Color.LightGray;
             btnLimparForm.IconColor = Color.LightGray;
             btnLimparForm.FlatAppearance.BorderColor = Color.LightGray;
+        }
+
+        private void btnLimparFuncaoSecundaria_Click(object sender, EventArgs e)
+        {
+            cbFuncao.Text = "Selecione...";
+            cbSubFuncao.Text = "Selecione...";
         }
     }
 }

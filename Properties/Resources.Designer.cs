@@ -83,69 +83,9 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1486504829_clipboard_tasks_report_business_checking_verification_list_81387 {
-            get {
-                object obj = ResourceManager.GetObject("1486504829-clipboard-tasks-report-business-checking-verification-list_81387", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1486504843_collaboration_group_people_men_user_team_users_81379 {
-            get {
-                object obj = ResourceManager.GetObject("1486504843-collaboration-group-people-men-user-team-users_81379", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1486504846_clipboard_tasks_report_business_checking_verification_document_81354 {
-            get {
-                object obj = ResourceManager.GetObject("1486504846-clipboard-tasks-report-business-checking-verification-document_81354", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1486564400_account_81513 {
-            get {
-                object obj = ResourceManager.GetObject("1486564400-account_81513", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _2741104 {
             get {
                 object obj = ResourceManager.GetObject("2741104", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _3563935 {
-            get {
-                object obj = ResourceManager.GetObject("3563935", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _367502_PAXLKG_681 {
-            get {
-                object obj = ResourceManager.GetObject("367502-PAXLKG-681", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +103,9 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9793 {
+        internal static System.Drawing.Bitmap Avodah_B_W {
             get {
-                object obj = ResourceManager.GetObject("9793", resourceCulture);
+                object obj = ResourceManager.GetObject("Avodah B_W", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +113,9 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add {
+        internal static System.Drawing.Bitmap Avodah_B_W1 {
             get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
+                object obj = ResourceManager.GetObject("Avodah B_W1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +123,49 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cruz_chama_metodista {
+        internal static System.Drawing.Bitmap Avodah_Line_Red {
             get {
-                object obj = ResourceManager.GetObject("cruz_chama_metodista", resourceCulture);
+                object obj = ResourceManager.GetObject("Avodah Line Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Avodah_Line_Red_White {
+            get {
+                object obj = ResourceManager.GetObject("Avodah Line Red White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Avodah_Line_White {
+            get {
+                object obj = ResourceManager.GetObject("Avodah Line White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Avodah_Red {
+            get {
+                object obj = ResourceManager.GetObject("Avodah Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Avodah_White {
+            get {
+                object obj = ResourceManager.GetObject("Avodah White", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,16 +196,6 @@ namespace EscalasMetodista.Properties {
         internal static System.Drawing.Bitmap fundo_futurista_moderno_do_circuito_metalico_cinzento_vermelho_33869_1252 {
             get {
                 object obj = ResourceManager.GetObject("fundo-futurista-moderno-do-circuito-metalico-cinzento-vermelho_33869-1252", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap iconfinder_folder_4341292_120540 {
-            get {
-                object obj = ResourceManager.GetObject("iconfinder-folder-4341292_120540", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -275,16 +245,6 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sair {
-            get {
-                object obj = ResourceManager.GetObject("sair", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap searchmagnifierinterfacesymbol1_79893 {
             get {
                 object obj = ResourceManager.GetObject("searchmagnifierinterfacesymbol1_79893", resourceCulture);
@@ -295,29 +255,9 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap seo_social_web_network_internet_322_icon_icons_com_61532 {
-            get {
-                object obj = ResourceManager.GetObject("seo-social-web-network-internet_322_icon-icons.com_61532", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap sobreposicao_de_rotulo_vermelho_sobre_fundo_metalico_cinzento_escuro_33869_1241 {
             get {
                 object obj = ResourceManager.GetObject("sobreposicao-de-rotulo-vermelho-sobre-fundo-metalico-cinzento-escuro_33869-1241", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap System_preferences_46991 {
-            get {
-                object obj = ResourceManager.GetObject("System-preferences_46991", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

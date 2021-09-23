@@ -307,6 +307,7 @@ namespace EscalasMetodista.Views.Escalas
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPersonalizarEscala";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personalizar Escala";
             this.Load += new System.EventHandler(this.FormPersonalizarEscala_Load);

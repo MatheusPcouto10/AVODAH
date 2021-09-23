@@ -287,7 +287,6 @@
             // btnLimparFuncaoSecundaria
             // 
             this.btnLimparFuncaoSecundaria.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLimparFuncaoSecundaria.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
             this.btnLimparFuncaoSecundaria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimparFuncaoSecundaria.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLimparFuncaoSecundaria.FlatAppearance.BorderSize = 2;
@@ -322,7 +321,6 @@
             // btnLimparFuncaoPrincipal
             // 
             this.btnLimparFuncaoPrincipal.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLimparFuncaoPrincipal.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
             this.btnLimparFuncaoPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimparFuncaoPrincipal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLimparFuncaoPrincipal.FlatAppearance.BorderSize = 2;

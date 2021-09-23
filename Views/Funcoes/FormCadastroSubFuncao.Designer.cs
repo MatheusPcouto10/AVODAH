@@ -55,7 +55,7 @@
             this.cbFuncoes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             this.cbFuncoes.FormattingEnabled = true;
             this.cbFuncoes.Location = new System.Drawing.Point(82, 128);
-            this.cbFuncoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFuncoes.Margin = new System.Windows.Forms.Padding(2);
             this.cbFuncoes.Name = "cbFuncoes";
             this.cbFuncoes.Size = new System.Drawing.Size(201, 22);
             this.cbFuncoes.TabIndex = 36;
@@ -80,7 +80,7 @@
             this.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.Location = new System.Drawing.Point(82, 70);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(201, 22);
             this.txtDescricao.TabIndex = 34;
@@ -122,10 +122,11 @@
             this.Controls.Add(this.txtDescricao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroSubFuncao";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Sub-Função";
             this.Load += new System.EventHandler(this.FormCadastroSubFuncao_Load);

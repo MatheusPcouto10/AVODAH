@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGerenciarSubfuncoes));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.telaPesquisa = new System.Windows.Forms.TabPage();
+            this.btnCadastrarNovo = new FontAwesome.Sharp.IconButton();
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.dgSubFuncoes = new System.Windows.Forms.DataGridView();
@@ -40,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCadastrarNovo = new FontAwesome.Sharp.IconButton();
             this.tabControl1.SuspendLayout();
             this.telaPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSubFuncoes)).BeginInit();
@@ -78,6 +78,29 @@
             this.telaPesquisa.Size = new System.Drawing.Size(732, 379);
             this.telaPesquisa.TabIndex = 0;
             this.telaPesquisa.Text = "Pesquisa";
+            // 
+            // btnCadastrarNovo
+            // 
+            this.btnCadastrarNovo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCadastrarNovo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrarNovo.FlatAppearance.BorderSize = 2;
+            this.btnCadastrarNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarNovo.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
+            this.btnCadastrarNovo.ForeColor = System.Drawing.Color.Black;
+            this.btnCadastrarNovo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnCadastrarNovo.IconColor = System.Drawing.Color.Black;
+            this.btnCadastrarNovo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCadastrarNovo.IconSize = 20;
+            this.btnCadastrarNovo.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnCadastrarNovo.Location = new System.Drawing.Point(566, 22);
+            this.btnCadastrarNovo.Name = "btnCadastrarNovo";
+            this.btnCadastrarNovo.Size = new System.Drawing.Size(159, 31);
+            this.btnCadastrarNovo.TabIndex = 71;
+            this.btnCadastrarNovo.Text = "Nova Sub-Função";
+            this.btnCadastrarNovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrarNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCadastrarNovo.UseVisualStyleBackColor = false;
+            this.btnCadastrarNovo.Click += new System.EventHandler(this.btnCadastrarNovo_Click);
             // 
             // btnPesquisa
             // 
@@ -220,29 +243,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "GERENCIAR SUB-FUNÇÕES";
             // 
-            // btnCadastrarNovo
-            // 
-            this.btnCadastrarNovo.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnCadastrarNovo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrarNovo.FlatAppearance.BorderSize = 2;
-            this.btnCadastrarNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarNovo.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
-            this.btnCadastrarNovo.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastrarNovo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnCadastrarNovo.IconColor = System.Drawing.Color.Black;
-            this.btnCadastrarNovo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCadastrarNovo.IconSize = 20;
-            this.btnCadastrarNovo.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCadastrarNovo.Location = new System.Drawing.Point(566, 22);
-            this.btnCadastrarNovo.Name = "btnCadastrarNovo";
-            this.btnCadastrarNovo.Size = new System.Drawing.Size(159, 31);
-            this.btnCadastrarNovo.TabIndex = 71;
-            this.btnCadastrarNovo.Text = "Nova Sub-Função";
-            this.btnCadastrarNovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrarNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnCadastrarNovo.UseVisualStyleBackColor = false;
-            this.btnCadastrarNovo.Click += new System.EventHandler(this.btnCadastrarNovo_Click);
-            // 
             // FormGerenciarSubfuncoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +258,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FormGerenciarSubfuncoes";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Sub-Funções";
             this.Activated += new System.EventHandler(this.FormGerenciarSubfuncoes_Activated);

@@ -32,7 +32,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigoNome = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnLimparFuncao = new System.Windows.Forms.Button();
             this.cbSubFuncao = new System.Windows.Forms.ComboBox();
             this.cbFuncao = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.dgUsuariosPesquisa = new System.Windows.Forms.DataGridView();
             this.btnLimparForm = new FontAwesome.Sharp.IconButton();
             this.btnPesquisar = new FontAwesome.Sharp.IconButton();
+            this.btnLimparFuncaoSecundaria = new FontAwesome.Sharp.IconButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuariosPesquisa)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.btnLimparFuncao);
+            this.groupBox2.Controls.Add(this.btnLimparFuncaoSecundaria);
             this.groupBox2.Controls.Add(this.cbSubFuncao);
             this.groupBox2.Controls.Add(this.cbFuncao);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
@@ -83,24 +83,6 @@
             this.groupBox2.TabIndex = 75;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Função ";
-            // 
-            // btnLimparFuncao
-            // 
-            this.btnLimparFuncao.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLimparFuncao.BackgroundImage = global::EscalasMetodista.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
-            this.btnLimparFuncao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimparFuncao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimparFuncao.FlatAppearance.BorderSize = 2;
-            this.btnLimparFuncao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparFuncao.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimparFuncao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLimparFuncao.Location = new System.Drawing.Point(392, 7);
-            this.btnLimparFuncao.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLimparFuncao.Name = "btnLimparFuncao";
-            this.btnLimparFuncao.Size = new System.Drawing.Size(15, 16);
-            this.btnLimparFuncao.TabIndex = 65;
-            this.btnLimparFuncao.UseVisualStyleBackColor = false;
-            this.btnLimparFuncao.Click += new System.EventHandler(this.btnLimparFuncao_Click);
             // 
             // cbSubFuncao
             // 
@@ -227,6 +209,21 @@
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
+            // btnLimparFuncaoSecundaria
+            // 
+            this.btnLimparFuncaoSecundaria.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLimparFuncaoSecundaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparFuncaoSecundaria.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnLimparFuncaoSecundaria.IconColor = System.Drawing.Color.Black;
+            this.btnLimparFuncaoSecundaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimparFuncaoSecundaria.IconSize = 15;
+            this.btnLimparFuncaoSecundaria.Location = new System.Drawing.Point(387, 8);
+            this.btnLimparFuncaoSecundaria.Name = "btnLimparFuncaoSecundaria";
+            this.btnLimparFuncaoSecundaria.Size = new System.Drawing.Size(20, 18);
+            this.btnLimparFuncaoSecundaria.TabIndex = 73;
+            this.btnLimparFuncaoSecundaria.UseVisualStyleBackColor = false;
+            this.btnLimparFuncaoSecundaria.Click += new System.EventHandler(this.btnLimparFuncaoSecundaria_Click);
+            // 
             // FormPesquisaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,6 +247,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPesquisaUsuario";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisar Usuário";
             this.Load += new System.EventHandler(this.FormPesquisaUsuario_Load);
@@ -266,7 +265,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigoNome;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnLimparFuncao;
         public System.Windows.Forms.ComboBox cbSubFuncao;
         public System.Windows.Forms.ComboBox cbFuncao;
         private System.Windows.Forms.Label label9;
@@ -274,5 +272,6 @@
         public System.Windows.Forms.DataGridView dgUsuariosPesquisa;
         private FontAwesome.Sharp.IconButton btnLimparForm;
         private FontAwesome.Sharp.IconButton btnPesquisar;
+        private FontAwesome.Sharp.IconButton btnLimparFuncaoSecundaria;
     }
 }
