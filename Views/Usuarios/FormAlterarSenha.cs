@@ -45,7 +45,7 @@ namespace EscalasMetodista.Views
             if ((string.IsNullOrWhiteSpace(txtNovaSenha.Text)) || (string.IsNullOrWhiteSpace(txtSenhaAtual.Text)) ||
                 (string.IsNullOrWhiteSpace(txtConfirmarSenha.Text)))
             {
-                Validacoes.mensagem("É necessário informar os campos!", ToolTipIcon.Error, "Campos não informados", txtConfirmarSenha);
+                Validacoes.exibeMensagem("É necessário informar os campos!", Outros.Mensagem.tipo.Warning);
                 return;
             }
             try
@@ -60,27 +60,27 @@ namespace EscalasMetodista.Views
                     {
                         if (Validacoes.verificaUnico("senha", "pessoa", txtNovaSenha.Text, UsuarioSession.idUsuario, "idPessoa") == true)
                         {
-                            Validacoes.mensagem("A senha informada já está em uso!", ToolTipIcon.Error, "Senha já Cadastrada", txtNovaSenha);
+                            Validacoes.exibeMensagem("A senha informada já está em uso", Outros.Mensagem.tipo.Warning);
                             return;
                         }
                         if (txtNovaSenha.Text == txtConfirmarSenha.Text)
                         {
                             Pessoa pessoa = new Pessoa();
                             pessoa.updateSenha(txtNovaSenha.Text, UsuarioSession.idUsuario);
+                            //this.Close();
                         }
                         else
-                            Validacoes.mensagem("A nova senha não corresponde!", ToolTipIcon.Error, "Senha Incorreta", txtConfirmarSenha);
+                            Validacoes.exibeMensagem("A nova senha não corresponde", Outros.Mensagem.tipo.Warning);
                     }
                     else
-                        Validacoes.mensagem("A senha atual está incorreta!", ToolTipIcon.Error, "Senha Incorreta", txtSenhaAtual);
+                        Validacoes.exibeMensagem("A senha atual está incorreta", Outros.Mensagem.tipo.Warning);
                 }
             }
 
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Outros.Mensagem.tipo.Erro);
             }
-            this.Close();
         }
     }
 }

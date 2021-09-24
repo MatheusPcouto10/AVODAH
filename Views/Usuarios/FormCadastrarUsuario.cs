@@ -67,7 +67,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -93,7 +93,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -119,7 +119,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -146,7 +146,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -172,7 +172,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -287,41 +287,41 @@ namespace EscalasMetodista.Views.Usuarios
             {
                 if (cbTipoUsuario.Text == "Selecione...")
                 {
-                    Validacoes.mensagem("É necessário informar o Tipo de Usuário", ToolTipIcon.Error, "Tipo de Usuário", cbTipoUsuario);
+                    Validacoes.exibeMensagem("É necessário informar o Tipo de Usuário", Outros.Mensagem.tipo.Warning);
                     return;
                 }
 
                 if (cbSubFuncaoPrincipal.Text == "Selecione...")
                 {
-                    Validacoes.mensagem("É Necessário informar a Função Principal!", ToolTipIcon.Error, "Função Principal", cbFuncaoPrincipal);
+                    Validacoes.exibeMensagem("É necessário informar a Função Principal", Outros.Mensagem.tipo.Warning);
                     return;
+                }
+
+                if (cbTipoUsuario.SelectedValue != null && (int)cbTipoUsuario.SelectedValue == 3)
+                {
+                    if ((int)cbFuncaoSecundaria.SelectedValue != 3 || (int)cbFuncaoPrincipal.SelectedValue != 3)
+                    {
+                        Validacoes.exibeMensagem("O Tipo de Usuário 'Célula' só pode ter funções relacionadas a células", Outros.Mensagem.tipo.Warning);
+                        return;
+                    }
                 }
 
                 if ((int)cbSubFuncaoPrincipal.SelectedValue == (int)cbSubFuncaoSecundaria.SelectedValue)
                 {
-                    Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox1);
-                    Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Error, "Sub-Função Cadastrada", groupBox2);
+                    Validacoes.exibeMensagem("As funções não podem ser iguais", Outros.Mensagem.tipo.Warning);
                     return;
                 }
-
-                if ((int)cbTipoUsuario.SelectedValue == 3)
-                {
-                    if ((int)cbFuncaoSecundaria.SelectedValue != 3 || (int)cbFuncaoPrincipal.SelectedValue != 3)
-                    {
-                        Validacoes.mensagem("O Tipo de Usuário 'Célula' só pode ter funções relacionadas a células.", ToolTipIcon.Error, "Tipo de Usuário inválido para as Funções", cbTipoUsuario);
-                        return;
-                    }
-                }
+                
                 else
                 {
                     if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrWhiteSpace(txtEmail.Text))
                     {
-                        Validacoes.mensagem("Informe um e-mail", ToolTipIcon.Error, "E-mail não informado", txtEmail);
+                        Validacoes.exibeMensagem("Informe um E-mail", Outros.Mensagem.tipo.Warning);
                         return;
                     }
                     if (string.IsNullOrEmpty(txtSobrenome.Text) || string.IsNullOrWhiteSpace(txtSobrenome.Text))
                     {
-                        Validacoes.mensagem("Informe o sobrenome", ToolTipIcon.Error, "Sobrenome não informado", txtSobrenome);
+                        Validacoes.exibeMensagem("Informe o Sobrenome", Outros.Mensagem.tipo.Warning);
                         return;
                     }
                 }
@@ -353,7 +353,7 @@ namespace EscalasMetodista.Views.Usuarios
                 {
                     if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, pessoa.idPessoa, "idPessoa") == true)
                     {
-                        Validacoes.mensagem("O e-mail já está em uso!", ToolTipIcon.Error, "Dados já cadastrados", txtEmail);
+                        Validacoes.exibeMensagem("Este E-mail já está em uso", Outros.Mensagem.tipo.Warning);
                         return;
                     }
                 }
@@ -378,7 +378,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex, Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -468,13 +468,13 @@ namespace EscalasMetodista.Views.Usuarios
                         smtpClient.UseDefaultCredentials = false;
                         smtpClient.Credentials = new NetworkCredential("matheuspcouto70@gmail.com", "Mat230500");
                         smtpClient.Send(mail);
-                        MessageBox.Show("E-mail com senha de acesso enviado para " + email);
+                        Validacoes.exibeMensagem("E-mail com senha de acesso enviado para " + email, Outros.Mensagem.tipo.Sucesso);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex, Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -486,7 +486,7 @@ namespace EscalasMetodista.Views.Usuarios
                 {
                     if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, pessoa.idPessoa, "idPessoa") == true)
                     {
-                        Validacoes.mensagem("O e-mail já está em uso!", ToolTipIcon.Warning, "Dados já cadastrados", txtEmail);
+                        Validacoes.exibeMensagem("Este E-mail já está em uso", Outros.Mensagem.tipo.Warning);
                         return;
                     }
                 }
@@ -499,7 +499,7 @@ namespace EscalasMetodista.Views.Usuarios
             {
                 if ((int)cbSubFuncaoPrincipal.SelectedValue == (int)cbSubFuncaoSecundaria.SelectedValue)
                 {
-                    Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Warning, "Sub-Função já Selecionada", groupBox1);
+                    Validacoes.exibeMensagem("As funções não podem ser iguais", Outros.Mensagem.tipo.Warning);
                     return;
                 }
             }
@@ -511,7 +511,7 @@ namespace EscalasMetodista.Views.Usuarios
             {
                 if ((int)cbSubFuncaoPrincipal.SelectedValue == (int)cbSubFuncaoSecundaria.SelectedValue)
                 {
-                    Validacoes.mensagem("As sub-funções não podem ser iguais!", ToolTipIcon.Warning, "Sub-Função já Selecionada", groupBox2);
+                    Validacoes.exibeMensagem("As funções não podem ser iguais", Outros.Mensagem.tipo.Warning);
                     return;
                 }
             }

@@ -51,6 +51,8 @@ namespace EscalasMetodista.Views.Escalas
             formatarDataGrid();
             lbNomeEscala.Left = (this.Width - lbNomeEscala.Width) / 2;
             txtNomeEscala.Left = (this.Width - txtNomeEscala.Width) / 2;
+            indiceColunaSelecionada = 99;
+            indiceLinhaSelecionada = 99;
 
             form.Dispose();
         }
@@ -78,7 +80,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (string.IsNullOrWhiteSpace(txtNomeEscala.Text))
             {
-                Validacoes.mensagem("O nome da escala não pode ficar em branco.", ToolTipIcon.Error, "Campo em Branco", lbNomeEscala);
+                Validacoes.exibeMensagem("Informe o nome da Escala", Outros.Mensagem.tipo.Warning);
             }
             else
             {
@@ -117,7 +119,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -194,7 +196,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -238,7 +240,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (MessageBox.Show("Deseja realmente sair? Você pode perder todo o trabalho feito.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                Close();
             }
         }
 
@@ -276,7 +278,7 @@ namespace EscalasMetodista.Views.Escalas
 
             if (indiceColunaSelecionada == 99)
             {
-                Validacoes.mensagem("É necessário selecionar uma coluna antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Coluna Selecionada", menuEscala);
+                Validacoes.exibeMensagem("É necessário selecionar uma coluna antes do preenchimento!", Outros.Mensagem.tipo.Warning);
                 return;
             }
 
@@ -313,7 +315,7 @@ namespace EscalasMetodista.Views.Escalas
 
                                 if (!dr.HasRows)
                                 {
-                                    Validacoes.mensagem("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, ToolTipIcon.Error, "Nenhuma Pessoa Encontrada", menuEscala);
+                                    Validacoes.exibeMensagem("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, Outros.Mensagem.tipo.Warning);
                                     return;
                                 }
 
@@ -346,7 +348,7 @@ namespace EscalasMetodista.Views.Escalas
                 }
                 catch (Exception erro)
                 {
-                    MessageBox.Show("Erro: " + erro.Message);
+                    Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
                 }
             }
         }
@@ -356,7 +358,7 @@ namespace EscalasMetodista.Views.Escalas
 
             if (indiceLinhaSelecionada == 99)
             {
-                Validacoes.mensagem("É necessário selecionar uma linha antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Linha Selecionada", menuEscala);
+                Validacoes.exibeMensagem("É necessário selecionar uma linha antes do preenchimento!", Outros.Mensagem.tipo.Warning);
                 return;
             }
 
@@ -501,7 +503,7 @@ namespace EscalasMetodista.Views.Escalas
 
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -522,7 +524,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -601,7 +603,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (indiceLinhaSelecionada == 99)
             {
-                Validacoes.mensagem("É necessário selecionar uma linha antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Linha Selecionada", menuEscala);
+                Validacoes.exibeMensagem("É necessário selecionar uma linha antes do preenchimento!", Outros.Mensagem.tipo.Warning);
                 return;
             }
 
@@ -615,7 +617,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (indiceColunaSelecionada == 99)
             {
-                Validacoes.mensagem("É necessário selecionar uma coluna antes do preenchimento!", ToolTipIcon.Error, "Nenhuma Coluna Selecionada", menuEscala);
+                Validacoes.exibeMensagem("É necessário selecionar uma coluna antes do preenchimento!", Outros.Mensagem.tipo.Warning);
                 return;
             }
 
@@ -723,6 +725,8 @@ namespace EscalasMetodista.Views.Escalas
 
                     if (System.IO.File.Exists(salvar.FileName))
                     {
+                        Validacoes.exibeMensagem("Arquivo salvo com sucesso", Outros.Mensagem.tipo.Sucesso);
+                        Thread.Sleep(3000);
                         System.Diagnostics.Process.Start(salvar.FileName);
                     }
 
@@ -732,7 +736,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
                 xlApp.Quit();
             }
         }

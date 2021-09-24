@@ -47,7 +47,7 @@ namespace EscalasMetodista.Views
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -79,19 +79,26 @@ namespace EscalasMetodista.Views
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Funcao fun = new Funcao();
-            subFuncoes.Descricao = txtDescricao.Text;
-            subFuncoes.funcao = fun.find((int)cbFuncoes.SelectedValue);
+
+            if (cbFuncoes.Text == "Selecione...")
+            {
+                Validacoes.exibeMensagem("É necessário ter uma Função selecionada", Outros.Mensagem.tipo.Warning);
+                return;
+            }
+            
 
             if (updateFuncao == true)
             {
                 if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, idSubFuncao, "idSubFuncao") == true)
                 {
-                    Validacoes.mensagem("Já existe uma Sub-Função Cadastrada!", ToolTipIcon.Error, "Sub-Função já Existente ", txtDescricao);
+                    Validacoes.exibeMensagem("Já existe uma Função Sub-Função com este Nome", Outros.Mensagem.tipo.Warning);
                 }
                 else
                 {
                     if (Validacoes.ValidarObjeto(subFuncoes) == true)
                     {
+                        subFuncoes.Descricao = txtDescricao.Text;
+                        subFuncoes.funcao = fun.find((int)cbFuncoes.SelectedValue);
                         subFuncoes.update(subFuncoes, idSubFuncao);
                         updateFuncao = false;
                         this.Close();
@@ -104,12 +111,14 @@ namespace EscalasMetodista.Views
             {
                 if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, 0, "idSubFuncao") == true)
                 {
-                    Validacoes.mensagem("Já existe uma Sub-Função Cadastrada!", ToolTipIcon.Error, "Sub-Função já Existente ", txtDescricao);
+                    Validacoes.exibeMensagem("Já existe uma Função Sub-Função com este Nome", Outros.Mensagem.tipo.Warning);
                 }
                 else
                 {
                     if (Validacoes.ValidarObjeto(subFuncoes) == true)
                     {
+                        subFuncoes.Descricao = txtDescricao.Text;
+                        subFuncoes.funcao = fun.find((int)cbFuncoes.SelectedValue);
                         subFuncoes.create(subFuncoes);
                         txtDescricao.Text = "";
                         updateFuncao = false;

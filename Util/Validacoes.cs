@@ -1,9 +1,11 @@
 ﻿using EscalasMetodista.Conexão;
 using EscalasMetodista.Session;
+using EscalasMetodista.Views.Outros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +28,8 @@ namespace EscalasMetodista.Model
             var erros = Validacoes.getValidationErros(obj);
             foreach (var error in erros)
             {
-                MessageBox.Show((error.ErrorMessage), "Dados Inválidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show((error.ErrorMessage), "Dados Inválidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                exibeMensagem((error.ErrorMessage), Mensagem.tipo.Info);
                 return false;
             }
             return true;
@@ -59,6 +62,12 @@ namespace EscalasMetodista.Model
 
             balaoMensagem.Show(mensagem, control, 5000);
 
+        }
+
+        public static void exibeMensagem(String mensagem, Mensagem.tipo tipo)
+        {
+            Mensagem form = new Mensagem(mensagem, tipo);
+            form.Show();
         }
     }
 }

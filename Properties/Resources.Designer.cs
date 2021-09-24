@@ -113,16 +113,6 @@ namespace EscalasMetodista.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Avodah_B_W1 {
-            get {
-                object obj = ResourceManager.GetObject("Avodah B_W1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Avodah_Line_Red {
             get {
                 object obj = ResourceManager.GetObject("Avodah Line Red", resourceCulture);
@@ -166,6 +156,16 @@ namespace EscalasMetodista.Properties {
         internal static System.Drawing.Bitmap Avodah_White {
             get {
                 object obj = ResourceManager.GetObject("Avodah White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BW {
+            get {
+                object obj = ResourceManager.GetObject("BW", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

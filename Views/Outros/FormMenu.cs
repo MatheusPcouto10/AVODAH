@@ -18,6 +18,7 @@ namespace EscalasMetodista
 {
     public partial class FormMenu : Form
     {
+
         public FormMenu()
         {
             InitializeComponent();
@@ -34,6 +35,8 @@ namespace EscalasMetodista
             {
                 btnFuncoesMenu.Visible = false;
                 btnUsuariosMenu.Visible = false;
+                btnAjudaMenu.Location = new Point(btnEscalaMenu.Location.X + btnEscalaMenu.Width + 5, 0);
+                btnSobreMenu.Location = new Point(btnAjudaMenu.Location.X + btnAjudaMenu.Width + 5, 0);
             }
         }
 
@@ -41,9 +44,35 @@ namespace EscalasMetodista
         {
             DateTime dataHoje = DateTime.Today;
             btnPerfil.Text = UsuarioSession.nomeUsuario + " " + UsuarioSession.sobrenomeUsuario;
+            btnPerfil.Width = (btnPerfil.Text.Length + btnPerfil.Width);
+            btnPerfil.Location = new Point(btnSair.Location.X - btnPerfil.Width, 0);
             labelIdUsuarioLogado.Text = "Código: " + UsuarioSession.idUsuario;
             labelData.Text = "Data: " + dataHoje.ToString("D");
             controleAcesso();
+            LinhaAtivaBtn(btnPerfil);
+            LinhaAtivaBtn(btnEscalaMenu);
+            LinhaAtivaBtn(btnAjudaMenu);
+            LinhaAtivaBtn(btnSobreMenu);
+            LinhaAtivaBtn(btnFuncoesMenu);
+            LinhaAtivaBtn(btnUsuariosMenu);
+
+
+            foreach (DataGridViewColumn coluna in dgEscalas.Columns)
+            {
+                switch (coluna.Name)
+                {
+                    case "descricao":
+                        coluna.Width = 220;
+                        coluna.HeaderText = "Arquivo";
+                        break;
+                    case "dataAlteracao":
+                        coluna.Width = 200;
+                        coluna.HeaderText = "Última Alteração";
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -58,7 +87,7 @@ namespace EscalasMetodista
                 switch (coluna.Name)
                 {
                     case "descricao":
-                        coluna.Width = 100;
+                        coluna.Width = 200;
                         coluna.HeaderText = "Arquivo";
                         break;
                     case "dataAlteracao":
@@ -86,6 +115,17 @@ namespace EscalasMetodista
             }
         }
 
+        private void LinhaAtivaBtn(FontAwesome.Sharp.IconButton btn)
+        {
+            Panel linhaAtiva = new Panel();
+            linhaAtiva.Size = new Size(btn.Width, 3);
+            linhaAtiva.BackColor = btn.IconColor;
+            linhaAtiva.Location = new Point(0, 33);
+            btn.Controls.Add(linhaAtiva);
+            linhaAtiva.Visible = true;
+            linhaAtiva.BringToFront();
+        }
+
 
         private void btnEscalaMenu_Click(object sender, EventArgs e)
         {
@@ -107,13 +147,13 @@ namespace EscalasMetodista
         private void btnAjudaMenu_Click(object sender, EventArgs e)
         {
             FormAjuda form = new FormAjuda();
-            form.ShowDialog();
+            form.Show();
         }
 
         private void btnSobreMenu_Click(object sender, EventArgs e)
         {
             FormSobre form = new FormSobre();
-            form.ShowDialog();
+            form.Show();
         }
 
         private void btnPerfil_Click(object sender, EventArgs e)

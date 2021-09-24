@@ -94,6 +94,12 @@
     <Compile Include="Views\Outros\FormSobre.Designer.cs">
       <DependentUpon>FormSobre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Outros\Mensagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Outros\Mensagem.Designer.cs">
+      <DependentUpon>Mensagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Usuarios\FormAlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Outros\FormSobre.resx">
       <DependentUpon>FormSobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Outros\Mensagem.resx">
+      <DependentUpon>Mensagem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuarios\FormAlterarSenha.resx">
       <DependentUpon>FormAlterarSenha.cs</DependentUpon>
@@ -295,16 +304,16 @@
     <None Include="Resources\Avodah Line White.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Avodah B_W.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Avodah Line Red.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Avodah Line Red White.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Avodah B_W1.jpg" />
+    <None Include="Resources\Avodah B_W.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

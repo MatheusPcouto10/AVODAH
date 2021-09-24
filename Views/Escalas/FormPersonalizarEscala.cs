@@ -43,7 +43,7 @@ namespace EscalasMetodista.Views.Escalas
             {
                 if (cbTipoEscala.Text == "Selecione.." || cbIntervalo.Text == "Selecione..." || string.IsNullOrWhiteSpace(txtNomeEscala.Text))
                 {
-                   Validacoes.mensagem("Campos não informados. Por favor informe.", ToolTipIcon.Error, "Campo em Branco", txtNomeEscala);
+                   Validacoes.exibeMensagem("Campos não informados", Outros.Mensagem.tipo.Warning);
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -139,7 +139,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -166,7 +166,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
             finally
             {

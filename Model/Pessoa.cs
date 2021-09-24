@@ -77,7 +77,7 @@ namespace EscalasMetodista.Model
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
 
-                    MessageBox.Show("Usuário cadastrado com sucesso!");
+                    Validacoes.exibeMensagem("Usuário cadastrado com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
                 }
                 else
                 {
@@ -90,13 +90,13 @@ namespace EscalasMetodista.Model
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
 
-                    MessageBox.Show("Usuário cadastrado com sucesso!");
+                    Validacoes.exibeMensagem("Usuário cadastrado com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -109,12 +109,12 @@ namespace EscalasMetodista.Model
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
 
-                MessageBox.Show("Usuário excluído com sucesso!");
+                Validacoes.exibeMensagem("Usuário excluído com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -156,12 +156,12 @@ namespace EscalasMetodista.Model
                 }
                 else
                 {
-                    MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Validacoes.exibeMensagem("Nenhum Usuário foi encontrado", Views.Outros.Mensagem.tipo.Info);
                 }
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -189,12 +189,12 @@ namespace EscalasMetodista.Model
                 }
                 else
                 {
-                    MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Validacoes.exibeMensagem("Nenhum Usuário foi encontrado", Views.Outros.Mensagem.tipo.Info);
                 }
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -223,7 +223,7 @@ namespace EscalasMetodista.Model
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
 
-                    MessageBox.Show("Alteração feita com sucesso!");
+                    Validacoes.exibeMensagem("Usuário alterado com sucesso", Views.Outros.Mensagem.tipo.Sucesso);
                 }
                 else
                 {
@@ -238,13 +238,13 @@ namespace EscalasMetodista.Model
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
 
-                    MessageBox.Show("Alteração feita com sucesso!");
+                    Validacoes.exibeMensagem("Usuário alterado com sucesso", Views.Outros.Mensagem.tipo.Sucesso);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -258,12 +258,12 @@ namespace EscalasMetodista.Model
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
 
-                MessageBox.Show("Senha atualizada com sucesso!");
+                Validacoes.exibeMensagem("Senha alterada com sucesso", Views.Outros.Mensagem.tipo.Sucesso);
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
             }
         }
     }

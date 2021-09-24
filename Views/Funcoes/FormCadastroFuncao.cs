@@ -31,7 +31,7 @@ namespace EscalasMetodista.Views
             {
                 if (Validacoes.verificaUnico("descricaoFuncao", "funcao", txtDescricaoFuncao.Text, idFuncao, "idFuncao") == true)
                 {
-                    Validacoes.mensagem("Já existe uma Função Cadastrada!", ToolTipIcon.Error, "Função já Existente ", txtDescricaoFuncao);
+                    Validacoes.exibeMensagem("Já existe uma Função cadastrada com este Nome", Outros.Mensagem.tipo.Warning);
                 }
                 else
                 {
@@ -48,7 +48,7 @@ namespace EscalasMetodista.Views
             {
                 if (Validacoes.verificaUnico("descricaoFuncao", "funcao", txtDescricaoFuncao.Text, 0, "idFuncao") == true)
                 {
-                    Validacoes.mensagem("Já existe uma Função Cadastrada!", ToolTipIcon.Error, "Função já Existente ", txtDescricaoFuncao);
+                    Validacoes.exibeMensagem("Já existe uma Função cadastrada com este Nome", Outros.Mensagem.tipo.Warning);
                 }
                 else
                 {

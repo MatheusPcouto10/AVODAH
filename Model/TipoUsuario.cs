@@ -31,11 +31,11 @@ namespace EscalasMetodista.Model
                 cmd.Connection = conexao.Conectar();
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
-                MessageBox.Show("Tipo de Usuário cadastrado com sucesso!");
+                Validacoes.exibeMensagem("Tipo de Usuário cadastrado com sucesso", Views.Outros.Mensagem.tipo.Sucesso);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -64,12 +64,12 @@ namespace EscalasMetodista.Model
                 }
                 else
                 {
-                    MessageBox.Show("Nenhum Tipo de Usuário foi encontrado!", "Tipo de Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Validacoes.exibeMensagem("Nenhum Tipo de Usuário foi encontrado", Views.Outros.Mensagem.tipo.Info);
                 }
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -90,12 +90,12 @@ namespace EscalasMetodista.Model
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
 
-                MessageBox.Show("Alteração feita com sucesso!");
+                Validacoes.exibeMensagem("Tipo de Usuário alterado com sucesso", Views.Outros.Mensagem.tipo.Sucesso);
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
             }
         }
     }

@@ -42,11 +42,11 @@ namespace EscalasMetodista.Model
                 cmd.Connection = conexao.Conectar();
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
-                MessageBox.Show("Sub-Função cadastrada com sucesso!");
+                Validacoes.exibeMensagem("Sub-Função cadastrada com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
             }
         }
 
@@ -76,12 +76,12 @@ namespace EscalasMetodista.Model
                 }
                 else
                 {
-                    MessageBox.Show("Nenhuma Funçao principal foi encontrada!", "Funçao Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Validacoes.exibeMensagem("Nenhuma Função foi encontrada", Views.Outros.Mensagem.tipo.Info);
                 }
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -102,12 +102,12 @@ namespace EscalasMetodista.Model
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
 
-                MessageBox.Show("Alteração feita com sucesso!");
+                Validacoes.exibeMensagem("Sub-Função alterada com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
             }
         }
     }

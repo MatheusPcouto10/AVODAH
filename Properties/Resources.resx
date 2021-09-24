@@ -121,6 +121,9 @@
   <data name="ocLJYEKLE1aHAy9jGKX_2g_store_banner_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ocLJYEKLE1aHAy9jGKX_2g_store_banner_image.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Avodah Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avodah Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="loadBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loadBar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,23 +139,23 @@
   <data name="2741104" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2741104.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kisspng-united-states-win-the-white-house-hotel-business-c-refresh-icon-5b0ecd3859cd92.0718737115276966963679" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kisspng-united-states-win-the-white-house-hotel-business-c-refresh-icon-5b0ecd3859cd92.0718737115276966963679.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Avodah Line Red White" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Avodah Line Red White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Avodah White" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Avodah White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Avodah B_W" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avodah B_W.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Avodah Line Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Avodah Line Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avodah B_W" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avodah B_W.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="8595" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8595.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avodah Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avodah Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kisspng-united-states-win-the-white-house-hotel-business-c-refresh-icon-5b0ecd3859cd92.0718737115276966963679" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-united-states-win-the-white-house-hotel-business-c-refresh-icon-5b0ecd3859cd92.0718737115276966963679.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Avodah Line White" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Avodah Line White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,13 +172,10 @@
   <data name="searchmagnifierinterfacesymbol1_79893" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchmagnifierinterfacesymbol1_79893.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8595" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8595.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-forest-lake-computer-icons-inspection-white-wine-search-bar-5addbd8c2df2a6.8041717315244814201882.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avodah B_W1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avodah B_W1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

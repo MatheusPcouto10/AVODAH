@@ -185,12 +185,12 @@ namespace EscalasMetodista.Views.Usuarios
                 }
                 else
                 {
-                    MessageBox.Show("Nenhum Usuário foi encontrado!", "Usuário Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Validacoes.exibeMensagem("Nenhum Usuário foi encontrado!", Outros.Mensagem.tipo.Info);
                 }
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -216,7 +216,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -242,7 +242,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
@@ -270,7 +270,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro: " + erro.Message);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
             }
             finally
             {
