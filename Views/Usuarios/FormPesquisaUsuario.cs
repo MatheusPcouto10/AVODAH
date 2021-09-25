@@ -185,12 +185,12 @@ namespace EscalasMetodista.Views.Usuarios
                 }
                 else
                 {
-                    Validacoes.exibeMensagem("Nenhum Usuário foi encontrado!", Outros.Mensagem.tipo.Info);
+                    Validacoes.exibeMensagem("Nenhum Usuário foi encontrado!", Outros.Mensagem.tipo.Info, false);
                 }
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -216,7 +216,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -242,7 +242,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -270,7 +270,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
             }
             finally
             {

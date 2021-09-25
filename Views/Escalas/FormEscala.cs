@@ -80,7 +80,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (string.IsNullOrWhiteSpace(txtNomeEscala.Text))
             {
-                Validacoes.exibeMensagem("Informe o nome da Escala", Outros.Mensagem.tipo.Warning);
+                Validacoes.exibeMensagem("Informe o nome da Escala", Outros.Mensagem.tipo.Erro, false);
             }
             else
             {
@@ -119,7 +119,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
             }
         }
 
@@ -196,7 +196,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -278,7 +278,7 @@ namespace EscalasMetodista.Views.Escalas
 
             if (indiceColunaSelecionada == 99)
             {
-                Validacoes.exibeMensagem("É necessário selecionar uma coluna antes do preenchimento!", Outros.Mensagem.tipo.Warning);
+                Validacoes.exibeMensagem("É necessário selecionar uma coluna antes do preenchimento!", Outros.Mensagem.tipo.Erro, false);
                 return;
             }
 
@@ -315,7 +315,7 @@ namespace EscalasMetodista.Views.Escalas
 
                                 if (!dr.HasRows)
                                 {
-                                    Validacoes.exibeMensagem("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, Outros.Mensagem.tipo.Warning);
+                                    Validacoes.exibeMensagem("Não foram encontradas pessoas cadastradas com a função " + s.Descricao, Outros.Mensagem.tipo.Info, false);
                                     return;
                                 }
 
@@ -348,7 +348,7 @@ namespace EscalasMetodista.Views.Escalas
                 }
                 catch (Exception erro)
                 {
-                    Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                    Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
                 }
             }
         }
@@ -358,7 +358,7 @@ namespace EscalasMetodista.Views.Escalas
 
             if (indiceLinhaSelecionada == 99)
             {
-                Validacoes.exibeMensagem("É necessário selecionar uma linha antes do preenchimento!", Outros.Mensagem.tipo.Warning);
+                Validacoes.exibeMensagem("É necessário selecionar uma linha antes do preenchimento!", Outros.Mensagem.tipo.Erro, false);
                 return;
             }
 
@@ -503,7 +503,7 @@ namespace EscalasMetodista.Views.Escalas
 
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
             }
         }
 
@@ -524,7 +524,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
             }
         }
 
@@ -603,7 +603,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (indiceLinhaSelecionada == 99)
             {
-                Validacoes.exibeMensagem("É necessário selecionar uma linha antes do preenchimento!", Outros.Mensagem.tipo.Warning);
+                Validacoes.exibeMensagem("É necessário selecionar uma linha antes da limpeza!", Outros.Mensagem.tipo.Erro, false);
                 return;
             }
 
@@ -617,7 +617,7 @@ namespace EscalasMetodista.Views.Escalas
         {
             if (indiceColunaSelecionada == 99)
             {
-                Validacoes.exibeMensagem("É necessário selecionar uma coluna antes do preenchimento!", Outros.Mensagem.tipo.Warning);
+                Validacoes.exibeMensagem("É necessário selecionar uma coluna antes da limpeza!", Outros.Mensagem.tipo.Erro, false);
                 return;
             }
 
@@ -725,7 +725,7 @@ namespace EscalasMetodista.Views.Escalas
 
                     if (System.IO.File.Exists(salvar.FileName))
                     {
-                        Validacoes.exibeMensagem("Arquivo salvo com sucesso", Outros.Mensagem.tipo.Sucesso);
+                        Validacoes.exibeMensagem("Arquivo salvo com sucesso", Outros.Mensagem.tipo.Sucesso, false);
                         Thread.Sleep(3000);
                         System.Diagnostics.Process.Start(salvar.FileName);
                     }
@@ -736,7 +736,7 @@ namespace EscalasMetodista.Views.Escalas
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
                 xlApp.Quit();
             }
         }

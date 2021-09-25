@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EscalasMetodista.Model;
+using EscalasMetodista.Views.Usuarios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace EscalasMetodista.Views.Outros
     public partial class Mensagem : Form
     {
         private int x, y;
+        public bool clicouLink = false;
 
         public enum enmAction
         {
@@ -27,7 +30,7 @@ namespace EscalasMetodista.Views.Outros
         {
             Sucesso, Erro, Warning, Info
         }
-        public Mensagem(String mensagem, tipo tipo)
+        public Mensagem(String mensagem, tipo tipo, bool desfazer)
         {
             InitializeComponent();
 
@@ -53,6 +56,9 @@ namespace EscalasMetodista.Views.Outros
                     break;
             }
 
+            if (desfazer)
+                linkDesfazer.Visible = true;
+
             labelDescricao.Text = mensagem;
             Width = Width + labelDescricao.Text.Length;
             x = Screen.PrimaryScreen.WorkingArea.Width - (Width + 15);
@@ -75,7 +81,7 @@ namespace EscalasMetodista.Views.Outros
             switch (this.action)
             {
                 case enmAction.wait:
-                    timerClose.Interval = BackColor == Color.Maroon ? 5000 : 3000;
+                    timerClose.Interval = BackColor == Color.Maroon || BackColor == Color.DodgerBlue ? 5000 : 3000;
                     action = enmAction.close;
                     break;
                 case enmAction.start:
@@ -103,6 +109,26 @@ namespace EscalasMetodista.Views.Outros
                         base.Close();
                     }
                     break;
+            }
+        }
+
+        private void linkDesfazer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormCadastrarUsuario form = (FormCadastrarUsuario) Application.OpenForms["FormCadastrarUsuario"];
+
+            if (form.WindowState == FormWindowState.Normal)
+            {
+                Pessoa pessoa = new Pessoa();
+                pessoa.reativa(form.idPessoaExcluida);
+
+                form.Hide();
+
+                FormCadastrarUsuario form2 = new FormCadastrarUsuario(form.idPessoaExcluida);
+                form2.Show();
+
+                form.Close();
+
+                this.Close();
             }
         }
 

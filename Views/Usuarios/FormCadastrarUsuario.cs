@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Net;
 using System.Net.Mail;
+using EscalasMetodista.Views.Outros;
 
 namespace EscalasMetodista.Views.Usuarios
 {
@@ -23,6 +24,7 @@ namespace EscalasMetodista.Views.Usuarios
         SqlCommand cmd = new SqlCommand();
         private bool temFuncaoSecundaria = false;
         private bool update = false;
+        public int idPessoaExcluida;
         private int idPessoaPesquisa { get; set; }
         public FormCadastrarUsuario()
         {
@@ -67,7 +69,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro, Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -93,7 +95,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro, Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -119,7 +121,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro, Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -146,7 +148,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro, Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -172,7 +174,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro, Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -187,6 +189,7 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void FormCadastrarUsuario_Load(object sender, EventArgs e)
         {
+            ActiveControl = btnSalvar;
             this.preencheComboBoxFuncaoPrincipal();
             this.preencheComboBoxFuncaoSecundaria();
             this.preencheComboBoxTipoUsuario();
@@ -254,10 +257,15 @@ namespace EscalasMetodista.Views.Usuarios
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente excluir este usuário? Esta ação não pode ser desfeita.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente excluir este usuário?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 pessoa.delete(pessoa.idPessoa);
+
+                idPessoaExcluida = pessoa.idPessoa;
                 btnLimparForm_Click(null, null);
+
+                Validacoes.exibeMensagem("Deseja desfazer as alterações ? Se sim, clique no link abaixo.", Mensagem.tipo.Info, true);
+
             }
         }
 
@@ -287,13 +295,13 @@ namespace EscalasMetodista.Views.Usuarios
             {
                 if (cbTipoUsuario.Text == "Selecione...")
                 {
-                    Validacoes.exibeMensagem("É necessário informar o Tipo de Usuário", Outros.Mensagem.tipo.Warning);
+                    Validacoes.exibeMensagem("É necessário informar o Tipo de Usuário", Mensagem.tipo.Erro, false);
                     return;
                 }
 
                 if (cbSubFuncaoPrincipal.Text == "Selecione...")
                 {
-                    Validacoes.exibeMensagem("É necessário informar a Função Principal", Outros.Mensagem.tipo.Warning);
+                    Validacoes.exibeMensagem("É necessário informar a Função Principal", Mensagem.tipo.Erro, false);
                     return;
                 }
 
@@ -301,14 +309,14 @@ namespace EscalasMetodista.Views.Usuarios
                 {
                     if ((int)cbFuncaoSecundaria.SelectedValue != 3 || (int)cbFuncaoPrincipal.SelectedValue != 3)
                     {
-                        Validacoes.exibeMensagem("O Tipo de Usuário 'Célula' só pode ter funções relacionadas a células", Outros.Mensagem.tipo.Warning);
+                        Validacoes.exibeMensagem("O Tipo de Usuário 'Célula' só pode ter funções relacionadas a células", Mensagem.tipo.Erro, false);
                         return;
                     }
                 }
 
-                if ((int)cbSubFuncaoPrincipal.SelectedValue == (int)cbSubFuncaoSecundaria.SelectedValue)
+                if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
                 {
-                    Validacoes.exibeMensagem("As funções não podem ser iguais", Outros.Mensagem.tipo.Warning);
+                    Validacoes.exibeMensagem("As funções não podem ser iguais", Mensagem.tipo.Erro, false);
                     return;
                 }
                 
@@ -316,12 +324,12 @@ namespace EscalasMetodista.Views.Usuarios
                 {
                     if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrWhiteSpace(txtEmail.Text))
                     {
-                        Validacoes.exibeMensagem("Informe um E-mail", Outros.Mensagem.tipo.Warning);
+                        Validacoes.exibeMensagem("Informe um E-mail", Mensagem.tipo.Erro, false);
                         return;
                     }
                     if (string.IsNullOrEmpty(txtSobrenome.Text) || string.IsNullOrWhiteSpace(txtSobrenome.Text))
                     {
-                        Validacoes.exibeMensagem("Informe o Sobrenome", Outros.Mensagem.tipo.Warning);
+                        Validacoes.exibeMensagem("Informe o Sobrenome", Mensagem.tipo.Erro, false);
                         return;
                     }
                 }
@@ -353,7 +361,7 @@ namespace EscalasMetodista.Views.Usuarios
                 {
                     if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, pessoa.idPessoa, "idPessoa") == true)
                     {
-                        Validacoes.exibeMensagem("Este E-mail já está em uso", Outros.Mensagem.tipo.Warning);
+                        Validacoes.exibeMensagem("Este E-mail já está em uso", Mensagem.tipo.Erro, false);
                         return;
                     }
                 }
@@ -378,7 +386,7 @@ namespace EscalasMetodista.Views.Usuarios
             }
             catch (Exception ex)
             {
-                Validacoes.exibeMensagem("Erro: " + ex, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + ex, Mensagem.tipo.Erro, false);
             }
         }
 
@@ -443,10 +451,14 @@ namespace EscalasMetodista.Views.Usuarios
                 txtEmail.Text = null;
                 txtSobrenome.Enabled = false;
                 txtSobrenome.Text = null;
+                label10.Visible = false;
+                label11.Visible = false;
                 return;
             }
             txtEmail.Enabled = true;
             txtSobrenome.Enabled = true;
+            label10.Visible = true;
+            label11.Visible = true;
         }
 
         private void sendEmailComSenhaUsuario(String nome, String email, String senha)
@@ -468,13 +480,13 @@ namespace EscalasMetodista.Views.Usuarios
                         smtpClient.UseDefaultCredentials = false;
                         smtpClient.Credentials = new NetworkCredential("matheuspcouto70@gmail.com", "Mat230500");
                         smtpClient.Send(mail);
-                        Validacoes.exibeMensagem("E-mail com senha de acesso enviado para " + email, Outros.Mensagem.tipo.Sucesso);
+                        Validacoes.exibeMensagem("E-mail com senha de acesso enviado para " + email, Mensagem.tipo.Sucesso, false);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Validacoes.exibeMensagem("Erro: " + ex, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + ex, Mensagem.tipo.Erro, false);
             }
         }
 
@@ -486,7 +498,7 @@ namespace EscalasMetodista.Views.Usuarios
                 {
                     if (Validacoes.verificaUnico("email", "pessoa", txtEmail.Text, pessoa.idPessoa, "idPessoa") == true)
                     {
-                        Validacoes.exibeMensagem("Este E-mail já está em uso", Outros.Mensagem.tipo.Warning);
+                        Validacoes.exibeMensagem("Este E-mail já está em uso", Mensagem.tipo.Warning, false);
                         return;
                     }
                 }
@@ -497,9 +509,9 @@ namespace EscalasMetodista.Views.Usuarios
         {
             if (cbSubFuncaoSecundaria.SelectedValue != null)
             {
-                if ((int)cbSubFuncaoPrincipal.SelectedValue == (int)cbSubFuncaoSecundaria.SelectedValue)
+                if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
                 {
-                    Validacoes.exibeMensagem("As funções não podem ser iguais", Outros.Mensagem.tipo.Warning);
+                    Validacoes.exibeMensagem("As funções não podem ser iguais", Mensagem.tipo.Warning, false);
                     return;
                 }
             }
@@ -509,9 +521,9 @@ namespace EscalasMetodista.Views.Usuarios
         {
             if (cbSubFuncaoSecundaria.SelectedValue != null)
             {
-                if ((int)cbSubFuncaoPrincipal.SelectedValue == (int)cbSubFuncaoSecundaria.SelectedValue)
+                if (cbSubFuncaoPrincipal.Text == cbSubFuncaoSecundaria.Text)
                 {
-                    Validacoes.exibeMensagem("As funções não podem ser iguais", Outros.Mensagem.tipo.Warning);
+                    Validacoes.exibeMensagem("As funções não podem ser iguais", Mensagem.tipo.Warning, false);
                     return;
                 }
             }

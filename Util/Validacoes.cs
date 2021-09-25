@@ -28,8 +28,7 @@ namespace EscalasMetodista.Model
             var erros = Validacoes.getValidationErros(obj);
             foreach (var error in erros)
             {
-                //MessageBox.Show((error.ErrorMessage), "Dados Inválidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                exibeMensagem((error.ErrorMessage), Mensagem.tipo.Info);
+                exibeMensagem((error.ErrorMessage), Mensagem.tipo.Erro, false);
                 return false;
             }
             return true;
@@ -64,9 +63,9 @@ namespace EscalasMetodista.Model
 
         }
 
-        public static void exibeMensagem(String mensagem, Mensagem.tipo tipo)
+        public static void exibeMensagem(String mensagem, Mensagem.tipo tipo, bool desfazer)
         {
-            Mensagem form = new Mensagem(mensagem, tipo);
+            Mensagem form = new Mensagem(mensagem, tipo, desfazer);
             form.Show();
         }
     }

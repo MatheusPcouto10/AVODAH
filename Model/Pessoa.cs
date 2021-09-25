@@ -77,7 +77,7 @@ namespace EscalasMetodista.Model
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
 
-                    Validacoes.exibeMensagem("Usuário cadastrado com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
+                    Validacoes.exibeMensagem("Usuário cadastrado com sucesso!", Views.Outros.Mensagem.tipo.Sucesso, false);
                 }
                 else
                 {
@@ -90,13 +90,14 @@ namespace EscalasMetodista.Model
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
 
-                    Validacoes.exibeMensagem("Usuário cadastrado com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
+                    Validacoes.exibeMensagem("Usuário cadastrado com sucesso!", Views.Outros.Mensagem.tipo.Sucesso, false);
+                    
                 }
 
             }
             catch (Exception ex)
             {
-                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro, false);
             }
         }
 
@@ -109,12 +110,30 @@ namespace EscalasMetodista.Model
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
 
-                Validacoes.exibeMensagem("Usuário excluído com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
+                Validacoes.exibeMensagem("Usuário excluído com sucesso!", Views.Outros.Mensagem.tipo.Sucesso, false);
 
             }
             catch (Exception ex)
             {
-                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro, false);
+            }
+        }
+
+        public void reativa(int id)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE pessoa SET status = 'Ativo' WHERE idPessoa = " + id;
+                cmd.Connection = conexao.Conectar();
+                cmd.ExecuteNonQuery();
+                conexao.Desconectar();
+
+                Validacoes.exibeMensagem("Usuário reativado com sucesso!", Views.Outros.Mensagem.tipo.Sucesso, false);
+
+            }
+            catch (Exception ex)
+            {
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro, false);
             }
         }
 
@@ -156,12 +175,12 @@ namespace EscalasMetodista.Model
                 }
                 else
                 {
-                    Validacoes.exibeMensagem("Nenhum Usuário foi encontrado", Views.Outros.Mensagem.tipo.Info);
+                    Validacoes.exibeMensagem("Nenhum Usuário foi encontrado", Views.Outros.Mensagem.tipo.Info, false);
                 }
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -189,12 +208,12 @@ namespace EscalasMetodista.Model
                 }
                 else
                 {
-                    Validacoes.exibeMensagem("Nenhum Usuário foi encontrado", Views.Outros.Mensagem.tipo.Info);
+                    Validacoes.exibeMensagem("Nenhum Usuário foi encontrado", Views.Outros.Mensagem.tipo.Info, false);
                 }
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -223,7 +242,7 @@ namespace EscalasMetodista.Model
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
 
-                    Validacoes.exibeMensagem("Usuário alterado com sucesso", Views.Outros.Mensagem.tipo.Sucesso);
+                    Validacoes.exibeMensagem("Usuário alterado com sucesso", Views.Outros.Mensagem.tipo.Sucesso, false);
                 }
                 else
                 {
@@ -238,13 +257,13 @@ namespace EscalasMetodista.Model
                     cmd.ExecuteNonQuery();
                     conexao.Desconectar();
 
-                    Validacoes.exibeMensagem("Usuário alterado com sucesso", Views.Outros.Mensagem.tipo.Sucesso);
+                    Validacoes.exibeMensagem("Usuário alterado com sucesso", Views.Outros.Mensagem.tipo.Sucesso, false);
                 }
 
             }
             catch (Exception ex)
             {
-                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro, false);
             }
         }
 
@@ -258,12 +277,12 @@ namespace EscalasMetodista.Model
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
 
-                Validacoes.exibeMensagem("Senha alterada com sucesso", Views.Outros.Mensagem.tipo.Sucesso);
+                Validacoes.exibeMensagem("Senha alterada com sucesso", Views.Outros.Mensagem.tipo.Sucesso, false);
 
             }
             catch (Exception ex)
             {
-                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro, false);
             }
         }
     }

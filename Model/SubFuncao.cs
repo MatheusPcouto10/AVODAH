@@ -42,11 +42,11 @@ namespace EscalasMetodista.Model
                 cmd.Connection = conexao.Conectar();
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
-                Validacoes.exibeMensagem("Sub-Função cadastrada com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
+                Validacoes.exibeMensagem("Sub-Função cadastrada com sucesso!", Views.Outros.Mensagem.tipo.Sucesso, false);
             }
             catch (Exception ex)
             {
-                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro, false);
             }
         }
 
@@ -76,12 +76,12 @@ namespace EscalasMetodista.Model
                 }
                 else
                 {
-                    Validacoes.exibeMensagem("Nenhuma Função foi encontrada", Views.Outros.Mensagem.tipo.Info);
+                    Validacoes.exibeMensagem("Nenhuma Função foi encontrada", Views.Outros.Mensagem.tipo.Info, false);
                 }
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Views.Outros.Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -102,12 +102,12 @@ namespace EscalasMetodista.Model
                 cmd.ExecuteNonQuery();
                 conexao.Desconectar();
 
-                Validacoes.exibeMensagem("Sub-Função alterada com sucesso!", Views.Outros.Mensagem.tipo.Sucesso);
+                Validacoes.exibeMensagem("Sub-Função alterada com sucesso!", Views.Outros.Mensagem.tipo.Sucesso, false);
 
             }
             catch (Exception ex)
             {
-                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Views.Outros.Mensagem.tipo.Erro, false);
             }
         }
     }

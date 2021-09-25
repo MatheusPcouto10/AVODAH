@@ -54,11 +54,11 @@ namespace EscalasMetodista.Views.Funcoes
                         dgFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                        Validacoes.exibeMensagem("Nenhuma Função foi encontrada!", Outros.Mensagem.tipo.Info);
+                        Validacoes.exibeMensagem("Nenhuma Função foi encontrada!", Outros.Mensagem.tipo.Info, false);
                 }
                 catch (Exception erro)
                 {
-                    Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                    Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
                 }
                 conexao.Desconectar();
             }
@@ -79,11 +79,11 @@ namespace EscalasMetodista.Views.Funcoes
                         dgFuncoes.DataSource = dt; // Preenche o DataGridView
                     }
                     else
-                        Validacoes.exibeMensagem("Nenhuma Função foi encontrada!", Outros.Mensagem.tipo.Info);
+                        Validacoes.exibeMensagem("Nenhuma Função foi encontrada!", Outros.Mensagem.tipo.Info, false);
                 }
                 catch (Exception erro)
                 {
-                    Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                    Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
                 }
                 conexao.Desconectar();
             }

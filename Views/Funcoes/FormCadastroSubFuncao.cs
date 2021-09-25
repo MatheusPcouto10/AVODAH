@@ -47,7 +47,7 @@ namespace EscalasMetodista.Views
             }
             catch (Exception erro)
             {
-                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
             }
             finally
             {
@@ -82,7 +82,7 @@ namespace EscalasMetodista.Views
 
             if (cbFuncoes.Text == "Selecione...")
             {
-                Validacoes.exibeMensagem("É necessário ter uma Função selecionada", Outros.Mensagem.tipo.Warning);
+                Validacoes.exibeMensagem("É necessário ter uma Função selecionada", Outros.Mensagem.tipo.Erro, false);
                 return;
             }
             
@@ -91,7 +91,7 @@ namespace EscalasMetodista.Views
             {
                 if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, idSubFuncao, "idSubFuncao") == true)
                 {
-                    Validacoes.exibeMensagem("Já existe uma Função Sub-Função com este Nome", Outros.Mensagem.tipo.Warning);
+                    Validacoes.exibeMensagem("Já existe uma Função Sub-Função com este Nome", Outros.Mensagem.tipo.Erro, false);
                 }
                 else
                 {
@@ -111,7 +111,7 @@ namespace EscalasMetodista.Views
             {
                 if (Validacoes.verificaUnico("descricao", "subfuncao", txtDescricao.Text, 0, "idSubFuncao") == true)
                 {
-                    Validacoes.exibeMensagem("Já existe uma Função Sub-Função com este Nome", Outros.Mensagem.tipo.Warning);
+                    Validacoes.exibeMensagem("Já existe uma Função Sub-Função com este Nome", Outros.Mensagem.tipo.Erro, false);
                 }
                 else
                 {

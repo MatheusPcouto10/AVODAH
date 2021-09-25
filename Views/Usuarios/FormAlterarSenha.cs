@@ -45,7 +45,7 @@ namespace EscalasMetodista.Views
             if ((string.IsNullOrWhiteSpace(txtNovaSenha.Text)) || (string.IsNullOrWhiteSpace(txtSenhaAtual.Text)) ||
                 (string.IsNullOrWhiteSpace(txtConfirmarSenha.Text)))
             {
-                Validacoes.exibeMensagem("É necessário informar os campos!", Outros.Mensagem.tipo.Warning);
+                Validacoes.exibeMensagem("É necessário informar os campos!", Outros.Mensagem.tipo.Erro, false);
                 return;
             }
             try
@@ -60,7 +60,7 @@ namespace EscalasMetodista.Views
                     {
                         if (Validacoes.verificaUnico("senha", "pessoa", txtNovaSenha.Text, UsuarioSession.idUsuario, "idPessoa") == true)
                         {
-                            Validacoes.exibeMensagem("A senha informada já está em uso", Outros.Mensagem.tipo.Warning);
+                            Validacoes.exibeMensagem("A senha informada já está em uso", Outros.Mensagem.tipo.Erro, false);
                             return;
                         }
                         if (txtNovaSenha.Text == txtConfirmarSenha.Text)
@@ -70,16 +70,16 @@ namespace EscalasMetodista.Views
                             //this.Close();
                         }
                         else
-                            Validacoes.exibeMensagem("A nova senha não corresponde", Outros.Mensagem.tipo.Warning);
+                            Validacoes.exibeMensagem("A nova senha não corresponde", Outros.Mensagem.tipo.Erro, false);
                     }
                     else
-                        Validacoes.exibeMensagem("A senha atual está incorreta", Outros.Mensagem.tipo.Warning);
+                        Validacoes.exibeMensagem("A senha atual está incorreta", Outros.Mensagem.tipo.Erro, false);
                 }
             }
 
             catch (Exception ex)
             {
-                Validacoes.exibeMensagem("Erro: " + ex.Message, Outros.Mensagem.tipo.Erro);
+                Validacoes.exibeMensagem("Erro: " + ex.Message, Outros.Mensagem.tipo.Erro, false);
             }
         }
     }

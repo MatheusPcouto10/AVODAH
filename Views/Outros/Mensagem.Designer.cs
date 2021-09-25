@@ -34,6 +34,7 @@ namespace EscalasMetodista.Views.Outros
             this.labelDescricao = new System.Windows.Forms.Label();
             this.timerClose = new System.Windows.Forms.Timer(this.components);
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.linkDesfazer = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,12 +89,27 @@ namespace EscalasMetodista.Views.Outros
             this.iconPictureBox1.TabIndex = 78;
             this.iconPictureBox1.TabStop = false;
             // 
+            // linkDesfazer
+            // 
+            this.linkDesfazer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkDesfazer.AutoSize = true;
+            this.linkDesfazer.LinkColor = System.Drawing.Color.White;
+            this.linkDesfazer.Location = new System.Drawing.Point(212, 47);
+            this.linkDesfazer.Name = "linkDesfazer";
+            this.linkDesfazer.Size = new System.Drawing.Size(102, 13);
+            this.linkDesfazer.TabIndex = 79;
+            this.linkDesfazer.TabStop = true;
+            this.linkDesfazer.Text = "Desfazer Alterações";
+            this.linkDesfazer.Visible = false;
+            this.linkDesfazer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkDesfazer_LinkClicked);
+            // 
             // Mensagem
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(318, 72);
+            this.Controls.Add(this.linkDesfazer);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.labelDescricao);
             this.Controls.Add(this.btnClose);
@@ -118,5 +134,6 @@ namespace EscalasMetodista.Views.Outros
         private System.Windows.Forms.Label labelDescricao;
         private System.Windows.Forms.Timer timerClose;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.LinkLabel linkDesfazer;
     }
 }
