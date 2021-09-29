@@ -35,11 +35,10 @@
             this.panel_rodape = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_principal = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelData = new System.Windows.Forms.Label();
             this.labelIdUsuarioLogado = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.dropBtnPerfil = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dropBtnFuncoes = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnPerfil = new FontAwesome.Sharp.IconButton();
             this.btnSair = new FontAwesome.Sharp.IconButton();
             this.btnSobreMenu = new FontAwesome.Sharp.IconButton();
@@ -47,6 +46,12 @@
             this.btnFuncoesMenu = new FontAwesome.Sharp.IconButton();
             this.btnUsuariosMenu = new FontAwesome.Sharp.IconButton();
             this.btnEscalaMenu = new FontAwesome.Sharp.IconButton();
+            this.dropBtnPerfil = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnEditarPerfil = new FontAwesome.Sharp.IconMenuItem();
+            this.btnAlterarSenha = new FontAwesome.Sharp.IconMenuItem();
+            this.dropBtnFuncoes = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnFuncoes = new FontAwesome.Sharp.IconMenuItem();
+            this.btnSubFuncoes = new FontAwesome.Sharp.IconMenuItem();
             this.panel_botoes = new System.Windows.Forms.Panel();
             this.dgEscalas = new System.Windows.Forms.DataGridView();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,20 +59,15 @@
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisaEscala = new System.Windows.Forms.TextBox();
             this.logo_metodista = new System.Windows.Forms.PictureBox();
-            this.btnEditarPerfil = new FontAwesome.Sharp.IconMenuItem();
-            this.btnAlterarSenha = new FontAwesome.Sharp.IconMenuItem();
-            this.btnFuncoes = new FontAwesome.Sharp.IconMenuItem();
-            this.btnSubFuncoes = new FontAwesome.Sharp.IconMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_rodape.SuspendLayout();
             this.panel_principal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.dropBtnPerfil.SuspendLayout();
             this.dropBtnFuncoes.SuspendLayout();
             this.panel_botoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_rodape
@@ -110,6 +110,19 @@
             this.panel_principal.Size = new System.Drawing.Size(925, 692);
             this.panel_principal.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources.Avodah_B_W;
+            this.pictureBox1.Location = new System.Drawing.Point(232, 42);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(461, 608);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // labelData
             // 
             this.labelData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -148,24 +161,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(925, 36);
             this.panelMenu.TabIndex = 8;
-            // 
-            // dropBtnPerfil
-            // 
-            this.dropBtnPerfil.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dropBtnPerfil.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnEditarPerfil,
-            this.btnAlterarSenha});
-            this.dropBtnPerfil.Name = "dropBtnPerfil";
-            this.dropBtnPerfil.Size = new System.Drawing.Size(165, 48);
-            // 
-            // dropBtnFuncoes
-            // 
-            this.dropBtnFuncoes.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dropBtnFuncoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFuncoes,
-            this.btnSubFuncoes});
-            this.dropBtnFuncoes.Name = "dropBtnPerfil";
-            this.dropBtnFuncoes.Size = new System.Drawing.Size(150, 48);
             // 
             // btnPerfil
             // 
@@ -299,6 +294,72 @@
             this.btnEscalaMenu.UseVisualStyleBackColor = true;
             this.btnEscalaMenu.Click += new System.EventHandler(this.btnEscalaMenu_Click);
             // 
+            // dropBtnPerfil
+            // 
+            this.dropBtnPerfil.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dropBtnPerfil.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnEditarPerfil,
+            this.btnAlterarSenha});
+            this.dropBtnPerfil.Name = "dropBtnPerfil";
+            this.dropBtnPerfil.Size = new System.Drawing.Size(165, 48);
+            // 
+            // btnEditarPerfil
+            // 
+            this.btnEditarPerfil.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarPerfil.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnEditarPerfil.IconColor = System.Drawing.Color.SeaGreen;
+            this.btnEditarPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditarPerfil.IconSize = 30;
+            this.btnEditarPerfil.Name = "btnEditarPerfil";
+            this.btnEditarPerfil.Size = new System.Drawing.Size(164, 22);
+            this.btnEditarPerfil.Text = "Editar Perfil";
+            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
+            // 
+            // btnAlterarSenha
+            // 
+            this.btnAlterarSenha.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAlterarSenha.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.btnAlterarSenha.IconColor = System.Drawing.Color.SeaGreen;
+            this.btnAlterarSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAlterarSenha.IconSize = 30;
+            this.btnAlterarSenha.Name = "btnAlterarSenha";
+            this.btnAlterarSenha.Size = new System.Drawing.Size(164, 22);
+            this.btnAlterarSenha.Text = "Alterar Senha";
+            this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
+            // 
+            // dropBtnFuncoes
+            // 
+            this.dropBtnFuncoes.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dropBtnFuncoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnFuncoes,
+            this.btnSubFuncoes});
+            this.dropBtnFuncoes.Name = "dropBtnPerfil";
+            this.dropBtnFuncoes.Size = new System.Drawing.Size(150, 48);
+            // 
+            // btnFuncoes
+            // 
+            this.btnFuncoes.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuncoes.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
+            this.btnFuncoes.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.btnFuncoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFuncoes.IconSize = 30;
+            this.btnFuncoes.Name = "btnFuncoes";
+            this.btnFuncoes.Size = new System.Drawing.Size(149, 22);
+            this.btnFuncoes.Text = "Funções";
+            this.btnFuncoes.Click += new System.EventHandler(this.btnFuncoes_Click);
+            // 
+            // btnSubFuncoes
+            // 
+            this.btnSubFuncoes.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSubFuncoes.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
+            this.btnSubFuncoes.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSubFuncoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSubFuncoes.IconSize = 30;
+            this.btnSubFuncoes.Name = "btnSubFuncoes";
+            this.btnSubFuncoes.Size = new System.Drawing.Size(149, 22);
+            this.btnSubFuncoes.Text = "Subfunções";
+            this.btnSubFuncoes.Click += new System.EventHandler(this.btnSubFuncoes_Click);
+            // 
             // panel_botoes
             // 
             this.panel_botoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -416,67 +477,6 @@
             this.logo_metodista.TabIndex = 0;
             this.logo_metodista.TabStop = false;
             // 
-            // btnEditarPerfil
-            // 
-            this.btnEditarPerfil.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarPerfil.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnEditarPerfil.IconColor = System.Drawing.Color.SeaGreen;
-            this.btnEditarPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditarPerfil.IconSize = 30;
-            this.btnEditarPerfil.Name = "btnEditarPerfil";
-            this.btnEditarPerfil.Size = new System.Drawing.Size(164, 22);
-            this.btnEditarPerfil.Text = "Editar Perfil";
-            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
-            // 
-            // btnAlterarSenha
-            // 
-            this.btnAlterarSenha.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAlterarSenha.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.btnAlterarSenha.IconColor = System.Drawing.Color.SeaGreen;
-            this.btnAlterarSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAlterarSenha.IconSize = 30;
-            this.btnAlterarSenha.Name = "btnAlterarSenha";
-            this.btnAlterarSenha.Size = new System.Drawing.Size(164, 22);
-            this.btnAlterarSenha.Text = "Alterar Senha";
-            this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
-            // 
-            // btnFuncoes
-            // 
-            this.btnFuncoes.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuncoes.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
-            this.btnFuncoes.IconColor = System.Drawing.Color.DarkSlateGray;
-            this.btnFuncoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnFuncoes.IconSize = 30;
-            this.btnFuncoes.Name = "btnFuncoes";
-            this.btnFuncoes.Size = new System.Drawing.Size(149, 22);
-            this.btnFuncoes.Text = "Funções";
-            this.btnFuncoes.Click += new System.EventHandler(this.btnFuncoes_Click);
-            // 
-            // btnSubFuncoes
-            // 
-            this.btnSubFuncoes.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnSubFuncoes.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
-            this.btnSubFuncoes.IconColor = System.Drawing.Color.DarkSlateGray;
-            this.btnSubFuncoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSubFuncoes.IconSize = 30;
-            this.btnSubFuncoes.Name = "btnSubFuncoes";
-            this.btnSubFuncoes.Size = new System.Drawing.Size(149, 22);
-            this.btnSubFuncoes.Text = "Subfunções";
-            this.btnSubFuncoes.Click += new System.EventHandler(this.btnSubFuncoes_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::EscalasMetodista.Properties.Resources.Avodah_B_W;
-            this.pictureBox1.Location = new System.Drawing.Point(250, 41);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(424, 608);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // FormMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -498,11 +498,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenu_FormClosed);
             this.Load += new System.EventHandler(this.FormMenu_Load);
+            this.Shown += new System.EventHandler(this.FormMenu_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMenu_KeyDown);
             this.panel_rodape.ResumeLayout(false);
             this.panel_rodape.PerformLayout();
             this.panel_principal.ResumeLayout(false);
             this.panel_principal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.dropBtnPerfil.ResumeLayout(false);
             this.dropBtnFuncoes.ResumeLayout(false);
@@ -510,7 +512,6 @@
             this.panel_botoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEscalas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_metodista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

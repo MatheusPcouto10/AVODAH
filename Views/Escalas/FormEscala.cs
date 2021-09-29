@@ -37,8 +37,8 @@ namespace EscalasMetodista.Views.Escalas
         {
             datasEscala = lista;
             InitializeComponent();
-            //form.Show();
-            //Application.DoEvents();
+            form.Show();
+            Application.DoEvents();
         }
 
         public FormEscala()
@@ -54,7 +54,7 @@ namespace EscalasMetodista.Views.Escalas
             indiceColunaSelecionada = 99;
             indiceLinhaSelecionada = 99;
 
-            form.Dispose();
+            form.Close();
         }
 
         private void FormEscalaLouvor_KeyDown(object sender, KeyEventArgs e)
@@ -98,7 +98,7 @@ namespace EscalasMetodista.Views.Escalas
             {
                 if (!preenchimento)
                 {
-                    for (int i = 0; i <= 15; i++)
+                    for (int i = 0; i <= 30; i++)
                     {
                         tbEscala.Rows.Add("");
                     }
@@ -595,7 +595,7 @@ namespace EscalasMetodista.Views.Escalas
             {
                 linhasDuplicadas = linhasDuplicadas.Remove(linhasDuplicadas.Trim().Length - 1);
 
-                Validacoes.mensagem("Existem valores duplicados nas linhas: " + linhasDuplicadas, ToolTipIcon.Warning, "Registros Duplicados", menuEscala);
+                //Validacoes.mensagem("Existem valores duplicados nas linhas: " + linhasDuplicadas, ToolTipIcon.Warning, "Registros Duplicados", menuEscala);
             }
         }
 
@@ -739,6 +739,21 @@ namespace EscalasMetodista.Views.Escalas
                 Validacoes.exibeMensagem("Erro: " + erro.Message, Outros.Mensagem.tipo.Erro, false);
                 xlApp.Quit();
             }
+        }
+
+        private void btnSalvarEscalaComo_Click(object sender, EventArgs e)
+        {
+            dropSalvarComo.Show(btnSalvarEscalaComo, new Point(0, btnSalvarEscalaComo.Height));
+        }
+
+        private void btnPreencherEscala_Click(object sender, EventArgs e)
+        {
+            dropPreencherEscala.Show(btnPreencherEscala, new Point(0, btnPreencherEscala.Height));
+        }
+
+        private void btnLimparEscala_Click(object sender, EventArgs e)
+        {
+            dropBtnLimparEscala.Show(btnLimparEscala, new Point(0, btnLimparEscala.Height));
         }
     }
 }

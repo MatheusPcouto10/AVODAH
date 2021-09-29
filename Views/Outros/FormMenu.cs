@@ -1,4 +1,5 @@
-﻿using EscalasMetodista.Session;
+﻿using EscalasMetodista.Model;
+using EscalasMetodista.Session;
 using EscalasMetodista.Views;
 using EscalasMetodista.Views.Escalas;
 using EscalasMetodista.Views.Funcoes;
@@ -209,5 +210,9 @@ namespace EscalasMetodista
             form.Show();
         }
 
+        private void FormMenu_Shown(object sender, EventArgs e)
+        {
+            Validacoes.exibeMensagem("Bem vindo(a) " + UsuarioSession.nomeUsuario + " " + UsuarioSession.sobrenomeUsuario, Mensagem.tipo.Info, false);
+        }
     }
 }
