@@ -1,5 +1,6 @@
 ﻿using EscalasMetodista.Conexão;
 using EscalasMetodista.Model;
+using EscalasMetodista.Session;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -124,8 +125,8 @@ namespace EscalasMetodista.Views.Usuarios
 
             if (txtCodigoNome.Text != null)
             {
-                campoPesquisa = "AND (p.idPessoa IS NULL OR cast(p.idPessoa as varchar) = '" + txtCodigoNome.Text + "') OR (p.nome IS NULL OR p.nome LIKE '%" + txtCodigoNome.Text + "%') " +
-                                  "OR (p.sobrenome IS NULL OR p.sobrenome LIKE '%" + txtCodigoNome.Text + "%') ";
+                campoPesquisa = "AND ((p.idPessoa IS NULL OR cast(p.idPessoa as varchar) = '" + txtCodigoNome.Text + "') OR (p.nome IS NULL OR p.nome LIKE '%" + txtCodigoNome.Text + "%') " +
+                                  "OR (p.sobrenome IS NULL OR p.sobrenome LIKE '%" + txtCodigoNome.Text + "%'))";
             }
 
             if (cbFuncao.Text != "Selecione...")
@@ -159,7 +160,7 @@ namespace EscalasMetodista.Views.Usuarios
 	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
 	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
                                   INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk
-								  WHERE	p.status = 'Ativo' " + campoPesquisa;
+								  WHERE	p.status = 'Ativo' AND p.idPessoa <> " + UsuarioSession.idUsuario + " " + campoPesquisa;
                 }
                 else
                 {
@@ -172,7 +173,7 @@ namespace EscalasMetodista.Views.Usuarios
 	                              LEFT JOIN SubFuncao AS s2 ON s2.idSubFuncao = p.funcaoSecundaria_fk 
 	                              LEFT JOIN Funcao AS f2 ON f2.idFuncao = s2.idFuncao_fk 
                                   INNER JOIN TipoUsuario AS t ON t.idTipoUsuario = p.tipoUsuario_fk
-								  WHERE	p.status = 'Ativo'";
+								  WHERE	p.status = 'Ativo' AND p.idPessoa <> " + UsuarioSession.idUsuario;
                 }
 
                 SqlDataReader dr = cmd.ExecuteReader();
