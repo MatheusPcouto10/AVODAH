@@ -1,2 +1,2 @@
-# Avodah - Sistema de Geração de Escalas Dinâmicas
-Sistema de administração e geração de escalas dinâmicas. Projeto realizado como Trabalho de Conclusão de Curso e direcionado a Igreja Metodista em Palmas.
+# Avodah
+Management system and generation of dynamic scales. Project carried out as Completion Work of Information Systems Course directed to the Methodist Church in Palmas.
