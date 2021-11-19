@@ -74,9 +74,9 @@ namespace EscalasMetodista.Views.Escalas
             this.label3.Location = new System.Drawing.Point(28, 24);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
+            this.label3.Size = new System.Drawing.Size(135, 17);
             this.label3.TabIndex = 84;
-            this.label3.Text = "Nome:";
+            this.label3.Text = "Nome da Escala:";
             // 
             // txtNomeEscala
             // 
@@ -310,7 +310,7 @@ namespace EscalasMetodista.Views.Escalas
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.DarkRed;
-            this.label6.Location = new System.Drawing.Point(81, 24);
+            this.label6.Location = new System.Drawing.Point(167, 26);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);

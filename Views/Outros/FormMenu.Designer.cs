@@ -37,7 +37,6 @@
             this.panel_principal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelData = new System.Windows.Forms.Label();
-            this.labelIdUsuarioLogado = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnPerfil = new FontAwesome.Sharp.IconButton();
             this.btnSair = new FontAwesome.Sharp.IconButton();
@@ -102,7 +101,6 @@
             this.panel_principal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_principal.Controls.Add(this.pictureBox1);
             this.panel_principal.Controls.Add(this.labelData);
-            this.panel_principal.Controls.Add(this.labelIdUsuarioLogado);
             this.panel_principal.Controls.Add(this.panel_rodape);
             this.panel_principal.Location = new System.Drawing.Point(443, 0);
             this.panel_principal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -134,17 +132,6 @@
             this.labelData.Size = new System.Drawing.Size(0, 13);
             this.labelData.TabIndex = 7;
             // 
-            // labelIdUsuarioLogado
-            // 
-            this.labelIdUsuarioLogado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelIdUsuarioLogado.AutoSize = true;
-            this.labelIdUsuarioLogado.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIdUsuarioLogado.ForeColor = System.Drawing.Color.Black;
-            this.labelIdUsuarioLogado.Location = new System.Drawing.Point(525, 589);
-            this.labelIdUsuarioLogado.Name = "labelIdUsuarioLogado";
-            this.labelIdUsuarioLogado.Size = new System.Drawing.Size(0, 13);
-            this.labelIdUsuarioLogado.TabIndex = 6;
-            // 
             // panelMenu
             // 
             this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -173,9 +160,9 @@
             this.btnPerfil.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnPerfil.IconSize = 30;
             this.btnPerfil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPerfil.Location = new System.Drawing.Point(686, 0);
+            this.btnPerfil.Location = new System.Drawing.Point(669, 0);
             this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(187, 36);
+            this.btnPerfil.Size = new System.Drawing.Size(204, 36);
             this.btnPerfil.TabIndex = 12;
             this.btnPerfil.Text = "Meu Perfil";
             this.btnPerfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -209,9 +196,9 @@
             this.btnSobreMenu.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnSobreMenu.IconSize = 30;
             this.btnSobreMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSobreMenu.Location = new System.Drawing.Point(410, 0);
+            this.btnSobreMenu.Location = new System.Drawing.Point(458, 0);
             this.btnSobreMenu.Name = "btnSobreMenu";
-            this.btnSobreMenu.Size = new System.Drawing.Size(90, 36);
+            this.btnSobreMenu.Size = new System.Drawing.Size(101, 36);
             this.btnSobreMenu.TabIndex = 11;
             this.btnSobreMenu.Text = "Sobre";
             this.btnSobreMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -228,9 +215,9 @@
             this.btnAjudaMenu.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnAjudaMenu.IconSize = 25;
             this.btnAjudaMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAjudaMenu.Location = new System.Drawing.Point(322, 0);
+            this.btnAjudaMenu.Location = new System.Drawing.Point(357, 0);
             this.btnAjudaMenu.Name = "btnAjudaMenu";
-            this.btnAjudaMenu.Size = new System.Drawing.Size(82, 36);
+            this.btnAjudaMenu.Size = new System.Drawing.Size(95, 36);
             this.btnAjudaMenu.TabIndex = 10;
             this.btnAjudaMenu.Text = "Ajuda";
             this.btnAjudaMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -247,9 +234,9 @@
             this.btnFuncoesMenu.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnFuncoesMenu.IconSize = 25;
             this.btnFuncoesMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuncoesMenu.Location = new System.Drawing.Point(213, 0);
+            this.btnFuncoesMenu.Location = new System.Drawing.Point(240, 0);
             this.btnFuncoesMenu.Name = "btnFuncoesMenu";
-            this.btnFuncoesMenu.Size = new System.Drawing.Size(103, 36);
+            this.btnFuncoesMenu.Size = new System.Drawing.Size(111, 36);
             this.btnFuncoesMenu.TabIndex = 9;
             this.btnFuncoesMenu.Text = "Funções";
             this.btnFuncoesMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,9 +253,9 @@
             this.btnUsuariosMenu.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnUsuariosMenu.IconSize = 30;
             this.btnUsuariosMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuariosMenu.Location = new System.Drawing.Point(104, 0);
+            this.btnUsuariosMenu.Location = new System.Drawing.Point(115, 0);
             this.btnUsuariosMenu.Name = "btnUsuariosMenu";
-            this.btnUsuariosMenu.Size = new System.Drawing.Size(103, 36);
+            this.btnUsuariosMenu.Size = new System.Drawing.Size(119, 36);
             this.btnUsuariosMenu.TabIndex = 8;
             this.btnUsuariosMenu.Text = "Usuários";
             this.btnUsuariosMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -287,7 +274,7 @@
             this.btnEscalaMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEscalaMenu.Location = new System.Drawing.Point(2, 0);
             this.btnEscalaMenu.Name = "btnEscalaMenu";
-            this.btnEscalaMenu.Size = new System.Drawing.Size(96, 36);
+            this.btnEscalaMenu.Size = new System.Drawing.Size(107, 36);
             this.btnEscalaMenu.TabIndex = 0;
             this.btnEscalaMenu.Text = "Escalas";
             this.btnEscalaMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -297,11 +284,12 @@
             // dropBtnPerfil
             // 
             this.dropBtnPerfil.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dropBtnPerfil.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.dropBtnPerfil.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnEditarPerfil,
             this.btnAlterarSenha});
             this.dropBtnPerfil.Name = "dropBtnPerfil";
-            this.dropBtnPerfil.Size = new System.Drawing.Size(165, 48);
+            this.dropBtnPerfil.Size = new System.Drawing.Size(169, 56);
             // 
             // btnEditarPerfil
             // 
@@ -311,7 +299,7 @@
             this.btnEditarPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditarPerfil.IconSize = 30;
             this.btnEditarPerfil.Name = "btnEditarPerfil";
-            this.btnEditarPerfil.Size = new System.Drawing.Size(164, 22);
+            this.btnEditarPerfil.Size = new System.Drawing.Size(168, 26);
             this.btnEditarPerfil.Text = "Editar Perfil";
             this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
             // 
@@ -323,18 +311,19 @@
             this.btnAlterarSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAlterarSenha.IconSize = 30;
             this.btnAlterarSenha.Name = "btnAlterarSenha";
-            this.btnAlterarSenha.Size = new System.Drawing.Size(164, 22);
+            this.btnAlterarSenha.Size = new System.Drawing.Size(168, 26);
             this.btnAlterarSenha.Text = "Alterar Senha";
             this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
             // 
             // dropBtnFuncoes
             // 
             this.dropBtnFuncoes.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dropBtnFuncoes.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.dropBtnFuncoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnFuncoes,
             this.btnSubFuncoes});
             this.dropBtnFuncoes.Name = "dropBtnPerfil";
-            this.dropBtnFuncoes.Size = new System.Drawing.Size(150, 48);
+            this.dropBtnFuncoes.Size = new System.Drawing.Size(154, 56);
             // 
             // btnFuncoes
             // 
@@ -344,7 +333,7 @@
             this.btnFuncoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFuncoes.IconSize = 30;
             this.btnFuncoes.Name = "btnFuncoes";
-            this.btnFuncoes.Size = new System.Drawing.Size(149, 22);
+            this.btnFuncoes.Size = new System.Drawing.Size(153, 26);
             this.btnFuncoes.Text = "Funções";
             this.btnFuncoes.Click += new System.EventHandler(this.btnFuncoes_Click);
             // 
@@ -356,7 +345,7 @@
             this.btnSubFuncoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubFuncoes.IconSize = 30;
             this.btnSubFuncoes.Name = "btnSubFuncoes";
-            this.btnSubFuncoes.Size = new System.Drawing.Size(149, 22);
+            this.btnSubFuncoes.Size = new System.Drawing.Size(153, 26);
             this.btnSubFuncoes.Text = "Subfunções";
             this.btnSubFuncoes.Click += new System.EventHandler(this.btnSubFuncoes_Click);
             // 
@@ -527,7 +516,6 @@
         private System.Windows.Forms.Panel panel_principal;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataAlteracao;
-        private System.Windows.Forms.Label labelIdUsuarioLogado;
         private System.Windows.Forms.Label labelData;
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.Panel panelMenu;

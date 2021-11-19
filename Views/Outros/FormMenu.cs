@@ -47,7 +47,6 @@ namespace EscalasMetodista
             btnPerfil.Text = UsuarioSession.nomeUsuario + " " + UsuarioSession.sobrenomeUsuario;
             btnPerfil.Width = (btnPerfil.Text.Length + btnPerfil.Width);
             btnPerfil.Location = new Point(btnSair.Location.X - btnPerfil.Width, 0);
-            labelIdUsuarioLogado.Text = "Código: " + UsuarioSession.idUsuario;
             labelData.Text = "Data: " + dataHoje.ToString("D");
             controleAcesso();
             LinhaAtivaBtn(btnPerfil);
